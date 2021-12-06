@@ -1,0 +1,11 @@
+
+
+para:
+  DEV_INDEX: 0
+  USE_CAN_NUM: 3        # 0-自动选择 1-使用CAN0；2-使用CAN1；3-同时使用CAN0、CAN1
+  SND_TYPE: 0                   # CAN发送类型,0-正常发送;1-单次发送;2-自发自收;3-单次自发自收
+  SND_FRAMES: 1            # 每次发送帧数
+  SND_TIMES: 1000        # 发送次数
+  SND_DELY: 5                  # 发送前延时,单位秒
+
+node_rate: 1   # [Herz]
