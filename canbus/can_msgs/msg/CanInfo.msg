@@ -1,2 +1,0 @@
-Header header
-uint32 can_device_handle

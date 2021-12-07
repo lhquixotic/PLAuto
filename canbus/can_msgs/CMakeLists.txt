@@ -15,7 +15,6 @@ find_package(catkin REQUIRED
 add_message_files(DIRECTORY msg
   FILES
     Frame.msg
-    CanInfo.msg
     Frames.msg
 )
 
