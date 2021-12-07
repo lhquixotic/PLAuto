@@ -1,6 +1,7 @@
 #include "likecan.hpp"
 #include <ros/ros.h>
 
+namespace ns_likecan{
 
 // Public methods
 LikeCan::LikeCan(){
@@ -26,6 +27,17 @@ LikeCan::LikeCan(){
 
     rcv_arg0.channelId = 0;
     rcv_arg0.Run = TRUE;
+
+    can_msgs::Frame frame;
+    frame.id = 0x00000345;
+    frame.dlc = 8;
+    frame.is_error = 0;
+    frame.is_extended = 1;
+    frame.is_rtr = 0;
+    for (int i = 0;i < 8;i++){
+        frame.data[i] = i+3;
+    }
+    test_frames.push_back(frame);
 }
 
 void LikeCan::setCanParameters(Para para){
@@ -102,6 +114,9 @@ void LikeCan::recvProc(){
         can_msgs::Frame rcv_frame;
         rcv_frame.id = rec[reclen-1].uID;
         rcv_frame.dlc = sizeof(rec[reclen-1].arryData);
+        for ( int i = 0; i < rcv_frame.dlc; i++){
+            rcv_frame.data[i] = rec[reclen-1].arryData[i];  
+        }
         rcv_frames.push_back(rcv_frame);
 
         // ROS_INFO_STREAM("CAN0 rcv count = " << rcv_frames.size());
@@ -111,50 +126,9 @@ void LikeCan::recvProc(){
                 CanRecvErrcount ++;
             }else{}
         }
-    // ROS_INFO_STREAM("CAN0 rcv count = " << count<<", error count = "<<errcount);
     }
 }
 
-// void  * sendProc(void * param){
-//     ROS_INFO_STREAM("FLAG1");
-//     LikeCan * pCanMain = (LikeCan *) param;
-    
-//     // Send through CAN 0
-//     snd_thread_arg_t * thread_arg = & (pCanMain->snd_thread_arg0);
-//     CAN_DataFrame * send = new CAN_DataFrame[thread_arg->sndFrames];
-//     int times = thread_arg ->sndTimes;
-//     int channel_id = thread_arg ->channelId;
-
-//     for ( int j = 0; j < thread_arg->sndFrames; j++ ) {
-//         send[j].uID = channel_id;         // ID
-//         send[j].nSendType = thread_arg->sndType;  // 0-正常发送;1-单次发送;2-自发自收;3-单次自发自收
-//         send[j].bRemoteFlag = 0;  // 0-数据帧；1-远程帧
-//         send[j].bExternFlag = 1;  // 0-标准帧；1-扩展帧
-//         send[j].nDataLen = 8;     // DLC
-//         for ( int i = 0; i < send[j].nDataLen; i++ ) {
-//             send[j].arryData[i] = i;
-//         }
-//     }
-//     ROS_INFO_STREAM("FLAG2");
-//     while ( times ){
-//         unsigned long sndCnt = CAN_ChannelSend(pCanMain->dwDeviceHandle,channel_id,send,thread_arg->sndFrames);
-//         pCanMain->CanSendcount[channel_id] += sndCnt;
-//         if ( sndCnt ){
-//             times --;
-//         }
-//         delete[] send;
-//         ROS_INFO_STREAM("[can_bridge] CAN " <<  channel_id << " Send Count: " 
-//                                                     << pCanMain->CanSendcount[channel_id] << " end");
-//     }
-// }
-
-
-// void LikeCan::createSndThread(){
-//     int ret;
-//     ret = pthread_create(&snd_thread_0,NULL,sendProc,this);
-//     ROS_INFO_STREAM("FLAG0: test num = " << this);
-//     ROS_INFO_STREAM("[can_bridge] Send thread Created. ");
-// }
 
 int LikeCan::openCanChannel(int channel_id){
     CAN_InitConfig config;
@@ -183,7 +157,6 @@ int LikeCan::openCanChannel(int channel_id){
     return 1;
 }
 
-
 // Private methods
 void LikeCan::exitCanProcedure(){
     if ( (can_para._useCanChannel & 1) == 1){
@@ -197,5 +170,4 @@ void LikeCan::exitCanProcedure(){
     CAN_DeviceClose(dwDeviceHandle);
     ROS_INFO_STREAM("CAN_DeviceClose");
 }
-
-
+}

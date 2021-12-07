@@ -16,6 +16,7 @@ add_message_files(DIRECTORY msg
   FILES
     Frame.msg
     CanInfo.msg
+    Frames.msg
 )
 
 generate_messages(

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(can_to_topic)
+project(can_bridge)
 
 add_compile_options(-std=c++11)
 
@@ -12,6 +12,7 @@ set(PROJECT_DEPS
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  geometry_msgs
   can_msgs
   )
 
@@ -35,17 +36,12 @@ link_directories(
 
 # Each node in the package must be declared like this
 add_executable(${PROJECT_NAME}
-  src/can_to_topic_handle.cpp
-  src/can_to_topic.cpp
+  src/can_bridge_handle.cpp
   src/main.cpp
   src/likecan.cpp
   )
 
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
-
-target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES} libCanCmd.so
-  )
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES} libCanCmd.so

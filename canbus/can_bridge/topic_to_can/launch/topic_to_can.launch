@@ -1,5 +1,0 @@
-<launch>
-    <node name="topic_to_can_node" pkg="topic_to_can" type="topic_to_can" output="screen">
-        <rosparam command="load" file="$(find topic_to_can)/config/topic_to_can.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>

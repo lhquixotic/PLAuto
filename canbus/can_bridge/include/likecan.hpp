@@ -1,7 +1,7 @@
 #include "ICANCmd.h"
-#include <pthread.h>
 #include <can_msgs/Frame.h>
-
+#include <can_msgs/CanInfo.h>
+#include <can_msgs/Frames.h>
 
 struct Para{
   int _useCanDevIndex;
@@ -24,13 +24,14 @@ DWORD sndFrames; // 每次发送帧数
 DWORD sndTimes;  // 发送次数
 }snd_arg_t;
 
+namespace ns_likecan{
 class LikeCan
 {
 private:
     Para can_para;
      
     // define basic variables
-
+    
     unsigned long CanSendcount = 0;
     unsigned long CanRecvcount = 0;
     unsigned long CanRecvErrcount = 0;
@@ -49,14 +50,15 @@ private:
 
 public:
     DWORD dwDeviceHandle;
+    std::vector<can_msgs::Frame> test_frames;
     std::vector<can_msgs::Frame> rcv_frames;
     int openCanDevice();
     int openCanChannel(int channel_id);
-    int checkCanDevice();
-    void readCanDeviceInfo(DWORD device_handle);
+    void readCanDeviceInfo();
     void sendProc(std::vector<can_msgs::Frame>  &frames);
     void recvProc();
     void setCanParameters(Para para);
     LikeCan ();
 
 };
+}

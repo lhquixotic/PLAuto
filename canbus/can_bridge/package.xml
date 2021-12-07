@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>can_to_topic</name>
+  <name>can_bridge</name>
   <version>0.0.0</version>
-  <description>Simple can_to_topic node, that inputs "cone detections" and outputs array of points</description>
+  <description>Simple can_bridge node, that inputs "cone detections" and outputs array of points</description>
   <maintainer email="killasipilin@gmail.com">chentairan</maintainer>
   <license>TODO</license>
 
@@ -10,13 +10,12 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <!--For custom message import-->
-  <depend>can_msgs</depend>
+  <depend>fsd_common_msgs</depend>
 
   <!--Other depends-->
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
-  <depend>topic_to_can</depend>
 
   <export>
   </export>

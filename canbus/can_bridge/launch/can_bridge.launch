@@ -1,0 +1,5 @@
+<launch>
+    <node name="can_bridge_node" pkg="can_bridge" type="can_bridge" output="screen">
+        <rosparam command="load" file="$(find can_bridge)/config/can_bridge.yaml" /> <!--Load parameters from config files-->
+    </node>
+</launch>
