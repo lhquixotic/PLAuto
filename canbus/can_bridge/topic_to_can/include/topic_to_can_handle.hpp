@@ -23,13 +23,14 @@ class TopicToCanHandle {
 
  private:
   ros::NodeHandle nodeHandle_;
-  ros::Subscriber visionConeDetectionsSubscriber_;
-  // ros::Publisher topic_to_canStatePublisher_;
+  
+  ros::Publisher canHandlePublisher_;
   ros::Subscriber canMsgsSubscriber_;
 
   void canMsgsCallback(const can_msgs::Frame &msg);
 
   std::string can_msgs_topic_name_;
+  std::string can_handle_topic_name_;
 
   int node_rate_;
   Para can_para_; 

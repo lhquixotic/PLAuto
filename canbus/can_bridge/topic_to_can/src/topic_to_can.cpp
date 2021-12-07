@@ -23,13 +23,22 @@ void TopicToCan::setCanParameters(const Para &msg){
 }
 
 void TopicToCan::initializeCanDevice(){
-    likecan.setCanParameters(can_para);
+  likecan.setCanParameters(can_para);
   likecan.openCanDevice(); // TODO: check success or not
   likecan.readCanDeviceInfo();
   likecan.openCanChannel(0);  
+  ROS_INFO_STREAM("Handle: "<<likecan.dwDeviceHandle);
 }
 
 void TopicToCan::runAlgorithm() {
   likecan.sendProc(test_frames);
 }
+
+
+can_msgs::CanInfo TopicToCan::getCanHandle(){
+  can_msgs::CanInfo can_info;
+  can_info.can_device_handle = likecan.dwDeviceHandle;
+  return can_info;
+}
+
 }

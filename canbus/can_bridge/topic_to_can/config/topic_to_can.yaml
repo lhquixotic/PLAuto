@@ -1,4 +1,4 @@
-
+can_handle_topic_name: can_handle
 
 para:
   DEV_INDEX: 0
@@ -8,4 +8,4 @@ para:
   SND_TIMES: 1000        # 发送次数
   SND_DELY: 5                  # 发送前延时,单位秒
 
-node_rate: 1   # [Herz]
+node_rate: 10  # [Herz]

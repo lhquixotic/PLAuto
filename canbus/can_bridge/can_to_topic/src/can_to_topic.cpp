@@ -24,20 +24,41 @@
 namespace ns_can_to_topic {
 // Constructor
 CanToTopic::CanToTopic(ros::NodeHandle &nh) : nh_(nh) {
-
-};//FIXME:load config params.
+  can_msgs::Frame frame;
+  frame.id = 0x00000345;
+  frame.dlc = 8;
+  frame.is_error = 0;
+  frame.is_extended = 1;
+  frame.is_rtr = 0;
+  for (int i = 0;i < 8;i++){
+      frame.data[i] = i+3;
+  }
+  test_frames.push_back(frame);
+};
 
 // Getters
-fsd_common_msgs::ConeDetections CanToTopic::getConeDetections() { return cone_current; }
-//FIXME: get value from next layer.
+// fsd_common_msgs::ConeDetections CanToTopic::getConeDetections() { return cone_current; }
+// //FIXME: get value from next layer.
 
 // Setters
-void CanToTopic::setConeDetections(fsd_common_msgs::ConeDetections cones) {
-  cone_current = cones;
-}// FIXME:set value from subscriber or config files.
+void CanToTopic::setCanParameters(const Para & msg){
+  can_para = msg;
+}
+
+void CanToTopic::initializeCanDevice(){
+  likecan.setCanParameters(can_para);
+  // likecan.openCanDevice();
+  DWORD device_handle = can_info.can_device_handle;
+  likecan.readCanDeviceInfo(1);
+  // likecan.openCanChannel(0);  
+}
 
 void CanToTopic::runAlgorithm() {
-
-}//FIXME:add code you want to execute.
+  // while (1){
+  //   likecan.recvProc();
+  //   likecan.sendProc(test_frames);
+  // }
+  
+}
 
 }

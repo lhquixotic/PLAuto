@@ -26,6 +26,7 @@ void TopicToCanHandle::loadParameters() {
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
+  nodeHandle_.param<std::string>("can_handle_topic_name",can_handle_topic_name_,"can_handle");
   // Can parameters
   nodeHandle_.param<int>("para/DEV_INDEX" , can_para_._useCanDevIndex,0);
   nodeHandle_.param<int>("para/USE_CAN_NUM", can_para_._useCanChannel,3);
@@ -33,6 +34,7 @@ void TopicToCanHandle::loadParameters() {
   nodeHandle_.param<int>("para/SND_FRAMES", can_para_._useCanSendFrames,64);
   nodeHandle_.param<int>("para/SND_TIMES", can_para_._useCanSendTimes,1000);
   nodeHandle_.param<int>("para/SND_DELY", can_para_._useCanSendDely,5);
+
   ROS_INFO_STREAM("DEV_INDEX: "<<can_para_._useCanDevIndex);
 
 }
@@ -45,6 +47,7 @@ void TopicToCanHandle::subscribeToTopics() {
 
 void TopicToCanHandle::publishToTopics() {
   ROS_INFO("publish to topics");
+  canHandlePublisher_ = nodeHandle_.advertise<can_msgs::CanInfo>(can_handle_topic_name_,1);
   }
 
 void TopicToCanHandle::run() {
@@ -54,6 +57,7 @@ void TopicToCanHandle::run() {
 
 void TopicToCanHandle::sendMsg() {
   // topic_to_canStatePublisher_.publish(topic_to_can_.getConeDetections());
+  canHandlePublisher_.publish(topic_to_can_.getCanHandle());
 }
 
 void TopicToCanHandle::canMsgsCallback(const can_msgs::Frame & msg){

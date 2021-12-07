@@ -4,7 +4,7 @@
 
 // Public methods
 LikeCan::LikeCan(){
-    can_channel_cfg0.bMode = 0;  // 工作模式(0表示正常模式,1表示只听模式)
+    can_channel_cfg0.bMode =0;  // 工作模式(0表示正常模式,1表示只听模式)
     can_channel_cfg0.dwAccCode = 0;
     can_channel_cfg0.dwAccMask = 0xffffffff;
     can_channel_cfg0.dwBtr[0] = 0x00; // BTR0   0014 -1M 0016-800K 001C-500K 011C-250K 031C-12K 041C-100K 091C-50K 181C-20K 311C-10K BFFF-5K
@@ -42,9 +42,9 @@ int LikeCan::openCanDevice(){
 }
 
 
-void LikeCan::readCanDeviceInfo(){
+void LikeCan::readCanDeviceInfo(DWORD device_handle){
     CAN_DeviceInformation DevInfo;
-    if ( CAN_GetDeviceInfo(dwDeviceHandle, &DevInfo) != CAN_RESULT_OK ) {
+    if ( CAN_GetDeviceInfo(device_handle, &DevInfo) != CAN_RESULT_OK ) {
       exitCanProcedure();
       ROS_ERROR_STREAM("[likecan] GetDeviceInfo error!");
    }
@@ -80,7 +80,7 @@ void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
         }
         unsigned long sndCnt = CAN_ChannelSend(dwDeviceHandle,channel_id,send,snd_arg->sndFrames);
         CanSendcount += sndCnt * frames.size();
-        // frames.clear();
+        frames.clear();
 
         ROS_INFO_STREAM("Sent frames number:  " << CanSendcount); 
     }
@@ -181,6 +181,10 @@ int LikeCan::openCanChannel(int channel_id){
         ROS_WARN_STREAM("[likecan] CAN " << channel_id << " not support Wakeup");
     }
     return 1;
+}
+
+int LikeCan::checkCanDevice(){
+    return 0;
 }
 
 

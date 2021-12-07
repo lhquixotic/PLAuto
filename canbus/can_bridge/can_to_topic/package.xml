@@ -10,12 +10,13 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <!--For custom message import-->
-  <depend>fsd_common_msgs</depend>
+  <depend>can_msgs</depend>
 
   <!--Other depends-->
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
+  <depend>topic_to_can</depend>
 
   <export>
   </export>

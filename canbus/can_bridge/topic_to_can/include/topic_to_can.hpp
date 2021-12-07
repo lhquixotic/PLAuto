@@ -13,7 +13,7 @@ class TopicToCan {
   TopicToCan(ros::NodeHandle &nh);
 
   // Getters
-  // fsd_common_msgs::ConeDetections getConeDetections();//FIXME: change value names you want to get from config files.
+  can_msgs::CanInfo getCanHandle();
 
   // Setters
   void setCanParameters(const Para &msg);
@@ -29,7 +29,6 @@ class TopicToCan {
   Para can_para;
   LikeCan likecan;
   std::vector<can_msgs::Frame> test_frames;
-
 
 };
 }
