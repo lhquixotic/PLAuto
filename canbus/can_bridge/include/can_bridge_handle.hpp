@@ -10,7 +10,8 @@ class CanBridgeHandle {
  public:
   CanBridgeHandle(ros::NodeHandle &nodeHandle);
   void loadParameters();
-  std::string can_msgs_topic_name_;
+  std::string can_send_topic_name_;
+  std::string can_recv_topic_name_;
   Para can_para_; 
 
  private:

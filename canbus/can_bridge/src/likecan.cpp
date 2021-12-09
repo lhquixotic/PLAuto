@@ -38,6 +38,7 @@ LikeCan::LikeCan(){
         frame.data[i] = i+3;
     }
     test_frames.push_back(frame);
+    test_frames.push_back(frame);
 }
 
 void LikeCan::setCanParameters(Para para){
@@ -69,20 +70,21 @@ void LikeCan::readCanDeviceInfo(){
    );
 }
 
+
 void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
     ROS_INFO_STREAM("Queue size: " << frames.size());
-    if (frames.empty()){
+    if (frames.size()==0){
         ROS_WARN_STREAM("[likecan] No can frames in the queue size.");
     }else{
         // Send through CAN 0
         snd_arg_t * snd_arg = & (snd_arg0);
-        CAN_DataFrame * send = new CAN_DataFrame[snd_arg->sndFrames];
-        
+        CAN_DataFrame * send = new CAN_DataFrame[frames.size()];
+        ROS_INFO_STREAM("hahahah");
         int channel_id = snd_arg ->channelId;
         for ( int j = 0; j < frames.size(); j++ ) {
             can_msgs::Frame frame = frames[j];
             send[j].uID = frame.id;         // ID
-            send[j].nSendType = snd_arg->sndType;  // 0-正常发送;1-单次发送;2-自发自收;3-单次自发自收
+            send[j].nSendType = 0;  // 0-正常发送;1-单次发送;2-自发自收;3-单次自发自收
             send[j].bRemoteFlag = frame.is_rtr;  // 0-数据帧；1-远程帧
             send[j].bExternFlag = frame.is_extended;  // 0-标准帧；1-扩展帧
             send[j].nDataLen = frame.dlc;     // DLC
@@ -90,10 +92,10 @@ void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
                 send[j].arryData[i] = frame.data[i];
             }
         }
-        unsigned long sndCnt = CAN_ChannelSend(dwDeviceHandle,channel_id,send,snd_arg->sndFrames);
-        CanSendcount += sndCnt * frames.size();
+        unsigned long sndCnt = CAN_ChannelSend(dwDeviceHandle,channel_id,send,frames.size());
+        CanSendcount += sndCnt;
+        delete[] send;
         // frames.clear();
-
         ROS_INFO_STREAM("Sent frames number:  " << CanSendcount); 
     }
 }
@@ -111,15 +113,17 @@ void LikeCan::recvProc(){
                                     rec[reclen -1].arryData[2],rec[reclen -1].arryData[3],rec[reclen -1].arryData[4],
                                     rec[reclen -1].arryData[5],rec[reclen -1].arryData[6],rec[reclen -1].arryData[7]);
         CanRecvcount += reclen;
-        can_msgs::Frame rcv_frame;
-        rcv_frame.id = rec[reclen-1].uID;
-        rcv_frame.dlc = sizeof(rec[reclen-1].arryData);
-        for ( int i = 0; i < rcv_frame.dlc; i++){
-            rcv_frame.data[i] = rec[reclen-1].arryData[i];  
+        ROS_INFO_STREAM("RECLEN = "<<reclen);
+        for (int j = 0; j < reclen ; j++){
+            can_msgs::Frame rcv_frame;
+            rcv_frame.id = rec[j].uID;
+            rcv_frame.dlc = sizeof(rec[j].arryData);
+            for ( int i = 0; i < rcv_frame.dlc; i++){
+            rcv_frame.data[i] = rec[j].arryData[i];  
         }
         rcv_frames.push_back(rcv_frame);
-
-        // ROS_INFO_STREAM("CAN0 rcv count = " << rcv_frames.size());
+        }
+        
         ROS_INFO_STREAM("CAN0 rcv count = " << CanRecvcount);
         }else{
             if (CAN_GetErrorInfo(dwDeviceHandle,rcv_arg -> channelId,&err) == CAN_RESULT_OK){

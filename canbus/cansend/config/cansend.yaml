@@ -1,0 +1,5 @@
+# chassis_control_topic_name: /chassis/control_cmd
+
+cansend_topic_name: /sent_messages
+
+node_rate: 50   # [Herz]

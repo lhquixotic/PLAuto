@@ -1,4 +1,8 @@
-can_handle_topic_name: can_handle
+# can_handle_topic_name: can_handle
+
+can_send_topic_name: /sent_messages
+
+can_recv_topic_name: /recv_messages
 
 para:
   DEV_INDEX: 0

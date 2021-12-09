@@ -22,7 +22,8 @@ void CanBridgeHandle::loadParameters() {
   nodeHandle_.param<int>("para/SND_TIMES", can_para_._useCanSendTimes,1000);
   nodeHandle_.param<int>("para/SND_DELY", can_para_._useCanSendDely,5);
 
-  nodeHandle_.param<std::string>("can_msgs_topic_name",can_msgs_topic_name_,"can_msgs");
+  nodeHandle_.param<std::string>("can_send_topic_name",can_send_topic_name_,"sent_messages");
+  nodeHandle_.param<std::string>("can_recv_topic_name", can_recv_topic_name_,"recv_messages");
 
   ROS_INFO_STREAM("DEV_INDEX: "<<can_para_._useCanDevIndex);
 }
