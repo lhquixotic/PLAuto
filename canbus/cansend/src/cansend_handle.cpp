@@ -75,8 +75,6 @@ void CansendHandle::run() {
 
 void CansendHandle::sendMsg() {
   cansendStatePublisher_.publish(cansend_.getFrames());
-  // cansendStatePublisher_.publish(cansend_.getFrame(id_0x04EF8480));
-  // cansendStatePublisher_.publish(cansend_.getFrame(id_0x0C040B2A));
 }
 
 // void CansendHandle::chassisControlCallback(const common_msgs::ChassisControl &msg) {

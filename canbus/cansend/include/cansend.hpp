@@ -1,36 +1,21 @@
-/*
-    Formula Student Driverless Project (FSD-Project).
-    Copyright (c) 2019:
-     - chentairan <killasipilin@gmail.com>
-
-    FSD-Project is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    FSD-Project is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 #ifndef CANSEND_HPP
 #define CANSEND_HPP
 
 #include "std_msgs/String.h"
 #include "can_msgs/Frame.h"
 #include "can_msgs/Frames.h"
-// #include "common_msgs/ChassisControl.h"
-#include "ID_0x04EF8480.h"
-#include "ID_0x0C040B2A.h"
-#include "Steer_Cmd_Msg.h"
 
-extern ID_0x04EF8480 *id_0x04EF8480;
-extern ID_0x0C040B2A *id_0x0C040B2A;
+#include "Steer_Cmd_Msg.h"
+#include "Body_Cmd_Msg.h"
+#include "Brake_Cmd_Msg.h"
+#include "Park_Cmd_Msg.h"
+#include "Throt_Cmd_Msg.h"
+
 extern Steer_Cmd_Msg * steer_cmd_msg;
+extern Body_Cmd_Msg * body_cmd_msg;
+extern Brake_Cmd_Msg * brake_cmd_msg;
+extern Park_Cmd_Msg * park_cmd_msg;
+extern Throt_Cmd_Msg * throt_cmd_msg;
 
 namespace ns_cansend {
 
@@ -45,14 +30,13 @@ class Cansend {
   can_msgs::Frame getFrame(protocol *frame);
   can_msgs::Frames getFrames();  
   // Setters
-  // void setChassisControl(common_msgs::ChassisControl msg);
-  // can_msgs::Frames sendframes;
   void runAlgorithm();
 
  private:
 
   ros::NodeHandle &nh_;
-  int rolling_counter;
+  double rolling_counter;
+  int send_count;
  
 
   // common_msgs::ChassisControl chassis_control_cmd;

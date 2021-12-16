@@ -1,6 +1,5 @@
 #include "ICANCmd.h"
 #include <can_msgs/Frame.h>
-#include <can_msgs/CanInfo.h>
 #include <can_msgs/Frames.h>
 
 struct Para{

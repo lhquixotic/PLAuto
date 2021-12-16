@@ -1,22 +1,3 @@
-/*
-    Formula Student Driverless Project (FSD-Project).
-    Copyright (c) 2019:
-     - chentairan <killasipilin@gmail.com>
-
-    FSD-Project is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    FSD-Project is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 #include <ros/ros.h>
 #include "canparse_handle.hpp"
 #include "register.h"
@@ -45,10 +26,10 @@ void CanparseHandle::loadParameters() {
                                       "/received_messages")) {
     ROS_WARN_STREAM("Did not load canbus_receive_topic_name_. Standard value is: " << canbus_receive_topic_name_);
   }
-  if (!nodeHandle_.param<std::string>("chassis_state_topic_name",
-                                      chassis_state_topic_name_,
-                                      "/chassis/vehicle_state")) {
-    ROS_WARN_STREAM("Did not load chassis_state_topic_name_. Standard value is: " << chassis_state_topic_name_);
+  if (!nodeHandle_.param<std::string>("vehicle_dynamic_state_topic_name",
+                                      vehicle_dynamic_state_topic_name_,
+                                      "/chassis/vehicle_dynamic_state")) {
+    ROS_WARN_STREAM("Did not load chassis_state_topic_name_. Standard value is: " << vehicle_dynamic_state_topic_name_);
   }
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
@@ -57,29 +38,29 @@ void CanparseHandle::loadParameters() {
 
 void CanparseHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
-  canbus_receive_Subscriber_ =
+  canbusReceiveSubscriber_ =
       nodeHandle_.subscribe(canbus_receive_topic_name_, 100, &CanparseHandle::CanbusReceiveCallback, this);
 }
 
 void CanparseHandle::publishToTopics() {
   ROS_INFO("publish to topics");
-  chassisStatePublisher_ = nodeHandle_.advertise<common_msgs::ChassisState>(chassis_state_topic_name_,1);
+  vehicleDynamicStatePublisher_ = nodeHandle_.advertise<common_msgs::VehicleDynamicState>(vehicle_dynamic_state_topic_name_,10000);
 }
 
 void CanparseHandle::run() {
-  // std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
   canparse_.runAlgorithm();
-  // std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
-  // double time_round = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count();
-  // std::cout << "time cost = " << time_round << ", frequency = " << 1 / time_round << std::endl;
   sendMsg();
 }
 
 void CanparseHandle::sendMsg() {
-  chassisStatePublisher_.publish(canparse_.getChassisState());
+  vehicleDynamicStatePublisher_.publish(canparse_.getVehicleDynamicState());
 }
 
-void CanparseHandle::CanbusReceiveCallback(const can_msgs::Frame &f) {
-  canparse_.Parse(f);
+void CanparseHandle::CanbusReceiveCallback(const can_msgs::Frames &msg) {
+  std::vector<can_msgs::Frame> recv_frames = msg.frames;
+  int frame_num = recv_frames.size();
+  for (int i = 0; i < frame_num; i++){
+    canparse_.Parse(recv_frames[i]);
+  }
 }
 }

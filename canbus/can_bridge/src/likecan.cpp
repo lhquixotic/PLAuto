@@ -38,7 +38,6 @@ LikeCan::LikeCan(){
         frame.data[i] = i+3;
     }
     test_frames.push_back(frame);
-    test_frames.push_back(frame);
 }
 
 void LikeCan::setCanParameters(Para para){
@@ -48,7 +47,7 @@ void LikeCan::setCanParameters(Para para){
 int LikeCan::openCanDevice(){
     if ( (dwDeviceHandle = CAN_DeviceOpen (ACUSB_132B,can_para._useCanDevIndex,0)) == 0){        
         exitCanProcedure();
-        ROS_ERROR_STREAM("[likecan] Open device error! ");
+        ROS_FATAL_STREAM("[likecan] Open device error! ");
     }
     ROS_INFO_STREAM("[likecan] Open device success! ");
     return 1;
@@ -59,7 +58,7 @@ void LikeCan::readCanDeviceInfo(){
     CAN_DeviceInformation DevInfo;
     if ( CAN_GetDeviceInfo(dwDeviceHandle, &DevInfo) != CAN_RESULT_OK ) {
       exitCanProcedure();
-      ROS_ERROR_STREAM("[likecan] GetDeviceInfo error!");
+      ROS_FATAL_STREAM("[likecan] GetDeviceInfo error!");
    }
    // Print  device infomation
    ROS_INFO_STREAM(
@@ -72,14 +71,13 @@ void LikeCan::readCanDeviceInfo(){
 
 
 void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
-    ROS_INFO_STREAM("Queue size: " << frames.size());
+    //ROS_INFO_STREAM("Queue size: " << frames.size());
     if (frames.size()==0){
         ROS_WARN_STREAM("[likecan] No can frames in the queue size.");
     }else{
         // Send through CAN 0
         snd_arg_t * snd_arg = & (snd_arg0);
         CAN_DataFrame * send = new CAN_DataFrame[frames.size()];
-        ROS_INFO_STREAM("hahahah");
         int channel_id = snd_arg ->channelId;
         for ( int j = 0; j < frames.size(); j++ ) {
             can_msgs::Frame frame = frames[j];
@@ -95,7 +93,7 @@ void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
         unsigned long sndCnt = CAN_ChannelSend(dwDeviceHandle,channel_id,send,frames.size());
         CanSendcount += sndCnt;
         delete[] send;
-        // frames.clear();
+        //frames.clear();
         ROS_INFO_STREAM("Sent frames number:  " << CanSendcount); 
     }
 }
@@ -103,9 +101,9 @@ void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
 void LikeCan::recvProc(){
     rcv_arg_t * rcv_arg = & (rcv_arg0);
     if(rcv_arg->Run) {
-        ROS_INFO_STREAM("[likecan] Receiving can messages...");
+        //ROS_INFO_STREAM("[likecan] Receiving can messages...");
         int reclen = 0;
-        CAN_DataFrame rec[100];
+        CAN_DataFrame rec[10000];
         CAN_ErrorInformation err;
         if( (reclen = CAN_ChannelReceive(dwDeviceHandle,rcv_arg -> channelId,rec,sizeof(rec),200)) >0){
             ROS_INFO("CAN0 Receive:ID 0x%08X, Frame: %02X %02X %02X %02X %02X %02X %02X %02X.",

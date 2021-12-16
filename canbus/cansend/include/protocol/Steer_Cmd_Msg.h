@@ -18,21 +18,17 @@ class Steer_Cmd_Msg:public protocol{
     double steer_control_mode();
     void Setsteer_control_mode(double steer_control_mode);
     void Set_p_steer_control_mode(double steer_control_mode);
-    double target_steer_angle_gradiant();
-    void Settarget_steer_angle_gradiant(double target_steer_angle_gradiant);
-    void Set_p_target_steer_angle_gradiant(double target_steer_angle_gradiant);
     double target_steer_angle_value();
     void Settarget_steer_angle_value(double target_steer_angle_value);
     void Set_p_target_steer_angle_value(double target_steer_angle_value);
-    double target_steer_torque_value();
-    void Settarget_steer_torque_value(double target_steer_torque_value);
-    void Set_p_target_steer_torque_value(double target_steer_torque_value);
+    double target_steer_curvature();
+    void Settarget_steer_curvature(double target_steer_curvature);
+    void Set_p_target_steer_curvature(double target_steer_curvature);
   private:
     double checksum_;
     double control_active_;
     double rolling_counter_;
     double steer_control_mode_;
-    double target_steer_angle_gradiant_;
     double target_steer_angle_value_;
-    double target_steer_torque_value_;
+    double target_steer_curvature_;
 };

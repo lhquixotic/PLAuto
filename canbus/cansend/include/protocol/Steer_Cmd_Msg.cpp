@@ -13,18 +13,17 @@ void Steer_Cmd_Msg::Reset(){
   control_active_=0;
   rolling_counter_=0;
   steer_control_mode_=0;
-  target_steer_angle_gradiant_=0;
   target_steer_angle_value_=0;
-  target_steer_torque_value_=0;
+  target_steer_curvature_=0;
 }
 void Steer_Cmd_Msg::Update(uint8_t *data){
-  Set_p_checksum(checksum_);
+  
   Set_p_control_active(control_active_);
   Set_p_rolling_counter(rolling_counter_);
   Set_p_steer_control_mode(steer_control_mode_);
-  Set_p_target_steer_angle_gradiant(target_steer_angle_gradiant_);
   Set_p_target_steer_angle_value(target_steer_angle_value_);
-  Set_p_target_steer_torque_value(target_steer_torque_value_);
+  Set_p_target_steer_curvature(target_steer_curvature_);
+  Set_p_checksum(checksum_);
   for(int i=0;i<dlc_;i++) data[i] = data_[i];
 }
 /******************
@@ -42,10 +41,10 @@ void Steer_Cmd_Msg::Setchecksum(double checksum){
   checksum_=checksum;
 }
 void Steer_Cmd_Msg::Set_p_checksum(double checksum){
-  checksum=BoundedValue(0.000000,0.000000,checksum);
-  int x = (checksum - 0.000000) / 1.000000;
-  uint8_t x0 = x & RANG_MASK_1_L[7];
-  x >>= 8;
+  uint8_t cs = 0;
+  for (int k = 0; k<7; k++) cs += data_[k];
+  cs = cs ^ 0xff;
+  uint8_t x0 = cs & RANG_MASK_1_L[7];
   SetByte(data_ + 7,0,8,x0);
 }
 /******************
@@ -112,27 +111,6 @@ void Steer_Cmd_Msg::Set_p_steer_control_mode(double steer_control_mode){
   SetByte(data_ + 0,5,2,x0);
 }
 /******************
-signalname: target_steer_angle_gradiant;
-signalclass: uint8;
-StartBit: 32;
-SignalSize: 8;
-ByteOrder: BigEndian;
-Factor: 36;
-Offset: 0;
-Minimum: 720;
-Maximum: 9000;
-******************/
-void Steer_Cmd_Msg::Settarget_steer_angle_gradiant(double target_steer_angle_gradiant){
-  target_steer_angle_gradiant_=target_steer_angle_gradiant;
-}
-void Steer_Cmd_Msg::Set_p_target_steer_angle_gradiant(double target_steer_angle_gradiant){
-  target_steer_angle_gradiant=BoundedValue(720.000000,9000.000000,target_steer_angle_gradiant);
-  int x = (target_steer_angle_gradiant - 0.000000) / 36.000000;
-  uint8_t x0 = x & RANG_MASK_1_L[7];
-  x >>= 8;
-  SetByte(data_ + 4,0,8,x0);
-}
-/******************
 signalname: target_steer_angle_value;
 signalclass: int16;
 StartBit: 16;
@@ -151,32 +129,32 @@ void Steer_Cmd_Msg::Set_p_target_steer_angle_value(double target_steer_angle_val
   int x = (target_steer_angle_value - -1000.000000) / 0.100000;
   uint8_t x0 = x & RANG_MASK_1_L[7];
   x >>= 8;
-  SetByte(data_ + 3,0,8,x0);
+  SetByte(data_ + 1,0,8,x0);
   uint8_t x1 = x & RANG_MASK_1_L[7];
   x >>= 8;
   SetByte(data_ + 2,0,8,x1);
 }
 /******************
-signalname: target_steer_torque_value;
+signalname: target_steer_curvature;
 signalclass: int16;
-StartBit: 52;
-SignalSize: 12;
+StartBit: 32;
+SignalSize: 16;
 ByteOrder: BigEndian;
-Factor: 0.01;
-Offset: -20;
-Minimum: -20;
-Maximum: 20;
+Factor: 0.0001;
+Offset: -3;
+Minimum: -3;
+Maximum: 3;
 ******************/
-void Steer_Cmd_Msg::Settarget_steer_torque_value(double target_steer_torque_value){
-  target_steer_torque_value_=target_steer_torque_value;
+void Steer_Cmd_Msg::Settarget_steer_curvature(double target_steer_curvature){
+  target_steer_curvature_=target_steer_curvature;
 }
-void Steer_Cmd_Msg::Set_p_target_steer_torque_value(double target_steer_torque_value){
-  target_steer_torque_value=BoundedValue(-20.000000,20.000000,target_steer_torque_value);
-  int x = (target_steer_torque_value - -20.000000) / 0.010000;
+void Steer_Cmd_Msg::Set_p_target_steer_curvature(double target_steer_curvature){
+  target_steer_curvature=BoundedValue(-3.000000,3.000000,target_steer_curvature);
+  int x = (target_steer_curvature - -3.000000) / 0.000100;
   uint8_t x0 = x & RANG_MASK_1_L[7];
   x >>= 8;
-  SetByte(data_ + 7,0,8,x0);
-  uint8_t x1 = x & RANG_MASK_1_L[3];
-  x >>= 4;
-  SetByte(data_ + 6,4,4,x1);
+  SetByte(data_ + 3,0,8,x0);
+  uint8_t x1 = x & RANG_MASK_1_L[7];
+  x >>= 8;
+  SetByte(data_ + 4,0,8,x1);
 }

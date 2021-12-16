@@ -12,7 +12,6 @@ void customQueue(const can_msgs::Frames::ConstPtr &msg){
   ROS_INFO_STREAM("convert topic to can msg");
   
   std::vector<can_msgs::Frame> send_frames = msg->frames;
-  // likecan.sendProc(likecan.test_frames);
   likecan.sendProc(send_frames);
 }
 
