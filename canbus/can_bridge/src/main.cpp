@@ -9,9 +9,8 @@ ros::CallbackQueue g_queue;
 ns_likecan::LikeCan likecan;
 
 void customQueue(const can_msgs::Frames::ConstPtr &msg){
-  ROS_INFO_STREAM("convert topic to can msg");
-  
   std::vector<can_msgs::Frame> send_frames = msg->frames;
+  ROS_INFO_STREAM("convert topic to can msg, msg length = "<<send_frames.size()); 
   likecan.sendProc(send_frames);
 }
 
@@ -59,6 +58,7 @@ int main(int argc, char **argv) {
         receive_frames.frames = likecan.rcv_frames;
         canMsgsPublisher.publish(receive_frames);
         receive_frames.frames.clear();
+        likecan.rcv_frames.clear();
       }
     }
     

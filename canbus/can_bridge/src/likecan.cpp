@@ -71,7 +71,7 @@ void LikeCan::readCanDeviceInfo(){
 
 
 void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
-    //ROS_INFO_STREAM("Queue size: " << frames.size());
+    // ROS_INFO_STREAM("Queue size: " << frames.size());
     if (frames.size()==0){
         ROS_WARN_STREAM("[likecan] No can frames in the queue size.");
     }else{
@@ -93,7 +93,7 @@ void  LikeCan::sendProc(std::vector<can_msgs::Frame> &frames){
         unsigned long sndCnt = CAN_ChannelSend(dwDeviceHandle,channel_id,send,frames.size());
         CanSendcount += sndCnt;
         delete[] send;
-        //frames.clear();
+        frames.clear();
         ROS_INFO_STREAM("Sent frames number:  " << CanSendcount); 
     }
 }

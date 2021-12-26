@@ -24,9 +24,12 @@ typedef ns_cansend::CansendHandle CansendHandle;
 
 int main(int argc, char **argv) {
   ros::init(argc, argv, "cansend");
+  // Se the logging level manually to DEBUGXXXXXX  
+  ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Info);
   ros::NodeHandle nodeHandle("~");
   CansendHandle myCansendHandle(nodeHandle);
   ros::Rate loop_rate(myCansendHandle.getNodeRate());
+
   while (ros::ok()) {
 
     myCansendHandle.run();

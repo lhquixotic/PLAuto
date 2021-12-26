@@ -31,6 +31,12 @@ void CanparseHandle::loadParameters() {
                                       "/chassis/vehicle_dynamic_state")) {
     ROS_WARN_STREAM("Did not load chassis_state_topic_name_. Standard value is: " << vehicle_dynamic_state_topic_name_);
   }
+  if (!nodeHandle_.param<std::string>("chassis_status_topic_name",
+                                      chassis_status_topic_name_,
+                                      "/chassis/status")){
+    ROS_WARN_STREAM("Did not load chassis_status_topic_name_. Standard value is: "<< chassis_status_topic_name_);
+  }
+  
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
@@ -44,7 +50,10 @@ void CanparseHandle::subscribeToTopics() {
 
 void CanparseHandle::publishToTopics() {
   ROS_INFO("publish to topics");
-  vehicleDynamicStatePublisher_ = nodeHandle_.advertise<common_msgs::VehicleDynamicState>(vehicle_dynamic_state_topic_name_,10000);
+  vehicleDynamicStatePublisher_ = 
+      nodeHandle_.advertise<common_msgs::VehicleDynamicState>(vehicle_dynamic_state_topic_name_,10000);
+  chassisStatusPublisher_ = 
+      nodeHandle_.advertise<common_msgs::ChassisStatus>(chassis_status_topic_name_,100);
 }
 
 void CanparseHandle::run() {
@@ -54,6 +63,7 @@ void CanparseHandle::run() {
 
 void CanparseHandle::sendMsg() {
   vehicleDynamicStatePublisher_.publish(canparse_.getVehicleDynamicState());
+  chassisStatusPublisher_.publish(canparse_.getChassisStatus());
 }
 
 void CanparseHandle::CanbusReceiveCallback(const can_msgs::Frames &msg) {

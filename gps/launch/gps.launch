@@ -1,0 +1,5 @@
+<launch>
+    <node name="gps_node" pkg="gps" type="gps" output="screen">
+        <rosparam command="load" file="$(find gps)/config/gps.yaml" /> <!--Load parameters from config files-->
+    </node>
+</launch>

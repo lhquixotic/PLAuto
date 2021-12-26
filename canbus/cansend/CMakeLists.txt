@@ -6,6 +6,7 @@ add_compile_options(-std=c++11)
 set(PROJECT_DEPS
   roscpp
   std_msgs
+  autoware_msgs
   )
 
 find_package(catkin REQUIRED COMPONENTS
@@ -13,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   can_msgs
+  autoware_msgs
   )
 
 catkin_package(

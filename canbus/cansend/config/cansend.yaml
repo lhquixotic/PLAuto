@@ -1,5 +1,16 @@
 # chassis_control_topic_name: /chassis/control_cmd
+control_cmd_topic_name: ctrl_raw
 
 cansend_topic_name: /sent_messages
+
+chassis_status_topic_name: /chassis/status
+
+cansend_para:
+  send_mode: 0 # 0 for test, 1 for autonomous driving 
+  steer_angle: 10
+  steer_scale: 16.5
+  drive_target_speed: 0
+  drive_target_gear: 0
+  drive_limit_speed: 0
 
 node_rate: 50   # [Herz]

@@ -14,9 +14,10 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   geometry_msgs
+  message_filters
 )
 
-add_message_files(FILES V2V.msg)
+add_message_files(FILES V2V.msg ChassisStatus.msg GpsInfo.msg VehicleDynamicState.msg)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -134,9 +135,11 @@ include_directories(
 #   src/${PROJECT_NAME}/beginner_tutorials.cpp
 # )
 
-add_executable(v2v src/talker.cpp)
-target_link_libraries(v2v ${catkin_LIBRARIES})
+add_executable(v2v_pub src/talker.cpp)
+target_link_libraries(v2v_pub ${catkin_LIBRARIES})
 
+add_executable(v2v_sub src/listener.cpp)
+target_link_libraries(v2v_sub ${catkin_LIBRARIES})
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
