@@ -59,7 +59,7 @@ void CansendHandle::loadParameters() {
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
-  nodeHandle_param<int>("cansend_para/send_mode", para_.send_mode,0);
+  nodeHandle_.param<int>("cansend_para/send_mode", para_.send_mode,0);
   nodeHandle_.param<double>("cansend_para/steer_angle",para_.steer_angle, 0);
   nodeHandle_.param<double>("cansend_para/steer_scale",para_.steer_scale,16.5);
   nodeHandle_.param<double>("cansend_para/drive_target_speed",para_.drive_target_speed,0);

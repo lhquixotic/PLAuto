@@ -109,7 +109,7 @@ void Waypoint_ReconstructorHandle::poseCallback(const nav_msgs::OdometryConstPtr
   poseFlag=true;
 }//FIXME: change or add callback functions to receive msgs.
 
-void Waypoint_ReconstructorHandle::V2VCallback(const autoware_msgs::V2VConstPtr &msg) {
+void Waypoint_ReconstructorHandle::V2VCallback(const common_msgs::V2VConstPtr &msg) {
   waypoint_reconstructor_.setV2V(msg);
   v2vFlag=true;
 }//FIXME: change or add callback functions to receive msgs.

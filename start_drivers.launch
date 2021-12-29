@@ -1,0 +1,7 @@
+<launch>
+    <!-- start drivers node-->
+    <include file = "$(find can_bridge)/launch/can_bridge.launch"></include>
+    <include file = "$(find can_parse)/launch/can_parse.launch"></include>
+    <include file = "$(find can_send)/launch/can_send.launch"></include>
+    <include file = "$(find serial_com)/launch/serial_com.launch"></include>
+</launch>

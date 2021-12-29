@@ -326,7 +326,7 @@ void PurePursuitNode::callbackFromWayPoints(
   is_waypoint_set_ = true;
 }
 
-void PurePursuitNode::callbackFromV2V(const autoware_msgs::V2VConstPtr &msg)
+void PurePursuitNode::callbackFromV2V(const common_msgs::V2VConstPtr &msg)
 {
   leader_speed_ = msg->leader_speed;
   leader_acc_ = msg->leader_acc;

@@ -21,6 +21,7 @@ add_message_files(DIRECTORY msg
     VehicleDynamicState.msg
     GpsInfo.msg
     ChassisStatus.msg
+    V2V.msg
 )
 
 generate_messages(

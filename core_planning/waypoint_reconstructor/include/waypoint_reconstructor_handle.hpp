@@ -20,8 +20,8 @@
 #ifndef WAYPOINT_RECONSTRUCTOR_HANDLE_HPP
 #define WAYPOINT_RECONSTRUCTOR_HANDLE_HPP
 
-#include "autoware_msgs/GpsInfo.h"
-#include "autoware_msgs/V2V.h"
+#include "common_msgs/GpsInfo.h"
+#include "common_msgs/V2V.h"
 #include "autoware_msgs/Lane.h"
 #include "waypoint_reconstructor.hpp"
 
@@ -50,7 +50,7 @@ class Waypoint_ReconstructorHandle {
   ros::Publisher pub1_,pub2_;
 
   void poseCallback(const nav_msgs::OdometryConstPtr &msg);// FIXME:change the name of callback function.
-  void V2VCallback(const autoware_msgs::V2VConstPtr &msg);
+  void V2VCallback(const common_msgs::V2VConstPtr &msg);
   std::string current_pose_topic_name_,v2v_topic_name_; // FIXME:change the topic name
   std::string final_waypoint_topic_name_,pose_topic_name_,velocity_topic_name_;
   utm::Gps_point origin_;

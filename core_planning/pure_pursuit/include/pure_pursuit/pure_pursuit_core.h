@@ -28,7 +28,7 @@
 #include <autoware_config_msgs/ConfigWaypointFollower.h>
 #include <autoware_msgs/ControlCommandStamped.h>
 #include <autoware_msgs/Lane.h>
-#include <autoware_msgs/V2V.h>
+#include <common_msgs/V2V.h>
 #include <common_msgs/VehicleDynamicState.h>
 #include <pure_pursuit/pure_pursuit.h>
 #include <pure_pursuit/pure_pursuit_viz.h>
@@ -110,7 +110,7 @@ private:
   void callbackFromCurrentVelocity(
     const common_msgs::VehicleDynamicStateConstPtr& msg);
   void callbackFromWayPoints(const autoware_msgs::LaneConstPtr& msg);
-  void callbackFromV2V(const autoware_msgs::V2VConstPtr &msg);
+  void callbackFromV2V(const common_msgs::V2VConstPtr &msg);
 
 
   // initializer

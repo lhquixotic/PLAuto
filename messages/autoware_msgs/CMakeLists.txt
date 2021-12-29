@@ -64,8 +64,8 @@ add_message_files(
     VscanTrackedArray.msg
     Waypoint.msg
     WaypointState.msg
-    ## v2v
-    V2V.msg
+    # v2v
+    #V2V.msg
     GpsInfo.msg
 )
 

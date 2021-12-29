@@ -51,7 +51,7 @@ geometry_msgs::PoseStamped Waypoint_Reconstructor::getCurrentPose(){
 void Waypoint_Reconstructor::setSelfPose(const nav_msgs::OdometryConstPtr &msg){
     current_pose = msg->pose.pose;
 }
-void Waypoint_Reconstructor::setV2V(const autoware_msgs::V2VConstPtr &msg){
+void Waypoint_Reconstructor::setV2V(const common_msgs::V2VConstPtr &msg){
     v2v_=*msg;
     current_leader_point= utm::lla2utm(v2v_.fix);
     current_leader_point.x -= origin.x;

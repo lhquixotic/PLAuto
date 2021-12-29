@@ -1,0 +1,7 @@
+chassis_status_topic_name: /chassis/status
+
+vehicle_dynamic_state_topic_name: /chassis/vehicle_dynamic_state
+
+gps_info_topic_name: /drivers/gps_info
+
+node_rate: 50  # [Herz]

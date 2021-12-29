@@ -21,8 +21,8 @@
 #define WAYPOINT_RECONSTRUCTOR_HPP
 
 #include <deque>
-#include "autoware_msgs/GpsInfo.h"
-#include "autoware_msgs/V2V.h"
+#include "common_msgs/GpsInfo.h"
+#include "common_msgs/V2V.h"
 #include "autoware_msgs/Lane.h"
 #include "std_msgs/String.h"
 #include "gps_convert.h"
@@ -45,7 +45,7 @@ class Waypoint_Reconstructor {
   // Setters
   //void setConeDetections(autoware_msgs::ConeDetections cones);//FIXME: change value names you want to get from subscribers: msg type & function name.
   void setSelfPose(const nav_msgs::OdometryConstPtr &msg);
-  void setV2V(const autoware_msgs::V2VConstPtr &msg);
+  void setV2V(const common_msgs::V2VConstPtr &msg);
   void setGpsOrigin(const utm::Gps_point &msg);
   
   void initWaypoints();
@@ -57,8 +57,8 @@ class Waypoint_Reconstructor {
   double getPlaneDistance(geometry_msgs::Point,geometry_msgs::Point);
   ros::NodeHandle &nh_;
   bool initFlag;
-  autoware_msgs::GpsInfo gpsinfo_;
-  autoware_msgs::V2V v2v_;//FIXME: change value names you want to get from subscriber.
+  common_msgs::GpsInfo gpsinfo_;
+  common_msgs::V2V v2v_;//FIXME: change value names you want to get from subscriber.
   autoware_msgs::Lane lane_;
   geometry_msgs::Pose current_pose;
   utm::Gps_point origin;

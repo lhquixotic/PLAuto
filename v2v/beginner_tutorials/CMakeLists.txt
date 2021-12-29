@@ -17,7 +17,11 @@ find_package(catkin REQUIRED COMPONENTS
   message_filters
 )
 
-add_message_files(FILES V2V.msg ChassisStatus.msg GpsInfo.msg VehicleDynamicState.msg)
+add_message_files(FILES 
+                  V2V.msg 
+                  ChassisStatus.msg 
+                  GpsInfo.msg 
+                  VehicleDynamicState.msg)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
