@@ -36,10 +36,12 @@ class ObuSendHandle {
   std::string gps_info_topic_name_;
   std::string vehicle_dynamic_state_topic_name_;
 
+  // ros::Subscriber chassisStatusSubscriber_;
+  // ros::Subscriber vehicleDynamicStateSubscriber_;
+  // ros::Subscriber gpsInfoSubscriber_;
+
  private:
   ros::NodeHandle nodeHandle_;
-
-
 
   int node_rate_;
 

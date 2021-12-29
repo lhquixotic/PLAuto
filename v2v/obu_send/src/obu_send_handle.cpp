@@ -52,6 +52,8 @@ void ObuSendHandle::subscribeToTopics() {
   typedef message_filters::sync_policies::ApproximateTime <common_msgs::ChassisStatus, common_msgs::GpsInfo, common_msgs::VehicleDynamicState> syncPolicy;
   message_filters::Synchronizer<syncPolicy> sync(syncPolicy(10), subscriber_chassis, subscriber_gps, subscriber_vehicle);  
   sync.registerCallback(boost::bind(&multiCallback, _1, _2, _3));
+  // vehicleDynamicStateSubscriber_ = 
+  //     nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_,1000,)
 
 }
 

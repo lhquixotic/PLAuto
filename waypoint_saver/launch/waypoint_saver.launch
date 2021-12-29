@@ -1,0 +1,6 @@
+<launch>
+    <node name="waypoint_saver_node" pkg="waypoint_saver" type="waypoint_saver" output="screen">
+        <rosparam command="load" file="$(find waypoint_saver)/config/waypoint_saver.yaml" /> <!--Load parameters from config files-->
+        <param name="waypoint_filename" value="$(find waypoint_loader)/data/track_data/track00.csv" />
+    </node>
+</launch>
