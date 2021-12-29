@@ -107,7 +107,7 @@ void Cansend::setParameters(const Para & msg){
   para  = msg;
 }
 
-void Cansend::setControlCmd(const autoware_msgs::ControlCommand & msg){
+void Cansend::setControlCmd(const autoware_msgs::ControlCommandStamped & msg){
   control_cmd = msg;
 }
 void Cansend::setChassisStatus(const common_msgs::ChassisStatus & msg){
@@ -140,8 +140,8 @@ void Cansend::runAlgorithm() {
       steer_cmd -> SetADCU_Str_TgtAngle(para.steer_angle);
       throt_cmd -> SetADCU_Drv_TgtVehSpd0(para.drive_target_speed);
     }else{
-      steer_cmd -> SetADCU_Str_TgtAngle(control_cmd.steering_angle);
-      throt_cmd ->SetADCU_Drv_TgtVehSpd0(control_cmd.linear_velocity);
+      steer_cmd -> SetADCU_Str_TgtAngle(control_cmd.cmd.steering_angle);
+      throt_cmd ->SetADCU_Drv_TgtVehSpd0(control_cmd.cmd.linear_velocity);
     }
     throt_cmd ->SetADCU_Drv_CtrlMode(1); //speed
     throt_cmd -> SetADCU_Drv_TgtGear(para.drive_target_gear);

@@ -89,7 +89,7 @@ void CansendHandle::sendMsg() {
   cansendPublisher_.publish(cansend_.getFrames());
 }
 
-void CansendHandle::controlCmdCallback(const autoware_msgs::ControlCommand &msg){
+void CansendHandle::controlCmdCallback(const autoware_msgs::ControlCommandStamped &msg){
   cansend_.setControlCmd(msg);
 }
 void CansendHandle::chassisStatusCallback(const common_msgs::ChassisStatus & msg){

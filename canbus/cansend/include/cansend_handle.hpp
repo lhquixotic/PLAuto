@@ -35,7 +35,7 @@ class CansendHandle {
   Para para_;
 
   Cansend cansend_;
-  void controlCmdCallback(const autoware_msgs::ControlCommand & msg);
+  void controlCmdCallback(const autoware_msgs::ControlCommandStamped & msg);
   void chassisStatusCallback(const common_msgs::ChassisStatus & msg);
 };
 }

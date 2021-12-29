@@ -4,7 +4,7 @@
 #include "std_msgs/String.h"
 #include "can_msgs/Frame.h"
 #include "can_msgs/Frames.h"
-#include "autoware_msgs/ControlCommand.h"
+#include "autoware_msgs/ControlCommandStamped.h"
 #include "common_msgs/ChassisStatus.h"
 
 #include "ADCU_BodyCmd.h"
@@ -45,7 +45,7 @@ class Cansend {
 
   // Setters
   void setParameters(const Para &msg);
-  void setControlCmd(const autoware_msgs::ControlCommand &msg);
+  void setControlCmd(const autoware_msgs::ControlCommandStamped &msg);
   void setChassisStatus(const common_msgs::ChassisStatus & msg);
 
   // Methods
@@ -58,12 +58,10 @@ class Cansend {
   int send_count;
 
   Para para;
-  autoware_msgs::ControlCommand control_cmd;
+  autoware_msgs::ControlCommandStamped control_cmd;
   common_msgs::ChassisStatus chassis_status;
   int run_mode;
  
-
-  // common_msgs::ChassisControl chassis_control_cmd;
 
 };
 }
