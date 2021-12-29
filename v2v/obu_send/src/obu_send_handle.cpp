@@ -22,6 +22,9 @@ ObuSendHandle::ObuSendHandle(ros::NodeHandle &nodeHandle) :
   SockFd = sock_fd_;
   sockaddr_in AddrServ = addr_serv_;
   Len = len_;
+  msg_flag1 = false;
+  msg_flag2 = false;
+  msg_flag3 = false;
   subscribeToTopics();
   publishToTopics();
 }
@@ -43,25 +46,33 @@ void ObuSendHandle::loadParameters() {
 
 void ObuSendHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
-  message_filters::Subscriber <common_msgs::ChassisStatus> subscriber_chassis(nodeHandle_,chassis_status_topic_name_,1000,
-                              ros::TransportHints().tcpNoDelay());
-  message_filters::Subscriber <common_msgs::GpsInfo> subscriber_gps(nodeHandle_,gps_info_topic_name_,1000,
-                              ros::TransportHints().tcpNoDelay());
-  message_filters::Subscriber <common_msgs::VehicleDynamicState> subscriber_vehicle(nodeHandle_,vehicle_dynamic_state_topic_name_,1000,
-                              ros::TransportHints().tcpNoDelay());
-  typedef message_filters::sync_policies::ApproximateTime <common_msgs::ChassisStatus, common_msgs::GpsInfo, common_msgs::VehicleDynamicState> syncPolicy;
-  message_filters::Synchronizer<syncPolicy> sync(syncPolicy(10), subscriber_chassis, subscriber_gps, subscriber_vehicle);  
-  sync.registerCallback(boost::bind(&multiCallback, _1, _2, _3));
-  // vehicleDynamicStateSubscriber_ = 
-  //     nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_,1000,)
-
+  // message_filters::Subscriber <common_msgs::ChassisStatus> subscriber_chassis(nodeHandle_,chassis_status_topic_name_,1000,
+  //                             ros::TransportHints().tcpNoDelay());
+  // message_filters::Subscriber <common_msgs::GpsInfo> subscriber_gps(nodeHandle_,gps_info_topic_name_,1000,
+  //                             ros::TransportHints().tcpNoDelay());
+  // message_filters::Subscriber <common_msgs::VehicleDynamicState> subscriber_vehicle(nodeHandle_,vehicle_dynamic_state_topic_name_,1000,
+  //                             ros::TransportHints().tcpNoDelay());
+  // typedef message_filters::sync_policies::ApproximateTime <common_msgs::ChassisStatus, common_msgs::GpsInfo, common_msgs::VehicleDynamicState> syncPolicy;
+  // message_filters::Synchronizer<syncPolicy> sync(syncPolicy(10), subscriber_chassis, subscriber_gps, subscriber_vehicle);  
+  // sync.registerCallback(boost::bind(&multiCallback, _1, _2, _3));
+  vehicleDynamicStateSubscriber_ = 
+      nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_,1000,&ObuSendHandle::vehicleDynamicStateCallback,this);
+  chassisStatusSubscriber_ = 
+      nodeHandle_.subscribe(chassis_status_topic_name_,1000, &ObuSendHandle::chassisStatusCallback,this);
+  gpsInfoSubscriber_ = 
+      nodeHandle_.subscribe(gps_info_topic_name_, 1000, &ObuSendHandle::gpsInfoCallback,this);
 }
 
 void ObuSendHandle::publishToTopics() {
 }
 
 void ObuSendHandle::run() {
-  obu_send_.runAlgorithm();
+  if (msg_flag1 & msg_flag2 & msg_flag3){
+    obu_send_.runAlgorithm();
+  }
+  else{
+    ROS_WARN("[ObuSend]Waiting for subscribed topic...");
+  }
 }
 
 
@@ -100,6 +111,21 @@ void multiCallback(const common_msgs::ChassisStatus::ConstPtr& chassis,
     perror("sendto error:");
     exit(1);
   }
+}
+
+void ObuSendHandle::chassisStatusCallback(const common_msgs::ChassisStatus &msg){
+  msg_flag1 = true;
+  obu_send_.setChassisStatus(msg);
+}
+
+void ObuSendHandle::vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg){
+  msg_flag2 = true;
+  obu_send_.setVehicleDynamicState(msg);
+}
+
+void ObuSendHandle::gpsInfoCallback(const common_msgs::GpsInfo &msg){
+  msg_flag3 = true;
+  obu_send_.setGpsInfo(msg);
 }
 
 }

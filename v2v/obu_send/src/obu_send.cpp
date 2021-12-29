@@ -67,7 +67,48 @@ void ObuSend::socketComSetup(){
 }
 
 void ObuSend::runAlgorithm() {
+  ROS_INFO("I heard::");
+  std::string s = "";
+  s += std::to_string(gps_info.fix.latitude);
+  s += " ";
+  s += std::to_string(gps_info.fix.longitude);
+  s += " ";
+  s += std::to_string(gps_info.fix.altitude);
+  s += " ";
+  s += std::to_string(gps_info.rpy.x);
+  s += " ";
+  s += std::to_string(gps_info.rpy.y);
+  s += " ";
+  s += std::to_string(gps_info.rpy.z);
+  s += " ";
+  s += std::to_string(vehicle_dynamic_state.vehicle_speed);
+  s += " ";
+  s += std::to_string(vehicle_dynamic_state.vehicle_lon_acceleration);
+  s += " ";
+  s += std::to_string(vehicle_dynamic_state.vehicle_lon_acceleration);
+  s += " ";
+  s += std::to_string(chassis_status.real_brake_pressure);
+  s += " ";
+  s += std::to_string(chassis_status.real_steer_angle);
+  char c[s.size() + 1];
+  strcpy(c, s.c_str());
+  int send_num = sendto(sock_fd, c, strlen(c), 0, (struct sockaddr *)&addr_serv, len);
 
+  if(send_num < 0)
+  {
+    perror("sendto error:");
+    exit(1);
+  }
+}
+
+void ObuSend::setChassisStatus(common_msgs::ChassisStatus msg){
+  chassis_status = msg;
+}
+void ObuSend::setGpsInfo(common_msgs::GpsInfo msg){
+  gps_info = msg;
+}
+void ObuSend::setVehicleDynamicState(common_msgs::VehicleDynamicState msg){
+  vehicle_dynamic_state = msg;
 }
 
 }

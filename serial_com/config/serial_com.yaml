@@ -1,4 +1,4 @@
-port: /dev/ttyTHS2
+port: /dev/ttyS0
 
 baud: 115200
 

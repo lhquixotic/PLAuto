@@ -36,9 +36,13 @@ class ObuSendHandle {
   std::string gps_info_topic_name_;
   std::string vehicle_dynamic_state_topic_name_;
 
-  // ros::Subscriber chassisStatusSubscriber_;
-  // ros::Subscriber vehicleDynamicStateSubscriber_;
-  // ros::Subscriber gpsInfoSubscriber_;
+  ros::Subscriber chassisStatusSubscriber_;
+  ros::Subscriber vehicleDynamicStateSubscriber_;
+  ros::Subscriber gpsInfoSubscriber_;
+
+  void chassisStatusCallback(const common_msgs::ChassisStatus &msg);
+  void vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg);
+  void gpsInfoCallback(const common_msgs::GpsInfo &msg);
 
  private:
   ros::NodeHandle nodeHandle_;
@@ -46,6 +50,10 @@ class ObuSendHandle {
   int node_rate_;
 
   ObuSend obu_send_;
+  bool msg_flag1;
+  bool msg_flag2;
+  bool msg_flag3;
+
 
 };
 }

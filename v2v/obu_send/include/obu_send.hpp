@@ -51,9 +51,9 @@ class ObuSend {
   int getSocklen();
 
   // Setters
-  // void setChassisStatus(common_msgs::ChassisStatus msg);
-  // void setVehicleDynamicState();
-  // void setGpsInfo();
+  void setChassisStatus(common_msgs::ChassisStatus msg);
+  void setVehicleDynamicState(common_msgs::VehicleDynamicState msg);
+  void setGpsInfo(common_msgs::GpsInfo msg);
 
   void socketComSetup();
   void runAlgorithm();
@@ -66,6 +66,10 @@ class ObuSend {
   struct sockaddr_in addr_serv;
   int len;
   int sock_fd;
+
+  common_msgs::ChassisStatus chassis_status;
+  common_msgs::VehicleDynamicState vehicle_dynamic_state;
+  common_msgs::GpsInfo gps_info;
 
 };
 }
