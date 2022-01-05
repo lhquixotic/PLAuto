@@ -51,9 +51,6 @@ void Waypoint_ReconstructorHandle::loadParameters() {
   if (!private_nh_.param<std::string>("final_waypoints_topic_name",final_waypoint_topic_name_,"final_waypoints")) {
     ROS_WARN_STREAM("Did not load final_waypoints_topic_name. Standard value is: " << final_waypoint_topic_name_);
   }
-  if (!private_nh_.param<std::string>("pose_topic_name",pose_topic_name_,"current_pose")) {
-    ROS_WARN_STREAM("Did not load pose_topic_name. Standard value is: " << pose_topic_name_);
-  }
   if (!private_nh_.param<std::string>("velocity_topic_name",velocity_topic_name_,"current_velocity")) {
     ROS_WARN_STREAM("Did not load velocity_topic_name. Standard value is: " << velocity_topic_name_);
   }

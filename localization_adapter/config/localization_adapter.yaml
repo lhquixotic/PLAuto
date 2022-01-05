@@ -7,6 +7,6 @@ localization_utm_topic_name: /localization/utmpose
 node_rate: 50   # [Herz]
 
 Gps_origin:
-  x: 274083.365138
-  y: 4006502.509805
-  z: 74.80
+  x: 442677
+  y: 4428728
+  z: 40

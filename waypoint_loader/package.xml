@@ -10,7 +10,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <!--For custom message import-->
-  <depend>fsd_common_msgs</depend>
+  <depend>autoware_msgs</depend>
 
   <!--Other depends-->
   <depend>roscpp</depend>
