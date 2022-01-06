@@ -1,8 +1,6 @@
 <launch>
     <node name="waypoint_reconstructor_node" pkg="waypoint_reconstructor" type="waypoint_reconstructor" output="screen">
-	<param name="localization_utm_topic_name" value="/localization/utmpose" />
-	<param name="v2v_topic_name" value="v2v" />
-	<param name="final_waypoints_topic_name" value="final_waypoints" />
-	<param name="node_rate" value="20" />
-    </node>
+	<rosparam command="load" file="$(find waypoint_reconstructor)/config/waypoint_reconstructor.yaml" /> <!--Load parameters from config files-->
+	<rosparam command="load" file="$(find gps)/config/gps_config.yaml"/>
+	</node>
 </launch>

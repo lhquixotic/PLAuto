@@ -1,22 +1,3 @@
-/*
-    Formula Student Driverless Project (FSD-Project).
-    Copyright (c) 2019:
-     - chentairan <killasipilin@gmail.com>
-
-    FSD-Project is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    FSD-Project is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 #include <ros/ros.h>
 #include "waypoint_reconstructor_handle.hpp"
 #include "register.h"
@@ -51,9 +32,6 @@ void Waypoint_ReconstructorHandle::loadParameters() {
   if (!private_nh_.param<std::string>("final_waypoints_topic_name",final_waypoint_topic_name_,"final_waypoints")) {
     ROS_WARN_STREAM("Did not load final_waypoints_topic_name. Standard value is: " << final_waypoint_topic_name_);
   }
-  if (!private_nh_.param<std::string>("velocity_topic_name",velocity_topic_name_,"current_velocity")) {
-    ROS_WARN_STREAM("Did not load velocity_topic_name. Standard value is: " << velocity_topic_name_);
-  }
   if (!private_nh_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
@@ -69,13 +47,13 @@ void Waypoint_ReconstructorHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
   sub1_ = nodeHandle_.subscribe(current_pose_topic_name_, 10, &Waypoint_ReconstructorHandle::poseCallback, this);
   sub2_ = nodeHandle_.subscribe(v2v_topic_name_, 10, &Waypoint_ReconstructorHandle::V2VCallback, this);
-}//FIXME: change topic name you want to subscribe.
+}
 
 void Waypoint_ReconstructorHandle::publishToTopics() {
   ROS_INFO("publish to topics");
   pub1_ = nodeHandle_.advertise<autoware_msgs::Lane>(final_waypoint_topic_name_, 10);
   pub2_ = nodeHandle_.advertise<geometry_msgs::PoseStamped>(pose_topic_name_, 10);
-}//FIXME: change topic name you want to advertise.
+}
 
 void Waypoint_ReconstructorHandle::run() {
   std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();

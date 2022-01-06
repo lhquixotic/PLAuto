@@ -1,0 +1,5 @@
+waypoint_loader_state_topic_name: /map/global_path
+
+waypoint_loader_visual_topic_name: /map/global_path_rviz
+
+node_rate: 1   # [Herz]

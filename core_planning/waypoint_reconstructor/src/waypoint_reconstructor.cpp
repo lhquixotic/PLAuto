@@ -27,7 +27,7 @@ namespace ns_waypoint_reconstructor {
 // Constructor
 Waypoint_Reconstructor::Waypoint_Reconstructor(ros::NodeHandle &nh) : nh_(nh) {
     initFlag = false;
-};//FIXME:load config params.
+};
 
 // Getters
 bool Waypoint_Reconstructor::isInited(){
@@ -45,8 +45,6 @@ geometry_msgs::PoseStamped Waypoint_Reconstructor::getCurrentPose(){
     return ps;
 }
 
-//FIXME: get value from config files.
-
 // Setters
 void Waypoint_Reconstructor::setSelfPose(const nav_msgs::OdometryConstPtr &msg){
     current_pose = msg->pose.pose;
@@ -61,9 +59,6 @@ void Waypoint_Reconstructor::setV2V(const common_msgs::V2VConstPtr &msg){
 void Waypoint_Reconstructor::setGpsOrigin(const utm::Gps_point &msg){
     origin = msg;
 }
-// void Waypoint_Reconstructor::setConeDetections(fsd_common_msgs::ConeDetections cones) {
-//   cone_current = cones;
-// }// FIXME:set value from subscriber.
 
 void Waypoint_Reconstructor::initWaypoints() {
     double initx,inity,initz,endx,endy,endz;
@@ -106,7 +101,7 @@ void Waypoint_Reconstructor::runAlgorithm() {
         updateWaypoints();
     }
     updateLane();
-}//FIXME:add code you want to execute.
+}
 double Waypoint_Reconstructor::getPlaneDistance(geometry_msgs::Point a,geometry_msgs::Point b){
     double dis=sqrt(pow(a.x-b.x,2)+pow(a.y-b.y,2));
     return dis;

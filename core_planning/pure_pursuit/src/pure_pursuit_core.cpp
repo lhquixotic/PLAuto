@@ -71,7 +71,7 @@ void PurePursuitNode::initForROS()
   nh_.param("vehicle_info/wheel_base", wheel_base_, 2.7);
 
   // setup subscriber
-  sub1_ = nh_.subscribe("final_waypoints", 10,
+  sub1_ = nh_.subscribe("/planning/final_waypoints", 10,
     &PurePursuitNode::callbackFromWayPoints, this);
   sub2_ = nh_.subscribe("current_pose", 10,
     &PurePursuitNode::callbackFromCurrentPose, this);

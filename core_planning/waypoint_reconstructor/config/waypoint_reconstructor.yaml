@@ -1,5 +1,7 @@
-vision_cone_detections_topic_name: /perception/vision/cone_detections
+localization_utm_topic_name: /localization/utmpose
 
-waypoint_reconstructor_state_topic_name: /estimation/slam/state
+v2v_state_topic_name: /drivers/v2v
+
+final_waypoints_topic_name: /planning/
 
 node_rate: 1   # [Herz]
