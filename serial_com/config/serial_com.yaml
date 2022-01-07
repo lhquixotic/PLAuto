@@ -1,0 +1,7 @@
+port: /dev/ttyS0
+
+baud: 115200
+
+serial_info_topic_name: /drivers/serial_info
+
+node_rate: 20  # [Herz]

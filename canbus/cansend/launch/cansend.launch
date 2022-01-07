@@ -1,0 +1,5 @@
+<launch>
+    <node name="cansend_node" pkg="cansend" type="cansend" respawn="true">
+        <rosparam command="load" file="$(find cansend)/config/cansend.yaml" /> <!--Load parameters from config files-->
+    </node>
+</launch>

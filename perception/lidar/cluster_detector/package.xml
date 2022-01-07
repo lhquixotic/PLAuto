@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<package format= "2">
+    <name>cluster_detector</name>
+    <version>0.0.1</version>
+    <description>cluster based 3D object detection</description>
+    <maintainer email = "yl-wang19@mails.tsinghua.edu.cn">yunlong wang</maintainer>
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <build_depend>roscpp</build_depend>
+    <build_export_depend>roscpp</build_export_depend>
+    <exec_depend>roscpp</exec_depend>
+
+    <export></export>
+
+</package>
