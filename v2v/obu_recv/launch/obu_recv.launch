@@ -1,5 +1,0 @@
-<launch>
-    <node name="obu_recv_node" pkg="obu_recv" type="obu_recv" output="screen">
-        <rosparam command="load" file="$(find obu_recv)/config/obu_recv.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>

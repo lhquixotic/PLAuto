@@ -1,7 +1,0 @@
-canbus_receive_topic_name: /recv_messages
-
-vehicle_dynamic_state_topic_name: /chassis/vehicle_dynamic_state
-
-chassis_status_topic_name: /chassis/status
-
-node_rate: 50   # [Herz]

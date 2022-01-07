@@ -1,3 +1,0 @@
-std_msgs/Header  header
-float64 vehicle_speed
-float64 vehicle_lon_acceleration
