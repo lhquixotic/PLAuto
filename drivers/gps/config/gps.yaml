@@ -4,4 +4,4 @@ gps_state_topic_name: /drivers/gps
 
 protocol_name: GPCHC # GPGGA/GPCHC
 
-node_rate: 20   # [Herz]
+node_rate: 50   # [Herz]

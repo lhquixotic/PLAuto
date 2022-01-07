@@ -38,7 +38,7 @@
 #       packet_send_ip: 127.0.0.1                        #Ip address which the lidar packets will be send to
 common:
   msg_source: 1                                         
-  send_packet_ros: false                               
+  send_packet_ros: true                               
   send_point_cloud_ros: true                           
   send_packet_proto: false                              
   send_point_cloud_proto: false                         
@@ -46,9 +46,9 @@ common:
 lidar:
   - driver:
       lidar_type: RS16         
-      frame_id: /rslidar           
-      msop_port: 6699             
-      difop_port: 7788            
+      frame_id: /middle/rslidar           
+      msop_port: 6688          
+      difop_port: 7799          
       start_angle: 0              
       end_angle: 360               
       min_distance: 0.2            
@@ -57,7 +57,7 @@ lidar:
     ros:
       ros_recv_packet_topic: /middle/rslidar_packets    
       ros_send_packet_topic: /middle/rslidar_packets    
-      ros_send_point_cloud_topic: /middle/rslidar_points      
+      ros_send_point_cloud_topic: /middle/points_raw     
     proto:
       point_cloud_recv_port: 60021                     
       point_cloud_send_port: 60021                     
@@ -65,13 +65,13 @@ lidar:
       msop_send_port: 60022                       
       difop_recv_port: 60023                      
       difop_send_port: 60023       
-      point_cloud_send_ip: 127.0.0.1                   
-      packet_send_ip: 127.0.0.1    
+      point_cloud_send_ip: 192.168.20.202               
+      packet_send_ip: 192.168.20.202
   - driver:
       lidar_type: RS16          
-      frame_id: /rslidar           
-      msop_port: 1990             
-      difop_port: 1991            
+      frame_id: /left/rslidar           
+      msop_port: 6677             
+      difop_port: 8899        
       start_angle: 0              
       end_angle: 360               
       min_distance: 0.2            
@@ -80,7 +80,7 @@ lidar:
     ros:
       ros_recv_packet_topic: /left/rslidar_packets    
       ros_send_packet_topic: /left/rslidar_packets    
-      ros_send_point_cloud_topic: /left/rslidar_points      
+      ros_send_point_cloud_topic: /left/points_raw  
     proto:
       point_cloud_recv_port: 60024                     
       point_cloud_send_port: 60024                     
@@ -88,13 +88,13 @@ lidar:
       msop_send_port: 60025                       
       difop_recv_port: 60026                      
       difop_send_port: 60026       
-      point_cloud_send_ip: 127.0.0.1                   
-      packet_send_ip: 127.0.0.1   
+      point_cloud_send_ip: 192.168.20.200                  
+      packet_send_ip: 192.168.20.200
   - driver:
       lidar_type: RS16           
-      frame_id: /rslidar           
-      msop_port: 2010             
-      difop_port: 2011            
+      frame_id: /right/rslidar           
+      msop_port: 6699        
+      difop_port: 7788            
       start_angle: 0              
       end_angle: 360               
       min_distance: 0.2            
@@ -103,7 +103,7 @@ lidar:
     ros:
       ros_recv_packet_topic: /right/rslidar_packets    
       ros_send_packet_topic: /right/rslidar_packets    
-      ros_send_point_cloud_topic: /right/rslidar_points      
+      ros_send_point_cloud_topic: /right/points_raw
     proto:
       point_cloud_recv_port: 60027                     
       point_cloud_send_port: 60027                     
@@ -111,7 +111,7 @@ lidar:
       msop_send_port: 60028                       
       difop_recv_port: 60029                      
       difop_send_port: 60029       
-      point_cloud_send_ip: 127.0.0.1                   
-      packet_send_ip: 127.0.0.1   
+      point_cloud_send_ip: 192.168.20.201                   
+      packet_send_ip: 192.168.20.201
 
 # 192.168.20.200 201 202[TODO] forgot ~/robosense/ .sh tools/lidar config [Get][Set] 

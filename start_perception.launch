@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find rslidar_sdk)/launch/start.launch"></include>
+    <include file="$(find points_preprocessor)/launch/points_concat_filter.launch"></include>
+</launch>
