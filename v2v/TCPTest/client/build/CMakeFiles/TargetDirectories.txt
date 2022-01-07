@@ -1,3 +1,0 @@
-/home/sunzengpeng/Downloads/TCPTest/client/build/CMakeFiles/rebuild_cache.dir
-/home/sunzengpeng/Downloads/TCPTest/client/build/CMakeFiles/TcpClient.dir
-/home/sunzengpeng/Downloads/TCPTest/client/build/CMakeFiles/edit_cache.dir

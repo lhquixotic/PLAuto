@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/TcpClient_recv.dir/client_recv.cpp.o  -o TcpClient_recv 

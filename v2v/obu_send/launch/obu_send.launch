@@ -1,5 +1,0 @@
-<launch>
-    <node name="obu_send_node" pkg="obu_send" type="obu_send" output="screen">
-        <rosparam command="load" file="$(find obu_send)/config/obu_send.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>
