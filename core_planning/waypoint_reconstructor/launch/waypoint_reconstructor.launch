@@ -1,6 +1,6 @@
 <launch>
     <node name="waypoint_reconstructor_node" pkg="waypoint_reconstructor" type="waypoint_reconstructor" output="screen">
-	<rosparam command="load" file="$(find waypoint_reconstructor)/config/waypoint_reconstructor.yaml" /> <!--Load parameters from config files-->
-	<rosparam command="load" file="$(find gps)/config/gps_config.yaml"/>
+		<rosparam command="load" file="$(find waypoint_reconstructor)/config/waypoint_reconstructor.yaml" /> <!--Load parameters from config files-->
+		<rosparam command="load" file="$(find gps)/config/gps_config.yaml"/>
 	</node>
 </launch>

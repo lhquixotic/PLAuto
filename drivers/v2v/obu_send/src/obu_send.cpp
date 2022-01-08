@@ -67,19 +67,18 @@ void ObuSend::socketComSetup(){
 }
 
 void ObuSend::runAlgorithm() {
-  ROS_INFO("I heard::");
   std::string s = "";
-  s += std::to_string(gps_info.fix.latitude);
+  s += std::to_string(utm_pose.pose.pose.position.x);
   s += " ";
-  s += std::to_string(gps_info.fix.longitude);
+  s += std::to_string(utm_pose.pose.pose.position.y);
   s += " ";
-  s += std::to_string(gps_info.fix.altitude);
+  s += std::to_string(utm_pose.pose.pose.orientation.x);
   s += " ";
-  s += std::to_string(gps_info.rpy.x);
+  s += std::to_string(utm_pose.pose.pose.orientation.y);
   s += " ";
-  s += std::to_string(gps_info.rpy.y);
+  s += std::to_string(utm_pose.pose.pose.orientation.z);
   s += " ";
-  s += std::to_string(gps_info.rpy.z);
+  s += std::to_string(utm_pose.pose.pose.orientation.w);
   s += " ";
   s += std::to_string(vehicle_dynamic_state.vehicle_speed);
   s += " ";
@@ -104,8 +103,8 @@ void ObuSend::runAlgorithm() {
 void ObuSend::setChassisStatus(common_msgs::ChassisStatus msg){
   chassis_status = msg;
 }
-void ObuSend::setGpsInfo(common_msgs::GpsInfo msg){
-  gps_info = msg;
+void ObuSend::setUtmPose(nav_msgs::Odometry msg){
+  utm_pose = msg;
 }
 void ObuSend::setVehicleDynamicState(common_msgs::VehicleDynamicState msg){
   vehicle_dynamic_state = msg;

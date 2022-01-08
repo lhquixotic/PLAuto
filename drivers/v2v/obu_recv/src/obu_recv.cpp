@@ -77,15 +77,20 @@ void ObuRecv::runAlgorithm() {
   printf("client receive %d bytes: %s\n", recv_num, recv_buf);
   std::string sstr = recv_buf;
   std::vector<std::string> stringvector = split(sstr, ' ');
-  
+   
   v2v_info.header.frame_id = "frame";
   v2v_info.header.stamp = ros::Time::now();
-  v2v_info.fix.latitude = std::atof(stringvector[0].c_str());
-  v2v_info.fix.longitude = std::atof(stringvector[1].c_str());
-  v2v_info.fix.altitude = std::atof(stringvector[2].c_str());
-  v2v_info.rpy.x = std::atof(stringvector[3].c_str());
-  v2v_info.rpy.y = std::atof(stringvector[4].c_str());
-  v2v_info.rpy.z = std::atof(stringvector[5].c_str());
+  
+  v2v_info.odom.header.frame_id = "world";
+  v2v_info.odom.header.stamp = ros::Time::now();
+  v2v_info.odom.pose.pose.position.x = std::atof(stringvector[0].c_str());
+  v2v_info.odom.pose.pose.position.y = std::atof(stringvector[1].c_str());
+  v2v_info.odom.pose.pose.position.z = 0;
+  v2v_info.odom.pose.pose.orientation.x = std::atof(stringvector[2].c_str());
+  v2v_info.odom.pose.pose.orientation.y = std::atof(stringvector[3].c_str());
+  v2v_info.odom.pose.pose.orientation.z = std::atof(stringvector[4].c_str());
+  v2v_info.odom.pose.pose.orientation.w = std::atof(stringvector[5].c_str());
+
   v2v_info.leader_speed = std::atof(stringvector[6].c_str());
   v2v_info.leader_acc = std::atof(stringvector[7].c_str());
   v2v_info.leader_acc_pedal = std::atof(stringvector[8].c_str());

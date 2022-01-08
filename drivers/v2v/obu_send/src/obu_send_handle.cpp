@@ -37,7 +37,7 @@ void ObuSendHandle::loadParameters() {
   ROS_INFO("loading handle parameters");
 
   nodeHandle_.param<std::string>("chassis_status_topic_name",chassis_status_topic_name_,"/chassis/status");
-  nodeHandle_.param<std::string>("gps_info_topic_name",gps_info_topic_name_,"/drivers/gps_info");
+  nodeHandle_.param<std::string>("utm_pose_topic_name",utm_pose_topic_name_,"/localization/utmpose");
   nodeHandle_.param<std::string>("vehicle_dynamic_state_topic_name",vehicle_dynamic_state_topic_name_,"/chassis/vehicle_dynamic_state");
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
@@ -59,8 +59,8 @@ void ObuSendHandle::subscribeToTopics() {
       nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_,1000,&ObuSendHandle::vehicleDynamicStateCallback,this);
   chassisStatusSubscriber_ = 
       nodeHandle_.subscribe(chassis_status_topic_name_,1000, &ObuSendHandle::chassisStatusCallback,this);
-  gpsInfoSubscriber_ = 
-      nodeHandle_.subscribe(gps_info_topic_name_, 1000, &ObuSendHandle::gpsInfoCallback,this);
+  utmPoseSubscriber_ = 
+      nodeHandle_.subscribe(utm_pose_topic_name_, 1000, &ObuSendHandle::utmPoseCallback,this);
 }
 
 void ObuSendHandle::publishToTopics() {
@@ -76,42 +76,41 @@ void ObuSendHandle::run() {
 }
 
 
-void multiCallback(const common_msgs::ChassisStatus::ConstPtr& chassis, 
-		const common_msgs::GpsInfo::ConstPtr& gpsinfo, 
-		const common_msgs::VehicleDynamicState::ConstPtr& vehicle) {
-  ROS_INFO("I heard::");
-  std::string s = "";
-  s += std::to_string(gpsinfo->fix.latitude);
-  s += " ";
-  s += std::to_string(gpsinfo->fix.longitude);
-  s += " ";
-  s += std::to_string(gpsinfo->fix.altitude);
-  s += " ";
-  s += std::to_string(gpsinfo->rpy.x);
-  s += " ";
-  s += std::to_string(gpsinfo->rpy.y);
-  s += " ";
-  s += std::to_string(gpsinfo->rpy.z);
-  s += " ";
-  s += std::to_string(vehicle->vehicle_speed);
-  s += " ";
-  s += std::to_string(vehicle->vehicle_lon_acceleration);
-  s += " ";
-  s += std::to_string(vehicle->vehicle_lon_acceleration);
-  s += " ";
-  s += std::to_string(chassis->real_brake_pressure);
-  s += " ";
-  s += std::to_string(chassis->real_steer_angle);
-  char c[s.size() + 1];
-  strcpy(c, s.c_str());
-  int send_num = sendto(SockFd, c, strlen(c), 0, (struct sockaddr *)&AddrServ, Len);
+// void multiCallback(const common_msgs::ChassisStatus::ConstPtr& chassis, 
+// 		nav_msgs::Odometry::ConstPtr& pose,
+// 		const common_msgs::VehicleDynamicState::ConstPtr& vehicle) {
+//   std::string s = "";
+//   s += std::to_string(gpsinfo->fix.latitude);
+//   s += " ";
+//   s += std::to_string(gpsinfo->fix.longitude);
+//   s += " ";
+//   s += std::to_string(gpsinfo->fix.altitude);
+//   s += " ";
+//   s += std::to_string(gpsinfo->rpy.x);
+//   s += " ";
+//   s += std::to_string(gpsinfo->rpy.y);
+//   s += " ";
+//   s += std::to_string(gpsinfo->rpy.z);
+//   s += " ";
+//   s += std::to_string(vehicle->vehicle_speed);
+//   s += " ";
+//   s += std::to_string(vehicle->vehicle_lon_acceleration);
+//   s += " ";
+//   s += std::to_string(vehicle->vehicle_lon_acceleration);
+//   s += " ";
+//   s += std::to_string(chassis->real_brake_pressure);
+//   s += " ";
+//   s += std::to_string(chassis->real_steer_angle);
+//   char c[s.size() + 1];
+//   strcpy(c, s.c_str());
+//   int send_num = sendto(SockFd, c, strlen(c), 0, (struct sockaddr *)&AddrServ, Len);
 
-  if(send_num < 0)
-  {
-    perror("sendto error:");
-    exit(1);
-  }
-}
+//   if(send_num < 0)
+//   {
+//     perror("sendto error:");
+//     exit(1);
+//   }
+// }
 
 void ObuSendHandle::chassisStatusCallback(const common_msgs::ChassisStatus &msg){
   msg_flag1 = true;
@@ -123,9 +122,9 @@ void ObuSendHandle::vehicleDynamicStateCallback(const common_msgs::VehicleDynami
   obu_send_.setVehicleDynamicState(msg);
 }
 
-void ObuSendHandle::gpsInfoCallback(const common_msgs::GpsInfo &msg){
+void ObuSendHandle::utmPoseCallback(const nav_msgs::Odometry &msg){
   msg_flag3 = true;
-  obu_send_.setGpsInfo(msg);
+  obu_send_.setUtmPose(msg);
 }
 
 }

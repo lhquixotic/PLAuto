@@ -9,6 +9,7 @@ set(PROJECT_DEPS
   common_msgs
   message_filters
   sensor_msgs
+  nav_msgs
   )
 
 
@@ -19,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   common_msgs
   message_filters
   sensor_msgs
+  nav_msgs
   )
 
 catkin_package(

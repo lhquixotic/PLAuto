@@ -1,22 +1,3 @@
-/*
-    Formula Student Driverless Project (FSD-Project).
-    Copyright (c) 2019:
-     - chentairan <killasipilin@gmail.com>
-
-    FSD-Project is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    FSD-Project is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
 #include <ros/ros.h>
 #include <sstream>
 #include "waypoint_reconstructor.hpp"
@@ -34,7 +15,7 @@ bool Waypoint_Reconstructor::isInited(){
     return initFlag;
 }
 autoware_msgs::Lane Waypoint_Reconstructor::getFinalWaypoints(){
-    return lane_;
+    return lane;
 }
 geometry_msgs::PoseStamped Waypoint_Reconstructor::getCurrentPose(){
     geometry_msgs::PoseStamped ps;
@@ -44,8 +25,13 @@ geometry_msgs::PoseStamped Waypoint_Reconstructor::getCurrentPose(){
     ps.header.seq = 1;
     return ps;
 }
+nav_msgs::Odometry Waypoint_Reconstructor::getLeaderPose(){
+    return leader_pose;
+}
 nav_msgs::Path Waypoint_Reconstructor::getFinalWaypointsVis(){
     leader_path_vis.poses.clear();
+    leader_path_vis.header.frame_id = "world";
+    leader_path_vis.header.stamp = ros::Time::now();
     for(int i=0;i<leader_path.size();i++){
         geometry_msgs::PoseStamped pose;
         pose.pose.position = leader_path[i];
@@ -59,14 +45,10 @@ void Waypoint_Reconstructor::setSelfPose(const nav_msgs::OdometryConstPtr &msg){
     current_pose = msg->pose.pose;
 }
 void Waypoint_Reconstructor::setV2V(const common_msgs::V2VConstPtr &msg){
-    v2v_=*msg;
-    current_leader_point= utm::lla2utm(v2v_.fix);
-    current_leader_point.x -= origin.x;
-    current_leader_point.y -= origin.y;
-    current_leader_point.z -= origin.z;
-}
-void Waypoint_Reconstructor::setGpsOrigin(const utm::Gps_point &msg){
-    origin = msg;
+    v2v_info=*msg;
+    leader_pose = v2v_info.odom;
+    current_leader_point = leader_pose.pose.pose.position;
+    ROS_INFO("current leader point x:%f, y:%f, z:%f.",current_leader_point.x,current_leader_point.y,current_leader_point.z);
 }
 
 void Waypoint_Reconstructor::initWaypoints() {
@@ -96,11 +78,11 @@ void Waypoint_Reconstructor::updateWaypoints() {
     }
 }
 void Waypoint_Reconstructor::updateLane(){
-    lane_.waypoints.clear();
+    lane.waypoints.clear();
     for(int i=0;i<leader_path.size();i++){
         autoware_msgs::Waypoint wp;
         wp.pose.pose.position=leader_path[i];
-        lane_.waypoints.push_back(wp);
+        lane.waypoints.push_back(wp);
     }
 }
 void Waypoint_Reconstructor::runAlgorithm() {

@@ -35,8 +35,6 @@ add_executable(${PROJECT_NAME}
   src/waypoint_reconstructor_handle.cpp
   src/waypoint_reconstructor.cpp
   src/main.cpp
-  src/gps_convert.cpp
-  src/gps2utm.cpp
   )
 
 add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})

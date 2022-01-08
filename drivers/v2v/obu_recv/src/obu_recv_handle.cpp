@@ -31,7 +31,7 @@ void ObuRecvHandle::loadParameters() {
   // }
   if (!nodeHandle_.param<std::string>("v2v_info_topic_name",
                                       v2v_info_topic_name_,
-                                      "/drivers/v2vinfo")) {
+                                      "/drivers/v2v")) {
     ROS_WARN_STREAM("Did not load v2v_info_topic_name. Standard value is: " << v2v_info_topic_name_);
   }
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {

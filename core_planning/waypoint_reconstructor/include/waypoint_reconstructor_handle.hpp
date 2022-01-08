@@ -48,13 +48,12 @@ class Waypoint_ReconstructorHandle {
  private:
   ros::NodeHandle nodeHandle_,private_nh_;
   ros::Subscriber sub1_,sub2_;
-  ros::Publisher pub1_,pub2_,pub3_;
+  ros::Publisher pub1_,pub2_,pub3_,pub4_;
 
   void poseCallback(const nav_msgs::OdometryConstPtr &msg);
   void V2VCallback(const common_msgs::V2VConstPtr &msg);
-  std::string current_pose_topic_name_,v2v_topic_name_; 
+  std::string current_pose_topic_name_,v2v_topic_name_,leader_pose_topic_name_; 
   std::string final_waypoint_topic_name_,pose_topic_name_,final_waypoint_visual_topic_name_;
-  utm::Gps_point origin_;
 
   int node_rate_;
   bool poseFlag,v2vFlag;

@@ -10,7 +10,7 @@ extern int Len;
 namespace ns_obu_send {
 
 void multiCallback(const common_msgs::ChassisStatus::ConstPtr& chassis, 
-  const common_msgs::GpsInfo::ConstPtr& gpsinfo, 
+  const nav_msgs::Odometry::ConstPtr& pose,
   const common_msgs::VehicleDynamicState::ConstPtr& vehicle);
 
 class ObuSendHandle {
@@ -33,16 +33,16 @@ class ObuSendHandle {
   struct sockaddr_in addr_serv_; 
 
   std::string chassis_status_topic_name_;
-  std::string gps_info_topic_name_;
+  std::string utm_pose_topic_name_;
   std::string vehicle_dynamic_state_topic_name_;
 
   ros::Subscriber chassisStatusSubscriber_;
   ros::Subscriber vehicleDynamicStateSubscriber_;
-  ros::Subscriber gpsInfoSubscriber_;
+  ros::Subscriber utmPoseSubscriber_;
 
   void chassisStatusCallback(const common_msgs::ChassisStatus &msg);
   void vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg);
-  void gpsInfoCallback(const common_msgs::GpsInfo &msg);
+  void utmPoseCallback(const nav_msgs::Odometry &msg);
 
  private:
   ros::NodeHandle nodeHandle_;

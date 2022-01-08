@@ -10,6 +10,7 @@
 #include <message_filters/synchronizer.h>
 #include <message_filters/sync_policies/approximate_time.h>
 #include <boost/thread/thread.hpp>
+#include <nav_msgs/Odometry.h>
 
 #include <sstream>
 
@@ -36,7 +37,7 @@ namespace ns_obu_send {
   static void _split(const std::string& s, char delim, std::vector<std::string>& elems);
   std::vector<std::string> split(const std::string& s, char delim);
   void multi_callback(const common_msgs::ChassisStatus::ConstPtr& chassis, 
-		const common_msgs::GpsInfo::ConstPtr& gpsinfo, 
+    const nav_msgs::Odometry::ConstPtr& pose, 
 		const common_msgs::VehicleDynamicState::ConstPtr& vehicle);
 
 class ObuSend {
@@ -53,7 +54,7 @@ class ObuSend {
   // Setters
   void setChassisStatus(common_msgs::ChassisStatus msg);
   void setVehicleDynamicState(common_msgs::VehicleDynamicState msg);
-  void setGpsInfo(common_msgs::GpsInfo msg);
+  void setUtmPose(nav_msgs::Odometry msg);
 
   void socketComSetup();
   void runAlgorithm();
@@ -69,8 +70,8 @@ class ObuSend {
 
   common_msgs::ChassisStatus chassis_status;
   common_msgs::VehicleDynamicState vehicle_dynamic_state;
-  common_msgs::GpsInfo gps_info;
-
+  // common_msgs::GpsInfo gps_info;
+  nav_msgs::Odometry utm_pose;
 };
 }
 

@@ -1,7 +1,6 @@
 std_msgs/Header header
 #gpsinfo
-sensor_msgs/NavSatFix fix
-geometry_msgs/Vector3 rpy
+nav_msgs/Odometry odom
 #leader info
 float64 leader_speed
 float64 leader_acc
