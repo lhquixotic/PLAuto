@@ -29,7 +29,7 @@
 #include "gps2utm.hpp"
 #include "tf/transform_datatypes.h"//转换函数头文件
 #include <nav_msgs/Odometry.h>//里程计信息格式
-
+#include <nav_msgs/Path.h>
 
 namespace ns_waypoint_reconstructor {
 
@@ -42,8 +42,9 @@ class Waypoint_Reconstructor {
   // Getters
   autoware_msgs::Lane getFinalWaypoints();
   geometry_msgs::PoseStamped getCurrentPose();
+  nav_msgs::Path getFinalWaypointsVis();
+
   // Setters
-  //void setConeDetections(autoware_msgs::ConeDetections cones);//FIXME: change value names you want to get from subscribers: msg type & function name.
   void setSelfPose(const nav_msgs::OdometryConstPtr &msg);
   void setV2V(const common_msgs::V2VConstPtr &msg);
   void setGpsOrigin(const utm::Gps_point &msg);
@@ -58,9 +59,11 @@ class Waypoint_Reconstructor {
   ros::NodeHandle &nh_;
   bool initFlag;
   common_msgs::GpsInfo gpsinfo_;
-  common_msgs::V2V v2v_;//FIXME: change value names you want to get from subscriber.
+  common_msgs::V2V v2v_;
+
   autoware_msgs::Lane lane_;
   geometry_msgs::Pose current_pose;
+  nav_msgs::Path leader_path_vis;
   utm::Gps_point origin;
   geometry_msgs::Point current_leader_point,current_follower_point;
   std::deque<geometry_msgs::Point> leader_path;

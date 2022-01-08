@@ -107,7 +107,16 @@ void GPS::parseGPCHC(std::string s){
   gps_state.acc.x = safe_double(gps_buffer[9]);
   gps_state.acc.y = safe_double(gps_buffer[10]);
   gps_state.acc.z = safe_double(gps_buffer[11]);
-  // Warning
+  // status
+  int gps_status = safe_int(gps_buffer[21]);
+  int gps_sys_status = gps_status % 10;
+  int gps_sat_status = gps_status / 10;
+  if (gps_sys_status == 2 && gps_sat_status == 4){
+    // working correctly
+  }else{
+    ROS_WARN("GPS system status: %d, satellite status: %d.",gps_sys_status,gps_sat_status);
+  }
+  // warning
   int warning = safe_int(gps_buffer[23]);
   if ((GET_BIT(warning,0))==1){
     // No gps message

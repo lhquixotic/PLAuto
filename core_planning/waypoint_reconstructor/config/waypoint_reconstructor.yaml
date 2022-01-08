@@ -2,6 +2,8 @@ localization_utm_topic_name: /localization/utmpose
 
 v2v_state_topic_name: /drivers/v2v
 
-final_waypoints_topic_name: /planning/
+final_waypoints_topic_name: /planning/final_waypoints
 
-node_rate: 1   # [Herz]
+final_waypoints_visual_topic_name: /planning/final_waypoints_vis
+
+node_rate: 20   # [Herz]

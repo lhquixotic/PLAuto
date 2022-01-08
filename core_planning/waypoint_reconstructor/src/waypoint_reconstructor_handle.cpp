@@ -32,6 +32,9 @@ void Waypoint_ReconstructorHandle::loadParameters() {
   if (!private_nh_.param<std::string>("final_waypoints_topic_name",final_waypoint_topic_name_,"final_waypoints")) {
     ROS_WARN_STREAM("Did not load final_waypoints_topic_name. Standard value is: " << final_waypoint_topic_name_);
   }
+  if (!private_nh_.param<std::string>("final_waypoints_visual_topic_name",final_waypoint_visual_topic_name_,"final_waypoints_vis")) {
+    ROS_WARN_STREAM("Did not load final_waypoints_topic_name. Standard value is: " << final_waypoint_visual_topic_name_);
+  }
   if (!private_nh_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
@@ -53,6 +56,7 @@ void Waypoint_ReconstructorHandle::publishToTopics() {
   ROS_INFO("publish to topics");
   pub1_ = nodeHandle_.advertise<autoware_msgs::Lane>(final_waypoint_topic_name_, 10);
   pub2_ = nodeHandle_.advertise<geometry_msgs::PoseStamped>(pose_topic_name_, 10);
+  pub3_ = nodeHandle_.advertise<nav_msgs::Path>(final_waypoint_visual_topic_name_,10);
 }
 
 void Waypoint_ReconstructorHandle::run() {
@@ -77,6 +81,7 @@ void Waypoint_ReconstructorHandle::sendMsg() {
      pub1_.publish(waypoint_reconstructor_.getFinalWaypoints());
   }
   pub2_.publish(waypoint_reconstructor_.getCurrentPose());
+  pub3_.publish(waypoint_reconstructor_.getFinalWaypointsVis());
 }//FIXME: change the msg name you want to publish.
 
 void Waypoint_ReconstructorHandle::poseCallback(const nav_msgs::OdometryConstPtr &msg) {

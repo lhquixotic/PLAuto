@@ -44,6 +44,15 @@ geometry_msgs::PoseStamped Waypoint_Reconstructor::getCurrentPose(){
     ps.header.seq = 1;
     return ps;
 }
+nav_msgs::Path Waypoint_Reconstructor::getFinalWaypointsVis(){
+    leader_path_vis.poses.clear();
+    for(int i=0;i<leader_path.size();i++){
+        geometry_msgs::PoseStamped pose;
+        pose.pose.position = leader_path[i];
+        leader_path_vis.poses.push_back(pose);
+    }
+    return leader_path_vis;
+}
 
 // Setters
 void Waypoint_Reconstructor::setSelfPose(const nav_msgs::OdometryConstPtr &msg){
