@@ -45,10 +45,10 @@ void Wp_saver::runAlgorithm(double min_dis, std::string waypoint_filename) {
 
   std::string output_x = std::to_string(recorded_pose.pose.pose.position.x);
   std::string output_dis = std::to_string(distance_compute(recorded_pose, cur_pose));
-  ROS_INFO_STREAM("recorded position x is " + output_x);
-  ROS_INFO_STREAM("distance is " + output_dis);
 
   if (distance_compute(cur_pose, recorded_pose) > min_dis){
+  ROS_INFO_STREAM("recorded position x is " + output_x);
+  ROS_INFO_STREAM("distance is " + output_dis);
   recorded_pose = cur_pose;
   write2File(waypoint_filename, recorded_pose);
   }
