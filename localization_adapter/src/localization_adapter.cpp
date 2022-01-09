@@ -16,7 +16,13 @@ void Localization_adapter::setSimulationPose(const geometry_msgs::PoseStamped &m
   simulation_pose = msg;
 }
 void Localization_adapter::setGpsInfo(const common_msgs::GpsInfo &msg){
-  gps_info = msg;
+  if (msg.fix.latitude > para.lat_min & msg.fix.latitude < para.lat_max
+    & msg.fix.longitude > para.lon_min & msg.fix.longitude < para.lon_max){
+    gps_info = msg;
+  }else{
+    ROS_WARN("GPS out of range!");
+    gps_info = gps_info;
+  }
 }
 
 void Localization_adapter::setRunMode(const std::string &msg){
@@ -25,6 +31,9 @@ void Localization_adapter::setRunMode(const std::string &msg){
 
 void Localization_adapter::setGpsOrigin(const utm::Gps_point &msg){
   origin = msg;
+}
+void Localization_adapter::setGpsPara(const utm::Gps_para &msg){
+  para = msg;
 }
 
 void Localization_adapter::runAlgorithm() {

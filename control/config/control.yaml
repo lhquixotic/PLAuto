@@ -1,0 +1,14 @@
+# Subscriber
+final_waypoints_topic_name: /planning/final_waypoints
+
+vehicle_state_topic_name: /chassis/vehicle_dynamic_state
+
+v2v_topic_name: /drivers/v2v
+
+localization_utm_topic_name: /localization/utmpose
+
+# Publisher
+control_command_topic_name: /control_cmd
+
+# control parameters
+node_rate: 50   # [Herz]

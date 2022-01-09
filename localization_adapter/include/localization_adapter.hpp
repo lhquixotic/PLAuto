@@ -24,6 +24,7 @@ class Localization_adapter {
   void setGpsInfo(const common_msgs::GpsInfo &msg);
   void setRunMode(const std::string &msg);
   void setGpsOrigin(const utm::Gps_point &msg);
+  void setGpsPara(const utm::Gps_para &msg);
 
   // Methods
   void runAlgorithm();
@@ -34,6 +35,8 @@ class Localization_adapter {
   ros::NodeHandle &nh_;
 
   utm::Gps_point origin;
+  utm::Gps_para para;
+
   std::string run_mode;
 
   common_msgs::GpsInfo gps_info;

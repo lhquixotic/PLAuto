@@ -7,11 +7,18 @@
 #include "geometry_msgs/Point.h"
 #include "geometry_msgs/Quaternion.h"
 #include "tf2/LinearMath/Quaternion.h"
+#include "tf/transform_datatypes.h"
 namespace utm{
 struct Gps_point{
     double x; // lon
     double y; // lat
     double z; // alt
+};
+struct Gps_para{
+    double lat_min;
+    double lat_max;
+    double lon_min;
+    double lon_max;
 };
 
 // WGS84 coordinate system parameters

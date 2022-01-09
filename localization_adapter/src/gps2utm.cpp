@@ -64,15 +64,16 @@ geometry_msgs::Point lla2utm(sensor_msgs::NavSatFix fix){
 }
 
 geometry_msgs::Quaternion rpy2qtn(geometry_msgs::Vector3 rpy){
-    tf2::Quaternion qtn;
+    geometry_msgs::Quaternion qtn;
     //qtn.setRPY(rpy.x,rpy.y,rpy.z);
-    qtn.setRPY(deg2rad(rpy.x),deg2rad(rpy.y),deg2rad(rpy.z));
-    geometry_msgs::Quaternion qtn_;
-    qtn_.w = qtn.getW();
-    qtn_.x = qtn.getX();
-    qtn_.y = qtn.getY();
-    qtn_.z = qtn.getZ();
-    return qtn_;
+    //qtn.setRPY(deg2rad(rpy.x),deg2rad(rpy.y),deg2rad(rpy.z));
+	qtn = tf::createQuaternionMsgFromRollPitchYaw(deg2rad(rpy.x),deg2rad(rpy.y),deg2rad(rpy.z));
+    // geometry_msgs::Quaternion qtn_;
+    // qtn_.w = qtn.getW();
+    // qtn_.x = qtn.getX();
+    // qtn_.y = qtn.getY();
+    // qtn_.z = qtn.getZ();
+    return qtn;
 }
 
 char latitude_zone_letter(const double &lat){

@@ -13,6 +13,7 @@ Localization_adapterHandle::Localization_adapterHandle(ros::NodeHandle &nodeHand
   loadParameters();
   localization_adapter_.setRunMode(run_mode_);
   localization_adapter_.setGpsOrigin(origin_);
+  localization_adapter_.setGpsPara(para_);
   subscribeToTopics();
   publishToTopics();
 }
@@ -49,6 +50,11 @@ void Localization_adapterHandle::loadParameters() {
   nodeHandle_.param<double>("Gps_origin/y",origin_.y,4006502.509805);
   nodeHandle_.param<double>("Gps_origin/z",origin_.z,74.80);
   ROS_INFO_STREAM("Gps origin: x: "<<origin_.x<<", y: " << origin_.y<<", z: "<< origin_.z);
+
+  nodeHandle_.param<double>("Gps_range/lat_min",para_.lat_min,30);
+  nodeHandle_.param<double>("Gps_range/lat_max",para_.lat_max,50);
+  nodeHandle_.param<double>("Gps_range/lon_min",para_.lon_min,100);
+  nodeHandle_.param<double>("Gps_range/lon_max",para_.lon_max,120);
 }
 
 void Localization_adapterHandle::subscribeToTopics() {
@@ -65,13 +71,7 @@ void Localization_adapterHandle::publishToTopics() {
 }
 
 void Localization_adapterHandle::run() {
-  //std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
   localization_adapter_.runAlgorithm();
-  /*
-  std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
-  double time_round = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count();
-  std::cout << "time cost = " << time_round << ", frequency = " << 1 / time_round << std::endl;
-  */
   sendMsg();
 }
 

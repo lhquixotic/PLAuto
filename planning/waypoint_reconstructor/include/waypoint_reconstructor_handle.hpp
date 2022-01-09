@@ -17,18 +17,22 @@
     along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef LOCALIZATION_ADAPTER_HANDLE_HPP
-#define LOCALIZATION_ADAPTER_HANDLE_HPP
+#ifndef WAYPOINT_RECONSTRUCTOR_HANDLE_HPP
+#define WAYPOINT_RECONSTRUCTOR_HANDLE_HPP
 
-#include "localization_adapter.hpp"
+#include "common_msgs/GpsInfo.h"
+#include "common_msgs/V2V.h"
+#include "autoware_msgs/Lane.h"
+#include "waypoint_reconstructor.hpp"
 
-namespace ns_localization_adapter {
 
-class Localization_adapterHandle {
+namespace ns_waypoint_reconstructor {
+
+class Waypoint_ReconstructorHandle {
 
  public:
   // Constructor
-  Localization_adapterHandle(ros::NodeHandle &nodeHandle);
+  Waypoint_ReconstructorHandle(ros::NodeHandle &nodeHandle);
 
   // Getters
   int getNodeRate() const;
@@ -39,29 +43,23 @@ class Localization_adapterHandle {
   void publishToTopics();
   void run();
   void sendMsg();
-
+  // void sendVisualization();
 
  private:
-  ros::NodeHandle nodeHandle_;
-  ros::Subscriber simulationPoseSubscriber_;
-  ros::Subscriber gpsInfoSubscriber_;
-  ros::Publisher utmPosePublisher_;
+  ros::NodeHandle nodeHandle_,private_nh_;
+  ros::Subscriber sub1_,sub2_;
+  ros::Publisher pub1_,pub2_,pub3_,pub4_;
 
-  void simulationPoseCallback(const geometry_msgs::PoseStamped &msg);
-  void gpsInfoCallback(const common_msgs::GpsInfo &msg);
-
-  std::string simulation_pose_topic_name_;
-  std::string gps_info_topic_name_;
-  std::string localization_utm_topic_name_;
+  void poseCallback(const nav_msgs::OdometryConstPtr &msg);
+  void V2VCallback(const common_msgs::V2VConstPtr &msg);
+  std::string current_pose_topic_name_,v2v_topic_name_,leader_pose_topic_name_; 
+  std::string final_waypoint_topic_name_,final_waypoint_visual_topic_name_;
 
   int node_rate_;
-  std::string run_mode_;
-
-  Localization_adapter localization_adapter_;
-  utm::Gps_point origin_;
-  utm::Gps_para para_;
+  bool poseFlag,v2vFlag;
+  Waypoint_Reconstructor waypoint_reconstructor_;
 
 };
 }
 
-#endif //LOCALIZATION_ADAPTER_HANDLE_HPP
+#endif //WAYPOINT_RECONSTRUCTOR_HANDLE_HPP

@@ -17,21 +17,23 @@
     along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef LOCALIZATION_ADAPTER_HANDLE_HPP
-#define LOCALIZATION_ADAPTER_HANDLE_HPP
+#ifndef WAYPOINT_SAVER_HANDLE_HPP
+#define WAYPOINT_SAVER_HANDLE_HPP
 
-#include "localization_adapter.hpp"
+#include "waypoint_saver.hpp"
 
-namespace ns_localization_adapter {
 
-class Localization_adapterHandle {
+namespace ns_waypoint_saver {
+
+class Wp_saverHandle {
 
  public:
   // Constructor
-  Localization_adapterHandle(ros::NodeHandle &nodeHandle);
+  Wp_saverHandle(ros::NodeHandle &nodeHandle);
 
   // Getters
   int getNodeRate() const;
+  double getMinDis() const{ return min_dis_; }
 
   // Methods
   void loadParameters();
@@ -39,29 +41,24 @@ class Localization_adapterHandle {
   void publishToTopics();
   void run();
   void sendMsg();
-
+  // void sendVisualization();
 
  private:
   ros::NodeHandle nodeHandle_;
-  ros::Subscriber simulationPoseSubscriber_;
-  ros::Subscriber gpsInfoSubscriber_;
-  ros::Publisher utmPosePublisher_;
+  ros::Subscriber localizationSubscriber_;
 
-  void simulationPoseCallback(const geometry_msgs::PoseStamped &msg);
-  void gpsInfoCallback(const common_msgs::GpsInfo &msg);
+  void localizationCallback(const nav_msgs::Odometry &msg);
 
-  std::string simulation_pose_topic_name_;
-  std::string gps_info_topic_name_;
-  std::string localization_utm_topic_name_;
+  std::string localization_topic_name_;
 
+  std::string waypoint_filename_;
   int node_rate_;
-  std::string run_mode_;
+  double min_dis_;
 
-  Localization_adapter localization_adapter_;
-  utm::Gps_point origin_;
-  utm::Gps_para para_;
+  Wp_saver waypoint_saver_;
 
 };
+
 }
 
-#endif //LOCALIZATION_ADAPTER_HANDLE_HPP
+#endif //WAYPOINT_SAVER_HANDLE_HPP

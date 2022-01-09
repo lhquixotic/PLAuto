@@ -1,5 +1,5 @@
 # chassis_control_topic_name: /chassis/control_cmd
-control_cmd_topic_name: ctrl_raw
+control_cmd_topic_name: /control_cmd
 
 cansend_topic_name: /sent_messages
 

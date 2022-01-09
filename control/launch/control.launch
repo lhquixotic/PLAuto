@@ -1,0 +1,6 @@
+<launch>
+    <node name="control_node" pkg="control" type="control" output="screen">
+        <rosparam command="load" file="$(find control)/config/control.yaml" /> <!--Load parameters from config files-->
+        <rosparam command="load" file="$(find control)/config/control_para.yaml" />
+    </node>
+</launch>
