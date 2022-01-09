@@ -4,4 +4,6 @@ gps_state_topic_name: /drivers/gps
 
 protocol_name: GPCHC # GPGGA/GPCHC
 
+record_filename: /home/huiqian/log/gps.csv
+
 node_rate: 50   # [Herz]

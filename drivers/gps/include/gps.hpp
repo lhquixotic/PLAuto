@@ -9,10 +9,18 @@
 #include "common_msgs/GpsInfo.h"
 #include <cmath>
 
+#include <sstream>
+#include <string>
+#include <fstream>
+#include <math.h>
+#include <stdio.h>
+
 namespace ns_gps {
 
 struct Para{
   std::string protocol_name;
+  bool record_to_file;
+  std::string filename;
 };
 
 class GPS {
@@ -52,6 +60,7 @@ class GPS {
   double safe_double(const std::string& s);
   int safe_int(const std::string& s);
   std::string &trim(std::string &s, std::string e); // clear the string e in string s
+  void write2File(std::string filename);
 };
 }
 

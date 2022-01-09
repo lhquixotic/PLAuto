@@ -87,6 +87,7 @@ void GPS::parseGPCHC(std::string s){
   gps_state.fix.latitude  = safe_double(gps_buffer[12]);
   gps_state.fix.longitude = safe_double(gps_buffer[13]);
   gps_state.fix.altitude  = safe_double(gps_buffer[14]);
+  // ROS_INFO("current lat: %lf, lon: %lf",gps_state.fix.latitude,gps_state.fix.longitude);
   // rpy deg
   double roll = safe_double(gps_buffer[5]);
   double pitch = safe_double(gps_buffer[4]);
@@ -111,6 +112,13 @@ void GPS::parseGPCHC(std::string s){
   int gps_status = safe_int(gps_buffer[21]);
   int gps_sys_status = gps_status % 10;
   int gps_sat_status = gps_status / 10;
+
+  if (gps_para.record_to_file){
+    // ROS_INFO("recording...");
+    // ROS_INFO_STREAM("filename:" << gps_para.filename);
+    write2File(gps_para.filename);
+  }
+
   if (gps_sys_status == 2 && gps_sat_status == 4){
     // working correctly
   }else{
@@ -236,6 +244,15 @@ double GPS::safe_double(const std::string& s) {
 
 double GPS::deg2rad (double deg) {
     return deg * 3.1415926 / 180.0;
+}
+void GPS::write2File(std::string filename){
+  std::string lon = std::to_string(111000 * (gps_state.fix.longitude - 116));
+  std::string lat = std::to_string(111000 * (gps_state.fix.latitude - 40));
+  
+  std::fstream f;
+  f.open(filename, std::ios::out|std::ios::app);
+  f << lon + "," + lat << std::endl;
+  f.close();
 }
 
 }

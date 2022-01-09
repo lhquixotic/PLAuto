@@ -7,3 +7,4 @@ Gps_range:
   lat_max: 50
   lon_min: 100
   lon_max: 120
+record_to_file: false

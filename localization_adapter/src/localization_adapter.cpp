@@ -16,13 +16,14 @@ void Localization_adapter::setSimulationPose(const geometry_msgs::PoseStamped &m
   simulation_pose = msg;
 }
 void Localization_adapter::setGpsInfo(const common_msgs::GpsInfo &msg){
-  if (msg.fix.latitude > para.lat_min & msg.fix.latitude < para.lat_max
-    & msg.fix.longitude > para.lon_min & msg.fix.longitude < para.lon_max){
-    gps_info = msg;
-  }else{
-    ROS_WARN("GPS out of range!");
-    gps_info = gps_info;
-  }
+  // if (msg.fix.latitude > para.lat_min & msg.fix.latitude < para.lat_max
+  //   & msg.fix.longitude > para.lon_min & msg.fix.longitude < para.lon_max){
+  //   gps_info = msg;
+  // }else{
+  //   ROS_WARN("GPS out of range!");
+  //   gps_info = gps_info;
+  // }
+   gps_info = msg;
 }
 
 void Localization_adapter::setRunMode(const std::string &msg){

@@ -38,7 +38,13 @@ void GPSHandle::loadParameters() {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
   nodeHandle_.param<std::string>("protocol_name",gps_para_.protocol_name,"GPCHC");
-  ROS_INFO_STREAM("[GPS parameters] protocol_name: "<<gps_para_.protocol_name);
+  ROS_INFO_STREAM("[GPS parameters] protocol_name: "<< gps_para_.protocol_name);
+  if (!nodeHandle_.param<bool>("record_to_file",gps_para_.record_to_file,true)){
+    ROS_WARN_STREAM("Did not load record_to_file:" << gps_para_.protocol_name);
+  }
+  if (!nodeHandle_.param<std::string>("record_filename",gps_para_.filename,"~/log/gps.csv")){
+    ROS_WARN_STREAM("Did not load record filename: " << gps_para_.filename);
+  }
 }
 
 void GPSHandle::subscribeToTopics() {
@@ -53,11 +59,7 @@ void GPSHandle::publishToTopics() {
 }
 
 void GPSHandle::run() {
-  // std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
   gps_.runAlgorithm();
-  // std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
-  // double time_round = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1).count();
-  // std::cout << "time cost = " << time_round << ", frequency = " << 1 / time_round << std::endl;
   sendMsg();
 }
 
