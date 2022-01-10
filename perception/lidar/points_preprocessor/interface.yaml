@@ -1,0 +1,5 @@
+
+- name: /points_concat_filter
+  publish: [/points_concat]
+  subscribe: [ /lidar*/points_raw]
+
