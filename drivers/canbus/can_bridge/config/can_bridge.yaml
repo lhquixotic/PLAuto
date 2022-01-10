@@ -12,4 +12,4 @@ para:
   SND_TIMES: 1000        # 发送次数
   SND_DELY: 1                 # 发送前延时,单位秒
 
-node_rate: 10  # [Herz]
+node_rate: 50  # [Herz]

@@ -16,6 +16,13 @@ double PID::outputSignal(double tar, double act) {
     actual = act;
     error = target - actual;
     integral += error;
+    if(integral > PID_INT_MAX){
+        integral = PID_INT_MAX;
+    }else{
+        if (integral < -PID_INT_MAX){
+            integral = -PID_INT_MAX;
+        }
+    }
     ROS_INFO_STREAM("[PID control]" << "target: " << tar << ", act: " << act << ", integral: " << integral);
     u = kp * error + ki * integral + kd * (error - error_pre);
     ROS_INFO_STREAM("[PID control]" << "u: " << u);

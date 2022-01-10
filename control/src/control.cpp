@@ -28,6 +28,7 @@ namespace ns_control
   }
   void Control::setV2VInfo(const common_msgs::V2V &msg){
     v2v_info = msg;
+    leader_pose = v2v_info.odom.pose.pose;
   }
   void Control::setUtmPose(const nav_msgs::Odometry &msg){
     utm_pose = msg; 
@@ -51,6 +52,7 @@ namespace ns_control
     int waypoints_size = current_waypoints.size();
     if (waypoints_size == 0){
       next_waypoint_number_ = -1;
+      return -1;
     }
     // find nearest point
     int nearest_idx = 0;
@@ -59,7 +61,7 @@ namespace ns_control
       // if search waypoint is the last
       if(i == (waypoints_size - 1)){
         ROS_INFO("search waypoint is the last");
-        break;
+        // break;
       }
       double dis = getPlaneDistance(current_waypoints.at(i).pose.pose.position,current_pose.position);
       if (dis < nearest_distance){
@@ -69,17 +71,17 @@ namespace ns_control
     }
 
     // look for the next waypoint
-    for (int i = nearest_idx; i < waypoints_size; i++){
+    for (int j = nearest_idx; j < waypoints_size; j++){
       // if search waypoint is the last
-      if (i == (waypoints_size - 1)){
+      if (j == (waypoints_size - 1)){
         ROS_INFO("search waypoints is the last");
-        return i;
+        return j;
       }
       // if there exists an effective waypoint
       if (getPlaneDistance(
-        current_waypoints.at(i).pose.pose.position, current_pose.position
+        current_waypoints.at(j).pose.pose.position, current_pose.position
       ) > lookAheadDistance){
-        return i;
+        return j;
       }
     }
     // float dist_sum = 0;
@@ -142,7 +144,8 @@ namespace ns_control
         }
         else{ if (control_para.longitudinal_mode == 3){//keeping desired distance
             if (v2vInfoFlag){
-              control_cmd.linear_velocity = 0;
+              control_cmd.linear_velocity = v2v_info.leader_speed + pid_controller.outputSignal(control_para.desired_distance,
+                  getPlaneDistance(current_pose.position,leader_pose.position));
             }else{ ROS_WARN("NO V2V info!");}
           } 
         }

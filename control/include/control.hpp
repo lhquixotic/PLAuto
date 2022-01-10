@@ -67,6 +67,7 @@ class Control {
   nav_msgs::Odometry utm_pose;
   common_msgs::V2V v2v_info;
   geometry_msgs::Pose current_pose;
+  geometry_msgs::Pose leader_pose;
   std::vector<autoware_msgs::Waypoint> current_waypoints;
 
   PID pid_controller;

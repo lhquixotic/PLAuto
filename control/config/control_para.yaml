@@ -4,11 +4,11 @@ pid:
   kd: 0
 pure_pursuit:
   mode: fixed  # 1) [fixed] lookahead distance 2) [variable] k_pre * v
-  lookahead_distance: 8.0 # [m]
+  lookahead_distance: 4.0 # [m]
   k_pre: 1.5
 control_switch:
   longitudinal: false # Start: true; Shutdown: false
   lateral: true
 longitudinal_mode: 1 # 1: constant speed 2: planned speed 3: desired distance
-desired_speed: 5 # m/s
+desired_speed: 5 # km/h TODO: to check
 desired_distance: 5 # m
