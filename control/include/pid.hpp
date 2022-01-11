@@ -1,6 +1,6 @@
 #ifndef PID_H
 #define PID_H
-#define PID_INR_MAX 10
+#define PID_INT_MAX 10
 
 struct Pid_para{
    double kp;

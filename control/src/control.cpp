@@ -7,7 +7,7 @@ namespace ns_control
   // Constructor
   Control::Control(ros::NodeHandle &nh) : nh_(nh),
                                           pid_controller(1.0, 0.0, 0.0),
-                                          pp_controller(3.975){};
+                                          pp_controller(1.20){};
 
   // Getters
   autoware_msgs::ControlCommandStamped Control::getControlCommand() { 

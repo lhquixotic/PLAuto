@@ -9,7 +9,10 @@ double Pure_pursuit::outputSteeringWheelAngle(geometry_msgs::Point target,
     double kappa;
     double d = getPlaneDistance(target,current_pose.position);
     double denominator = d * d;
-    double numerator = 2 * calcRelativeCoordinate(target, current_pose).y;
+    double rel_x = calcRelativeCoordinate(target, current_pose).x;
+    double rel_y = calcRelativeCoordinate(target, current_pose).y;
+    double numerator = 2 * rel_y;
+    ROS_INFO("relative coordinate x: %f, y: %f.",rel_x,rel_y);
     
     if(denominator != 0){
         kappa = numerator / denominator;
