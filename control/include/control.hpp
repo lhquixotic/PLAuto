@@ -35,7 +35,7 @@ class Control {
 
   // Getters
   autoware_msgs::ControlCommandStamped getControlCommand();
-
+  geometry_msgs::PointStamped getLookaheadPoint();
 
   // Setters
   void setFinalWaypoints(const autoware_msgs::Lane &msg);
@@ -68,6 +68,7 @@ class Control {
   common_msgs::V2V v2v_info;
   geometry_msgs::Pose current_pose;
   geometry_msgs::Pose leader_pose;
+  geometry_msgs::PointStamped lookahead_point;
   std::vector<autoware_msgs::Waypoint> current_waypoints;
 
   PID pid_controller;

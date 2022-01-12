@@ -53,6 +53,12 @@ void ControlHandle::loadParameters() {
                                       "/localization/utmpose")) {
     ROS_WARN_STREAM("Did not load localization_utm_topic_name. Standard value is: " << localization_utm_topic_name_);
   }
+  if (!nodeHandle_.param<std::string>("lookahead_point_topic_name",
+                                        lookahead_point_topic_name_,
+                                      "/control/lookahead_point")) {
+    ROS_WARN_STREAM("Did not load lookahead_point_topic_name. Standard value is: " << localization_utm_topic_name_);
+  }
+
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
@@ -93,6 +99,7 @@ void ControlHandle::subscribeToTopics() {
 
 void ControlHandle::publishToTopics() {
   ROS_INFO("publish to topics");
+  lookaheadpointPublisher_ = nodeHandle_.advertise<geometry_msgs::PointStamped>(lookahead_point_topic_name_, 1);
   controlCommandPublisher_ = nodeHandle_.advertise<autoware_msgs::ControlCommandStamped>(control_command_topic_name_, 1);
 }  
 
@@ -102,6 +109,7 @@ void ControlHandle::run() {
 }
 
 void ControlHandle::sendMsg() {
+  lookaheadpointPublisher_.publish(control_.getLookaheadPoint());
   controlCommandPublisher_.publish(control_.getControlCommand());
 }
 // Callbacks

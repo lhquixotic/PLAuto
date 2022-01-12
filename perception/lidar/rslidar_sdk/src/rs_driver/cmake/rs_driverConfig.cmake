@@ -19,6 +19,7 @@ if(${ENABLE_TRANSFORM})
   add_definitions("-DENABLE_TRANSFORM")
 endif(${ENABLE_TRANSFORM})
 
+
 set(rs_driver_INCLUDE_DIRS "/home/zhangbowei/research/projects/catkin_ws/src/slow-auto/perception/lidar/rslidar_sdk/src/rs_driver/src;/usr/local/Project/include")
 set(RS_DRIVER_INCLUDE_DIRS "/home/zhangbowei/research/projects/catkin_ws/src/slow-auto/perception/lidar/rslidar_sdk/src/rs_driver/src;/usr/local/Project/include")
 

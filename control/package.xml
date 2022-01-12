@@ -11,6 +11,7 @@
 
   <!--Other depends-->
   <depend>roscpp</depend>
+  <depend>libwaypoint_follower</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>common_msgs</depend>

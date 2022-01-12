@@ -14,7 +14,7 @@ double PID::outputSignal(double tar, double act) {
     double u;
     target = tar;
     actual = act;
-    error = target - actual;
+    error = actual - target;
     integral += error;
     if(integral > PID_INT_MAX){
         integral = PID_INT_MAX;
