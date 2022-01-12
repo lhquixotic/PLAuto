@@ -42,9 +42,15 @@ void cloud_toolbox::ClusterDetector::cloud_preprocess(pcl::PointCloud<pcl::Point
     pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_inrange( new pcl::PointCloud<pcl::PointXYZI>);
     
     for (size_t i = 0; i < cloud->points.size(); i++){
-        if (cloud->points[i].x > cloud_range_[0] && cloud->points[i].x < cloud_range_[3]
-         && cloud->points[i].y > cloud_range_[1] && cloud->points[i].y < cloud_range_[4]
-         && cloud->points[i].z > cloud_range_[2] && cloud->points[i].z < cloud_range_[5]){
+        if (
+            (cloud->points[i].x > cloud_range_[0] && cloud->points[i].x < cloud_range_[3]
+                && cloud->points[i].y > cloud_range_[1] && cloud->points[i].y < cloud_range_[4]
+                && cloud->points[i].z > cloud_range_[2] && cloud->points[i].z < cloud_range_[5]) 
+            &&
+            !(cloud->points[i].x > ego_size_[0] && cloud->points[i].x < ego_size_[3]
+                && cloud->points[i].y > ego_size_[1] && cloud->points[i].y < ego_size_[4]
+                && cloud->points[i].z > ego_size_[2] && cloud->points[i].z < ego_size_[5])
+           ){
              cloud_inrange->points.push_back(cloud->points[i]);
          } 
     }
