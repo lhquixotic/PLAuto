@@ -10,5 +10,6 @@ localization_utm_topic_name: /localization/utmpose
 # Publisher
 control_command_topic_name: /control_cmd
 
+lookahead_point_topic_name: /control/lookahead_point
 # control parameters
 node_rate: 50   # [Herz]

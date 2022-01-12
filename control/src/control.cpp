@@ -16,6 +16,11 @@ namespace ns_control
     ccs.header.stamp = ros::Time::now();
     return ccs; 
     }
+  geometry_msgs::PointStamped Control::getLookaheadPoint() { 
+    lookahead_point.header.frame_id = "world";
+    lookahead_point.header.stamp = ros::Time::now();
+    return lookahead_point; 
+  }
 
   // Setters
   void Control::setFinalWaypoints(const autoware_msgs::Lane &msg){
@@ -81,6 +86,7 @@ namespace ns_control
       if (getPlaneDistance(
         current_waypoints.at(j).pose.pose.position, current_pose.position
       ) > lookAheadDistance){
+        lookahead_point.point = current_waypoints.at(j).pose.pose.position;
         return j;
       }
     }

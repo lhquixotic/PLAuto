@@ -94,7 +94,7 @@ void GPS::parseGPCHC(std::string s){
   double yaw = safe_double(gps_buffer[3]);
   gps_state.rpy.x = roll;
   gps_state.rpy.y = pitch;
-  gps_state.rpy.z = yaw;
+  gps_state.rpy.z = 90 - yaw;
   // twist m/s
   double east_vel = safe_double(gps_buffer[15]);// east velocity
   double north_vel = safe_double(gps_buffer[16]);// north velocity
