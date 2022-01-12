@@ -33,6 +33,13 @@ cloud_toolbox::ROSDetector::ROSDetector(ros::NodeHandle &nh){
     nh.getParam("cloud_range_y_max", cloud_range_[4]);
     nh.getParam("cloud_range_z_max", cloud_range_[5]);
 
+    nh.getParam("ego_size_x_min", ego_size_[0]);
+    nh.getParam("ego_size_y_min", ego_size_[1]);
+    nh.getParam("ego_size_z_min", ego_size_[2]);
+    nh.getParam("ego_size_x_max", ego_size_[3]);
+    nh.getParam("ego_size_y_max", ego_size_[4]);
+    nh.getParam("ego_size_z_max", ego_size_[5]);
+
         // voxel filter leaf size
     nh.getParam("voxel_filter_leaf_size_x", voxel_filter_leaf_size_[0]);
     nh.getParam("voxel_filter_leaf_size_y", voxel_filter_leaf_size_[1]);
@@ -330,7 +337,7 @@ void cloud_toolbox::ROSDetector::vis_boundary(std::vector<float>& polar_boundary
     tempmarker.color.a = 0.5;
     tempmarker.lifetime = ros::Duration(0.5);
     tempmarker.points.resize(0);
-    for (int i = 0; i < 360; i++){
+    for (int i = 175; i < 185; i++){
         if (std::count(to_del_id.begin(), to_del_id.end(), i)){
             // std::cout<< "del" << i << std::endl;
             geometry_msgs::Point p;
@@ -348,7 +355,7 @@ void cloud_toolbox::ROSDetector::vis_boundary(std::vector<float>& polar_boundary
         p.z = 0;
         tempmarker.points.push_back(p);
     }
-    tempmarker.points.push_back(tempmarker.points[0]); //close the figure
+    // tempmarker.points.push_back(tempmarker.points[0]); //close the figure
     boundary_marker = tempmarker;
 
     std::cout << "num points deleted: " << to_del_id.size()<<std::endl;
@@ -514,10 +521,6 @@ void cloud_toolbox::ROSDetector::execute(const sensor_msgs::PointCloud2ConstPtr 
     occ_grid.data.clear();
     vis_cluster_cloud->clear();
     boundary_marker.points.clear();
-
-
-
-
 
     
     pcl::fromROSMsg(*input_cloud_ptr, *input_cloud);

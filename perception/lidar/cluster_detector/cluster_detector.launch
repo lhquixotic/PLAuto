@@ -23,6 +23,14 @@
     <arg name = "cloud_range_x_max" default = "30"/>
     <arg name = "cloud_range_y_max" default = "30.0"/>
     <arg name = "cloud_range_z_max" default = "3.0"/>
+
+    <arg name = "ego_size_x_min" default = "-1.5"/>
+    <arg name = "ego_size_y_min" default = "-0.8"/>
+    <arg name = "ego_size_z_min" default = "-2.0"/>
+    <arg name = "ego_size_x_max" default = "1.5"/>
+    <arg name = "ego_size_y_max" default = "0.8"/>
+    <arg name = "ego_size_z_max" default = "3.0"/>
+
         <!-- voxel filter leaf size -->
     <arg name = "voxel_filter_leaf_size_x" default="0.05"/>
     <arg name = "voxel_filter_leaf_size_y" default="0.05"/>
@@ -30,7 +38,7 @@
 
     <!-- ground filter -->
     <arg name = "num_ground_seeds" default = "15"/>
-    <arg name = "lidar_height" default ="0.75" />
+    <arg name = "lidar_height" default ="1.882" />
     <arg name = "th_ground_seeds" default = "1.2"/>
     <arg name = "iter_ground_plane" default = "3"/>
     <arg name = "th_ground_plane" default = "0.2"/>
@@ -84,6 +92,16 @@
         <param name="cloud_range_x_max" value="$(arg cloud_range_x_max)" />
         <param name="cloud_range_y_max" value="$(arg cloud_range_y_max)" />
         <param name="cloud_range_z_max" value="$(arg cloud_range_z_max)" />
+
+        <param name="ego_size_x_min" value="$(arg ego_size_x_min)" />
+        <param name="ego_size_y_min" value="$(arg ego_size_y_min)" />
+        <param name="ego_size_z_min" value="$(arg ego_size_z_min)" />
+        <param name="ego_size_x_max" value="$(arg ego_size_x_max)" />
+        <param name="ego_size_y_max" value="$(arg ego_size_y_max)" />
+        <param name="ego_size_z_max" value="$(arg ego_size_z_max)" />
+
+
+
 
             <!-- voxel filter leaf size -->
         <param name="voxel_filter_leaf_size_x" value="$(arg voxel_filter_leaf_size_x)" />
