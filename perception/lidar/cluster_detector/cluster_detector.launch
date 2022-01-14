@@ -8,6 +8,7 @@
     <arg name="obj_array_topic" default="/zzz/detection/lidar_detector/objects"/>
     <arg name="marker_array_topic" default="/box_marker"/>
     <arg name="boundary_marker_topic" default="/boundary_marker"/>
+    <arg name="polar_boundary_topic" default="/polar_boundary"/>
     
     <!-- preprocessing -->
         <!-- cloud_range -->
@@ -71,7 +72,7 @@
     <arg name = "cluster_min_size" default = "10"/>
     <arg name = "cluster_max_size" default = "5000"/>
  
-     <node pkg= "cluster_detector" type="cluster_detector_node" name="cluster_detector_node" output="screen">
+    <node pkg= "cluster_detector" type="cluster_detector_node" name="cluster_detector_node" output="screen">
         <param name="input_cloud_topic" value="$(arg input_cloud_topic)"/>
         <param name="filtered_cloud_topic" value="$(arg filtered_cloud_topic)"/>
         <param name="ground_cloud_topic" value="$(arg ground_cloud_topic)"/>
@@ -81,6 +82,7 @@
         <param name="obj_array_topic" value="$(arg obj_array_topic)"/>
         <param name="marker_array_topic" value="$(arg marker_array_topic)"/>
         <param name="boundary_marker_topic" value="$(arg boundary_marker_topic)"/>
+        <param name="polar_boundary_topic" value="$(arg polar_boundary_topic)" />
 
         
         

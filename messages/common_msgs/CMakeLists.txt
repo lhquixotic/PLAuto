@@ -23,6 +23,8 @@ add_message_files(DIRECTORY msg
     GpsInfo.msg
     ChassisStatus.msg
     V2V.msg
+    PolarBoundary.msg
+    StopDecision.msg
 )
 
 generate_messages(
