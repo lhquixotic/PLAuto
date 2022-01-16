@@ -1,6 +1,7 @@
 #ifndef CONTROL_HPP
 #define CONTROL_HPP
 
+#include "common_msgs/StopDecision.h"
 #include "autoware_msgs/Lane.h"
 #include "common_msgs/V2V.h"
 #include "common_msgs/VehicleDynamicState.h"

@@ -26,6 +26,12 @@ int ControlHandle::getNodeRate() const { return node_rate_; }
 // Methods
 void ControlHandle::loadParameters() {
   ROS_INFO("loading handle parameters");
+  if(!nodeHandle_.param<std::string>("stop_flag_topic_name",
+                                    stop_flag_topic_name_,
+                                    "/stop_flag")){
+    ROS_WARN_STREAM(
+        "Did not load stop_flag_topic_name. Standard value is: " << stop_flag_topic_name_);
+                                    }
   if (!nodeHandle_.param<std::string>("final_waypoints_topic_name",
                                       final_waypoints_topic_name_,
                                       "/planning/final_waypoints")) {
@@ -87,6 +93,8 @@ void ControlHandle::loadParameters() {
 
 void ControlHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
+  stopFlagSubscriber_ = 
+      nodeHandle_.subscribe(stop_flag_topic_name_, 10, &ControlHandle::stopFlagCallback, this);
   finalWaypointsSubscriber_ =
       nodeHandle_.subscribe(final_waypoints_topic_name_, 10, &ControlHandle::finalWaypointsCallback, this);
   vehicleDynamicStateSubscriber_ =
@@ -110,9 +118,17 @@ void ControlHandle::run() {
 
 void ControlHandle::sendMsg() {
   lookaheadpointPublisher_.publish(control_.getLookaheadPoint());
-  controlCommandPublisher_.publish(control_.getControlCommand());
+  autoware_msgs::ControlCommandStamped control_command = control_.getControlCommand();
+  if (stop_flag_ == 1) {
+    control_command.cmd.linear_velocity = 0;
+  }
+  controlCommandPublisher_.publish(control_command);
 }
 // Callbacks
+void ControlHandle::stopFlagCallback(const common_msgs::StopDecision &msg){
+  stop_flag_ = msg.veh_stop_flag;
+}
+
 void ControlHandle::finalWaypointsCallback(const autoware_msgs::Lane &msg) {
   control_.setFinalWaypoints(msg);
   control_.finalWaypointsFlag = true;
