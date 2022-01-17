@@ -7,6 +7,8 @@ v2v_topic_name: /drivers/v2v
 
 localization_utm_topic_name: /localization/utmpose
 
+stop_flag_topic_name: /stop_flag
+
 # Publisher
 control_command_topic_name: /control_cmd
 

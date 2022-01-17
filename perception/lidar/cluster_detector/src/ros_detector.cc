@@ -8,6 +8,7 @@ cloud_toolbox::ROSDetector::ROSDetector(ros::NodeHandle &nh){
     std::string scene_cloud_topic;
     std::string occ_grid_topic;
     std::string obj_array_topic;
+    std::string polar_boundary_topic; //zbw: add polar boundary
     std::string vis_cluster_cloud_topic;
     std::string marker_array_topic;
     std::string boundary_marker_topic;
@@ -19,6 +20,7 @@ cloud_toolbox::ROSDetector::ROSDetector(ros::NodeHandle &nh){
     nh.getParam("scene_cloud_topic", scene_cloud_topic);
     nh.getParam("occ_grid_topic", occ_grid_topic);
     nh.getParam("obj_array_topic", obj_array_topic);
+    nh.getParam("polar_boundary_topic", polar_boundary_topic); //zbw: add polar boundary
     nh.getParam("vis_cluster_cloud_topic", vis_cluster_cloud_topic);
     nh.getParam("marker_array_topic", marker_array_topic);
     nh.getParam("boundary_marker_topic", boundary_marker_topic);
@@ -99,6 +101,7 @@ cloud_toolbox::ROSDetector::ROSDetector(ros::NodeHandle &nh){
     scene_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(scene_cloud_topic, 10);
     occ_grid_publisher = nh.advertise<nav_msgs::OccupancyGrid>(occ_grid_topic, 10);
     obj_array_publisher = nh.advertise<autoware_msgs::DetectedObjectArray>(obj_array_topic, 10);
+    polar_boundary_publisher = nh.advertise<common_msgs::PolarBoundary>(polar_boundary_topic, 10); //zbw: add polar boundary
     vis_cluster_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(vis_cluster_cloud_topic, 10);
     marker_array_publisher = nh.advertise<visualization_msgs::MarkerArray>(marker_array_topic, 10);
     boundary_marker_publisher = nh.advertise<visualization_msgs::Marker>(boundary_marker_topic, 10);
@@ -173,6 +176,7 @@ void cloud_toolbox::ROSDetector::cal_marker_array(std::vector<box_info>& bboxes,
 
     }
 }
+
 void cloud_toolbox::ROSDetector::cal_obj_array(std::vector<box_info>& bboxes, autoware_msgs::DetectedObjectArray& obj_array){
     obj_array.header = common_header;
     for (int i = 0; i < bboxes.size(); i ++){
@@ -205,19 +209,17 @@ void cloud_toolbox::ROSDetector::cal_obj_array(std::vector<box_info>& bboxes, au
 
         obj_array.objects.push_back(obj);
 
-
-
     }
 }
 
 
 void cloud_toolbox::ROSDetector::cal_polar_boundary(pcl::PointCloud<pcl::PointXYZI>::Ptr scene_cloud, visualization_msgs::Marker& boundary_marker){
-    std::vector<float> polar_boundary;
+    // std::vector<float> polar_boundary;
     std::vector<int> to_del_id;
-    polar_boundary.clear();
+    polar_boundary.distance.clear();
     to_del_id.clear();
     for (size_t i = 0; i < 360; i ++){
-        polar_boundary.push_back(boundary_max_distance);
+        polar_boundary.distance.push_back(boundary_max_distance);
     }
     for (size_t i = 0; i < scene_cloud->points.size(); i ++){
         if (scene_cloud->points[i].z > clip_height_ + lidar_height_){
@@ -235,32 +237,33 @@ void cloud_toolbox::ROSDetector::cal_polar_boundary(pcl::PointCloud<pcl::PointXY
         if (theta_round < 0 || theta_round >= 360){ //jxy: theoretically impossible, but there are always some points with x and y of value "nan"
             continue;
         }
-        if (polar_boundary[theta_round] > distance){
-            polar_boundary[theta_round] = distance;
+        if (polar_boundary.distance[theta_round] > distance){
+            polar_boundary.distance[theta_round] = distance;
         }
     }
 
-
-    del_points(polar_boundary, to_del_id);
-
-
+    del_points(polar_boundary, to_del_id); // size of polar_boundary is 360 before and after del_points
+    // for (int j = 0 ; j< polar_boundary.size(); j ++){
+    //     std::cout<< polar_boundary[j]<<' ';
+    // }
+    // std::cout<< std::endl;
 
     vis_boundary(polar_boundary, to_del_id, boundary_marker);
 }
 
 
-void cloud_toolbox::ROSDetector::del_points(std::vector<float>& original_polar_boundary, std::vector<int>& to_del_id){
+void cloud_toolbox::ROSDetector::del_points(common_msgs::PolarBoundary& PB, std::vector<int>& to_del_id){
     double th_outlier = 1.0;
     for (size_t i = 1; i < 360-1; i ++){
-        if (original_polar_boundary[i] - original_polar_boundary[i-1] > th_outlier && original_polar_boundary[i] - original_polar_boundary[i+1] > th_outlier){
+        if (PB.distance[i] - PB.distance[i-1] > th_outlier && PB.distance[i] - PB.distance[i+1] > th_outlier){
             to_del_id.push_back(i);
         }
     }
 
-    if (original_polar_boundary[0] - original_polar_boundary[360-1] > th_outlier && original_polar_boundary[0] - original_polar_boundary[1] > th_outlier){
+    if (PB.distance[0] - PB.distance[360-1] > th_outlier && PB.distance[0] - PB.distance[1] > th_outlier){
         to_del_id.push_back(0);
     }
-    if (original_polar_boundary[360-1] - original_polar_boundary[0] > th_outlier && original_polar_boundary[360-1] - original_polar_boundary[360-2] > th_outlier){
+    if (PB.distance[360-1] - PB.distance[0] > th_outlier && PB.distance[360-1] - PB.distance[360-2] > th_outlier){
         to_del_id.push_back(360-1);
     }
 
@@ -270,9 +273,9 @@ void cloud_toolbox::ROSDetector::del_points(std::vector<float>& original_polar_b
     double curr_length, tri_a, tri_b, tri_c, tri_p, tri_mid, tmp_x, tmp_y, c_alpha;
     for (size_t i = 1; i < 360-1; i ++){
 
-        curr_length = original_polar_boundary[i];
-        tri_a = original_polar_boundary[i-1];
-        tri_c = original_polar_boundary[i+1];
+        curr_length = PB.distance[i];
+        tri_a = PB.distance[i-1];
+        tri_c = PB.distance[i+1];
         tri_b = sqrt( tri_a * tri_a + tri_c * tri_c - 2* tri_a* tri_c* cos(2*PI/180));
         tri_p = (tri_a + tri_b +tri_c)/2;
         tri_mid = 2/(tri_a +tri_c) *sqrt(tri_a*tri_c*tri_p*(tri_p - tri_b));
@@ -287,9 +290,9 @@ void cloud_toolbox::ROSDetector::del_points(std::vector<float>& original_polar_b
 
 
     //for the first and last point
-    curr_length = original_polar_boundary[0];
-    tri_a = original_polar_boundary[360-1];
-    tri_c = original_polar_boundary[1];
+    curr_length = PB.distance[0];
+    tri_a = PB.distance[360-1];
+    tri_c = PB.distance[1];
     tri_b = sqrt( tri_a * tri_a + tri_c * tri_c - 2* tri_a* tri_c* cos(2*PI/180));
     tri_p = (tri_a + tri_b +tri_c)/2;
     tri_mid = 2/(tri_a +tri_c) *sqrt(tri_a*tri_c*tri_p*(tri_p - tri_b));
@@ -302,9 +305,9 @@ void cloud_toolbox::ROSDetector::del_points(std::vector<float>& original_polar_b
     }
 
 
-    curr_length = original_polar_boundary[360-1];
-    tri_a = original_polar_boundary[360-2];
-    tri_c = original_polar_boundary[0];
+    curr_length = PB.distance[360-1];
+    tri_a = PB.distance[360-2];
+    tri_c = PB.distance[0];
     tri_b = sqrt( tri_a * tri_a + tri_c * tri_c - 2* tri_a* tri_c* cos(2*PI/180));
     tri_p = (tri_a + tri_b +tri_c)/2;
     tri_mid = 2/(tri_a +tri_c) *sqrt(tri_a*tri_c*tri_p*(tri_p - tri_b));
@@ -321,7 +324,7 @@ void cloud_toolbox::ROSDetector::del_points(std::vector<float>& original_polar_b
 
 
 
-void cloud_toolbox::ROSDetector::vis_boundary(std::vector<float>& polar_boundary, std::vector<int>& to_del_id, visualization_msgs::Marker& boundary_marker){
+void cloud_toolbox::ROSDetector::vis_boundary(common_msgs::PolarBoundary& PB, std::vector<int>& to_del_id, visualization_msgs::Marker& boundary_marker){
     visualization_msgs::Marker tempmarker;
     tempmarker.header.frame_id = "/base_link";
     tempmarker.header.stamp = ros::Time::now();
@@ -337,25 +340,25 @@ void cloud_toolbox::ROSDetector::vis_boundary(std::vector<float>& polar_boundary
     tempmarker.color.a = 0.5;
     tempmarker.lifetime = ros::Duration(0.5);
     tempmarker.points.resize(0);
-    for (int i = 175; i < 185; i++){
+    for (int i = 0; i < 360; i++){
         if (std::count(to_del_id.begin(), to_del_id.end(), i)){
             // std::cout<< "del" << i << std::endl;
             geometry_msgs::Point p;
             double theta = (i - 180) * PI / 180;
-            p.x = polar_boundary[i] * cos(theta);
-            p.y = polar_boundary[i] * sin(theta);
+            p.x = PB.distance[i] * cos(theta);
+            p.y = PB.distance[i] * sin(theta);
             p.z = 0.1; //mark that this point should be removed
             tempmarker.points.push_back(p);
             continue;
         }
         geometry_msgs::Point p;
         double theta = (i - 180) * PI / 180;
-        p.x = polar_boundary[i] * cos(theta);
-        p.y = polar_boundary[i] * sin(theta);
+        p.x = PB.distance[i] * cos(theta);
+        p.y = PB.distance[i] * sin(theta);
         p.z = 0;
         tempmarker.points.push_back(p);
     }
-    // tempmarker.points.push_back(tempmarker.points[0]); //close the figure
+    tempmarker.points.push_back(tempmarker.points[0]); //close the figure
     boundary_marker = tempmarker;
 
     std::cout << "num points deleted: " << to_del_id.size()<<std::endl;
@@ -416,12 +419,12 @@ void cloud_toolbox::ROSDetector::cal_occ_grid(pcl::PointCloud<pcl::PointXYZI>::P
 
 void cloud_toolbox::ROSDetector::occgrid2boundary(nav_msgs::OccupancyGrid& occ_grid, visualization_msgs::Marker& boundary_marker){
     
-    std::vector<float> polar_boundary;
+    // std::vector<float> polar_boundary;
     std::vector<int> to_del_id;
-    polar_boundary.clear();
+    polar_boundary.distance.clear();
     to_del_id.clear();
     for (size_t i = 0; i < 360; i ++){
-        polar_boundary.push_back(boundary_max_distance);
+        polar_boundary.distance.push_back(boundary_max_distance);
     }
 
 
@@ -452,8 +455,8 @@ void cloud_toolbox::ROSDetector::occgrid2boundary(nav_msgs::OccupancyGrid& occ_g
             if (theta_round < 0 || theta >=360){
                 continue;
             }
-            if (polar_boundary[theta_round] > distance){
-                polar_boundary[theta_round] = distance;
+            if (polar_boundary.distance[theta_round] > distance){
+                polar_boundary.distance[theta_round] = distance;
             }
 
 
@@ -500,13 +503,13 @@ void cloud_toolbox::ROSDetector::publish_ros(){
     // pcl::toROSMsg(*vis_cluster_cloud, vis_cluster_cloud_msg);
     // vis_cluster_cloud_msg.header = common_header;
     // vis_cluster_cloud_publisher.publish(vis_cluster_cloud_msg);
+    polar_boundary_publisher.publish(polar_boundary); //zbw: add polar boundary
 
     // marker_array_publisher.publish(marker_array);
     boundary_marker_publisher.publish(boundary_marker);
 
-
-
 }
+
 void cloud_toolbox::ROSDetector::execute(const sensor_msgs::PointCloud2ConstPtr &input_cloud_ptr){
     common_header = input_cloud_ptr->header;
 
@@ -519,6 +522,7 @@ void cloud_toolbox::ROSDetector::execute(const sensor_msgs::PointCloud2ConstPtr 
     obj_array.objects.clear();
     marker_array.markers.clear();
     occ_grid.data.clear();
+    polar_boundary.distance.clear();
     vis_cluster_cloud->clear();
     boundary_marker.points.clear();
 

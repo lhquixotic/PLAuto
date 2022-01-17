@@ -24,6 +24,7 @@ class ControlHandle {
 
  private:
   ros::NodeHandle nodeHandle_;
+  ros::Subscriber stopFlagSubscriber_;
   ros::Subscriber finalWaypointsSubscriber_;
   ros::Subscriber vehicleDynamicStateSubscriber_;
   ros::Subscriber v2vInfoSubscriber_;
@@ -32,11 +33,13 @@ class ControlHandle {
   ros::Publisher controlCommandPublisher_;
   ros::Publisher lookaheadpointPublisher_;
 
+  void stopFlagCallback(const common_msgs::StopDecision &msg);
   void finalWaypointsCallback(const autoware_msgs::Lane &msg);
   void vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg); 
   void v2vInfoCallback(const common_msgs::V2V &msg);
   void utmPoseCallback(const nav_msgs::Odometry &msg);
 
+  std::string stop_flag_topic_name_;
   std::string final_waypoints_topic_name_;
   std::string vehicle_dynamic_state_topic_name_;
   std::string v2v_topic_name_;
@@ -47,6 +50,7 @@ class ControlHandle {
 
   int node_rate_;
   int control_mode_;
+  int stop_flag_;
   Para control_para_;
   Pid_para pid_para_;
   Pure_pursuit_para pp_para_;
