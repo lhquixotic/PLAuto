@@ -96,11 +96,11 @@ void Waypoint_loader::loadWaypointFile(std::string filename){
             ss.getline(tempdata, 500, ',');
             csvdata[i] = std::string(tempdata);
         }   
-        double x,y;
+        double x,y,v;
 
         x = atof(csvdata[0].data());
         y = atof(csvdata[1].data());
-
+        v = atof(csvdata[2].data());
         autoware_msgs::Waypoint point;
         point.pose.pose.position.x = x;
         point.pose.pose.position.y = y;
@@ -110,6 +110,8 @@ void Waypoint_loader::loadWaypointFile(std::string filename){
         point.pose.pose.orientation.y = 0;
         point.pose.pose.orientation.z = 0;
         point.pose.pose.orientation.w = 0;
+
+        point.twist.twist.linear.x = v;
         
         global_path.waypoints.push_back(point);
 

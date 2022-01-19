@@ -39,6 +39,9 @@ Wp_saver::Wp_saver(ros::NodeHandle &nh) : nh_(nh) {
 void Wp_saver::setLocalization (nav_msgs::Odometry msg) {
   cur_pose = msg;
 }
+void Wp_saver::setVehicleDynamicState(const common_msgs::VehicleDynamicState &msg){
+  vehicle_dynamic_state = msg;
+}
 
 void Wp_saver::runAlgorithm(double min_dis, std::string waypoint_filename) {
   //TODO: add code to record the waypoint into waypoint_filename
@@ -50,7 +53,7 @@ void Wp_saver::runAlgorithm(double min_dis, std::string waypoint_filename) {
   ROS_INFO_STREAM("recorded position x is " + output_x);
   ROS_INFO_STREAM("distance is " + output_dis);
   recorded_pose = cur_pose;
-  write2File(waypoint_filename, recorded_pose);
+  write2File(waypoint_filename, recorded_pose,vehicle_dynamic_state);
   }
 
 }
@@ -65,14 +68,15 @@ inline double Wp_saver::distance_compute(nav_msgs::Odometry msg1, nav_msgs::Odom
   return dist;
 }
 
-void Wp_saver::write2File(std::string waypoint_filename, nav_msgs::Odometry msg) {
+void Wp_saver::write2File(std::string waypoint_filename, nav_msgs::Odometry msg, common_msgs::VehicleDynamicState vd) {
 
   std::string x = std::to_string(msg.pose.pose.position.x);
   std::string y = std::to_string(msg.pose.pose.position.y);
+  std::string v = std::to_string(vd.vehicle_speed);
 
   std::fstream f;
   f.open(waypoint_filename, std::ios::out|std::ios::app);
-  f << x + "," + y << std::endl;
+  f << x + "," + y + ","+ v<< std::endl;
   f.close();
 
   }
