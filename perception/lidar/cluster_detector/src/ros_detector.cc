@@ -96,18 +96,18 @@ cloud_toolbox::ROSDetector::ROSDetector(ros::NodeHandle &nh){
     scene_cloud = pcl::PointCloud<pcl::PointXYZI>::Ptr(new pcl::PointCloud<pcl::PointXYZI>);
     vis_cluster_cloud = pcl::PointCloud<pcl::PointXYZRGB>::Ptr(new pcl::PointCloud<pcl::PointXYZRGB>);
 
-    filter_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(filter_cloud_topic, 10);
-    ground_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(ground_cloud_topic, 10);
-    scene_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(scene_cloud_topic, 10);
-    occ_grid_publisher = nh.advertise<nav_msgs::OccupancyGrid>(occ_grid_topic, 10);
-    obj_array_publisher = nh.advertise<autoware_msgs::DetectedObjectArray>(obj_array_topic, 10);
-    polar_boundary_publisher = nh.advertise<common_msgs::PolarBoundary>(polar_boundary_topic, 10); //zbw: add polar boundary
-    vis_cluster_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(vis_cluster_cloud_topic, 10);
-    marker_array_publisher = nh.advertise<visualization_msgs::MarkerArray>(marker_array_topic, 10);
-    boundary_marker_publisher = nh.advertise<visualization_msgs::Marker>(boundary_marker_topic, 10);
+    filter_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(filter_cloud_topic, 1);
+    ground_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(ground_cloud_topic, 1);
+    scene_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(scene_cloud_topic, 1);
+    occ_grid_publisher = nh.advertise<nav_msgs::OccupancyGrid>(occ_grid_topic, 1);
+    obj_array_publisher = nh.advertise<autoware_msgs::DetectedObjectArray>(obj_array_topic, 1);
+    polar_boundary_publisher = nh.advertise<common_msgs::PolarBoundary>(polar_boundary_topic, 1); //zbw: add polar boundary
+    vis_cluster_cloud_publisher = nh.advertise<sensor_msgs::PointCloud2>(vis_cluster_cloud_topic, 1);
+    marker_array_publisher = nh.advertise<visualization_msgs::MarkerArray>(marker_array_topic, 1);
+    boundary_marker_publisher = nh.advertise<visualization_msgs::Marker>(boundary_marker_topic, 1);
 
 
-    cloud_subscriber = nh.subscribe(input_cloud_topic, 10, &cloud_toolbox::ROSDetector::execute, this);
+    cloud_subscriber = nh.subscribe(input_cloud_topic, 1, &cloud_toolbox::ROSDetector::execute, this);
     ros::spin();
 
 

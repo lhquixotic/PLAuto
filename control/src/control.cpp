@@ -159,15 +159,14 @@ namespace ns_control
               if(nearest_idx <= 10){
                 control_cmd.linear_velocity = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
               }else{
-		if(nearest_idx <current_waypoints.size()-1){
-		
+		            if(nearest_idx <current_waypoints.size()-1){
                   control_cmd.linear_velocity = current_waypoints.at(nearest_idx).twist.twist.linear.x;
                 }else{
-		  control_cmd.linear_velocity = 0;
-		  control_cmd.steering_angle =0;
-		}
-	      }
-	      ROS_INFO_STREAM("[Control] Longitudinal control Speed: "<< control_cmd.linear_velocity);
+                  control_cmd.linear_velocity = 0;
+                  control_cmd.steering_angle =0;
+                }
+	            }
+	            ROS_INFO_STREAM("[Control] Longitudinal control Speed: "<< control_cmd.linear_velocity);
             }
 
           } 
