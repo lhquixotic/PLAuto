@@ -17,6 +17,7 @@
   <depend>common_msgs</depend>
   <depend>nav_msgs</depend>
   <depend>autoware_msgs</depend>
+  <depend>libwaypoint_follower</depend>
 
   <export>
   </export>

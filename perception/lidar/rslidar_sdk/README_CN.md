@@ -85,7 +85,7 @@ sudo apt-get install -y libyaml-cpp-dev
 安装方式：
 
 ```sh
-sudo apt-get install -y  libpcap-dev
+sudo apt-get install -y libpcap-dev
 ```
 
 ### 3.5 Protobuf (可选)

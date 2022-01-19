@@ -69,6 +69,8 @@ public:
     //cloud_preprocess
     float cloud_range_[6] = {-100.0, -80.0, -5.0, 100.0, 80.0, 5.0}; //x_min, y_min, z_min, x_max, y_max, z_max
 
+    float ego_size_[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+
     float voxel_filter_leaf_size_[3] = {0.05, 0.05, 0.05}; 
     
     //ground filter
