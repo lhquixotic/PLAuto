@@ -87,7 +87,6 @@ void ControlHandle::loadParameters() {
   nodeHandle_.param<std::string>("pure_pursuit/mode", pp_para_.mode, "fixed");
   nodeHandle_.param<double>("pure_pursuit/lookahead_distance", pp_para_.lookahead_distance, 8.0);
   nodeHandle_.param<double>("pure_pursuit/k_pre", pp_para_.k_pre, 1.5); 
-  
 
 }
 

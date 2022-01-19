@@ -16,7 +16,7 @@
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>geometry_msgs</depend>
-
+  <depend>common_msgs</depend>
   <export>
   </export>
 </package>

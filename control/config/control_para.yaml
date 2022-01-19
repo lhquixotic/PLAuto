@@ -9,6 +9,6 @@ pure_pursuit:
 control_switch:
   longitudinal: true # Start: true; Shutdown: false
   lateral: true
-longitudinal_mode: 3 # 1: constant speed 2: planned speed 3: desired distance
+longitudinal_mode: 4 # 1: constant speed 2: planned speed 3: desired distance
 desired_speed: 5 # km/h TODO: to check
 desired_distance: 5 # m

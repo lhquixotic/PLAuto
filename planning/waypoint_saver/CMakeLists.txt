@@ -7,6 +7,7 @@ set(PROJECT_DEPS
   roscpp
   std_msgs
   nav_msgs
+  common_msgs
   )
 
 find_package(catkin REQUIRED COMPONENTS
@@ -14,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   nav_msgs
+  common_msgs
   )
 
 catkin_package(
