@@ -60,7 +60,7 @@ namespace ns_control
       return -1;
     }
     // find nearest point
-    int nearest_idx = 0;
+    nearest_idx = 0;
     double nearest_distance = getPlaneDistance(current_waypoints.at(0).pose.pose.position,current_pose.position);
     for (int i = 0; i < waypoints_size; i++){
       // if search waypoint is the last
@@ -153,6 +153,22 @@ namespace ns_control
               control_cmd.linear_velocity = v2v_info.leader_speed + pid_controller.outputSignal(control_para.desired_distance,
                   getPlaneDistance(current_pose.position,leader_pose.position));
             }else{ ROS_WARN("NO V2V info!");}
+          }
+          else {
+            if (control_para.longitudinal_mode == 4){ //traj mode
+              if(nearest_idx <= 10){
+                control_cmd.linear_velocity = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
+              }else{
+		            if(nearest_idx <current_waypoints.size()-1){
+                  control_cmd.linear_velocity = current_waypoints.at(nearest_idx).twist.twist.linear.x;
+                }else{
+                  control_cmd.linear_velocity = 0;
+                  control_cmd.steering_angle =0;
+                }
+	            }
+	            ROS_INFO_STREAM("[Control] Longitudinal control Speed: "<< control_cmd.linear_velocity);
+            }
+
           } 
         }
       }else{

@@ -21,6 +21,7 @@
 #define WAYPOINT_SAVER_HPP
 
 #include "std_msgs/String.h"
+#include "common_msgs/VehicleDynamicState.h"
 #include "nav_msgs/Odometry.h"
 
 namespace ns_waypoint_saver {
@@ -35,10 +36,10 @@ class Wp_saver {
 
   // Setters
   void setLocalization(nav_msgs::Odometry msg);
-
+  void setVehicleDynamicState(const common_msgs::VehicleDynamicState &msg);
   void runAlgorithm(double min_dis, std::string file_name);
   inline double distance_compute(nav_msgs::Odometry msg1, nav_msgs::Odometry msg2);
-  void write2File(std::string waypoint_filename, nav_msgs::Odometry msg);
+  void write2File(std::string waypoint_filename, nav_msgs::Odometry msg,common_msgs::VehicleDynamicState vd);
 
  private:
 
@@ -46,9 +47,8 @@ class Wp_saver {
 
   nav_msgs::Odometry cur_pose;
   nav_msgs::Odometry recorded_pose;
+  common_msgs::VehicleDynamicState vehicle_dynamic_state;
 
 };
-
 }
-
 #endif //WAYPOINT_SAVER_HPP

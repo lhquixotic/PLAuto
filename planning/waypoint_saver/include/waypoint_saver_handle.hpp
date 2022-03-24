@@ -45,11 +45,11 @@ class Wp_saverHandle {
 
  private:
   ros::NodeHandle nodeHandle_;
-  ros::Subscriber localizationSubscriber_;
+  ros::Subscriber localizationSubscriber_,vehicaldynamicSubscriber_;
 
   void localizationCallback(const nav_msgs::Odometry &msg);
-
-  std::string localization_topic_name_;
+  void vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg);
+  std::string localization_topic_name_,vehicle_dynamic_state_topic_name_;
 
   std::string waypoint_filename_;
   int node_rate_;

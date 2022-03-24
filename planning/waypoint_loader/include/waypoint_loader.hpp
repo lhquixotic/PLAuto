@@ -20,7 +20,7 @@
 #ifndef WAYPOINT_LOADER_HPP
 #define WAYPOINT_LOADER_HPP
 
-#define INFO_NUM 2
+#define INFO_NUM 3
 
 #include <autoware_msgs/Lane.h>
 #include <autoware_msgs/Waypoint.h>

@@ -27,6 +27,11 @@ void Wp_saverHandle::loadParameters() {
     ROS_WARN_STREAM(
         "Did not load utm_localization_topic_name. Standard value is: " << localization_topic_name_);
   }
+  if (!nodeHandle_.param<std::string>("vehicle_dynamic_state_topic_name",
+                                      vehicle_dynamic_state_topic_name_,
+                                      "/chassis/vehicle_dynamic_state")) {
+    ROS_WARN_STREAM("Did not load chassis_state_topic_name_. Standard value is: " << vehicle_dynamic_state_topic_name_);
+  }
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
   }
@@ -45,6 +50,8 @@ void Wp_saverHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
   localizationSubscriber_ =
       nodeHandle_.subscribe(localization_topic_name_, 1, &Wp_saverHandle::localizationCallback, this);
+  vehicaldynamicSubscriber_=
+      nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_, 1, &Wp_saverHandle::vehicleDynamicStateCallback, this);
 }
 
 void Wp_saverHandle::publishToTopics() {
@@ -66,5 +73,7 @@ void Wp_saverHandle::sendMsg() {
 void Wp_saverHandle::localizationCallback(const nav_msgs::Odometry &msg) {
   waypoint_saver_.setLocalization(msg);
 }
-
+void Wp_saverHandle::vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg){
+  waypoint_saver_.setVehicleDynamicState(msg);
+}
 }

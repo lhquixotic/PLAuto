@@ -81,6 +81,7 @@ class Control {
   
   // methods
   int next_waypoint_number_;
+  int nearest_idx;
   int findLookAheadWaypoint(float lookAheadDistance);
 };
 }
