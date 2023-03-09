@@ -1,0 +1,10 @@
+Gps_origin:
+  x: 442639
+  y: 4428700
+  z: 40
+Gps_range:
+  lat_min: 30
+  lat_max: 50
+  lon_min: 100
+  lon_max: 120
+record_to_file: false

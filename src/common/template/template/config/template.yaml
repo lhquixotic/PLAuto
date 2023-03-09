@@ -1,0 +1,5 @@
+vision_cone_detections_topic_name: /perception/vision/cone_detections
+
+template_state_topic_name: /estimation/slam/state
+
+node_rate: 1   # [Herz]

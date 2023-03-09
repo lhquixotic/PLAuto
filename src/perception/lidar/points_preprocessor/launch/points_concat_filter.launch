@@ -1,0 +1,17 @@
+<!-- -->
+<launch>
+  <arg name="input_topics" default="[/left/points_raw, /right/points_raw, /middle/points_raw]" />
+  <arg name="output_topic" default="/points_raw" />
+  <arg name="output_frame_id" default="rslidar" />
+
+
+  <node pkg="tf" type="static_transform_publisher" name="laser_rslidar_to_middle" args="0 0 0 0 0 0 /rslidar /middle/rslidar 100" />
+  <node pkg="tf" type="static_transform_publisher" name="laser_rslidar_to_left" args="0.7789999  0.4512 -1.26  0.63512533 -0.04974188 -0.06405358  /rslidar /left/rslidar 100" />
+  <node pkg="tf" type="static_transform_publisher" name="laser_rslidar_to_right" args="0.77 -0.4 -1.29 -0.7162831447 -0.017453293 0.0150098 /rslidar /right/rslidar 100" />
+
+  <node pkg="points_preprocessor" type="points_concat_filter" name="points_concat_filter" output="screen">
+    <param name="output_frame_id" value="$(arg output_frame_id)" />
+    <param name="input_topics" value="$(arg input_topics)" />
+    <remap from="/points_concat" to="$(arg output_topic)" />
+  </node>
+</launch>

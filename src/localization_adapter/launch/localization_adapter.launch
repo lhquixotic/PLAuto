@@ -1,0 +1,9 @@
+<launch>
+    <arg name="run_mode_setting" default="real_car" />
+    <node name="localization_adapter_node" pkg="localization_adapter" type="localization_adapter" output="screen">
+        <rosparam command="load" file="$(find localization_adapter)/config/localization_adapter.yaml" /> <!--Load parameters from config files-->
+        <rosparam command="load" file="$(find gps)/config/gps_config.yaml" />
+        <param name="run_mode" value="$(arg run_mode_setting)" />
+        <!-- run_mode: simulation or real_car -->
+    </node>
+</launch>
