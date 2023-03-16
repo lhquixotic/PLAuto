@@ -1,2 +1,0 @@
-std_msgs/Header header
-int32 veh_stop_flag

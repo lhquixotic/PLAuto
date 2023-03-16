@@ -1,9 +1,0 @@
-# Subscriber
-polar_boundary_topic_name: /polar_boundary
-
-# Publisher
-stop_flag_topic_name: /stop_flag
-
-# Decision making parameters
-node_rate: 10   # [Herz]
-

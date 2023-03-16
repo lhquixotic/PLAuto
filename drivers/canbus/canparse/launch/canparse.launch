@@ -1,5 +1,0 @@
-<launch>
-    <node name="canparse_node" pkg="canparse" type="canparse" output="screen" respawn="true">
-        <rosparam command="load" file="$(find canparse)/config/canparse.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>

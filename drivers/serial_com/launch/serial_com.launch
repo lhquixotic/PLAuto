@@ -1,5 +1,0 @@
-<launch>
-    <node name="serial_com_node" pkg="serial_com" type="serial_com" output="screen">
-        <rosparam command="load" file="$(find serial_com)/config/serial_com.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>

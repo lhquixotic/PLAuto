@@ -1,5 +1,0 @@
-<launch>
-    <node name="decision_making_node" pkg="decision_making" type="decision_making" output="screen">
-        <rosparam command="load" file="$(find decision_making)/config/decision_making.yaml" /> <!--Load parameters from config files-->
-    </node>
-</launch>
