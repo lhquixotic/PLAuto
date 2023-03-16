@@ -22,6 +22,7 @@
             "id": "map"
         },
         {
+            "type": "vehicle.*",
             "id": "ego_vehicle",
             "sensors": 
             [

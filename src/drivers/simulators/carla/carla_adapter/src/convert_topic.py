@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# Adapted from CLAP (https://github.com/CLAP-Framework/clap)
 
 import sys
 import rospy
@@ -10,11 +10,12 @@ import rospy
 # from zzz_perception_msgs.msg import TrackingBoxArray, TrackingBox, ObjectClass
 
 # from derived_object_msgs.msg import ObjectArray, Object
+from utils.params import parse_private_args
 
 from carla_msgs.msg import CarlaWorldInfo, CarlaEgoVehicleControl, CarlaEgoVehicleStatus
 from nav_msgs.msg import Path
 
-from autoware_msgs.msg import ControlCommandStamped
+from common_msgs import ControlCommand
 
 
 def convert_CarlaWorldInfo(msg, pub):
@@ -48,6 +49,7 @@ def convert_ControlCommand(msg, pub):
         new_msg.manual_gear_shift = True
 
     pub.publish(new_msg)
+
 
 def convert_VehicleStatus(msg, chassis_pub, control_pub):
     assert type(msg) == CarlaEgoVehicleStatus
