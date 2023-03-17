@@ -1,0 +1,6 @@
+<launch>
+    <node name="data_logger_node" pkg="data_logger" type="data_logger" output="screen">
+        <rosparam command="load" file="$(find data_logger)/config/data_logger.yaml" /> <!--Load parameters from config files-->
+        <param name="log_filename" value="$(find waypoint_loader)/data/track_data/turn_test-4.csv" />
+    </node>
+</launch>

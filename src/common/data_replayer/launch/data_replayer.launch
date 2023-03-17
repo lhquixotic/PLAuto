@@ -1,0 +1,7 @@
+<launch>
+    <node name="data_replayer_node" pkg="data_replayer" type="data_replayer" output="screen">
+        <rosparam command="load" file="$(find data_replayer)/config/data_replayer.yaml" /> <!--Load parameters from config files-->
+        <rosparam command="load" file="$(find data_logger)/config/data_logger.yaml" />
+        <param name="log_filename" value="$(find waypoint_loader)/data/track_data/virtual_vehicle_1.csv" />
+    </node>
+</launch>
