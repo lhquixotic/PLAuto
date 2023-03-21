@@ -1,0 +1,13 @@
+<!-- This launch file generates the designed scenarios -->
+<launch>
+  <!-- <arg name="spawn_point_ego_vehicle" default="" /> -->
+  <arg name="spawn_point_ego_vehicle" default='271.0,-129.4,0.3,0.0,0.0,-180.0'/> 
+  <arg name="carla_host" default='127.0.0.1' />
+  <arg name="carla_port" default='2000' />
+  
+  <node pkg="carla_adapter" type="scenario_generation" name= "scenario_generation" output="screen">
+    <param name="spawn_point_ego_vehicle" value="$(arg spawn_point_ego_vehicle)"/>
+    <param name="carla_host" value="$(arg carla_host)"/>
+    <param name="carla_port" value="$(arg carla_port)"/>
+  </node>
+</launch>

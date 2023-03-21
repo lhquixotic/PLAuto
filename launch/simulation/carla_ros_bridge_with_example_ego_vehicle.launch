@@ -41,6 +41,12 @@
     <arg name="spawn_sensors_only" value="false"/>
   </include>
 
+  <include file="$(find carla_adapter)/launch/scenario_generation.launch">
+    <arg name="spawn_point_ego_vehicle" value="$(arg spawn_point)"/>
+    <arg name="carla_host" value="$(arg host)"/>
+    <arg name="carla_port" value="$(arg port)"/>
+  </include>
+
   <include file="$(find carla_manual_control)/launch/carla_manual_control.launch">
     <arg name='role_name' value='$(arg role_name)'/>
   </include>

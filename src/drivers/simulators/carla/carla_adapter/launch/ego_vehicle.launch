@@ -1,4 +1,4 @@
-<!-- -->
+<!-- This launch file generates ego vehicle and sensors -->
 <launch>
   <arg name="role_name" default="ego_vehicle"/>
   <arg name="objects_definition_file" default='$(find carla_spawn_objects)/config/objects.json'/>
@@ -23,3 +23,5 @@
     <arg name="control_id" value="$(arg control_id)"/>
   </include>
 </launch>
+
+

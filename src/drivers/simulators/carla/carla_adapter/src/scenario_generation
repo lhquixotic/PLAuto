@@ -1,6 +1,7 @@
 import os
 import math
 import json
+import carla
 
 import ros_compatibility as roscomp
 from ros_compatibility.exceptions import *
@@ -11,6 +12,9 @@ from carla_msgs.srv import SpawnObject, DestroyObject
 from diagnostic_msgs.msg import KeyValue
 from geometry_msgs.msg import Pose
 
+from transforms3d.quaternions import quat2axangle
+from transforms3d.euler import euler2quat
+
 # ==============================================================================
 # -- CarlaScenarioGeneration() --------------------------------------------------------------------
 # ==============================================================================
@@ -20,20 +24,148 @@ class CarlaScenarioGeneration(CompatibleNode):
     Handles the spawning of the ego vehicle, its sensors and the platoon vehicle
     """
     def __init__(self):
-        super(CarlaScenarioGeneration).__init__('carla_scenario_generation')
+        super(CarlaScenarioGeneration, self).__init__('carla_scenario_generation')
 
-        self.objects_definition_file = self.get_param('object_definition_file','')
-        self.spawn_sensors_only = self.get_param('spawn_sensors_only','')
+        # self.objects_definition_file = self.get_param('object_definition_file','')
+        # self.spawn_sensors_only = self.get_param('spawn_sensors_only','')
         
+        # connect to the carla world
+        self.carla_host = self.get_param("carla_host", "127.0.0.1")
+        self.carla_port = self.get_param("carla_port", "2000")
+        self.carla_client = carla.Client(host=self.carla_host,port=self.carla_port)
+        self.carla_client.set_timeout(10.0)
+        self.carla_world = self.carla_client.get_world()
+
+        self.spawn_point_ego_vehicle_parm = self.get_param('spawn_point_ego_vehicle','')
+        if self.spawn_point_ego_vehicle_parm is not None:
+            self.spawn_point_ego_vehicle = self.check_spawn_point_param(self.spawn_point_ego_vehicle_parm)
+        else:
+            self.logwarn("The spawn point of the ego vehicle is not given")
+        # TODO: (lhq) search the point of the ego vehicle through Actor.id
+
+        # initialize the players list
+        self.platoon_vehicles = []
         self.players = []
-        self.vehicles_sensors = []
-        self.global_sensors = []
+
+        # self.vehicles_sensors = []
+        # self.global_sensors = []
 
         self.spawn_object_service = self.new_client(SpawnObject, "/carla/spawn_object")
         self.destroy_object_service = self.new_client(DestroyObject, "/carla/destroy_object")
-
     
+    def generate_platoon(self,interveh_dist):
+        # spawn platoon vehicles
+        vehicle_bp = self.carla_world.get_blueprint_library().filter('vehicle.carlamotors.carlacola')
+        
 
+        def calculate_spawn_point(spawn_point_ego_vehicle,ev_order,pv_order,interveh_dist):
+            # calculate the spawn point of other cars in the platoon
+            # param spawn_point_ego_vehicle: Pose()
+            # param ev_order: int, order of the ego vehicle in the platoon
+            # param pv_order: int, order of the other platoon vehicle in the platoon
+            # param interveh_dist: float: distance between vehicles in the platoon
+            # return spawn_point_platoon_vehicle: Pose()
+
+            ego_ori = spawn_point_ego_vehicle.orientation
+            axangle = quat2axangle([ego_ori.w, ego_ori.x, ego_ori.y, ego_ori.z])
+            rpy = axangle[0] * axangle[1]
+
+            spawn_point_platoon_vehicle = Pose()
+            spawn_point_platoon_vehicle.position.x = spawn_point_ego_vehicle.position.x + (ev_order - pv_order) * interveh_dist * math.cos(rpy[-1])
+            spawn_point_platoon_vehicle.position.y = spawn_point_ego_vehicle.position.y + (ev_order - pv_order) * interveh_dist * math.sin(rpy[-1])
+            spawn_point_platoon_vehicle.position.z = 0.3
+
+            spawn_point_platoon_vehicle.orientation = spawn_point_ego_vehicle.orientation
+            
+            return spawn_point_platoon_vehicle
+        
+
+        spawn_point = calculate_spawn_point(self.spawn_point_ego_vehicle,2,1,interveh_dist)
+        # print("info",vehicle_bp,spawn_point,self.spawn_point_ego_vehicle)
+        print(self.carla_world)
+        # vehicle_bp = self.carla_world.get_blueprint_library().filter('*vehicle*')
+        # spawn_point = self.spawn_point_ego_vehicle
+        # spawn_result = self.carla_world.try_spawn_actor(vehicle_bp,spawn_point)
+        spawn_object_request = roscomp.get_service_request(SpawnObject)
+        spawn_object_request.type = "vehicle.carlamotors.carlacola"
+        spawn_object_request.id = "v00"
+        spawn_object_request.attach_to = 0
+        spawn_object_request.random_pose = False
+        spawn_object_request.transform = spawn_point
+        spawn_result = self.call_service(self.spawn_object_service, spawn_object_request, spin_until_response_received=True)
+
+        if spawn_result is not None:
+            self.platoon_vehicles.append(spawn_result)
+            self.players.append(spawn_result)
+        else:
+            self.logwarn("The platoon vehicle is not spawned success.")
+
+    def generate_scenario(self):
+        self.generate_platoon(20)
+
+    def create_spawn_point(self, x, y, z, roll, pitch, yaw):
+        spawn_point = Pose()
+        spawn_point.position.x = x
+        spawn_point.position.y = y
+        spawn_point.position.z = z
+        quat = euler2quat(math.radians(roll), math.radians(pitch), math.radians(yaw))
+
+        spawn_point.orientation.w = quat[0]
+        spawn_point.orientation.x = quat[1]
+        spawn_point.orientation.y = quat[2]
+        spawn_point.orientation.z = quat[3]
+        return spawn_point
+
+    def check_spawn_point_param(self, spawn_point_parameter):
+        components = spawn_point_parameter.split(',')
+        if len(components) != 6:
+            self.logwarn("Invalid spawnpoint '{}'".format(spawn_point_parameter))
+            return None
+        spawn_point = self.create_spawn_point(
+            float(components[0]),
+            float(components[1]),
+            float(components[2]),
+            float(components[3]),
+            float(components[4]),
+            float(components[5])
+        )
+        return spawn_point
+
+    def destory(self):
+        """
+        destroy all the players and sensors
+        """
+        self.loginfo("Destroying spawned objects...")
+        try:
+            # # destroy vehicles sensors
+            # for actor_id in self.vehicles_sensors:
+            #     destroy_object_request = roscomp.get_service_request(DestroyObject)
+            #     destroy_object_request.id = actor_id
+            #     self.call_service(self.destroy_object_service,
+            #                       destroy_object_request, timeout=0.5, spin_until_response_received=True)
+            #     self.loginfo("Object {} successfully destroyed.".format(actor_id))
+            # self.vehicles_sensors = []
+
+            # # destroy global sensors
+            # for actor_id in self.global_sensors:
+            #     destroy_object_request = roscomp.get_service_request(DestroyObject)
+            #     destroy_object_request.id = actor_id
+            #     self.call_service(self.destroy_object_service,
+            #                       destroy_object_request, timeout=0.5, spin_until_response_received=True)
+            #     self.loginfo("Object {} successfully destroyed.".format(actor_id))
+            # self.global_sensors = []
+
+            # destroy player
+            for player_id in self.players:
+                destroy_object_request = roscomp.get_service_request(DestroyObject)
+                destroy_object_request.id = player_id
+                self.call_service(self.destroy_object_service,
+                                  destroy_object_request, timeout=0.5, spin_until_response_received=True)
+                self.loginfo("Object {} successfully destroyed.".format(player_id))
+            self.players = []
+        except ServiceException:
+            self.logwarn(
+                'Could not call destroy service on objects, the ros bridge is probably already shutdown')
 
 
 
@@ -56,7 +188,7 @@ def main(args=None):
 
     if scenario_generation_node:
         try:
-            scenario_generation_node.spawn_objects() # TODO
+            scenario_generation_node.generate_scenario()
             try:
                 scenario_generation_node.spin()
             except (ROSInterruptException, ServiceException, KeyboardInterrupt):
