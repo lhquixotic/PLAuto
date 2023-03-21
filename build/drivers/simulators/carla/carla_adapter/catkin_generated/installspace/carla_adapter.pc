@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/install
+
+Name: carla_adapter
+Description: Description of carla_adapter
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

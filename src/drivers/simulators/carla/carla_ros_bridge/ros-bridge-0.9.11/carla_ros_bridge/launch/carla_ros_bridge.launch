@@ -16,7 +16,7 @@
   <arg name='synchronous_mode_wait_for_vehicle_control_command' default='False'/>
   <!-- set the fixed timestep length -->
   <arg name='fixed_delta_seconds' default='0.05'/>
-  <arg name='town' default='Town01'/>
+  <arg name='town' default='Town03'/>
   <!-- enable/disable the registration of all sensors. If disabled, only sensors
   spawned by the bridge are registered -->
   <arg name='register_all_sensors' default='True'/>

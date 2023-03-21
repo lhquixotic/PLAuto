@@ -22,7 +22,7 @@
             "id": "map"
         },
         {
-            "type": "vehicle.*",
+            "type": "vehicle.carlamotors.carlacola",
             "id": "ego_vehicle",
             "sensors": 
             [

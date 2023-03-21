@@ -1,0 +1,2 @@
+set(autoware_system_msgs_MESSAGE_FILES "/home/user/code/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/user/code/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/user/code/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/user/code/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/user/code/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg")
+set(autoware_system_msgs_SERVICE_FILES "")

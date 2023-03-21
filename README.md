@@ -4,6 +4,13 @@ This is an autonomous driving framework for both single vehicle and platoon base
  1. Ubuntu 20.04 + ROS Noetic
 
 ## Usage
+### Preparations
+Before complied with `catkin_make`, some packages are supposed to be installed 
+
+``
+sudo apt-get install ros-noetic-nmea-msgs ros-noetic-ackermann-msgs ros-noetic-derived-object-msgs ros-noetic-jsk-rviz-plugins ros-noetic-serial
+``
+
 ### Real-world car
 
 ### Simulation

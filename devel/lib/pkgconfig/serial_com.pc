@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/devel
+
+Name: serial_com
+Description: Description of serial_com
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

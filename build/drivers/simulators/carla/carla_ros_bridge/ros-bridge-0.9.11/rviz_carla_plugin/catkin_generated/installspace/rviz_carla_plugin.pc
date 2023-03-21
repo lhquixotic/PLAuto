@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/install
+
+Name: rviz_carla_plugin
+Description: Description of rviz_carla_plugin
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

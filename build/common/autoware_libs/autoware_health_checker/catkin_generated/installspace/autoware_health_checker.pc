@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/install
+
+Name: autoware_health_checker
+Description: Description of autoware_health_checker
+Version: 1.12.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lhealth_checker -lsystem_status_subscriber
+Requires: autoware_system_msgs rosgraph_msgs

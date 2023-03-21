@@ -25,6 +25,7 @@ add_message_files(DIRECTORY msg
     V2V.msg
     PolarBoundary.msg
     StopDecision.msg
+    ControlCommand.msg
 )
 
 generate_messages(

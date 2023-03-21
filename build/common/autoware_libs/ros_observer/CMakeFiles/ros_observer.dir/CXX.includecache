@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/include/ros_observer/ros_observer.h
+iostream
+-
+string
+-
+functional
+-
+utility
+-
+boost/interprocess/managed_shared_memory.hpp
+-
+boost/interprocess/sync/interprocess_mutex.hpp
+-
+boost/interprocess/sync/scoped_lock.hpp
+-
+boost/thread.hpp
+-
+
+/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/src/ros_observer.cpp
+csignal
+-
+chrono
+-
+iostream
+-
+string
+-
+algorithm
+-
+ros_observer/ros_observer.h
+-
+

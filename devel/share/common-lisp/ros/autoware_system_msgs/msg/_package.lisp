@@ -1,0 +1,15 @@
+(cl:defpackage autoware_system_msgs-msg
+  (:use )
+  (:export
+   "<DIAGNOSTICSTATUS>"
+   "DIAGNOSTICSTATUS"
+   "<DIAGNOSTICSTATUSARRAY>"
+   "DIAGNOSTICSTATUSARRAY"
+   "<HARDWARESTATUS>"
+   "HARDWARESTATUS"
+   "<NODESTATUS>"
+   "NODESTATUS"
+   "<SYSTEMSTATUS>"
+   "SYSTEMSTATUS"
+  ))
+

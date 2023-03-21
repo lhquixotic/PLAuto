@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/devel
+
+Name: obu_send
+Description: Description of obu_send
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+set(common_msgs_MESSAGE_FILES "/home/user/code/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/ChassisStatus.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/V2V.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/StopDecision.msg;/home/user/code/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg")
+set(common_msgs_SERVICE_FILES "")

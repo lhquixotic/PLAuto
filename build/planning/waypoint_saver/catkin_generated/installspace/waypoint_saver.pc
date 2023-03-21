@@ -1,0 +1,8 @@
+prefix=/home/user/code/PLAuto/install
+
+Name: waypoint_saver
+Description: Description of waypoint_saver
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
