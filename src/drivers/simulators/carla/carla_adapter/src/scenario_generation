@@ -2,6 +2,7 @@ import os
 import math
 import json
 import carla
+import time
 
 import ros_compatibility as roscomp
 from ros_compatibility.exceptions import *
@@ -81,22 +82,26 @@ class CarlaScenarioGeneration(CompatibleNode):
         
 
         spawn_point = calculate_spawn_point(self.spawn_point_ego_vehicle,2,1,interveh_dist)
-        # print("info",vehicle_bp,spawn_point,self.spawn_point_ego_vehicle)
-        print(self.carla_world)
-        # vehicle_bp = self.carla_world.get_blueprint_library().filter('*vehicle*')
-        # spawn_point = self.spawn_point_ego_vehicle
-        # spawn_result = self.carla_world.try_spawn_actor(vehicle_bp,spawn_point)
+
+        # spawn through service
         spawn_object_request = roscomp.get_service_request(SpawnObject)
         spawn_object_request.type = "vehicle.carlamotors.carlacola"
-        spawn_object_request.id = "v00"
+        spawn_object_request.id = 'v00'
         spawn_object_request.attach_to = 0
         spawn_object_request.random_pose = False
         spawn_object_request.transform = spawn_point
-        spawn_result = self.call_service(self.spawn_object_service, spawn_object_request, spin_until_response_received=True)
+        response = self.call_service(self.spawn_object_service, spawn_object_request, spin_until_response_received=True)
+        
+        # sleep to wait response
+        time.sleep(1)
+        
+        actor_list = self.carla_world.get_actors()
+        actor = actor_list.find(response.id)
+        actor.set_autopilot(True)
 
-        if spawn_result is not None:
-            self.platoon_vehicles.append(spawn_result)
-            self.players.append(spawn_result)
+        if actor is not None:
+            self.platoon_vehicles.append(actor)
+            self.players.append(actor)
         else:
             self.logwarn("The platoon vehicle is not spawned success.")
 

@@ -47,8 +47,8 @@
     <arg name="carla_port" value="$(arg port)"/>
   </include>
 
-  <include file="$(find carla_manual_control)/launch/carla_manual_control.launch">
+  <!-- <include file="$(find carla_manual_control)/launch/carla_manual_control.launch">
     <arg name='role_name' value='$(arg role_name)'/>
-  </include>
+  </include> -->
 
 </launch>
