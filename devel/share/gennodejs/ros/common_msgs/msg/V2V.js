@@ -11,8 +11,8 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
+let PlatoonState = require('./PlatoonState.js');
 let std_msgs = _finder('std_msgs');
-let nav_msgs = _finder('nav_msgs');
 
 //-----------------------------------------------------------
 
@@ -21,12 +21,7 @@ class V2V {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
-      this.odom = null;
-      this.leader_speed = null;
-      this.leader_acc = null;
-      this.leader_acc_pedal = null;
-      this.leader_brake_pedal = null;
-      this.leader_frontwheel_angle = null;
+      this.platoon_info = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -35,41 +30,11 @@ class V2V {
       else {
         this.header = new std_msgs.msg.Header();
       }
-      if (initObj.hasOwnProperty('odom')) {
-        this.odom = initObj.odom
+      if (initObj.hasOwnProperty('platoon_info')) {
+        this.platoon_info = initObj.platoon_info
       }
       else {
-        this.odom = new nav_msgs.msg.Odometry();
-      }
-      if (initObj.hasOwnProperty('leader_speed')) {
-        this.leader_speed = initObj.leader_speed
-      }
-      else {
-        this.leader_speed = 0.0;
-      }
-      if (initObj.hasOwnProperty('leader_acc')) {
-        this.leader_acc = initObj.leader_acc
-      }
-      else {
-        this.leader_acc = 0.0;
-      }
-      if (initObj.hasOwnProperty('leader_acc_pedal')) {
-        this.leader_acc_pedal = initObj.leader_acc_pedal
-      }
-      else {
-        this.leader_acc_pedal = 0.0;
-      }
-      if (initObj.hasOwnProperty('leader_brake_pedal')) {
-        this.leader_brake_pedal = initObj.leader_brake_pedal
-      }
-      else {
-        this.leader_brake_pedal = 0.0;
-      }
-      if (initObj.hasOwnProperty('leader_frontwheel_angle')) {
-        this.leader_frontwheel_angle = initObj.leader_frontwheel_angle
-      }
-      else {
-        this.leader_frontwheel_angle = 0.0;
+        this.platoon_info = new PlatoonState();
       }
     }
   }
@@ -78,18 +43,8 @@ class V2V {
     // Serializes a message object of type V2V
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
-    // Serialize message field [odom]
-    bufferOffset = nav_msgs.msg.Odometry.serialize(obj.odom, buffer, bufferOffset);
-    // Serialize message field [leader_speed]
-    bufferOffset = _serializer.float64(obj.leader_speed, buffer, bufferOffset);
-    // Serialize message field [leader_acc]
-    bufferOffset = _serializer.float64(obj.leader_acc, buffer, bufferOffset);
-    // Serialize message field [leader_acc_pedal]
-    bufferOffset = _serializer.float64(obj.leader_acc_pedal, buffer, bufferOffset);
-    // Serialize message field [leader_brake_pedal]
-    bufferOffset = _serializer.float64(obj.leader_brake_pedal, buffer, bufferOffset);
-    // Serialize message field [leader_frontwheel_angle]
-    bufferOffset = _serializer.float64(obj.leader_frontwheel_angle, buffer, bufferOffset);
+    // Serialize message field [platoon_info]
+    bufferOffset = PlatoonState.serialize(obj.platoon_info, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -99,26 +54,16 @@ class V2V {
     let data = new V2V(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
-    // Deserialize message field [odom]
-    data.odom = nav_msgs.msg.Odometry.deserialize(buffer, bufferOffset);
-    // Deserialize message field [leader_speed]
-    data.leader_speed = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [leader_acc]
-    data.leader_acc = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [leader_acc_pedal]
-    data.leader_acc_pedal = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [leader_brake_pedal]
-    data.leader_brake_pedal = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [leader_frontwheel_angle]
-    data.leader_frontwheel_angle = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [platoon_info]
+    data.platoon_info = PlatoonState.deserialize(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    length += nav_msgs.msg.Odometry.getMessageSize(object.odom);
-    return length + 40;
+    length += PlatoonState.getMessageSize(object.platoon_info);
+    return length;
   }
 
   static datatype() {
@@ -128,21 +73,15 @@ class V2V {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '5d3f3ce1d5d07abc8f4695c3e316dc23';
+    return 'eb9ec1d07a2ce2b979126f710e74eb76';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     std_msgs/Header header
-    #gpsinfo
-    nav_msgs/Odometry odom
-    #leader info
-    float64 leader_speed
-    float64 leader_acc
-    float64 leader_acc_pedal
-    float64 leader_brake_pedal
-    float64 leader_frontwheel_angle
+    
+    common_msgs/PlatoonState platoon_info
     
     ================================================================================
     MSG: std_msgs/Header
@@ -159,6 +98,28 @@ class V2V {
     time stamp
     #Frame this data is associated with
     string frame_id
+    
+    ================================================================================
+    MSG: common_msgs/PlatoonState
+    std_msgs/Header header
+    
+    # member vehicle state
+    common_msgs/VehicleState[] vehicles
+    ================================================================================
+    MSG: common_msgs/VehicleState
+    # Id of the vehicle
+    std_msgs/Header header 
+    
+    # Basic info of the vehicle
+    
+    # Odometry info of the vehicle
+    nav_msgs/Odometry odom
+    
+    # Dynamic state of vehicle
+    common_msgs/VehicleDynamicState dynamics
+    
+    # Chassis state of vehicle
+    common_msgs/ChassisState chassis
     
     ================================================================================
     MSG: nav_msgs/Odometry
@@ -234,6 +195,44 @@ class V2V {
     float64 x
     float64 y
     float64 z
+    ================================================================================
+    MSG: common_msgs/VehicleDynamicState
+    std_msgs/Header  header
+    
+    float64 lon_speed
+    float64 lon_acceleration
+    float64 lat_speed
+    float64 lat_acceleration
+    float64 yaw_rate
+    float64 yaw_acceleration
+    ================================================================================
+    MSG: common_msgs/ChassisState
+    std_msgs/Header header
+    
+    # real acc throttle value
+    uint8 throttle
+    
+    # real brake pressure
+    uint8 brake_pressure
+    
+    # vehicle run mode
+    uint8 run_mode
+    
+    # Level of accelaration, unit in m/s^2, throttle is positive, braking is negative
+    float32 accel
+    
+    # Level of steering on front wheel, unit in radian, left turning is positive
+    float32 steer
+    
+    # Gear
+    int8 gear
+    
+    # Parking
+    bool parking_brake
+    
+    
+    
+    
     `;
   }
 
@@ -250,46 +249,11 @@ class V2V {
       resolved.header = new std_msgs.msg.Header()
     }
 
-    if (msg.odom !== undefined) {
-      resolved.odom = nav_msgs.msg.Odometry.Resolve(msg.odom)
+    if (msg.platoon_info !== undefined) {
+      resolved.platoon_info = PlatoonState.Resolve(msg.platoon_info)
     }
     else {
-      resolved.odom = new nav_msgs.msg.Odometry()
-    }
-
-    if (msg.leader_speed !== undefined) {
-      resolved.leader_speed = msg.leader_speed;
-    }
-    else {
-      resolved.leader_speed = 0.0
-    }
-
-    if (msg.leader_acc !== undefined) {
-      resolved.leader_acc = msg.leader_acc;
-    }
-    else {
-      resolved.leader_acc = 0.0
-    }
-
-    if (msg.leader_acc_pedal !== undefined) {
-      resolved.leader_acc_pedal = msg.leader_acc_pedal;
-    }
-    else {
-      resolved.leader_acc_pedal = 0.0
-    }
-
-    if (msg.leader_brake_pedal !== undefined) {
-      resolved.leader_brake_pedal = msg.leader_brake_pedal;
-    }
-    else {
-      resolved.leader_brake_pedal = 0.0
-    }
-
-    if (msg.leader_frontwheel_angle !== undefined) {
-      resolved.leader_frontwheel_angle = msg.leader_frontwheel_angle;
-    }
-    else {
-      resolved.leader_frontwheel_angle = 0.0
+      resolved.platoon_info = new PlatoonState()
     }
 
     return resolved;

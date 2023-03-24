@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/user/code/PLAuto/build'
+export PWD='/home/lhq/Projects/PLAuto/build'

@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/planning/waypoint_loader
+# Install script for directory: /home/lhq/Projects/PLAuto/src/planning/waypoint_loader
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loader.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loader.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig.cmake"
-    "/home/user/code/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/planning/waypoint_loader/catkin_generated/installspace/waypoint_loaderConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader" TYPE FILE FILES "/home/user/code/PLAuto/src/planning/waypoint_loader/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/waypoint_loader" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/planning/waypoint_loader/package.xml")
 endif()
 

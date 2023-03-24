@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/roseus/ros/carla_waypoint_types/manifest.l"
-  "/home/user/code/PLAuto/devel/share/roseus/ros/carla_waypoint_types/msg/CarlaWaypoint.l"
-  "/home/user/code/PLAuto/devel/share/roseus/ros/carla_waypoint_types/srv/GetActorWaypoint.l"
-  "/home/user/code/PLAuto/devel/share/roseus/ros/carla_waypoint_types/srv/GetWaypoint.l"
+  "/home/lhq/Projects/PLAuto/devel/share/roseus/ros/carla_waypoint_types/manifest.l"
+  "/home/lhq/Projects/PLAuto/devel/share/roseus/ros/carla_waypoint_types/msg/CarlaWaypoint.l"
+  "/home/lhq/Projects/PLAuto/devel/share/roseus/ros/carla_waypoint_types/srv/GetActorWaypoint.l"
+  "/home/lhq/Projects/PLAuto/devel/share/roseus/ros/carla_waypoint_types/srv/GetWaypoint.l"
   "CMakeFiles/carla_waypoint_types_generate_messages_eus"
 )
 

@@ -1,16 +1,16 @@
 
 "use strict";
 
-let DiagnosticStatus = require('./DiagnosticStatus.js');
-let NodeStatus = require('./NodeStatus.js');
+let HardwareStatus = require('./HardwareStatus.js');
 let SystemStatus = require('./SystemStatus.js');
 let DiagnosticStatusArray = require('./DiagnosticStatusArray.js');
-let HardwareStatus = require('./HardwareStatus.js');
+let NodeStatus = require('./NodeStatus.js');
+let DiagnosticStatus = require('./DiagnosticStatus.js');
 
 module.exports = {
-  DiagnosticStatus: DiagnosticStatus,
-  NodeStatus: NodeStatus,
+  HardwareStatus: HardwareStatus,
   SystemStatus: SystemStatus,
   DiagnosticStatusArray: DiagnosticStatusArray,
-  HardwareStatus: HardwareStatus,
+  NodeStatus: NodeStatus,
+  DiagnosticStatus: DiagnosticStatus,
 };

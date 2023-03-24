@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/can_msgs/msg/Frame.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/can_msgs/msg/Frames.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/can_msgs/msg/Frame.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/can_msgs/msg/Frames.lisp"
   "CMakeFiles/can_msgs_generate_messages_lisp"
 )
 

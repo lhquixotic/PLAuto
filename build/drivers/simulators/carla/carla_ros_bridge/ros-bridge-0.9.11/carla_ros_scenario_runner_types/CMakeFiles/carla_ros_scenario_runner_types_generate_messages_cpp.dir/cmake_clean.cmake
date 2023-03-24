@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenario.h"
-  "/home/user/code/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenarioList.h"
-  "/home/user/code/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenarioRunnerStatus.h"
-  "/home/user/code/PLAuto/devel/include/carla_ros_scenario_runner_types/ExecuteScenario.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenario.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenarioList.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ros_scenario_runner_types/CarlaScenarioRunnerStatus.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ros_scenario_runner_types/ExecuteScenario.h"
   "CMakeFiles/carla_ros_scenario_runner_types_generate_messages_cpp"
 )
 

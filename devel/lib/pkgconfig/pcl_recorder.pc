@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/devel
+prefix=/home/lhq/Projects/PLAuto/devel
 
 Name: pcl_recorder
 Description: Description of pcl_recorder

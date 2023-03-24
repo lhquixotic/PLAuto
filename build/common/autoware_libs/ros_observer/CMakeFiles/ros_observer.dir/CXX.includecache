@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/include/ros_observer/ros_observer.h
+/home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer/include/ros_observer/ros_observer.h
 iostream
 -
 string
@@ -24,7 +24,7 @@ boost/interprocess/sync/scoped_lock.hpp
 boost/thread.hpp
 -
 
-/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/src/ros_observer.cpp
+/home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer/src/ros_observer.cpp
 csignal
 -
 chrono

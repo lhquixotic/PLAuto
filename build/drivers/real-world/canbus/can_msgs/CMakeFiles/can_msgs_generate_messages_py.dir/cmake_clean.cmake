@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/_Frame.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/_Frames.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/__init__.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/_Frame.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/_Frames.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/can_msgs/msg/__init__.py"
   "CMakeFiles/can_msgs_generate_messages_py"
 )
 

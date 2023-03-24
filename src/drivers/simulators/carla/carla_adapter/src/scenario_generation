@@ -7,11 +7,13 @@ import time
 import ros_compatibility as roscomp
 from ros_compatibility.exceptions import *
 from ros_compatibility.node import CompatibleNode
+from ros_compatibility.qos import QoSProfile, DurabilityPolicy
 
 from carla_msgs.msg import CarlaActorList
 from carla_msgs.srv import SpawnObject, DestroyObject
 from diagnostic_msgs.msg import KeyValue
 from geometry_msgs.msg import Pose
+from common_msgs.msg import VehicleState, PlatoonState
 
 from transforms3d.quaternions import quat2axangle
 from transforms3d.euler import euler2quat
@@ -47,9 +49,12 @@ class CarlaScenarioGeneration(CompatibleNode):
         # initialize the players list
         self.platoon_vehicles = []
         self.players = []
-
-        # self.vehicles_sensors = []
-        # self.global_sensors = []
+        
+        self.platoon_state = PlatoonState()
+        self.platoon_state_publisher = self.new_publisher(
+            PlatoonState,"/carla/scenario_generation/platoon_state",
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        )
 
         self.spawn_object_service = self.new_client(SpawnObject, "/carla/spawn_object")
         self.destroy_object_service = self.new_client(DestroyObject, "/carla/destroy_object")
@@ -86,7 +91,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # spawn through service
         spawn_object_request = roscomp.get_service_request(SpawnObject)
         spawn_object_request.type = "vehicle.carlamotors.carlacola"
-        spawn_object_request.id = 'v00'
+        spawn_object_request.id = 'p1v1'
         spawn_object_request.attach_to = 0
         spawn_object_request.random_pose = False
         spawn_object_request.transform = spawn_point
@@ -95,6 +100,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # sleep to wait response
         time.sleep(1)
         
+        # add platoon vehicle to actor list
         actor_list = self.carla_world.get_actors()
         actor = actor_list.find(response.id)
         actor.set_autopilot(True)
@@ -105,8 +111,28 @@ class CarlaScenarioGeneration(CompatibleNode):
         else:
             self.logwarn("The platoon vehicle is not spawned success.")
 
+        # add vehicle state to platoon state
+        vehicle_state = VehicleState()
+        self.platoon_state.vehicles.append(vehicle_state)
+
     def generate_scenario(self):
         self.generate_platoon(20)
+
+    def run_step(self):
+        # update platoon state
+        for veh_actor in self.platoon_vehicles:
+            veh_state=VehicleState()
+            pos = Pose()
+            carla_position = veh_actor.get_location()
+            carla_rotation = veh_actor.get_transform().rotation
+            pos.position.x, pos.position.y, pos.position.z = carla_position.x, carla_position.y, carla_position.z
+            # pos.position = carla_position
+            quat = euler2quat(math.radians(carla_rotation.roll), math.radians(carla_rotation.pitch), math.radians(carla_rotation.yaw))
+            pos.orientation.x,pos.orientation.y,pos.orientation.z, pos.orientation.w = quat
+            veh_state.odom.pose.pose = pos
+            self.platoon_state.vehicles[0] = veh_state
+
+        self.platoon_state_publisher.publish(self.platoon_state)
 
     def create_spawn_point(self, x, y, z, roll, pitch, yaw):
         spawn_point = Pose()
@@ -187,6 +213,9 @@ def main(args=None):
     scenario_generation_node = None
     try:
         scenario_generation_node = CarlaScenarioGeneration()
+        executor = roscomp.executors.MultiThreadedExecutor()
+        executor.add_node(scenario_generation_node)
+
         roscomp.on_shutdown(scenario_generation_node.destroy)
     except KeyboardInterrupt:
         roscomp.logerr("Could not initialize CarlaScenarioGeneration. Shutting down.")
@@ -194,6 +223,9 @@ def main(args=None):
     if scenario_generation_node:
         try:
             scenario_generation_node.generate_scenario()
+            new_timer = scenario_generation_node.new_timer(
+                0.05,lambda timer_event=None: scenario_generation_node.run_step())
+            
             try:
                 scenario_generation_node.spin()
             except (ROSInterruptException, ServiceException, KeyboardInterrupt):

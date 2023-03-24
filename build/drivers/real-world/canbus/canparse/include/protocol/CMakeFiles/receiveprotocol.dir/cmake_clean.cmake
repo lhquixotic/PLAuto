@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/libreceiveprotocol.pdb"
-  "/home/user/code/PLAuto/devel/lib/libreceiveprotocol.so"
+  "/home/lhq/Projects/PLAuto/devel/lib/libreceiveprotocol.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/libreceiveprotocol.so"
   "CMakeFiles/receiveprotocol.dir/CDCU_BatStatus.cpp.o"
   "CMakeFiles/receiveprotocol.dir/CDCU_BodyStatus.cpp.o"
   "CMakeFiles/receiveprotocol.dir/CDCU_BrakeStatus.cpp.o"

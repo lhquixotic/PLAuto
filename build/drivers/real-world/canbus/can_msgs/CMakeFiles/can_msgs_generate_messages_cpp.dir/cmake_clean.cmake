@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/include/can_msgs/Frame.h"
-  "/home/user/code/PLAuto/devel/include/can_msgs/Frames.h"
+  "/home/lhq/Projects/PLAuto/devel/include/can_msgs/Frame.h"
+  "/home/lhq/Projects/PLAuto/devel/include/can_msgs/Frames.h"
   "CMakeFiles/can_msgs_generate_messages_cpp"
 )
 

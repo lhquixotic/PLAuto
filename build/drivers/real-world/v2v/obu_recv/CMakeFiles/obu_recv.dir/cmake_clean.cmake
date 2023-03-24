@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/obu_recv/obu_recv"
-  "/home/user/code/PLAuto/devel/lib/obu_recv/obu_recv.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/obu_recv/obu_recv"
+  "/home/lhq/Projects/PLAuto/devel/lib/obu_recv/obu_recv.pdb"
   "CMakeFiles/obu_recv.dir/src/main.cpp.o"
   "CMakeFiles/obu_recv.dir/src/obu_recv.cpp.o"
   "CMakeFiles/obu_recv.dir/src/obu_recv_handle.cpp.o"

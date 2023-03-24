@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,18 +38,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_plugin.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_plugin.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_pluginConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_pluginConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_pluginConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/catkin_generated/installspace/rviz_carla_pluginConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -59,7 +59,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librviz_carla_plugin.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/user/code/PLAuto/devel/lib/librviz_carla_plugin.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lhq/Projects/PLAuto/devel/lib/librviz_carla_plugin.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librviz_carla_plugin.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librviz_carla_plugin.so")
     file(RPATH_CHANGE
@@ -76,10 +76,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/plugin_description.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/plugin_description.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin/icons" TYPE DIRECTORY FILES "/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/icons/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rviz_carla_plugin/icons" TYPE DIRECTORY FILES "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/icons/")
 endif()
 

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenario.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenarioList.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenarioRunnerStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/__init__.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/srv/_ExecuteScenario.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/srv/__init__.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenario.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenarioList.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/_CarlaScenarioRunnerStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/msg/__init__.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/srv/_ExecuteScenario.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ros_scenario_runner_types/srv/__init__.py"
   "CMakeFiles/carla_ros_scenario_runner_types_generate_messages_py"
 )
 

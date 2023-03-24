@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/real-world/canbus/canparse/include/protocol
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/canparse/include/protocol
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

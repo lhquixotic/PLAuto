@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/install
+prefix=/home/lhq/Projects/PLAuto/install
 
 Name: autoware_system_msgs
 Description: Description of autoware_system_msgs

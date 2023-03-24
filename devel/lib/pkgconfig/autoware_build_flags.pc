@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/devel
+prefix=/home/lhq/Projects/PLAuto/devel
 
 Name: autoware_build_flags
 Description: Description of autoware_build_flags

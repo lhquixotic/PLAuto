@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles /home/user/code/PLAuto/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles /home/lhq/Projects/PLAuto/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -998,175 +998,6 @@ _autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF: cmake_che
 _autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF/fast:
 	$(MAKE) -f messages/autoware_config_msgs/CMakeFiles/_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF.dir/build.make messages/autoware_config_msgs/CMakeFiles/_autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF.dir/build
 .PHONY : _autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages
-
-# Build rule for target.
-can_msgs_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages
-.PHONY : can_msgs_generate_messages
-
-# fast build rule for target.
-can_msgs_generate_messages/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages.dir/build
-.PHONY : can_msgs_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named _can_msgs_generate_messages_check_deps_Frame
-
-# Build rule for target.
-_can_msgs_generate_messages_check_deps_Frame: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _can_msgs_generate_messages_check_deps_Frame
-.PHONY : _can_msgs_generate_messages_check_deps_Frame
-
-# fast build rule for target.
-_can_msgs_generate_messages_check_deps_Frame/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/_can_msgs_generate_messages_check_deps_Frame.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/_can_msgs_generate_messages_check_deps_Frame.dir/build
-.PHONY : _can_msgs_generate_messages_check_deps_Frame/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_gennodejs
-
-# Build rule for target.
-can_msgs_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_gennodejs
-.PHONY : can_msgs_gennodejs
-
-# fast build rule for target.
-can_msgs_gennodejs/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_gennodejs.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_gennodejs.dir/build
-.PHONY : can_msgs_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named _can_msgs_generate_messages_check_deps_Frames
-
-# Build rule for target.
-_can_msgs_generate_messages_check_deps_Frames: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _can_msgs_generate_messages_check_deps_Frames
-.PHONY : _can_msgs_generate_messages_check_deps_Frames
-
-# fast build rule for target.
-_can_msgs_generate_messages_check_deps_Frames/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/_can_msgs_generate_messages_check_deps_Frames.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/_can_msgs_generate_messages_check_deps_Frames.dir/build
-.PHONY : _can_msgs_generate_messages_check_deps_Frames/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_gencpp
-
-# Build rule for target.
-can_msgs_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_gencpp
-.PHONY : can_msgs_gencpp
-
-# fast build rule for target.
-can_msgs_gencpp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_gencpp.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_gencpp.dir/build
-.PHONY : can_msgs_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages_cpp
-
-# Build rule for target.
-can_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages_cpp
-.PHONY : can_msgs_generate_messages_cpp
-
-# fast build rule for target.
-can_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_cpp.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_cpp.dir/build
-.PHONY : can_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages_eus
-
-# Build rule for target.
-can_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages_eus
-.PHONY : can_msgs_generate_messages_eus
-
-# fast build rule for target.
-can_msgs_generate_messages_eus/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_eus.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_eus.dir/build
-.PHONY : can_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_geneus
-
-# Build rule for target.
-can_msgs_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_geneus
-.PHONY : can_msgs_geneus
-
-# fast build rule for target.
-can_msgs_geneus/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_geneus.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_geneus.dir/build
-.PHONY : can_msgs_geneus/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages_lisp
-
-# Build rule for target.
-can_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages_lisp
-.PHONY : can_msgs_generate_messages_lisp
-
-# fast build rule for target.
-can_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_lisp.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_lisp.dir/build
-.PHONY : can_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages_nodejs
-
-# Build rule for target.
-can_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages_nodejs
-.PHONY : can_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-can_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_nodejs.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_nodejs.dir/build
-.PHONY : can_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_genlisp
-
-# Build rule for target.
-can_msgs_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_genlisp
-.PHONY : can_msgs_genlisp
-
-# fast build rule for target.
-can_msgs_genlisp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_genlisp.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_genlisp.dir/build
-.PHONY : can_msgs_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_generate_messages_py
-
-# Build rule for target.
-can_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_generate_messages_py
-.PHONY : can_msgs_generate_messages_py
-
-# fast build rule for target.
-can_msgs_generate_messages_py/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_py.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_generate_messages_py.dir/build
-.PHONY : can_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named can_msgs_genpy
-
-# Build rule for target.
-can_msgs_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_msgs_genpy
-.PHONY : can_msgs_genpy
-
-# fast build rule for target.
-can_msgs_genpy/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_genpy.dir/build.make drivers/real-world/canbus/can_msgs/CMakeFiles/can_msgs_genpy.dir/build
-.PHONY : can_msgs_genpy/fast
 
 #=============================================================================
 # Target rules for targets named carla_msgs_generate_messages_nodejs
@@ -2430,17 +2261,30 @@ carla_waypoint_types_genpy/fast:
 .PHONY : carla_waypoint_types_genpy/fast
 
 #=============================================================================
-# Target rules for targets named _common_msgs_generate_messages_check_deps_ChassisStatus
+# Target rules for targets named _common_msgs_generate_messages_check_deps_PlatoonState
 
 # Build rule for target.
-_common_msgs_generate_messages_check_deps_ChassisStatus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_ChassisStatus
-.PHONY : _common_msgs_generate_messages_check_deps_ChassisStatus
+_common_msgs_generate_messages_check_deps_PlatoonState: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_PlatoonState
+.PHONY : _common_msgs_generate_messages_check_deps_PlatoonState
 
 # fast build rule for target.
-_common_msgs_generate_messages_check_deps_ChassisStatus/fast:
-	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_ChassisStatus.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_ChassisStatus.dir/build
-.PHONY : _common_msgs_generate_messages_check_deps_ChassisStatus/fast
+_common_msgs_generate_messages_check_deps_PlatoonState/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_PlatoonState.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_PlatoonState.dir/build
+.PHONY : _common_msgs_generate_messages_check_deps_PlatoonState/fast
+
+#=============================================================================
+# Target rules for targets named _common_msgs_generate_messages_check_deps_GpsInfo
+
+# Build rule for target.
+_common_msgs_generate_messages_check_deps_GpsInfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_GpsInfo
+.PHONY : _common_msgs_generate_messages_check_deps_GpsInfo
+
+# fast build rule for target.
+_common_msgs_generate_messages_check_deps_GpsInfo/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_GpsInfo.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_GpsInfo.dir/build
+.PHONY : _common_msgs_generate_messages_check_deps_GpsInfo/fast
 
 #=============================================================================
 # Target rules for targets named _common_msgs_generate_messages_check_deps_StopDecision
@@ -2456,17 +2300,30 @@ _common_msgs_generate_messages_check_deps_StopDecision/fast:
 .PHONY : _common_msgs_generate_messages_check_deps_StopDecision/fast
 
 #=============================================================================
-# Target rules for targets named _common_msgs_generate_messages_check_deps_GpsInfo
+# Target rules for targets named _common_msgs_generate_messages_check_deps_VehicleState
 
 # Build rule for target.
-_common_msgs_generate_messages_check_deps_GpsInfo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_GpsInfo
-.PHONY : _common_msgs_generate_messages_check_deps_GpsInfo
+_common_msgs_generate_messages_check_deps_VehicleState: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_VehicleState
+.PHONY : _common_msgs_generate_messages_check_deps_VehicleState
 
 # fast build rule for target.
-_common_msgs_generate_messages_check_deps_GpsInfo/fast:
-	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_GpsInfo.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_GpsInfo.dir/build
-.PHONY : _common_msgs_generate_messages_check_deps_GpsInfo/fast
+_common_msgs_generate_messages_check_deps_VehicleState/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_VehicleState.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_VehicleState.dir/build
+.PHONY : _common_msgs_generate_messages_check_deps_VehicleState/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make messages/common_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named _common_msgs_generate_messages_check_deps_VehicleDynamicState
@@ -2573,17 +2430,30 @@ common_msgs_generate_messages_lisp/fast:
 .PHONY : common_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_cpp
+# Target rules for targets named _common_msgs_generate_messages_check_deps_ChassisState
 
 # Build rule for target.
-sensor_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
-.PHONY : sensor_msgs_generate_messages_cpp
+_common_msgs_generate_messages_check_deps_ChassisState: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _common_msgs_generate_messages_check_deps_ChassisState
+.PHONY : _common_msgs_generate_messages_check_deps_ChassisState
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f messages/common_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make messages/common_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+_common_msgs_generate_messages_check_deps_ChassisState/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_ChassisState.dir/build.make messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_ChassisState.dir/build
+.PHONY : _common_msgs_generate_messages_check_deps_ChassisState/fast
+
+#=============================================================================
+# Target rules for targets named common_msgs_gencpp
+
+# Build rule for target.
+common_msgs_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 common_msgs_gencpp
+.PHONY : common_msgs_gencpp
+
+# fast build rule for target.
+common_msgs_gencpp/fast:
+	$(MAKE) -f messages/common_msgs/CMakeFiles/common_msgs_gencpp.dir/build.make messages/common_msgs/CMakeFiles/common_msgs_gencpp.dir/build
+.PHONY : common_msgs_gencpp/fast
 
 #=============================================================================
 # Target rules for targets named _common_msgs_generate_messages_check_deps_PolarBoundary
@@ -2714,19 +2584,6 @@ common_msgs_generate_messages_nodejs: cmake_check_build_system
 common_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f messages/common_msgs/CMakeFiles/common_msgs_generate_messages_nodejs.dir/build.make messages/common_msgs/CMakeFiles/common_msgs_generate_messages_nodejs.dir/build
 .PHONY : common_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named common_msgs_gencpp
-
-# Build rule for target.
-common_msgs_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 common_msgs_gencpp
-.PHONY : common_msgs_gencpp
-
-# fast build rule for target.
-common_msgs_gencpp/fast:
-	$(MAKE) -f messages/common_msgs/CMakeFiles/common_msgs_gencpp.dir/build.make messages/common_msgs/CMakeFiles/common_msgs_gencpp.dir/build
-.PHONY : common_msgs_gencpp/fast
 
 #=============================================================================
 # Target rules for targets named autoware_system_msgs_genpy
@@ -3002,188 +2859,6 @@ autoware_system_msgs_gencpp/fast:
 .PHONY : autoware_system_msgs_gencpp/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
-
-# Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_py.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_nodejs
-
-# Build rule for target.
-roscpp_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_lisp
-
-# Build rule for target.
-roscpp_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named can_bridge
-
-# Build rule for target.
-can_bridge: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 can_bridge
-.PHONY : can_bridge
-
-# fast build rule for target.
-can_bridge/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/can_bridge.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/can_bridge.dir/build
-.PHONY : can_bridge/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_eus
-
-# Build rule for target.
-roscpp_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named canparse
-
-# Build rule for target.
-canparse: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 canparse
-.PHONY : canparse
-
-# fast build rule for target.
-canparse/fast:
-	$(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build
-.PHONY : canparse/fast
-
-#=============================================================================
-# Target rules for targets named receiveprotocol
-
-# Build rule for target.
-receiveprotocol: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 receiveprotocol
-.PHONY : receiveprotocol
-
-# fast build rule for target.
-receiveprotocol/fast:
-	$(MAKE) -f drivers/real-world/canbus/canparse/include/protocol/CMakeFiles/receiveprotocol.dir/build.make drivers/real-world/canbus/canparse/include/protocol/CMakeFiles/receiveprotocol.dir/build
-.PHONY : receiveprotocol/fast
-
-#=============================================================================
-# Target rules for targets named gps
-
-# Build rule for target.
-gps: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gps
-.PHONY : gps
-
-# fast build rule for target.
-gps/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/gps.dir/build.make drivers/real-world/gps/CMakeFiles/gps.dir/build
-.PHONY : gps/fast
-
-#=============================================================================
-# Target rules for targets named nmea_msgs_generate_messages_nodejs
-
-# Build rule for target.
-nmea_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nmea_msgs_generate_messages_nodejs
-.PHONY : nmea_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-nmea_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_nodejs.dir/build.make drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_nodejs.dir/build
-.PHONY : nmea_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named nmea_msgs_generate_messages_lisp
-
-# Build rule for target.
-nmea_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nmea_msgs_generate_messages_lisp
-.PHONY : nmea_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nmea_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_lisp.dir/build.make drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_lisp.dir/build
-.PHONY : nmea_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named nmea_msgs_generate_messages_py
-
-# Build rule for target.
-nmea_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nmea_msgs_generate_messages_py
-.PHONY : nmea_msgs_generate_messages_py
-
-# fast build rule for target.
-nmea_msgs_generate_messages_py/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_py.dir/build.make drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_py.dir/build
-.PHONY : nmea_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named nmea_msgs_generate_messages_eus
-
-# Build rule for target.
-nmea_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nmea_msgs_generate_messages_eus
-.PHONY : nmea_msgs_generate_messages_eus
-
-# fast build rule for target.
-nmea_msgs_generate_messages_eus/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_eus.dir/build.make drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_eus.dir/build
-.PHONY : nmea_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named nmea_msgs_generate_messages_cpp
-
-# Build rule for target.
-nmea_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nmea_msgs_generate_messages_cpp
-.PHONY : nmea_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nmea_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_cpp.dir/build.make drivers/real-world/gps/CMakeFiles/nmea_msgs_generate_messages_cpp.dir/build
-.PHONY : nmea_msgs_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named localization_adapter
 
 # Build rule for target.
@@ -3197,30 +2872,69 @@ localization_adapter/fast:
 .PHONY : localization_adapter/fast
 
 #=============================================================================
-# Target rules for targets named obu_recv
+# Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
-obu_recv: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obu_recv
-.PHONY : obu_recv
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
 
 # fast build rule for target.
-obu_recv/fast:
-	$(MAKE) -f drivers/real-world/v2v/obu_recv/CMakeFiles/obu_recv.dir/build.make drivers/real-world/v2v/obu_recv/CMakeFiles/obu_recv.dir/build
-.PHONY : obu_recv/fast
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f localization_adapter/CMakeFiles/roscpp_generate_messages_py.dir/build.make localization_adapter/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named obu_send
+# Target rules for targets named roscpp_generate_messages_nodejs
 
 # Build rule for target.
-obu_send: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obu_send
-.PHONY : obu_send
+roscpp_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
+.PHONY : roscpp_generate_messages_nodejs
 
 # fast build rule for target.
-obu_send/fast:
-	$(MAKE) -f drivers/real-world/v2v/obu_send/CMakeFiles/obu_send.dir/build.make drivers/real-world/v2v/obu_send/CMakeFiles/obu_send.dir/build
-.PHONY : obu_send/fast
+roscpp_generate_messages_nodejs/fast:
+	$(MAKE) -f localization_adapter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make localization_adapter/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_lisp
+
+# Build rule for target.
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f localization_adapter/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make localization_adapter/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_eus
+
+# Build rule for target.
+roscpp_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	$(MAKE) -f localization_adapter/CMakeFiles/roscpp_generate_messages_eus.dir/build.make localization_adapter/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_cpp
+
+# Build rule for target.
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f localization_adapter/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make localization_adapter/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named _run_tests_carla_ackermann_control_roslaunch-check_launch
@@ -4692,19 +4406,6 @@ run_tests_ros_observer_rostest/fast:
 .PHONY : run_tests_ros_observer_rostest/fast
 
 #=============================================================================
-# Target rules for targets named serial_com
-
-# Build rule for target.
-serial_com: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 serial_com
-.PHONY : serial_com
-
-# fast build rule for target.
-serial_com/fast:
-	$(MAKE) -f drivers/real-world/serial_com/CMakeFiles/serial_com.dir/build.make drivers/real-world/serial_com/CMakeFiles/serial_com.dir/build
-.PHONY : serial_com/fast
-
-#=============================================================================
 # Target rules for targets named autoware_msgs_gennodejs
 
 # Build rule for target.
@@ -5745,32 +5446,6 @@ _autoware_msgs_generate_messages_check_deps_TrafficLightResultArray/fast:
 .PHONY : _autoware_msgs_generate_messages_check_deps_TrafficLightResultArray/fast
 
 #=============================================================================
-# Target rules for targets named cansend
-
-# Build rule for target.
-cansend: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cansend
-.PHONY : cansend
-
-# fast build rule for target.
-cansend/fast:
-	$(MAKE) -f drivers/real-world/canbus/cansend/CMakeFiles/cansend.dir/build.make drivers/real-world/canbus/cansend/CMakeFiles/cansend.dir/build
-.PHONY : cansend/fast
-
-#=============================================================================
-# Target rules for targets named sendprotocol
-
-# Build rule for target.
-sendprotocol: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sendprotocol
-.PHONY : sendprotocol
-
-# fast build rule for target.
-sendprotocol/fast:
-	$(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build
-.PHONY : sendprotocol/fast
-
-#=============================================================================
 # Target rules for targets named decision_making
 
 # Build rule for target.
@@ -6263,19 +5938,6 @@ _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test: cmake_check
 _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test/fast:
 	$(MAKE) -f common/autoware_libs/libwaypoint_follower/CMakeFiles/_run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test.dir/build.make common/autoware_libs/libwaypoint_follower/CMakeFiles/_run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test.dir/build
 .PHONY : _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test/fast
-
-#=============================================================================
-# Target rules for targets named control
-
-# Build rule for target.
-control: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 control
-.PHONY : control
-
-# fast build rule for target.
-control/fast:
-	$(MAKE) -f control/CMakeFiles/control.dir/build.make control/CMakeFiles/control.dir/build
-.PHONY : control/fast
 
 #=============================================================================
 # Target rules for targets named nodelet_topic_tools_gencfg
@@ -7331,19 +6993,6 @@ rviz_carla_plugin_autogen/fast:
 .PHONY : rviz_carla_plugin_autogen/fast
 
 #=============================================================================
-# Target rules for targets named waypoint_loader
-
-# Build rule for target.
-waypoint_loader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 waypoint_loader
-.PHONY : waypoint_loader
-
-# fast build rule for target.
-waypoint_loader/fast:
-	$(MAKE) -f planning/waypoint_loader/CMakeFiles/waypoint_loader.dir/build.make planning/waypoint_loader/CMakeFiles/waypoint_loader.dir/build
-.PHONY : waypoint_loader/fast
-
-#=============================================================================
 # Target rules for targets named waypoint_reconstructor
 
 # Build rule for target.
@@ -7355,19 +7004,6 @@ waypoint_reconstructor: cmake_check_build_system
 waypoint_reconstructor/fast:
 	$(MAKE) -f planning/waypoint_reconstructor/CMakeFiles/waypoint_reconstructor.dir/build.make planning/waypoint_reconstructor/CMakeFiles/waypoint_reconstructor.dir/build
 .PHONY : waypoint_reconstructor/fast
-
-#=============================================================================
-# Target rules for targets named waypoint_saver
-
-# Build rule for target.
-waypoint_saver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 waypoint_saver
-.PHONY : waypoint_saver
-
-# fast build rule for target.
-waypoint_saver/fast:
-	$(MAKE) -f planning/waypoint_saver/CMakeFiles/waypoint_saver.dir/build.make planning/waypoint_saver/CMakeFiles/waypoint_saver.dir/build
-.PHONY : waypoint_saver/fast
 
 # Help Target
 help:
@@ -7446,19 +7082,6 @@ help:
 	@echo "... autoware_config_msgs_geneus"
 	@echo "... _autoware_config_msgs_generate_messages_check_deps_ConfigPoints2Polygon"
 	@echo "... _autoware_config_msgs_generate_messages_check_deps_ConfigPedestrianKF"
-	@echo "... can_msgs_generate_messages"
-	@echo "... _can_msgs_generate_messages_check_deps_Frame"
-	@echo "... can_msgs_gennodejs"
-	@echo "... _can_msgs_generate_messages_check_deps_Frames"
-	@echo "... can_msgs_gencpp"
-	@echo "... can_msgs_generate_messages_cpp"
-	@echo "... can_msgs_generate_messages_eus"
-	@echo "... can_msgs_geneus"
-	@echo "... can_msgs_generate_messages_lisp"
-	@echo "... can_msgs_generate_messages_nodejs"
-	@echo "... can_msgs_genlisp"
-	@echo "... can_msgs_generate_messages_py"
-	@echo "... can_msgs_genpy"
 	@echo "... carla_msgs_generate_messages_nodejs"
 	@echo "... carla_msgs_genlisp"
 	@echo "... carla_msgs_gennodejs"
@@ -7556,9 +7179,11 @@ help:
 	@echo "... carla_waypoint_types_genlisp"
 	@echo "... carla_waypoint_types_generate_messages_nodejs"
 	@echo "... carla_waypoint_types_genpy"
-	@echo "... _common_msgs_generate_messages_check_deps_ChassisStatus"
-	@echo "... _common_msgs_generate_messages_check_deps_StopDecision"
+	@echo "... _common_msgs_generate_messages_check_deps_PlatoonState"
 	@echo "... _common_msgs_generate_messages_check_deps_GpsInfo"
+	@echo "... _common_msgs_generate_messages_check_deps_StopDecision"
+	@echo "... _common_msgs_generate_messages_check_deps_VehicleState"
+	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... _common_msgs_generate_messages_check_deps_VehicleDynamicState"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -7567,7 +7192,8 @@ help:
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... _common_msgs_generate_messages_check_deps_ControlCommand"
 	@echo "... common_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... _common_msgs_generate_messages_check_deps_ChassisState"
+	@echo "... common_msgs_gencpp"
 	@echo "... _common_msgs_generate_messages_check_deps_PolarBoundary"
 	@echo "... common_msgs_generate_messages_eus"
 	@echo "... common_msgs_generate_messages_cpp"
@@ -7578,7 +7204,6 @@ help:
 	@echo "... common_msgs_generate_messages"
 	@echo "... _common_msgs_generate_messages_check_deps_V2V"
 	@echo "... common_msgs_generate_messages_nodejs"
-	@echo "... common_msgs_gencpp"
 	@echo "... autoware_system_msgs_genpy"
 	@echo "... autoware_system_msgs_gennodejs"
 	@echo "... autoware_system_msgs_generate_messages_py"
@@ -7600,23 +7225,12 @@ help:
 	@echo "... _autoware_system_msgs_generate_messages_check_deps_DiagnosticStatusArray"
 	@echo "... _autoware_system_msgs_generate_messages_check_deps_SystemStatus"
 	@echo "... autoware_system_msgs_gencpp"
+	@echo "... localization_adapter"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
-	@echo "... can_bridge"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... canparse"
-	@echo "... receiveprotocol"
-	@echo "... gps"
-	@echo "... nmea_msgs_generate_messages_nodejs"
-	@echo "... nmea_msgs_generate_messages_lisp"
-	@echo "... nmea_msgs_generate_messages_py"
-	@echo "... nmea_msgs_generate_messages_eus"
-	@echo "... nmea_msgs_generate_messages_cpp"
-	@echo "... localization_adapter"
-	@echo "... obu_recv"
-	@echo "... obu_send"
 	@echo "... _run_tests_carla_ackermann_control_roslaunch-check_launch"
 	@echo "... run_tests_carla_ackermann_control_roslaunch-check_launch"
 	@echo "... _run_tests_carla_ackermann_control_roslaunch-check"
@@ -7730,7 +7344,6 @@ help:
 	@echo "... _run_tests_ros_observer_roslint_package"
 	@echo "... run_tests_ros_observer_roslint_package"
 	@echo "... run_tests_ros_observer_rostest"
-	@echo "... serial_com"
 	@echo "... autoware_msgs_gennodejs"
 	@echo "... autoware_msgs_geneus"
 	@echo "... autoware_msgs_gencpp"
@@ -7811,8 +7424,6 @@ help:
 	@echo "... _autoware_msgs_generate_messages_check_deps_GeometricRectangle"
 	@echo "... _autoware_msgs_generate_messages_check_deps_SyncTimeMonitor"
 	@echo "... _autoware_msgs_generate_messages_check_deps_TrafficLightResultArray"
-	@echo "... cansend"
-	@echo "... sendprotocol"
 	@echo "... decision_making"
 	@echo "... _run_tests_amathutils_lib_roslint"
 	@echo "... run_tests_amathutils_lib_roslint"
@@ -7851,7 +7462,6 @@ help:
 	@echo "... run_tests_libwaypoint_follower_rostest"
 	@echo "... run_tests_libwaypoint_follower_rostest_test_test_libwaypoint_follower.test"
 	@echo "... _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test"
-	@echo "... control"
 	@echo "... nodelet_topic_tools_gencfg"
 	@echo "... topic_tools_generate_messages_eus"
 	@echo "... bond_generate_messages_lisp"
@@ -7933,9 +7543,7 @@ help:
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... rviz_carla_plugin"
 	@echo "... rviz_carla_plugin_autogen"
-	@echo "... waypoint_loader"
 	@echo "... waypoint_reconstructor"
-	@echo "... waypoint_saver"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/libsendprotocol.pdb"
-  "/home/user/code/PLAuto/devel/lib/libsendprotocol.so"
+  "/home/lhq/Projects/PLAuto/devel/lib/libsendprotocol.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/libsendprotocol.so"
   "CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.o"
   "CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.o"
   "CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.o"

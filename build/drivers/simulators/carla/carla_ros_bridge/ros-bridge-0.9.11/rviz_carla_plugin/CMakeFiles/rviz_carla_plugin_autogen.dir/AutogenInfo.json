@@ -1,31 +1,31 @@
 {
-	"BUILD_DIR" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen",
-	"CMAKE_BINARY_DIR" : "/home/user/code/PLAuto/build",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin",
+	"BUILD_DIR" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen",
+	"CMAKE_BINARY_DIR" : "/home/lhq/Projects/PLAuto/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
-	"CMAKE_SOURCE_DIR" : "/home/user/code/PLAuto/src",
+	"CMAKE_SOURCE_DIR" : "/home/lhq/Projects/PLAuto/src",
 	"HEADERS" : 
 	[
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/carla_control_panel.h",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/carla_control_panel.h",
 			"Mu",
 			"UVLADIE3JM/moc_carla_control_panel.cpp"
 		],
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/drive_widget.h",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/drive_widget.h",
 			"Mu",
 			"UVLADIE3JM/moc_drive_widget.cpp"
 		],
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/indicator_widget.h",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/indicator_widget.h",
 			"Mu",
 			"UVLADIE3JM/moc_indicator_widget.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
@@ -46,7 +46,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/user/code/PLAuto/devel/include",
+		"/home/lhq/Projects/PLAuto/devel/include",
 		"/opt/ros/noetic/include",
 		"/opt/ros/noetic/include/xmlrpcpp",
 		"/usr/include/eigen3",
@@ -76,28 +76,28 @@
 		"-c",
 		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/rviz_carla_plugin_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/CMakeFiles/rviz_carla_plugin_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/CMakeFiles/rviz_carla_plugin_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 5,
-	"SETTINGS_FILE" : "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/CMakeFiles/rviz_carla_plugin_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/CMakeFiles/rviz_carla_plugin_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/carla_control_panel.cpp",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/carla_control_panel.cpp",
 			"Mu"
 		],
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/drive_widget.cpp",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/drive_widget.cpp",
 			"Mu"
 		],
 		[
-			"/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/indicator_widget.cpp",
+			"/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/rviz_carla_plugin/src/indicator_widget.cpp",
 			"Mu"
 		]
 	],

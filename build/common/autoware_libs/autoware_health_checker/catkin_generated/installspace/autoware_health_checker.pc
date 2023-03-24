@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/install
+prefix=/home/lhq/Projects/PLAuto/install
 
 Name: autoware_health_checker
 Description: Description of autoware_health_checker

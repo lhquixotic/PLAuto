@@ -1,12 +1,14 @@
 (cl:defpackage common_msgs-msg
   (:use )
   (:export
-   "<CHASSISSTATUS>"
-   "CHASSISSTATUS"
+   "<CHASSISSTATE>"
+   "CHASSISSTATE"
    "<CONTROLCOMMAND>"
    "CONTROLCOMMAND"
    "<GPSINFO>"
    "GPSINFO"
+   "<PLATOONSTATE>"
+   "PLATOONSTATE"
    "<POLARBOUNDARY>"
    "POLARBOUNDARY"
    "<STOPDECISION>"
@@ -15,5 +17,7 @@
    "V2V"
    "<VEHICLEDYNAMICSTATE>"
    "VEHICLEDYNAMICSTATE"
+   "<VEHICLESTATE>"
+   "VEHICLESTATE"
   ))
 

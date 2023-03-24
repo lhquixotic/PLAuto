@@ -20,7 +20,8 @@ class Localization_adapter {
   nav_msgs::Odometry getUTMPose();
 
   // Setters
-  void setSimulationPose(const geometry_msgs::PoseStamped &msg);
+  // void setSimulationPose(const geometry_msgs::PoseStamped &msg);
+  void setSimulationOdom(const nav_msgs::Odometry &msg);
   void setGpsInfo(const common_msgs::GpsInfo &msg);
   void setRunMode(const std::string &msg);
   void setGpsOrigin(const utm::Gps_point &msg);
@@ -41,7 +42,8 @@ class Localization_adapter {
 
   common_msgs::GpsInfo gps_info;
   nav_msgs::Odometry utm_pose;
-  geometry_msgs::PoseStamped simulation_pose;
+  // geometry_msgs::PoseStamped simulation_pose;
+  nav_msgs::Odometry simulation_odom;
 
 };
 }

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/libhealth_checker.pdb"
-  "/home/user/code/PLAuto/devel/lib/libhealth_checker.so"
+  "/home/lhq/Projects/PLAuto/devel/lib/libhealth_checker.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/libhealth_checker.so"
   "CMakeFiles/health_checker.dir/src/health_checker/diag_buffer.cpp.o"
   "CMakeFiles/health_checker.dir/src/health_checker/health_checker.cpp.o"
   "CMakeFiles/health_checker.dir/src/health_checker/param_manager.cpp.o"

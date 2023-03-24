@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/real-world/canbus/can_test
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_test.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_test.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_test/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_testConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_testConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_testConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_test/catkin_generated/installspace/can_testConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_test" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/real-world/canbus/can_test/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_test" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_test/package.xml")
 endif()
 

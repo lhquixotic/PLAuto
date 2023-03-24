@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/gps/gps"
-  "/home/user/code/PLAuto/devel/lib/gps/gps.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/gps/gps"
+  "/home/lhq/Projects/PLAuto/devel/lib/gps/gps.pdb"
   "CMakeFiles/gps.dir/src/gps.cpp.o"
   "CMakeFiles/gps.dir/src/gps_handle.cpp.o"
   "CMakeFiles/gps.dir/src/main.cpp.o"

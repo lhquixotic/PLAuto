@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/install
+prefix=/home/lhq/Projects/PLAuto/install
 
 Name: carla_ros_scenario_runner_types
 Description: Description of carla_ros_scenario_runner_types

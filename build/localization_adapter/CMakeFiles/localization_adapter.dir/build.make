@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 # Include any dependencies generated for this target.
 include localization_adapter/CMakeFiles/localization_adapter.dir/depend.make
@@ -58,56 +58,56 @@ include localization_adapter/CMakeFiles/localization_adapter.dir/progress.make
 include localization_adapter/CMakeFiles/localization_adapter.dir/flags.make
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o: localization_adapter/CMakeFiles/localization_adapter.dir/flags.make
-localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o: /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o -c /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp
+localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o: /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o"
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o -c /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.i"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp > CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.i
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp > CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.i
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.s"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp -o CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.s
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp -o CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.s
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o: localization_adapter/CMakeFiles/localization_adapter.dir/flags.make
-localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o: /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o -c /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter.cpp
+localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o: /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o"
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o -c /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.cpp
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.i"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter.cpp > CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.i
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.cpp > CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.i
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.s"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/code/PLAuto/src/localization_adapter/src/localization_adapter.cpp -o CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.s
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.cpp -o CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.s
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o: localization_adapter/CMakeFiles/localization_adapter.dir/flags.make
-localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o: /home/user/code/PLAuto/src/localization_adapter/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/main.cpp.o -c /home/user/code/PLAuto/src/localization_adapter/src/main.cpp
+localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o: /home/lhq/Projects/PLAuto/src/localization_adapter/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o"
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/main.cpp.o -c /home/lhq/Projects/PLAuto/src/localization_adapter/src/main.cpp
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization_adapter.dir/src/main.cpp.i"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/code/PLAuto/src/localization_adapter/src/main.cpp > CMakeFiles/localization_adapter.dir/src/main.cpp.i
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lhq/Projects/PLAuto/src/localization_adapter/src/main.cpp > CMakeFiles/localization_adapter.dir/src/main.cpp.i
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization_adapter.dir/src/main.cpp.s"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/code/PLAuto/src/localization_adapter/src/main.cpp -o CMakeFiles/localization_adapter.dir/src/main.cpp.s
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lhq/Projects/PLAuto/src/localization_adapter/src/main.cpp -o CMakeFiles/localization_adapter.dir/src/main.cpp.s
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o: localization_adapter/CMakeFiles/localization_adapter.dir/flags.make
-localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o: /home/user/code/PLAuto/src/localization_adapter/src/gps2utm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o -c /home/user/code/PLAuto/src/localization_adapter/src/gps2utm.cpp
+localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o: /home/lhq/Projects/PLAuto/src/localization_adapter/src/gps2utm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o"
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o -c /home/lhq/Projects/PLAuto/src/localization_adapter/src/gps2utm.cpp
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.i"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/code/PLAuto/src/localization_adapter/src/gps2utm.cpp > CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.i
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lhq/Projects/PLAuto/src/localization_adapter/src/gps2utm.cpp > CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.i
 
 localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.s"
-	cd /home/user/code/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/code/PLAuto/src/localization_adapter/src/gps2utm.cpp -o CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.s
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lhq/Projects/PLAuto/src/localization_adapter/src/gps2utm.cpp -o CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.s
 
 # Object files for target localization_adapter
 localization_adapter_OBJECTS = \
@@ -119,42 +119,42 @@ localization_adapter_OBJECTS = \
 # External object files for target localization_adapter
 localization_adapter_EXTERNAL_OBJECTS =
 
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/build.make
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libroscpp.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole_log4cxx.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole_backend_interface.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libxmlrpcpp.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libroscpp_serialization.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librostime.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libcpp_common.so
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
-/home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter"
-	cd /home/user/code/PLAuto/build/localization_adapter && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization_adapter.dir/link.txt --verbose=$(VERBOSE)
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter_handle.cpp.o
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/localization_adapter.cpp.o
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/main.cpp.o
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/src/gps2utm.cpp.o
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/build.make
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libroscpp.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole_log4cxx.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librosconsole_backend_interface.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libxmlrpcpp.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libroscpp_serialization.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/librostime.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /opt/ros/noetic/lib/libcpp_common.so
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+/home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter: localization_adapter/CMakeFiles/localization_adapter.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter"
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localization_adapter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-localization_adapter/CMakeFiles/localization_adapter.dir/build: /home/user/code/PLAuto/devel/lib/localization_adapter/localization_adapter
+localization_adapter/CMakeFiles/localization_adapter.dir/build: /home/lhq/Projects/PLAuto/devel/lib/localization_adapter/localization_adapter
 
 .PHONY : localization_adapter/CMakeFiles/localization_adapter.dir/build
 
 localization_adapter/CMakeFiles/localization_adapter.dir/clean:
-	cd /home/user/code/PLAuto/build/localization_adapter && $(CMAKE_COMMAND) -P CMakeFiles/localization_adapter.dir/cmake_clean.cmake
+	cd /home/lhq/Projects/PLAuto/build/localization_adapter && $(CMAKE_COMMAND) -P CMakeFiles/localization_adapter.dir/cmake_clean.cmake
 .PHONY : localization_adapter/CMakeFiles/localization_adapter.dir/clean
 
 localization_adapter/CMakeFiles/localization_adapter.dir/depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/code/PLAuto/src /home/user/code/PLAuto/src/localization_adapter /home/user/code/PLAuto/build /home/user/code/PLAuto/build/localization_adapter /home/user/code/PLAuto/build/localization_adapter/CMakeFiles/localization_adapter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhq/Projects/PLAuto/src /home/lhq/Projects/PLAuto/src/localization_adapter /home/lhq/Projects/PLAuto/build /home/lhq/Projects/PLAuto/build/localization_adapter /home/lhq/Projects/PLAuto/build/localization_adapter/CMakeFiles/localization_adapter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : localization_adapter/CMakeFiles/localization_adapter.dir/depend
 

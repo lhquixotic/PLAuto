@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_DiagnosticStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_DiagnosticStatusArray.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_HardwareStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_NodeStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_SystemStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/__init__.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_DiagnosticStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_DiagnosticStatusArray.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_HardwareStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_NodeStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/_SystemStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/autoware_system_msgs/msg/__init__.py"
   "CMakeFiles/autoware_system_msgs_generate_messages_py"
 )
 

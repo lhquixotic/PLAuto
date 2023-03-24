@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/waypoint_reconstructor/waypoint_reconstructor"
-  "/home/user/code/PLAuto/devel/lib/waypoint_reconstructor/waypoint_reconstructor.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/waypoint_reconstructor/waypoint_reconstructor"
+  "/home/lhq/Projects/PLAuto/devel/lib/waypoint_reconstructor/waypoint_reconstructor.pdb"
   "CMakeFiles/waypoint_reconstructor.dir/src/main.cpp.o"
   "CMakeFiles/waypoint_reconstructor.dir/src/waypoint_reconstructor.cpp.o"
   "CMakeFiles/waypoint_reconstructor.dir/src/waypoint_reconstructor_handle.cpp.o"

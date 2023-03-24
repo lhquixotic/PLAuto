@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include".split(';') if "${prefix}/i
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-llib_ros_observer".split(';') if "-llib_ros_observer" != "" else []
 PROJECT_NAME = "ros_observer"
-PROJECT_SPACE_DIR = "/home/user/code/PLAuto/install"
+PROJECT_SPACE_DIR = "/home/lhq/Projects/PLAuto/install"
 PROJECT_VERSION = "1.12.0"

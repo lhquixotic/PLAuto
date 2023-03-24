@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/ros_observer/test_ros_observer"
-  "/home/user/code/PLAuto/devel/lib/ros_observer/test_ros_observer.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/ros_observer/test_ros_observer"
+  "/home/lhq/Projects/PLAuto/devel/lib/ros_observer/test_ros_observer.pdb"
   "CMakeFiles/test_ros_observer.dir/test/src/test_ros_observer.cpp.o"
 )
 

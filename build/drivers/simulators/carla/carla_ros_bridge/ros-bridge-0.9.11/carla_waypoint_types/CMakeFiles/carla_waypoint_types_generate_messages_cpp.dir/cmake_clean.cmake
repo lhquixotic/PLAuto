@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h"
-  "/home/user/code/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h"
-  "/home/user/code/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h"
   "CMakeFiles/carla_waypoint_types_generate_messages_cpp"
 )
 

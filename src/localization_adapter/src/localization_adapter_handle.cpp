@@ -26,7 +26,7 @@ void Localization_adapterHandle::loadParameters() {
   ROS_INFO("loading handle parameters");
   if (!nodeHandle_.param<std::string>("simulation_pose_topic_name",
                                       simulation_pose_topic_name_,
-                                      "/sim/center_pose")) {
+                                      "/carla/ego_vehicle/odometry")) {
     ROS_WARN_STREAM(
         "Did not load simulation_pose_topic_name. Standard value is: " << simulation_pose_topic_name_);
   }
@@ -59,8 +59,10 @@ void Localization_adapterHandle::loadParameters() {
 
 void Localization_adapterHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
-  simulationPoseSubscriber_ =
-      nodeHandle_.subscribe(simulation_pose_topic_name_, 1, &Localization_adapterHandle::simulationPoseCallback, this);
+  // simulationPoseSubscriber_ =
+  //     nodeHandle_.subscribe(simulation_pose_topic_name_, 1, &Localization_adapterHandle::simulationPoseCallback, this);
+  simulationPoseSubscriber_ = 
+      nodeHandle_.subscribe(simulation_pose_topic_name_,1, &Localization_adapterHandle::simulationOdomCallback, this);
   gpsInfoSubscriber_ =
       nodeHandle_.subscribe(gps_info_topic_name_, 1, &Localization_adapterHandle::gpsInfoCallback, this);
 }
@@ -79,9 +81,14 @@ void Localization_adapterHandle::sendMsg() {
   utmPosePublisher_.publish(localization_adapter_.getUTMPose());
 }
 
-void Localization_adapterHandle::simulationPoseCallback(const geometry_msgs::PoseStamped &msg) {
+// void Localization_adapterHandle::simulationPoseCallback(const geometry_msgs::PoseStamped &msg) {
+//   localization_adapter_.rawLocFlag = true;
+//   localization_adapter_.setSimulationPose(msg);
+// }
+
+void Localization_adapterHandle::simulationOdomCallback(const nav_msgs::Odometry &msg) {
   localization_adapter_.rawLocFlag = true;
-  localization_adapter_.setSimulationPose(msg);
+  localization_adapter_.setSimulationOdom(msg);
 }
 
 void Localization_adapterHandle::gpsInfoCallback(const common_msgs::GpsInfo &msg){

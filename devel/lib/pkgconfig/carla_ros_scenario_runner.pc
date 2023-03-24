@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/devel
+prefix=/home/lhq/Projects/PLAuto/devel
 
 Name: carla_ros_scenario_runner
 Description: Description of carla_ros_scenario_runner

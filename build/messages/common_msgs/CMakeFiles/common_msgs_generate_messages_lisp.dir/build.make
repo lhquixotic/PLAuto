@@ -43,87 +43,128 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 # Utility rule file for common_msgs_generate_messages_lisp.
 
 # Include the progress variables for this target.
 include messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/progress.make
 
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisStatus.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisState.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp
 
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from common_msgs/VehicleDynamicState.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from common_msgs/VehicleDynamicState.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from common_msgs/GpsInfo.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from common_msgs/VehicleState.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisStatus.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisStatus.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/ChassisStatus.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisStatus.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from common_msgs/ChassisStatus.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/ChassisStatus.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from common_msgs/GpsInfo.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/V2V.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from common_msgs/V2V.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/V2V.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisState.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from common_msgs/ChassisState.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from common_msgs/PolarBoundary.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Lisp code from common_msgs/PlatoonState.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/StopDecision.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from common_msgs/StopDecision.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/StopDecision.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Lisp code from common_msgs/V2V.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /home/user/code/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg
-/home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from common_msgs/ControlCommand.msg"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/code/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Lisp code from common_msgs/PolarBoundary.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/StopDecision.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Lisp code from common_msgs/StopDecision.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/StopDecision.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
+
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg
+/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Lisp code from common_msgs/ControlCommand.msg"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg
 
 common_msgs_generate_messages_lisp: messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisStatus.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp
-common_msgs_generate_messages_lisp: /home/user/code/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleDynamicState.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/VehicleState.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/GpsInfo.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ChassisState.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PlatoonState.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/V2V.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/PolarBoundary.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/StopDecision.lisp
+common_msgs_generate_messages_lisp: /home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/common_msgs/msg/ControlCommand.lisp
 common_msgs_generate_messages_lisp: messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/build.make
 
 .PHONY : common_msgs_generate_messages_lisp
@@ -134,10 +175,10 @@ messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/build: co
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/build
 
 messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/clean:
-	cd /home/user/code/PLAuto/build/messages/common_msgs && $(CMAKE_COMMAND) -P CMakeFiles/common_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && $(CMAKE_COMMAND) -P CMakeFiles/common_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/clean
 
 messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/code/PLAuto/src /home/user/code/PLAuto/src/messages/common_msgs /home/user/code/PLAuto/build /home/user/code/PLAuto/build/messages/common_msgs /home/user/code/PLAuto/build/messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhq/Projects/PLAuto/src /home/lhq/Projects/PLAuto/src/messages/common_msgs /home/lhq/Projects/PLAuto/build /home/lhq/Projects/PLAuto/build/messages/common_msgs /home/lhq/Projects/PLAuto/build/messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_lisp.dir/depend
 

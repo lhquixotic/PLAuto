@@ -67,14 +67,14 @@ set(amathutils_lib_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(amathutils_lib_SOURCE_PREFIX /home/user/code/PLAuto/src/common/autoware_libs/amathutils_lib)
-  set(amathutils_lib_DEVEL_PREFIX /home/user/code/PLAuto/devel)
+  set(amathutils_lib_SOURCE_PREFIX /home/lhq/Projects/PLAuto/src/common/autoware_libs/amathutils_lib)
+  set(amathutils_lib_DEVEL_PREFIX /home/lhq/Projects/PLAuto/devel)
   set(amathutils_lib_INSTALL_PREFIX "")
   set(amathutils_lib_PREFIX ${amathutils_lib_DEVEL_PREFIX})
 else()
   set(amathutils_lib_SOURCE_PREFIX "")
   set(amathutils_lib_DEVEL_PREFIX "")
-  set(amathutils_lib_INSTALL_PREFIX /home/user/code/PLAuto/install)
+  set(amathutils_lib_INSTALL_PREFIX /home/lhq/Projects/PLAuto/install)
   set(amathutils_lib_PREFIX ${amathutils_lib_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(amathutils_lib_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/user/code/PLAuto/src/common/autoware_libs/amathutils_lib/include " STREQUAL " ")
+if(NOT "/home/lhq/Projects/PLAuto/src/common/autoware_libs/amathutils_lib/include " STREQUAL " ")
   set(amathutils_lib_INCLUDE_DIRS "")
-  set(_include_dirs "/home/user/code/PLAuto/src/common/autoware_libs/amathutils_lib/include")
+  set(_include_dirs "/home/lhq/Projects/PLAuto/src/common/autoware_libs/amathutils_lib/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/user/code/PLAuto/src/common/autoware_libs/amathutils_lib/include "
         message(FATAL_ERROR "Project 'amathutils_lib' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'amathutils_lib' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/user/code/PLAuto/src/common/autoware_libs/amathutils_lib/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'amathutils_lib' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/lhq/Projects/PLAuto/src/common/autoware_libs/amathutils_lib/${idir}'.  ${_report}")
     endif()
     _list_append_unique(amathutils_lib_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/user/code/PLAuto/devel/lib;/home/user/code/PLAuto/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/lhq/Projects/PLAuto/devel/lib;/home/lhq/Projects/PLAuto/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

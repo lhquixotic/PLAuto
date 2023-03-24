@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/can_msgs/msg/Frame.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/can_msgs/msg/Frames.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/can_msgs/msg/Frame.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/can_msgs/msg/Frames.js"
   "CMakeFiles/can_msgs_generate_messages_nodejs"
 )
 

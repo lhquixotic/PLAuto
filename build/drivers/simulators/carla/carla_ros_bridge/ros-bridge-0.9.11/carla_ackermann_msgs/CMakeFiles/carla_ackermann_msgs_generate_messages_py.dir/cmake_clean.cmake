@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlCurrent.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlInfo.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlMaxima.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlStatus.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlTarget.py"
-  "/home/user/code/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/__init__.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlCurrent.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlInfo.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlMaxima.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlStatus.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/_EgoVehicleControlTarget.py"
+  "/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/carla_ackermann_msgs/msg/__init__.py"
   "CMakeFiles/carla_ackermann_msgs_generate_messages_py"
 )
 

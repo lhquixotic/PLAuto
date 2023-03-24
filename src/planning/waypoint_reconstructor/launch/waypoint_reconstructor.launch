@@ -1,6 +1,10 @@
 <launch>
+	<!-- <arg name="platoon_state_topic_name" default="/drivers/v2v" /> -->
+	<arg name="platoon_state_topic_name" default="/carla/scenario_generation/platoon_state" />
+
     <node name="waypoint_reconstructor_node" pkg="waypoint_reconstructor" type="waypoint_reconstructor" output="screen">
 		<rosparam command="load" file="$(find waypoint_reconstructor)/config/waypoint_reconstructor.yaml" /> <!--Load parameters from config files-->
-		<rosparam command="load" file="$(find gps)/config/gps_config.yaml"/>
+		<!-- <rosparam command="load" file="$(find gps)/config/gps_config.yaml"/> -->
+		<param name="platoon_state_topic_name" value="$(arg platoon_state_topic_name)" />
 	</node>
 </launch>

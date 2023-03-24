@@ -17,8 +17,8 @@ let BrakeCmd = require('./BrakeCmd.js');
 let LampCmd = require('./LampCmd.js');
 let Gear = require('./Gear.js');
 let ControlCommand = require('./ControlCommand.js');
-let std_msgs = _finder('std_msgs');
 let geometry_msgs = _finder('geometry_msgs');
+let std_msgs = _finder('std_msgs');
 
 //-----------------------------------------------------------
 

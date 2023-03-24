@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/libamathutils_lib.pdb"
-  "/home/user/code/PLAuto/devel/lib/libamathutils_lib.so"
+  "/home/lhq/Projects/PLAuto/devel/lib/libamathutils_lib.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/libamathutils_lib.so"
   "CMakeFiles/amathutils_lib.dir/src/Amathutils.cpp.o"
   "CMakeFiles/amathutils_lib.dir/src/butterworth_filter.cpp.o"
   "CMakeFiles/amathutils_lib.dir/src/kalman_filter.cpp.o"

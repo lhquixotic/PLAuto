@@ -6,23 +6,18 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import common_msgs.msg
 import geometry_msgs.msg
 import nav_msgs.msg
 import std_msgs.msg
 
 class V2V(genpy.Message):
-  _md5sum = "5d3f3ce1d5d07abc8f4695c3e316dc23"
+  _md5sum = "eb9ec1d07a2ce2b979126f710e74eb76"
   _type = "common_msgs/V2V"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
-#gpsinfo
-nav_msgs/Odometry odom
-#leader info
-float64 leader_speed
-float64 leader_acc
-float64 leader_acc_pedal
-float64 leader_brake_pedal
-float64 leader_frontwheel_angle
+
+common_msgs/PlatoonState platoon_info
 
 ================================================================================
 MSG: std_msgs/Header
@@ -39,6 +34,28 @@ uint32 seq
 time stamp
 #Frame this data is associated with
 string frame_id
+
+================================================================================
+MSG: common_msgs/PlatoonState
+std_msgs/Header header
+
+# member vehicle state
+common_msgs/VehicleState[] vehicles
+================================================================================
+MSG: common_msgs/VehicleState
+# Id of the vehicle
+std_msgs/Header header 
+
+# Basic info of the vehicle
+
+# Odometry info of the vehicle
+nav_msgs/Odometry odom
+
+# Dynamic state of vehicle
+common_msgs/VehicleDynamicState dynamics
+
+# Chassis state of vehicle
+common_msgs/ChassisState chassis
 
 ================================================================================
 MSG: nav_msgs/Odometry
@@ -113,9 +130,47 @@ MSG: geometry_msgs/Vector3
 
 float64 x
 float64 y
-float64 z"""
-  __slots__ = ['header','odom','leader_speed','leader_acc','leader_acc_pedal','leader_brake_pedal','leader_frontwheel_angle']
-  _slot_types = ['std_msgs/Header','nav_msgs/Odometry','float64','float64','float64','float64','float64']
+float64 z
+================================================================================
+MSG: common_msgs/VehicleDynamicState
+std_msgs/Header  header
+
+float64 lon_speed
+float64 lon_acceleration
+float64 lat_speed
+float64 lat_acceleration
+float64 yaw_rate
+float64 yaw_acceleration
+================================================================================
+MSG: common_msgs/ChassisState
+std_msgs/Header header
+
+# real acc throttle value
+uint8 throttle
+
+# real brake pressure
+uint8 brake_pressure
+
+# vehicle run mode
+uint8 run_mode
+
+# Level of accelaration, unit in m/s^2, throttle is positive, braking is negative
+float32 accel
+
+# Level of steering on front wheel, unit in radian, left turning is positive
+float32 steer
+
+# Gear
+int8 gear
+
+# Parking
+bool parking_brake
+
+
+
+"""
+  __slots__ = ['header','platoon_info']
+  _slot_types = ['std_msgs/Header','common_msgs/PlatoonState']
 
   def __init__(self, *args, **kwds):
     """
@@ -125,7 +180,7 @@ float64 z"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,odom,leader_speed,leader_acc,leader_acc_pedal,leader_brake_pedal,leader_frontwheel_angle
+       header,platoon_info
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -136,26 +191,11 @@ float64 z"""
       # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.odom is None:
-        self.odom = nav_msgs.msg.Odometry()
-      if self.leader_speed is None:
-        self.leader_speed = 0.
-      if self.leader_acc is None:
-        self.leader_acc = 0.
-      if self.leader_acc_pedal is None:
-        self.leader_acc_pedal = 0.
-      if self.leader_brake_pedal is None:
-        self.leader_brake_pedal = 0.
-      if self.leader_frontwheel_angle is None:
-        self.leader_frontwheel_angle = 0.
+      if self.platoon_info is None:
+        self.platoon_info = common_msgs.msg.PlatoonState()
     else:
       self.header = std_msgs.msg.Header()
-      self.odom = nav_msgs.msg.Odometry()
-      self.leader_speed = 0.
-      self.leader_acc = 0.
-      self.leader_acc_pedal = 0.
-      self.leader_brake_pedal = 0.
-      self.leader_frontwheel_angle = 0.
+      self.platoon_info = common_msgs.msg.PlatoonState()
 
   def _get_types(self):
     """
@@ -178,27 +218,95 @@ float64 z"""
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.odom.header.seq, _x.odom.header.stamp.secs, _x.odom.header.stamp.nsecs))
-      _x = self.odom.header.frame_id
+      buff.write(_get_struct_3I().pack(_x.platoon_info.header.seq, _x.platoon_info.header.stamp.secs, _x.platoon_info.header.stamp.nsecs))
+      _x = self.platoon_info.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.odom.child_frame_id
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
+      length = len(self.platoon_info.vehicles)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.platoon_info.vehicles:
+        _v1 = val1.header
+        _x = _v1.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v2 = _v1.stamp
+        _x = _v2
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v1.frame_id
         length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self
-      buff.write(_get_struct_7d().pack(_x.odom.pose.pose.position.x, _x.odom.pose.pose.position.y, _x.odom.pose.pose.position.z, _x.odom.pose.pose.orientation.x, _x.odom.pose.pose.orientation.y, _x.odom.pose.pose.orientation.z, _x.odom.pose.pose.orientation.w))
-      buff.write(_get_struct_36d().pack(*self.odom.pose.covariance))
-      _x = self
-      buff.write(_get_struct_6d().pack(_x.odom.twist.twist.linear.x, _x.odom.twist.twist.linear.y, _x.odom.twist.twist.linear.z, _x.odom.twist.twist.angular.x, _x.odom.twist.twist.angular.y, _x.odom.twist.twist.angular.z))
-      buff.write(_get_struct_36d().pack(*self.odom.twist.covariance))
-      _x = self
-      buff.write(_get_struct_5d().pack(_x.leader_speed, _x.leader_acc, _x.leader_acc_pedal, _x.leader_brake_pedal, _x.leader_frontwheel_angle))
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _v3 = val1.odom
+        _v4 = _v3.header
+        _x = _v4.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v5 = _v4.stamp
+        _x = _v5
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v4.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v3.child_frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _v6 = _v3.pose
+        _v7 = _v6.pose
+        _v8 = _v7.position
+        _x = _v8
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _v9 = _v7.orientation
+        _x = _v9
+        buff.write(_get_struct_4d().pack(_x.x, _x.y, _x.z, _x.w))
+        buff.write(_get_struct_36d().pack(*_v6.covariance))
+        _v10 = _v3.twist
+        _v11 = _v10.twist
+        _v12 = _v11.linear
+        _x = _v12
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _v13 = _v11.angular
+        _x = _v13
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        buff.write(_get_struct_36d().pack(*_v10.covariance))
+        _v14 = val1.dynamics
+        _v15 = _v14.header
+        _x = _v15.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v16 = _v15.stamp
+        _x = _v16
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v15.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v14
+        buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+        _v17 = val1.chassis
+        _v18 = _v17.header
+        _x = _v18.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v19 = _v18.stamp
+        _x = _v19
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v18.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v17
+        buff.write(_get_struct_3B2fbB().pack(_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -212,8 +320,8 @@ float64 z"""
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.odom is None:
-        self.odom = nav_msgs.msg.Odometry()
+      if self.platoon_info is None:
+        self.platoon_info = common_msgs.msg.PlatoonState()
       end = 0
       _x = self
       start = end
@@ -231,43 +339,146 @@ float64 z"""
       _x = self
       start = end
       end += 12
-      (_x.odom.header.seq, _x.odom.header.stamp.secs, _x.odom.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      (_x.platoon_info.header.seq, _x.platoon_info.header.stamp.secs, _x.platoon_info.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.odom.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.platoon_info.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.odom.header.frame_id = str[start:end]
+        self.platoon_info.header.frame_id = str[start:end]
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.odom.child_frame_id = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.odom.child_frame_id = str[start:end]
-      _x = self
-      start = end
-      end += 56
-      (_x.odom.pose.pose.position.x, _x.odom.pose.pose.position.y, _x.odom.pose.pose.position.z, _x.odom.pose.pose.orientation.x, _x.odom.pose.pose.orientation.y, _x.odom.pose.pose.orientation.z, _x.odom.pose.pose.orientation.w,) = _get_struct_7d().unpack(str[start:end])
-      start = end
-      end += 288
-      self.odom.pose.covariance = _get_struct_36d().unpack(str[start:end])
-      _x = self
-      start = end
-      end += 48
-      (_x.odom.twist.twist.linear.x, _x.odom.twist.twist.linear.y, _x.odom.twist.twist.linear.z, _x.odom.twist.twist.angular.x, _x.odom.twist.twist.angular.y, _x.odom.twist.twist.angular.z,) = _get_struct_6d().unpack(str[start:end])
-      start = end
-      end += 288
-      self.odom.twist.covariance = _get_struct_36d().unpack(str[start:end])
-      _x = self
-      start = end
-      end += 40
-      (_x.leader_speed, _x.leader_acc, _x.leader_acc_pedal, _x.leader_brake_pedal, _x.leader_frontwheel_angle,) = _get_struct_5d().unpack(str[start:end])
+      self.platoon_info.vehicles = []
+      for i in range(0, length):
+        val1 = common_msgs.msg.VehicleState()
+        _v20 = val1.header
+        start = end
+        end += 4
+        (_v20.seq,) = _get_struct_I().unpack(str[start:end])
+        _v21 = _v20.stamp
+        _x = _v21
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v20.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v20.frame_id = str[start:end]
+        _v22 = val1.odom
+        _v23 = _v22.header
+        start = end
+        end += 4
+        (_v23.seq,) = _get_struct_I().unpack(str[start:end])
+        _v24 = _v23.stamp
+        _x = _v24
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v23.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v23.frame_id = str[start:end]
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v22.child_frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v22.child_frame_id = str[start:end]
+        _v25 = _v22.pose
+        _v26 = _v25.pose
+        _v27 = _v26.position
+        _x = _v27
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _v28 = _v26.orientation
+        _x = _v28
+        start = end
+        end += 32
+        (_x.x, _x.y, _x.z, _x.w,) = _get_struct_4d().unpack(str[start:end])
+        start = end
+        end += 288
+        _v25.covariance = _get_struct_36d().unpack(str[start:end])
+        _v29 = _v22.twist
+        _v30 = _v29.twist
+        _v31 = _v30.linear
+        _x = _v31
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _v32 = _v30.angular
+        _x = _v32
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        start = end
+        end += 288
+        _v29.covariance = _get_struct_36d().unpack(str[start:end])
+        _v33 = val1.dynamics
+        _v34 = _v33.header
+        start = end
+        end += 4
+        (_v34.seq,) = _get_struct_I().unpack(str[start:end])
+        _v35 = _v34.stamp
+        _x = _v35
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v34.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v34.frame_id = str[start:end]
+        _x = _v33
+        start = end
+        end += 48
+        (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+        _v36 = val1.chassis
+        _v37 = _v36.header
+        start = end
+        end += 4
+        (_v37.seq,) = _get_struct_I().unpack(str[start:end])
+        _v38 = _v37.stamp
+        _x = _v38
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v37.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v37.frame_id = str[start:end]
+        _x = _v36
+        start = end
+        end += 13
+        (_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_3B2fbB().unpack(str[start:end])
+        _v36.parking_brake = bool(_v36.parking_brake)
+        self.platoon_info.vehicles.append(val1)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -289,27 +500,95 @@ float64 z"""
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_3I().pack(_x.odom.header.seq, _x.odom.header.stamp.secs, _x.odom.header.stamp.nsecs))
-      _x = self.odom.header.frame_id
+      buff.write(_get_struct_3I().pack(_x.platoon_info.header.seq, _x.platoon_info.header.stamp.secs, _x.platoon_info.header.stamp.nsecs))
+      _x = self.platoon_info.header.frame_id
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self.odom.child_frame_id
-      length = len(_x)
-      if python3 or type(_x) == unicode:
-        _x = _x.encode('utf-8')
+      length = len(self.platoon_info.vehicles)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.platoon_info.vehicles:
+        _v39 = val1.header
+        _x = _v39.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v40 = _v39.stamp
+        _x = _v40
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v39.frame_id
         length = len(_x)
-      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-      _x = self
-      buff.write(_get_struct_7d().pack(_x.odom.pose.pose.position.x, _x.odom.pose.pose.position.y, _x.odom.pose.pose.position.z, _x.odom.pose.pose.orientation.x, _x.odom.pose.pose.orientation.y, _x.odom.pose.pose.orientation.z, _x.odom.pose.pose.orientation.w))
-      buff.write(self.odom.pose.covariance.tostring())
-      _x = self
-      buff.write(_get_struct_6d().pack(_x.odom.twist.twist.linear.x, _x.odom.twist.twist.linear.y, _x.odom.twist.twist.linear.z, _x.odom.twist.twist.angular.x, _x.odom.twist.twist.angular.y, _x.odom.twist.twist.angular.z))
-      buff.write(self.odom.twist.covariance.tostring())
-      _x = self
-      buff.write(_get_struct_5d().pack(_x.leader_speed, _x.leader_acc, _x.leader_acc_pedal, _x.leader_brake_pedal, _x.leader_frontwheel_angle))
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _v41 = val1.odom
+        _v42 = _v41.header
+        _x = _v42.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v43 = _v42.stamp
+        _x = _v43
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v42.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v41.child_frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _v44 = _v41.pose
+        _v45 = _v44.pose
+        _v46 = _v45.position
+        _x = _v46
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _v47 = _v45.orientation
+        _x = _v47
+        buff.write(_get_struct_4d().pack(_x.x, _x.y, _x.z, _x.w))
+        buff.write(_v44.covariance.tostring())
+        _v48 = _v41.twist
+        _v49 = _v48.twist
+        _v50 = _v49.linear
+        _x = _v50
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _v51 = _v49.angular
+        _x = _v51
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        buff.write(_v48.covariance.tostring())
+        _v52 = val1.dynamics
+        _v53 = _v52.header
+        _x = _v53.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v54 = _v53.stamp
+        _x = _v54
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v53.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v52
+        buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+        _v55 = val1.chassis
+        _v56 = _v55.header
+        _x = _v56.seq
+        buff.write(_get_struct_I().pack(_x))
+        _v57 = _v56.stamp
+        _x = _v57
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
+        _x = _v56.frame_id
+        length = len(_x)
+        if python3 or type(_x) == unicode:
+          _x = _x.encode('utf-8')
+          length = len(_x)
+        buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = _v55
+        buff.write(_get_struct_3B2fbB().pack(_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -324,8 +603,8 @@ float64 z"""
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
-      if self.odom is None:
-        self.odom = nav_msgs.msg.Odometry()
+      if self.platoon_info is None:
+        self.platoon_info = common_msgs.msg.PlatoonState()
       end = 0
       _x = self
       start = end
@@ -343,43 +622,146 @@ float64 z"""
       _x = self
       start = end
       end += 12
-      (_x.odom.header.seq, _x.odom.header.stamp.secs, _x.odom.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
+      (_x.platoon_info.header.seq, _x.platoon_info.header.stamp.secs, _x.platoon_info.header.stamp.nsecs,) = _get_struct_3I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
       start = end
       end += length
       if python3:
-        self.odom.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        self.platoon_info.header.frame_id = str[start:end].decode('utf-8', 'rosmsg')
       else:
-        self.odom.header.frame_id = str[start:end]
+        self.platoon_info.header.frame_id = str[start:end]
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
-      start = end
-      end += length
-      if python3:
-        self.odom.child_frame_id = str[start:end].decode('utf-8', 'rosmsg')
-      else:
-        self.odom.child_frame_id = str[start:end]
-      _x = self
-      start = end
-      end += 56
-      (_x.odom.pose.pose.position.x, _x.odom.pose.pose.position.y, _x.odom.pose.pose.position.z, _x.odom.pose.pose.orientation.x, _x.odom.pose.pose.orientation.y, _x.odom.pose.pose.orientation.z, _x.odom.pose.pose.orientation.w,) = _get_struct_7d().unpack(str[start:end])
-      start = end
-      end += 288
-      self.odom.pose.covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=36)
-      _x = self
-      start = end
-      end += 48
-      (_x.odom.twist.twist.linear.x, _x.odom.twist.twist.linear.y, _x.odom.twist.twist.linear.z, _x.odom.twist.twist.angular.x, _x.odom.twist.twist.angular.y, _x.odom.twist.twist.angular.z,) = _get_struct_6d().unpack(str[start:end])
-      start = end
-      end += 288
-      self.odom.twist.covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=36)
-      _x = self
-      start = end
-      end += 40
-      (_x.leader_speed, _x.leader_acc, _x.leader_acc_pedal, _x.leader_brake_pedal, _x.leader_frontwheel_angle,) = _get_struct_5d().unpack(str[start:end])
+      self.platoon_info.vehicles = []
+      for i in range(0, length):
+        val1 = common_msgs.msg.VehicleState()
+        _v58 = val1.header
+        start = end
+        end += 4
+        (_v58.seq,) = _get_struct_I().unpack(str[start:end])
+        _v59 = _v58.stamp
+        _x = _v59
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v58.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v58.frame_id = str[start:end]
+        _v60 = val1.odom
+        _v61 = _v60.header
+        start = end
+        end += 4
+        (_v61.seq,) = _get_struct_I().unpack(str[start:end])
+        _v62 = _v61.stamp
+        _x = _v62
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v61.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v61.frame_id = str[start:end]
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v60.child_frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v60.child_frame_id = str[start:end]
+        _v63 = _v60.pose
+        _v64 = _v63.pose
+        _v65 = _v64.position
+        _x = _v65
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _v66 = _v64.orientation
+        _x = _v66
+        start = end
+        end += 32
+        (_x.x, _x.y, _x.z, _x.w,) = _get_struct_4d().unpack(str[start:end])
+        start = end
+        end += 288
+        _v63.covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=36)
+        _v67 = _v60.twist
+        _v68 = _v67.twist
+        _v69 = _v68.linear
+        _x = _v69
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _v70 = _v68.angular
+        _x = _v70
+        start = end
+        end += 24
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        start = end
+        end += 288
+        _v67.covariance = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=36)
+        _v71 = val1.dynamics
+        _v72 = _v71.header
+        start = end
+        end += 4
+        (_v72.seq,) = _get_struct_I().unpack(str[start:end])
+        _v73 = _v72.stamp
+        _x = _v73
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v72.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v72.frame_id = str[start:end]
+        _x = _v71
+        start = end
+        end += 48
+        (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+        _v74 = val1.chassis
+        _v75 = _v74.header
+        start = end
+        end += 4
+        (_v75.seq,) = _get_struct_I().unpack(str[start:end])
+        _v76 = _v75.stamp
+        _x = _v76
+        start = end
+        end += 8
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        start = end
+        end += length
+        if python3:
+          _v75.frame_id = str[start:end].decode('utf-8', 'rosmsg')
+        else:
+          _v75.frame_id = str[start:end]
+        _x = _v74
+        start = end
+        end += 13
+        (_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_3B2fbB().unpack(str[start:end])
+        _v74.parking_brake = bool(_v74.parking_brake)
+        self.platoon_info.vehicles.append(val1)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -388,33 +770,45 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I
 _struct_36d = None
 def _get_struct_36d():
     global _struct_36d
     if _struct_36d is None:
         _struct_36d = struct.Struct("<36d")
     return _struct_36d
+_struct_3B2fbB = None
+def _get_struct_3B2fbB():
+    global _struct_3B2fbB
+    if _struct_3B2fbB is None:
+        _struct_3B2fbB = struct.Struct("<3B2fbB")
+    return _struct_3B2fbB
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_5d = None
-def _get_struct_5d():
-    global _struct_5d
-    if _struct_5d is None:
-        _struct_5d = struct.Struct("<5d")
-    return _struct_5d
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d
+_struct_4d = None
+def _get_struct_4d():
+    global _struct_4d
+    if _struct_4d is None:
+        _struct_4d = struct.Struct("<4d")
+    return _struct_4d
 _struct_6d = None
 def _get_struct_6d():
     global _struct_6d
     if _struct_6d is None:
         _struct_6d = struct.Struct("<6d")
     return _struct_6d
-_struct_7d = None
-def _get_struct_7d():
-    global _struct_7d
-    if _struct_7d is None:
-        _struct_7d = struct.Struct("<7d")
-    return _struct_7d

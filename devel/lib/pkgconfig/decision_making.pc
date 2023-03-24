@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/devel
+prefix=/home/lhq/Projects/PLAuto/devel
 
 Name: decision_making
 Description: Description of decision_making

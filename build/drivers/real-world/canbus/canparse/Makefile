@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles /home/user/code/PLAuto/build/drivers/real-world/canbus/canparse/CMakeFiles/progress.marks
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles 0
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/canparse/CMakeFiles/progress.marks
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/clean
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/preinstall
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/preinstall
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/rule:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/rule
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/rule
 .PHONY : drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ canparse: drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/rule
 
 # fast build rule for target.
 canparse/fast:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build
 .PHONY : canparse/fast
 
 src/canparse.o: src/canparse.cpp.o
@@ -188,7 +188,7 @@ src/canparse.o: src/canparse.cpp.o
 
 # target to build an object file
 src/canparse.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.o
 .PHONY : src/canparse.cpp.o
 
 src/canparse.i: src/canparse.cpp.i
@@ -197,7 +197,7 @@ src/canparse.i: src/canparse.cpp.i
 
 # target to preprocess a source file
 src/canparse.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.i
 .PHONY : src/canparse.cpp.i
 
 src/canparse.s: src/canparse.cpp.s
@@ -206,7 +206,7 @@ src/canparse.s: src/canparse.cpp.s
 
 # target to generate assembly for a file
 src/canparse.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse.cpp.s
 .PHONY : src/canparse.cpp.s
 
 src/canparse_handle.o: src/canparse_handle.cpp.o
@@ -215,7 +215,7 @@ src/canparse_handle.o: src/canparse_handle.cpp.o
 
 # target to build an object file
 src/canparse_handle.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.o
 .PHONY : src/canparse_handle.cpp.o
 
 src/canparse_handle.i: src/canparse_handle.cpp.i
@@ -224,7 +224,7 @@ src/canparse_handle.i: src/canparse_handle.cpp.i
 
 # target to preprocess a source file
 src/canparse_handle.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.i
 .PHONY : src/canparse_handle.cpp.i
 
 src/canparse_handle.s: src/canparse_handle.cpp.s
@@ -233,7 +233,7 @@ src/canparse_handle.s: src/canparse_handle.cpp.s
 
 # target to generate assembly for a file
 src/canparse_handle.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/canparse_handle.cpp.s
 .PHONY : src/canparse_handle.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -242,7 +242,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -251,7 +251,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -260,7 +260,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/protocol.o: src/protocol.cpp.o
@@ -269,7 +269,7 @@ src/protocol.o: src/protocol.cpp.o
 
 # target to build an object file
 src/protocol.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.o
 .PHONY : src/protocol.cpp.o
 
 src/protocol.i: src/protocol.cpp.i
@@ -278,7 +278,7 @@ src/protocol.i: src/protocol.cpp.i
 
 # target to preprocess a source file
 src/protocol.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.i
 .PHONY : src/protocol.cpp.i
 
 src/protocol.s: src/protocol.cpp.s
@@ -287,7 +287,7 @@ src/protocol.s: src/protocol.cpp.s
 
 # target to generate assembly for a file
 src/protocol.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/build.make drivers/real-world/canbus/canparse/CMakeFiles/canparse.dir/src/protocol.cpp.s
 .PHONY : src/protocol.cpp.s
 
 # Help Target
@@ -327,6 +327,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

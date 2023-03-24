@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/libwaypoint_follower/test-libwaypoint_follower"
-  "/home/user/code/PLAuto/devel/lib/libwaypoint_follower/test-libwaypoint_follower.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/libwaypoint_follower/test-libwaypoint_follower"
+  "/home/lhq/Projects/PLAuto/devel/lib/libwaypoint_follower/test-libwaypoint_follower.pdb"
   "CMakeFiles/test-libwaypoint_follower.dir/src/libwaypoint_follower.cpp.o"
   "CMakeFiles/test-libwaypoint_follower.dir/test/src/test_libwaypoint_follower.cpp.o"
 )

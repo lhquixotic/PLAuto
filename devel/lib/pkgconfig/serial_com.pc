@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/devel
+prefix=/home/lhq/Projects/PLAuto/devel
 
 Name: serial_com
 Description: Description of serial_com

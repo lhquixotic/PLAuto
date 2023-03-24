@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/canparse/canparse"
-  "/home/user/code/PLAuto/devel/lib/canparse/canparse.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/canparse/canparse"
+  "/home/lhq/Projects/PLAuto/devel/lib/canparse/canparse.pdb"
   "CMakeFiles/canparse.dir/src/canparse.cpp.o"
   "CMakeFiles/canparse.dir/src/canparse_handle.cpp.o"
   "CMakeFiles/canparse.dir/src/main.cpp.o"

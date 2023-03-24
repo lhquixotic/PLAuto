@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/obu_send/obu_send"
-  "/home/user/code/PLAuto/devel/lib/obu_send/obu_send.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/obu_send/obu_send"
+  "/home/lhq/Projects/PLAuto/devel/lib/obu_send/obu_send.pdb"
   "CMakeFiles/obu_send.dir/src/main.cpp.o"
   "CMakeFiles/obu_send.dir/src/obu_send.cpp.o"
   "CMakeFiles/obu_send.dir/src/obu_send_handle.cpp.o"

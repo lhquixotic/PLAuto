@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles /home/user/code/PLAuto/build/drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/progress.marks
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/code/PLAuto/build/CMakeFiles 0
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/progress.marks
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lhq/Projects/PLAuto/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/clean
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/preinstall
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/preinstall
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/rule:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/rule
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f CMakeFiles/Makefile2 drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/rule
 .PHONY : drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/rule
 
 # Convenience name for target.
@@ -179,7 +179,7 @@ sendprotocol: drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/send
 
 # fast build rule for target.
 sendprotocol/fast:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build
 .PHONY : sendprotocol/fast
 
 ADCU_BodyCmd.o: ADCU_BodyCmd.cpp.o
@@ -188,7 +188,7 @@ ADCU_BodyCmd.o: ADCU_BodyCmd.cpp.o
 
 # target to build an object file
 ADCU_BodyCmd.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.o
 .PHONY : ADCU_BodyCmd.cpp.o
 
 ADCU_BodyCmd.i: ADCU_BodyCmd.cpp.i
@@ -197,7 +197,7 @@ ADCU_BodyCmd.i: ADCU_BodyCmd.cpp.i
 
 # target to preprocess a source file
 ADCU_BodyCmd.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.i
 .PHONY : ADCU_BodyCmd.cpp.i
 
 ADCU_BodyCmd.s: ADCU_BodyCmd.cpp.s
@@ -206,7 +206,7 @@ ADCU_BodyCmd.s: ADCU_BodyCmd.cpp.s
 
 # target to generate assembly for a file
 ADCU_BodyCmd.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BodyCmd.cpp.s
 .PHONY : ADCU_BodyCmd.cpp.s
 
 ADCU_BrakeCmd.o: ADCU_BrakeCmd.cpp.o
@@ -215,7 +215,7 @@ ADCU_BrakeCmd.o: ADCU_BrakeCmd.cpp.o
 
 # target to build an object file
 ADCU_BrakeCmd.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.o
 .PHONY : ADCU_BrakeCmd.cpp.o
 
 ADCU_BrakeCmd.i: ADCU_BrakeCmd.cpp.i
@@ -224,7 +224,7 @@ ADCU_BrakeCmd.i: ADCU_BrakeCmd.cpp.i
 
 # target to preprocess a source file
 ADCU_BrakeCmd.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.i
 .PHONY : ADCU_BrakeCmd.cpp.i
 
 ADCU_BrakeCmd.s: ADCU_BrakeCmd.cpp.s
@@ -233,7 +233,7 @@ ADCU_BrakeCmd.s: ADCU_BrakeCmd.cpp.s
 
 # target to generate assembly for a file
 ADCU_BrakeCmd.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_BrakeCmd.cpp.s
 .PHONY : ADCU_BrakeCmd.cpp.s
 
 ADCU_DriveCmd0.o: ADCU_DriveCmd0.cpp.o
@@ -242,7 +242,7 @@ ADCU_DriveCmd0.o: ADCU_DriveCmd0.cpp.o
 
 # target to build an object file
 ADCU_DriveCmd0.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.o
 .PHONY : ADCU_DriveCmd0.cpp.o
 
 ADCU_DriveCmd0.i: ADCU_DriveCmd0.cpp.i
@@ -251,7 +251,7 @@ ADCU_DriveCmd0.i: ADCU_DriveCmd0.cpp.i
 
 # target to preprocess a source file
 ADCU_DriveCmd0.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.i
 .PHONY : ADCU_DriveCmd0.cpp.i
 
 ADCU_DriveCmd0.s: ADCU_DriveCmd0.cpp.s
@@ -260,7 +260,7 @@ ADCU_DriveCmd0.s: ADCU_DriveCmd0.cpp.s
 
 # target to generate assembly for a file
 ADCU_DriveCmd0.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_DriveCmd0.cpp.s
 .PHONY : ADCU_DriveCmd0.cpp.s
 
 ADCU_ParkCmd.o: ADCU_ParkCmd.cpp.o
@@ -269,7 +269,7 @@ ADCU_ParkCmd.o: ADCU_ParkCmd.cpp.o
 
 # target to build an object file
 ADCU_ParkCmd.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.o
 .PHONY : ADCU_ParkCmd.cpp.o
 
 ADCU_ParkCmd.i: ADCU_ParkCmd.cpp.i
@@ -278,7 +278,7 @@ ADCU_ParkCmd.i: ADCU_ParkCmd.cpp.i
 
 # target to preprocess a source file
 ADCU_ParkCmd.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.i
 .PHONY : ADCU_ParkCmd.cpp.i
 
 ADCU_ParkCmd.s: ADCU_ParkCmd.cpp.s
@@ -287,7 +287,7 @@ ADCU_ParkCmd.s: ADCU_ParkCmd.cpp.s
 
 # target to generate assembly for a file
 ADCU_ParkCmd.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_ParkCmd.cpp.s
 .PHONY : ADCU_ParkCmd.cpp.s
 
 ADCU_PowerCmd.o: ADCU_PowerCmd.cpp.o
@@ -296,7 +296,7 @@ ADCU_PowerCmd.o: ADCU_PowerCmd.cpp.o
 
 # target to build an object file
 ADCU_PowerCmd.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.o
 .PHONY : ADCU_PowerCmd.cpp.o
 
 ADCU_PowerCmd.i: ADCU_PowerCmd.cpp.i
@@ -305,7 +305,7 @@ ADCU_PowerCmd.i: ADCU_PowerCmd.cpp.i
 
 # target to preprocess a source file
 ADCU_PowerCmd.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.i
 .PHONY : ADCU_PowerCmd.cpp.i
 
 ADCU_PowerCmd.s: ADCU_PowerCmd.cpp.s
@@ -314,7 +314,7 @@ ADCU_PowerCmd.s: ADCU_PowerCmd.cpp.s
 
 # target to generate assembly for a file
 ADCU_PowerCmd.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_PowerCmd.cpp.s
 .PHONY : ADCU_PowerCmd.cpp.s
 
 ADCU_SteerCmd.o: ADCU_SteerCmd.cpp.o
@@ -323,7 +323,7 @@ ADCU_SteerCmd.o: ADCU_SteerCmd.cpp.o
 
 # target to build an object file
 ADCU_SteerCmd.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.o
 .PHONY : ADCU_SteerCmd.cpp.o
 
 ADCU_SteerCmd.i: ADCU_SteerCmd.cpp.i
@@ -332,7 +332,7 @@ ADCU_SteerCmd.i: ADCU_SteerCmd.cpp.i
 
 # target to preprocess a source file
 ADCU_SteerCmd.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.i
 .PHONY : ADCU_SteerCmd.cpp.i
 
 ADCU_SteerCmd.s: ADCU_SteerCmd.cpp.s
@@ -341,7 +341,7 @@ ADCU_SteerCmd.s: ADCU_SteerCmd.cpp.s
 
 # target to generate assembly for a file
 ADCU_SteerCmd.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/ADCU_SteerCmd.cpp.s
 .PHONY : ADCU_SteerCmd.cpp.s
 
 protocol.o: protocol.cpp.o
@@ -350,7 +350,7 @@ protocol.o: protocol.cpp.o
 
 # target to build an object file
 protocol.cpp.o:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.o
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.o
 .PHONY : protocol.cpp.o
 
 protocol.i: protocol.cpp.i
@@ -359,7 +359,7 @@ protocol.i: protocol.cpp.i
 
 # target to preprocess a source file
 protocol.cpp.i:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.i
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.i
 .PHONY : protocol.cpp.i
 
 protocol.s: protocol.cpp.s
@@ -368,7 +368,7 @@ protocol.s: protocol.cpp.s
 
 # target to generate assembly for a file
 protocol.cpp.s:
-	cd /home/user/code/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.s
+	cd /home/lhq/Projects/PLAuto/build && $(MAKE) -f drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/build.make drivers/real-world/canbus/cansend/include/protocol/CMakeFiles/sendprotocol.dir/protocol.cpp.s
 .PHONY : protocol.cpp.s
 
 # Help Target
@@ -417,6 +417,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

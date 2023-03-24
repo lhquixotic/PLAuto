@@ -1,0 +1,11 @@
+
+<launch>
+    <arg name="run_mode_setting" default="simulation" />
+    <!-- localization -->
+    <include file = "$(find localization_adapter)/launch/localization_adapter.launch">
+        <param name="run_mode_setting" value="$(arg run_mode_setting)" />
+    </include>
+
+    <!-- waypoint_reconstruction -->
+    <include file = "$(find waypoint_reconstructor)/launch/waypoint_reconstructor.launch"></include>
+</launch>

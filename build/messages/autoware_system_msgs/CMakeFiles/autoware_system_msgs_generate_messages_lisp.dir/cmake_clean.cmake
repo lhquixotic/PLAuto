@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/DiagnosticStatus.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/DiagnosticStatusArray.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/HardwareStatus.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/NodeStatus.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/SystemStatus.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/DiagnosticStatus.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/DiagnosticStatusArray.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/HardwareStatus.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/NodeStatus.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/autoware_system_msgs/msg/SystemStatus.lisp"
   "CMakeFiles/autoware_system_msgs_generate_messages_lisp"
 )
 

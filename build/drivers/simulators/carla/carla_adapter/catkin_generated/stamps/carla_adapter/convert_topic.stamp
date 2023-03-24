@@ -15,7 +15,7 @@ import rospy
 from carla_msgs.msg import CarlaWorldInfo, CarlaEgoVehicleControl, CarlaEgoVehicleStatus
 from nav_msgs.msg import Path
 
-from common_msgs import ControlCommand
+from common_msgs.msg import ControlCommand
 
 import argparse
 from easydict import EasyDict as edict

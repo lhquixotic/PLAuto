@@ -1,8 +1,0 @@
-prefix=/home/user/code/PLAuto/install
-
-Name: data_replayer
-Description: Description of data_replayer
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

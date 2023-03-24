@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/pcl_recorder/pcl_recorder_node"
-  "/home/user/code/PLAuto/devel/lib/pcl_recorder/pcl_recorder_node.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/pcl_recorder/pcl_recorder_node"
+  "/home/lhq/Projects/PLAuto/devel/lib/pcl_recorder/pcl_recorder_node.pdb"
   "CMakeFiles/pcl_recorder_node.dir/src/PclRecorder.cpp.o"
   "CMakeFiles/pcl_recorder_node.dir/src/main.cpp.o"
 )

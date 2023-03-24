@@ -6,7 +6,7 @@ from os import path as os_path
 from pkgutil import extend_path
 from sys import path as sys_path
 
-__extended_path = '/home/user/code/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_spawn_objects/src'.split(';')
+__extended_path = '/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_spawn_objects/src'.split(';')
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
   common_msgs
+  autoware_msgs
   )
 
 catkin_package(

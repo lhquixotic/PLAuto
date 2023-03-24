@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/user/code/PLAuto/src/drivers/real-world/canbus/can_test
-# Build directory: /home/user/code/PLAuto/build/drivers/real-world/canbus/can_test
+# Source directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_test
+# Build directory: /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_test
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

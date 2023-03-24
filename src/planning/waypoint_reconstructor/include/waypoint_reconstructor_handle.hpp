@@ -51,8 +51,8 @@ class Waypoint_ReconstructorHandle {
   ros::Publisher pub1_,pub2_,pub3_,pub4_;
 
   void poseCallback(const nav_msgs::OdometryConstPtr &msg);
-  void V2VCallback(const common_msgs::V2VConstPtr &msg);
-  std::string current_pose_topic_name_,v2v_topic_name_,leader_pose_topic_name_; 
+  void PlatoonStateCallback(const common_msgs::PlatoonStateConstPtr &msg);
+  std::string current_pose_topic_name_,platoon_state_topic_name_,leader_pose_topic_name_; 
   std::string final_waypoint_topic_name_,final_waypoint_visual_topic_name_;
 
   int node_rate_;

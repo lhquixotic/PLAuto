@@ -1,11 +1,13 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/ChassisStatus.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/ControlCommand.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/GpsInfo.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/PolarBoundary.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/StopDecision.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/V2V.js"
-  "/home/user/code/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/VehicleDynamicState.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/ChassisState.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/ControlCommand.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/GpsInfo.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/PlatoonState.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/PolarBoundary.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/StopDecision.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/V2V.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/VehicleDynamicState.js"
+  "/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/common_msgs/msg/VehicleState.js"
   "CMakeFiles/common_msgs_generate_messages_nodejs"
 )
 

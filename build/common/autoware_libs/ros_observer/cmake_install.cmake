@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/common/autoware_libs/ros_observer
+# Install script for directory: /home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,22 +38,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observer.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observer.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_observer/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observerConfig.cmake"
-    "/home/user/code/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observerConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observerConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/common/autoware_libs/ros_observer/catkin_generated/installspace/ros_observerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_observer" TYPE FILE FILES "/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_observer" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ros_observer" TYPE DIRECTORY FILES "/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/include/ros_observer/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ros_observer" TYPE DIRECTORY FILES "/home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer/include/ros_observer/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -63,7 +63,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ros_observer/ros_observer"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ros_observer" TYPE EXECUTABLE FILES "/home/user/code/PLAuto/devel/lib/ros_observer/ros_observer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/ros_observer" TYPE EXECUTABLE FILES "/home/lhq/Projects/PLAuto/devel/lib/ros_observer/ros_observer")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ros_observer/ros_observer" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/ros_observer/ros_observer")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -79,7 +79,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/liblib_ros_observer.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/user/code/PLAuto/devel/lib/liblib_ros_observer.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lhq/Projects/PLAuto/devel/lib/liblib_ros_observer.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/liblib_ros_observer.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/liblib_ros_observer.so")
     file(RPATH_CHANGE
@@ -96,6 +96,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_observer/launch" TYPE DIRECTORY FILES "/home/user/code/PLAuto/src/common/autoware_libs/ros_observer/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros_observer/launch" TYPE DIRECTORY FILES "/home/lhq/Projects/PLAuto/src/common/autoware_libs/ros_observer/launch/")
 endif()
 

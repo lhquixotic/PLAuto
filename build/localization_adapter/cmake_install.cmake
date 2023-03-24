@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/localization_adapter
+# Install script for directory: /home/lhq/Projects/PLAuto/src/localization_adapter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapter.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapter.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization_adapter/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapterConfig.cmake"
-    "/home/user/code/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapterConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapterConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/localization_adapter/catkin_generated/installspace/localization_adapterConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization_adapter" TYPE FILE FILES "/home/user/code/PLAuto/src/localization_adapter/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/localization_adapter" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/localization_adapter/package.xml")
 endif()
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 # Utility rule file for roscpp_generate_messages_eus.
 
@@ -63,10 +63,10 @@ drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir
 .PHONY : drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/build
 
 drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	cd /home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/clean
 
 drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/code/PLAuto/src /home/user/code/PLAuto/src/drivers/real-world/canbus/can_bridge /home/user/code/PLAuto/build /home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge /home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhq/Projects/PLAuto/src /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_bridge /home/lhq/Projects/PLAuto/build /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge /home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : drivers/real-world/canbus/can_bridge/CMakeFiles/roscpp_generate_messages_eus.dir/depend
 

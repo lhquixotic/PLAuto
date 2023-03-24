@@ -5,6 +5,7 @@
 #include <deque>
 #include "common_msgs/GpsInfo.h"
 #include "common_msgs/V2V.h"
+#include "common_msgs/PlatoonState.h"
 #include "autoware_msgs/Lane.h"
 #include "std_msgs/String.h"
 #include "tf/transform_datatypes.h"//转换函数头文件
@@ -29,6 +30,7 @@ class Waypoint_Reconstructor {
   // Setters
   void setSelfPose(const nav_msgs::OdometryConstPtr &msg);
   void setV2V(const common_msgs::V2VConstPtr &msg);
+  void setPlatoonState(const common_msgs::PlatoonStateConstPtr &msg);
   
   void initWaypoints();
   void updateWaypoints();
@@ -41,7 +43,8 @@ class Waypoint_Reconstructor {
   bool initFlag;
 
   nav_msgs::Odometry leader_pose;
-  common_msgs::V2V v2v_info;
+  // common_msgs::V2V v2v_info;
+  common_msgs::PlatoonState platoon_state;
 
   autoware_msgs::Lane lane;
   geometry_msgs::Pose current_pose;

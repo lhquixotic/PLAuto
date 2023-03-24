@@ -10,35 +10,23 @@
 
 (in-package "ROS")
 ;;//! \htmlinclude V2V.msg.html
-(if (not (find-package "NAV_MSGS"))
-  (ros::roseus-add-msgs "nav_msgs"))
 (if (not (find-package "STD_MSGS"))
   (ros::roseus-add-msgs "std_msgs"))
 
 
 (defclass common_msgs::V2V
   :super ros::object
-  :slots (_header _odom _leader_speed _leader_acc _leader_acc_pedal _leader_brake_pedal _leader_frontwheel_angle ))
+  :slots (_header _platoon_info ))
 
 (defmethod common_msgs::V2V
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
-    ((:odom __odom) (instance nav_msgs::Odometry :init))
-    ((:leader_speed __leader_speed) 0.0)
-    ((:leader_acc __leader_acc) 0.0)
-    ((:leader_acc_pedal __leader_acc_pedal) 0.0)
-    ((:leader_brake_pedal __leader_brake_pedal) 0.0)
-    ((:leader_frontwheel_angle __leader_frontwheel_angle) 0.0)
+    ((:platoon_info __platoon_info) (instance common_msgs::PlatoonState :init))
     )
    (send-super :init)
    (setq _header __header)
-   (setq _odom __odom)
-   (setq _leader_speed (float __leader_speed))
-   (setq _leader_acc (float __leader_acc))
-   (setq _leader_acc_pedal (float __leader_acc_pedal))
-   (setq _leader_brake_pedal (float __leader_brake_pedal))
-   (setq _leader_frontwheel_angle (float __leader_frontwheel_angle))
+   (setq _platoon_info __platoon_info)
    self)
   (:header
    (&rest __header)
@@ -47,45 +35,20 @@
      (progn
        (if __header (setq _header (car __header)))
        _header)))
-  (:odom
-   (&rest __odom)
-   (if (keywordp (car __odom))
-       (send* _odom __odom)
+  (:platoon_info
+   (&rest __platoon_info)
+   (if (keywordp (car __platoon_info))
+       (send* _platoon_info __platoon_info)
      (progn
-       (if __odom (setq _odom (car __odom)))
-       _odom)))
-  (:leader_speed
-   (&optional __leader_speed)
-   (if __leader_speed (setq _leader_speed __leader_speed)) _leader_speed)
-  (:leader_acc
-   (&optional __leader_acc)
-   (if __leader_acc (setq _leader_acc __leader_acc)) _leader_acc)
-  (:leader_acc_pedal
-   (&optional __leader_acc_pedal)
-   (if __leader_acc_pedal (setq _leader_acc_pedal __leader_acc_pedal)) _leader_acc_pedal)
-  (:leader_brake_pedal
-   (&optional __leader_brake_pedal)
-   (if __leader_brake_pedal (setq _leader_brake_pedal __leader_brake_pedal)) _leader_brake_pedal)
-  (:leader_frontwheel_angle
-   (&optional __leader_frontwheel_angle)
-   (if __leader_frontwheel_angle (setq _leader_frontwheel_angle __leader_frontwheel_angle)) _leader_frontwheel_angle)
+       (if __platoon_info (setq _platoon_info (car __platoon_info)))
+       _platoon_info)))
   (:serialization-length
    ()
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
-    ;; nav_msgs/Odometry _odom
-    (send _odom :serialization-length)
-    ;; float64 _leader_speed
-    8
-    ;; float64 _leader_acc
-    8
-    ;; float64 _leader_acc_pedal
-    8
-    ;; float64 _leader_brake_pedal
-    8
-    ;; float64 _leader_frontwheel_angle
-    8
+    ;; common_msgs/PlatoonState _platoon_info
+    (send _platoon_info :serialization-length)
     ))
   (:serialize
    (&optional strm)
@@ -93,52 +56,26 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
-     ;; nav_msgs/Odometry _odom
-       (send _odom :serialize s)
-     ;; float64 _leader_speed
-       (sys::poke _leader_speed (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _leader_acc
-       (sys::poke _leader_acc (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _leader_acc_pedal
-       (sys::poke _leader_acc_pedal (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _leader_brake_pedal
-       (sys::poke _leader_brake_pedal (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _leader_frontwheel_angle
-       (sys::poke _leader_frontwheel_angle (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; common_msgs/PlatoonState _platoon_info
+       (send _platoon_info :serialize s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
-   ;; nav_msgs/Odometry _odom
-     (send _odom :deserialize buf ptr-) (incf ptr- (send _odom :serialization-length))
-   ;; float64 _leader_speed
-     (setq _leader_speed (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _leader_acc
-     (setq _leader_acc (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _leader_acc_pedal
-     (setq _leader_acc_pedal (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _leader_brake_pedal
-     (setq _leader_brake_pedal (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _leader_frontwheel_angle
-     (setq _leader_frontwheel_angle (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; common_msgs/PlatoonState _platoon_info
+     (send _platoon_info :deserialize buf ptr-) (incf ptr- (send _platoon_info :serialization-length))
    ;;
    self)
   )
 
-(setf (get common_msgs::V2V :md5sum-) "5d3f3ce1d5d07abc8f4695c3e316dc23")
+(setf (get common_msgs::V2V :md5sum-) "eb9ec1d07a2ce2b979126f710e74eb76")
 (setf (get common_msgs::V2V :datatype-) "common_msgs/V2V")
 (setf (get common_msgs::V2V :definition-)
       "std_msgs/Header header
-#gpsinfo
-nav_msgs/Odometry odom
-#leader info
-float64 leader_speed
-float64 leader_acc
-float64 leader_acc_pedal
-float64 leader_brake_pedal
-float64 leader_frontwheel_angle
+
+common_msgs/PlatoonState platoon_info
 
 ================================================================================
 MSG: std_msgs/Header
@@ -155,6 +92,28 @@ uint32 seq
 time stamp
 #Frame this data is associated with
 string frame_id
+
+================================================================================
+MSG: common_msgs/PlatoonState
+std_msgs/Header header
+
+# member vehicle state
+common_msgs/VehicleState[] vehicles
+================================================================================
+MSG: common_msgs/VehicleState
+# Id of the vehicle
+std_msgs/Header header 
+
+# Basic info of the vehicle
+
+# Odometry info of the vehicle
+nav_msgs/Odometry odom
+
+# Dynamic state of vehicle
+common_msgs/VehicleDynamicState dynamics
+
+# Chassis state of vehicle
+common_msgs/ChassisState chassis
 
 ================================================================================
 MSG: nav_msgs/Odometry
@@ -230,10 +189,48 @@ MSG: geometry_msgs/Vector3
 float64 x
 float64 y
 float64 z
+================================================================================
+MSG: common_msgs/VehicleDynamicState
+std_msgs/Header  header
+
+float64 lon_speed
+float64 lon_acceleration
+float64 lat_speed
+float64 lat_acceleration
+float64 yaw_rate
+float64 yaw_acceleration
+================================================================================
+MSG: common_msgs/ChassisState
+std_msgs/Header header
+
+# real acc throttle value
+uint8 throttle
+
+# real brake pressure
+uint8 brake_pressure
+
+# vehicle run mode
+uint8 run_mode
+
+# Level of accelaration, unit in m/s^2, throttle is positive, braking is negative
+float32 accel
+
+# Level of steering on front wheel, unit in radian, left turning is positive
+float32 steer
+
+# Gear
+int8 gear
+
+# Parking
+bool parking_brake
+
+
+
+
 ")
 
 
 
-(provide :common_msgs/V2V "5d3f3ce1d5d07abc8f4695c3e316dc23")
+(provide :common_msgs/V2V "eb9ec1d07a2ce2b979126f710e74eb76")
 
 

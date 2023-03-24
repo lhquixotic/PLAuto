@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/real-world/gps
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/gps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gps.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gps.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gpsConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gpsConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gpsConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/gps/catkin_generated/installspace/gpsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/real-world/gps/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/real-world/gps/package.xml")
 endif()
 

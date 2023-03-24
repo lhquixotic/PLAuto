@@ -1,8 +1,8 @@
 # generated from catkin/cmake/template/pkg.context.pc.in
 CATKIN_PACKAGE_PREFIX = ""
-PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/user/code/PLAuto/devel/include".split(';') if "/home/user/code/PLAuto/devel/include" != "" else []
+PROJECT_PKG_CONFIG_INCLUDE_DIRS = "/home/lhq/Projects/PLAuto/devel/include".split(';') if "/home/lhq/Projects/PLAuto/devel/include" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "carla_ackermann_control"
-PROJECT_SPACE_DIR = "/home/user/code/PLAuto/devel"
+PROJECT_SPACE_DIR = "/home/lhq/Projects/PLAuto/devel"
 PROJECT_VERSION = "0.0.0"

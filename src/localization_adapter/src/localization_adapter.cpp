@@ -12,9 +12,14 @@ nav_msgs::Odometry Localization_adapter::getUTMPose() { return utm_pose; }
 
 
 // Setters
-void Localization_adapter::setSimulationPose(const geometry_msgs::PoseStamped &msg) {
-  simulation_pose = msg;
+// void Localization_adapter::setSimulationPose(const geometry_msgs::PoseStamped &msg) {
+//   simulation_pose = msg;
+// }
+
+void Localization_adapter::setSimulationOdom(const nav_msgs::Odometry &msg) {
+  simulation_odom = msg;
 }
+
 void Localization_adapter::setGpsInfo(const common_msgs::GpsInfo &msg){
   // if (msg.fix.latitude > para.lat_min & msg.fix.latitude < para.lat_max
   //   & msg.fix.longitude > para.lon_min & msg.fix.longitude < para.lon_max){
@@ -41,7 +46,8 @@ void Localization_adapter::runAlgorithm() {
   if (rawLocFlag){
   utm_pose.header.stamp = ros::Time::now();
   if (run_mode == "simulation"){
-    utm_pose.pose.pose = simulation_pose.pose;
+    // utm_pose.pose.pose = simulation_pose.pose;
+    utm_pose = simulation_odom;
   }
   else{
     if (run_mode == "real_car"){

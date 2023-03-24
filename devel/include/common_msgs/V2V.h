@@ -16,7 +16,7 @@
 #include <ros/message_operations.h>
 
 #include <std_msgs/Header.h>
-#include <nav_msgs/Odometry.h>
+#include <common_msgs/PlatoonState.h>
 
 namespace common_msgs
 {
@@ -27,21 +27,11 @@ struct V2V_
 
   V2V_()
     : header()
-    , odom()
-    , leader_speed(0.0)
-    , leader_acc(0.0)
-    , leader_acc_pedal(0.0)
-    , leader_brake_pedal(0.0)
-    , leader_frontwheel_angle(0.0)  {
+    , platoon_info()  {
     }
   V2V_(const ContainerAllocator& _alloc)
     : header(_alloc)
-    , odom(_alloc)
-    , leader_speed(0.0)
-    , leader_acc(0.0)
-    , leader_acc_pedal(0.0)
-    , leader_brake_pedal(0.0)
-    , leader_frontwheel_angle(0.0)  {
+    , platoon_info(_alloc)  {
   (void)_alloc;
     }
 
@@ -50,23 +40,8 @@ struct V2V_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef  ::nav_msgs::Odometry_<ContainerAllocator>  _odom_type;
-  _odom_type odom;
-
-   typedef double _leader_speed_type;
-  _leader_speed_type leader_speed;
-
-   typedef double _leader_acc_type;
-  _leader_acc_type leader_acc;
-
-   typedef double _leader_acc_pedal_type;
-  _leader_acc_pedal_type leader_acc_pedal;
-
-   typedef double _leader_brake_pedal_type;
-  _leader_brake_pedal_type leader_brake_pedal;
-
-   typedef double _leader_frontwheel_angle_type;
-  _leader_frontwheel_angle_type leader_frontwheel_angle;
+   typedef  ::common_msgs::PlatoonState_<ContainerAllocator>  _platoon_info_type;
+  _platoon_info_type platoon_info;
 
 
 
@@ -98,12 +73,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::common_msgs::V2V_<ContainerAllocator1> & lhs, const ::common_msgs::V2V_<ContainerAllocator2> & rhs)
 {
   return lhs.header == rhs.header &&
-    lhs.odom == rhs.odom &&
-    lhs.leader_speed == rhs.leader_speed &&
-    lhs.leader_acc == rhs.leader_acc &&
-    lhs.leader_acc_pedal == rhs.leader_acc_pedal &&
-    lhs.leader_brake_pedal == rhs.leader_brake_pedal &&
-    lhs.leader_frontwheel_angle == rhs.leader_frontwheel_angle;
+    lhs.platoon_info == rhs.platoon_info;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -160,12 +130,12 @@ struct MD5Sum< ::common_msgs::V2V_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "5d3f3ce1d5d07abc8f4695c3e316dc23";
+    return "eb9ec1d07a2ce2b979126f710e74eb76";
   }
 
   static const char* value(const ::common_msgs::V2V_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x5d3f3ce1d5d07abcULL;
-  static const uint64_t static_value2 = 0x8f4695c3e316dc23ULL;
+  static const uint64_t static_value1 = 0xeb9ec1d07a2ce2b9ULL;
+  static const uint64_t static_value2 = 0x79126f710e74eb76ULL;
 };
 
 template<class ContainerAllocator>
@@ -185,14 +155,8 @@ struct Definition< ::common_msgs::V2V_<ContainerAllocator> >
   static const char* value()
   {
     return "std_msgs/Header header\n"
-"#gpsinfo\n"
-"nav_msgs/Odometry odom\n"
-"#leader info\n"
-"float64 leader_speed\n"
-"float64 leader_acc\n"
-"float64 leader_acc_pedal\n"
-"float64 leader_brake_pedal\n"
-"float64 leader_frontwheel_angle\n"
+"\n"
+"common_msgs/PlatoonState platoon_info\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
@@ -209,6 +173,28 @@ struct Definition< ::common_msgs::V2V_<ContainerAllocator> >
 "time stamp\n"
 "#Frame this data is associated with\n"
 "string frame_id\n"
+"\n"
+"================================================================================\n"
+"MSG: common_msgs/PlatoonState\n"
+"std_msgs/Header header\n"
+"\n"
+"# member vehicle state\n"
+"common_msgs/VehicleState[] vehicles\n"
+"================================================================================\n"
+"MSG: common_msgs/VehicleState\n"
+"# Id of the vehicle\n"
+"std_msgs/Header header \n"
+"\n"
+"# Basic info of the vehicle\n"
+"\n"
+"# Odometry info of the vehicle\n"
+"nav_msgs/Odometry odom\n"
+"\n"
+"# Dynamic state of vehicle\n"
+"common_msgs/VehicleDynamicState dynamics\n"
+"\n"
+"# Chassis state of vehicle\n"
+"common_msgs/ChassisState chassis\n"
 "\n"
 "================================================================================\n"
 "MSG: nav_msgs/Odometry\n"
@@ -284,6 +270,43 @@ struct Definition< ::common_msgs::V2V_<ContainerAllocator> >
 "float64 x\n"
 "float64 y\n"
 "float64 z\n"
+"================================================================================\n"
+"MSG: common_msgs/VehicleDynamicState\n"
+"std_msgs/Header  header\n"
+"\n"
+"float64 lon_speed\n"
+"float64 lon_acceleration\n"
+"float64 lat_speed\n"
+"float64 lat_acceleration\n"
+"float64 yaw_rate\n"
+"float64 yaw_acceleration\n"
+"================================================================================\n"
+"MSG: common_msgs/ChassisState\n"
+"std_msgs/Header header\n"
+"\n"
+"# real acc throttle value\n"
+"uint8 throttle\n"
+"\n"
+"# real brake pressure\n"
+"uint8 brake_pressure\n"
+"\n"
+"# vehicle run mode\n"
+"uint8 run_mode\n"
+"\n"
+"# Level of accelaration, unit in m/s^2, throttle is positive, braking is negative\n"
+"float32 accel\n"
+"\n"
+"# Level of steering on front wheel, unit in radian, left turning is positive\n"
+"float32 steer\n"
+"\n"
+"# Gear\n"
+"int8 gear\n"
+"\n"
+"# Parking\n"
+"bool parking_brake\n"
+"\n"
+"\n"
+"\n"
 ;
   }
 
@@ -303,12 +326,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
-      stream.next(m.odom);
-      stream.next(m.leader_speed);
-      stream.next(m.leader_acc);
-      stream.next(m.leader_acc_pedal);
-      stream.next(m.leader_brake_pedal);
-      stream.next(m.leader_frontwheel_angle);
+      stream.next(m.platoon_info);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -330,19 +348,9 @@ struct Printer< ::common_msgs::V2V_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
-    s << indent << "odom: ";
+    s << indent << "platoon_info: ";
     s << std::endl;
-    Printer< ::nav_msgs::Odometry_<ContainerAllocator> >::stream(s, indent + "  ", v.odom);
-    s << indent << "leader_speed: ";
-    Printer<double>::stream(s, indent + "  ", v.leader_speed);
-    s << indent << "leader_acc: ";
-    Printer<double>::stream(s, indent + "  ", v.leader_acc);
-    s << indent << "leader_acc_pedal: ";
-    Printer<double>::stream(s, indent + "  ", v.leader_acc_pedal);
-    s << indent << "leader_brake_pedal: ";
-    Printer<double>::stream(s, indent + "  ", v.leader_brake_pedal);
-    s << indent << "leader_frontwheel_angle: ";
-    Printer<double>::stream(s, indent + "  ", v.leader_frontwheel_angle);
+    Printer< ::common_msgs::PlatoonState_<ContainerAllocator> >::stream(s, indent + "  ", v.platoon_info);
   }
 };
 

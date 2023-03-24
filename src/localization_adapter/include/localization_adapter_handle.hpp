@@ -47,7 +47,8 @@ class Localization_adapterHandle {
   ros::Subscriber gpsInfoSubscriber_;
   ros::Publisher utmPosePublisher_;
 
-  void simulationPoseCallback(const geometry_msgs::PoseStamped &msg);
+  // void simulationPoseCallback(const geometry_msgs::PoseStamped &msg);
+  void simulationOdomCallback(const nav_msgs::Odometry &msg);
   void gpsInfoCallback(const common_msgs::GpsInfo &msg);
 
   std::string simulation_pose_topic_name_;

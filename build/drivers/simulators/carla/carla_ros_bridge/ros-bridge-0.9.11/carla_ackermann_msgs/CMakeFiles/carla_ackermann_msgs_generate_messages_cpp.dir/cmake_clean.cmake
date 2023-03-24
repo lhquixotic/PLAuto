@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlCurrent.h"
-  "/home/user/code/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlInfo.h"
-  "/home/user/code/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlMaxima.h"
-  "/home/user/code/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlStatus.h"
-  "/home/user/code/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlTarget.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlCurrent.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlInfo.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlMaxima.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlStatus.h"
+  "/home/lhq/Projects/PLAuto/devel/include/carla_ackermann_msgs/EgoVehicleControlTarget.h"
   "CMakeFiles/carla_ackermann_msgs_generate_messages_cpp"
 )
 

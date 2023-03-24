@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/msg/CarlaWaypoint.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/srv/GetActorWaypoint.lisp"
-  "/home/user/code/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/srv/GetWaypoint.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/msg/CarlaWaypoint.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/srv/GetActorWaypoint.lisp"
+  "/home/lhq/Projects/PLAuto/devel/share/common-lisp/ros/carla_waypoint_types/srv/GetWaypoint.lisp"
   "CMakeFiles/carla_waypoint_types_generate_messages_lisp"
 )
 

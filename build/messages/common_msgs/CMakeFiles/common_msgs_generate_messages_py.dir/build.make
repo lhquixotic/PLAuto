@@ -43,100 +43,143 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/code/PLAuto/src
+CMAKE_SOURCE_DIR = /home/lhq/Projects/PLAuto/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/code/PLAuto/build
+CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 
 # Utility rule file for common_msgs_generate_messages_py.
 
 # Include the progress variables for this target.
 include messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/progress.make
 
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
-messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
+messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py
 
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG common_msgs/VehicleDynamicState"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG common_msgs/VehicleDynamicState"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG common_msgs/GpsInfo"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG common_msgs/VehicleState"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/ChassisStatus.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG common_msgs/ChassisStatus"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/ChassisStatus.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatFix.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/NavSatStatus.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG common_msgs/GpsInfo"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/GpsInfo.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/V2V.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG common_msgs/V2V"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/V2V.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG common_msgs/ChassisState"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG common_msgs/PolarBoundary"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG common_msgs/PlatoonState"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/StopDecision.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG common_msgs/StopDecision"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/StopDecision.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ChassisState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleDynamicState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PlatoonState.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseWithCovariance.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /opt/ros/noetic/share/nav_msgs/msg/Odometry.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/VehicleState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG common_msgs/V2V"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /home/user/code/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG common_msgs/ControlCommand"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/code/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg -Icommon_msgs:/home/user/code/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG common_msgs/PolarBoundary"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/PolarBoundary.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
 
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
-/home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/code/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python msg __init__.py for common_msgs"
-	cd /home/user/code/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg --initpy
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/StopDecision.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG common_msgs/StopDecision"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/StopDecision.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG common_msgs/ControlCommand"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/ControlCommand.msg -Icommon_msgs:/home/lhq/Projects/PLAuto/src/messages/common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p common_msgs -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg
+
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
+/home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python msg __init__.py for common_msgs"
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg --initpy
 
 common_msgs_generate_messages_py: messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisStatus.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
-common_msgs_generate_messages_py: /home/user/code/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleDynamicState.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_VehicleState.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_GpsInfo.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ChassisState.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PlatoonState.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_V2V.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_PolarBoundary.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_StopDecision.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/_ControlCommand.py
+common_msgs_generate_messages_py: /home/lhq/Projects/PLAuto/devel/lib/python3/dist-packages/common_msgs/msg/__init__.py
 common_msgs_generate_messages_py: messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/build.make
 
 .PHONY : common_msgs_generate_messages_py
@@ -147,10 +190,10 @@ messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/build: comm
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/build
 
 messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/clean:
-	cd /home/user/code/PLAuto/build/messages/common_msgs && $(CMAKE_COMMAND) -P CMakeFiles/common_msgs_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && $(CMAKE_COMMAND) -P CMakeFiles/common_msgs_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/clean
 
 messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/depend:
-	cd /home/user/code/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/code/PLAuto/src /home/user/code/PLAuto/src/messages/common_msgs /home/user/code/PLAuto/build /home/user/code/PLAuto/build/messages/common_msgs /home/user/code/PLAuto/build/messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lhq/Projects/PLAuto/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lhq/Projects/PLAuto/src /home/lhq/Projects/PLAuto/src/messages/common_msgs /home/lhq/Projects/PLAuto/build /home/lhq/Projects/PLAuto/build/messages/common_msgs /home/lhq/Projects/PLAuto/build/messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : messages/common_msgs/CMakeFiles/common_msgs_generate_messages_py.dir/depend
 

@@ -34,6 +34,7 @@ nav_msgs::Path Waypoint_Reconstructor::getFinalWaypointsVis(){
     leader_path_vis.header.stamp = ros::Time::now();
     for(int i=0;i<leader_path.size();i++){
         geometry_msgs::PoseStamped pose;
+        pose.header.frame_id = 'world';
         pose.pose.position = leader_path[i];
         leader_path_vis.poses.push_back(pose);
     }
@@ -45,9 +46,16 @@ void Waypoint_Reconstructor::setSelfPose(const nav_msgs::OdometryConstPtr &msg){
     current_pose = msg->pose.pose;
     current_follower_point = current_pose.position;
 }
-void Waypoint_Reconstructor::setV2V(const common_msgs::V2VConstPtr &msg){
-    v2v_info=*msg;
-    leader_pose = v2v_info.odom;
+// void Waypoint_Reconstructor::setV2V(const common_msgs::V2VConstPtr &msg){
+//     v2v_info=*msg;
+//     leader_pose = v2v_info.platoon_info.vehicles[0].odom;
+//     current_leader_point = leader_pose.pose.pose.position;
+//     ROS_INFO("current leader point x:%f, y:%f, z:%f.",current_leader_point.x,current_leader_point.y,current_leader_point.z);
+// }
+
+void Waypoint_Reconstructor::setPlatoonState(const common_msgs::PlatoonStateConstPtr &msg){
+    platoon_state = *msg;
+    leader_pose = platoon_state.vehicles[0].odom;
     current_leader_point = leader_pose.pose.pose.position;
     ROS_INFO("current leader point x:%f, y:%f, z:%f.",current_leader_point.x,current_leader_point.y,current_leader_point.z);
 }

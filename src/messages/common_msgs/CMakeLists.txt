@@ -20,8 +20,10 @@ find_package(catkin REQUIRED
 add_message_files(DIRECTORY msg
   FILES
     VehicleDynamicState.msg
+    VehicleState.msg
     GpsInfo.msg
-    ChassisStatus.msg
+    ChassisState.msg
+    PlatoonState.msg
     V2V.msg
     PolarBoundary.msg
     StopDecision.msg

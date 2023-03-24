@@ -1,6 +1,6 @@
 localization_utm_topic_name: /localization/utmpose
 
-v2v_topic_name: /drivers/v2v
+# v2v_topic_name: /drivers/v2v
 
 final_waypoints_topic_name: /planning/final_waypoints
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/simulators/carla/carla_adapter
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_adapter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapter.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapter.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carla_adapter/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapterConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapterConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapterConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/carla_adapterConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carla_adapter" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/simulators/carla/carla_adapter/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carla_adapter" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_adapter/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carla_adapter" TYPE PROGRAM FILES "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/convert_topic")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carla_adapter" TYPE PROGRAM FILES "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/convert_topic")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carla_adapter" TYPE PROGRAM FILES "/home/user/code/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/scenario_generation")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carla_adapter" TYPE PROGRAM FILES "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_adapter/catkin_generated/installspace/scenario_generation")
 endif()
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/real-world/canbus/canparse
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/canparse
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,23 +38,23 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparse.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparse.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canparse/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparseConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparseConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparseConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/canparse/catkin_generated/installspace/canparseConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canparse" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/real-world/canbus/canparse/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/canparse" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/canparse/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/user/code/PLAuto/build/drivers/real-world/canbus/canparse/include/protocol/cmake_install.cmake")
+  include("/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/canparse/include/protocol/cmake_install.cmake")
 
 endif()
 

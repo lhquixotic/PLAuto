@@ -67,14 +67,14 @@ set(serial_com_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(serial_com_SOURCE_PREFIX /home/user/code/PLAuto/src/drivers/real-world/serial_com)
-  set(serial_com_DEVEL_PREFIX /home/user/code/PLAuto/devel)
+  set(serial_com_SOURCE_PREFIX /home/lhq/Projects/PLAuto/src/drivers/real-world/serial_com)
+  set(serial_com_DEVEL_PREFIX /home/lhq/Projects/PLAuto/devel)
   set(serial_com_INSTALL_PREFIX "")
   set(serial_com_PREFIX ${serial_com_DEVEL_PREFIX})
 else()
   set(serial_com_SOURCE_PREFIX "")
   set(serial_com_DEVEL_PREFIX "")
-  set(serial_com_INSTALL_PREFIX /home/user/code/PLAuto/install)
+  set(serial_com_INSTALL_PREFIX /home/lhq/Projects/PLAuto/install)
   set(serial_com_PREFIX ${serial_com_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/user/code/PLAuto/install/lib;/home/user/code/PLAuto/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/lhq/Projects/PLAuto/install/lib;/home/lhq/Projects/PLAuto/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

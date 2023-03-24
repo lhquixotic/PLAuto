@@ -1,8 +1,8 @@
-# Install script for directory: /home/user/code/PLAuto/src/drivers/real-world/canbus/can_bridge
+# Install script for directory: /home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_bridge
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/user/code/PLAuto/install")
+  set(CMAKE_INSTALL_PREFIX "/home/lhq/Projects/PLAuto/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridge.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridge.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_bridge/cmake" TYPE FILE FILES
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridgeConfig.cmake"
-    "/home/user/code/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridgeConfig-version.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridgeConfig.cmake"
+    "/home/lhq/Projects/PLAuto/build/drivers/real-world/canbus/can_bridge/catkin_generated/installspace/can_bridgeConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_bridge" TYPE FILE FILES "/home/user/code/PLAuto/src/drivers/real-world/canbus/can_bridge/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/can_bridge" TYPE FILE FILES "/home/lhq/Projects/PLAuto/src/drivers/real-world/canbus/can_bridge/package.xml")
 endif()
 

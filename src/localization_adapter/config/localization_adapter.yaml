@@ -1,4 +1,4 @@
-simulation_pose_topic_name: /sim/center_pose
+simulation_pose_topic_name: /carla/ego_vehicle/odometry
 
 gps_info_topic_name: /drivers/gps
 

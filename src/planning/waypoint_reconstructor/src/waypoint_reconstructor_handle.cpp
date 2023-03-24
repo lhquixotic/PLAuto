@@ -26,8 +26,11 @@ void Waypoint_ReconstructorHandle::loadParameters() {
   if (!private_nh_.param<std::string>("localization_utm_topic_name",current_pose_topic_name_,"/localization/utmpose")) {
     ROS_WARN_STREAM("Did not load localization_utm_topic_name. Standard value is: " << current_pose_topic_name_);
   }
-  if (!private_nh_.param<std::string>("v2v_topic_name",v2v_topic_name_,"v2v")) {
-    ROS_WARN_STREAM("Did not load v2v_topic_name_. Standard value is: " << v2v_topic_name_);
+  if (!private_nh_.param<std::string>("platoon_state_topic_name",platoon_state_topic_name_,"/carla/scenario_generation/platoon_state")) {
+    ROS_WARN_STREAM("Did not load platoon_state_topic_name_. Standard value is: " << platoon_state_topic_name_);
+  }
+  else{
+    ROS_INFO_STREAM("Load platoon_state topic name as " << platoon_state_topic_name_);
   }
   if (!private_nh_.param<std::string>("final_waypoints_topic_name",final_waypoint_topic_name_,"final_waypoints")) {
     ROS_WARN_STREAM("Did not load final_waypoints_topic_name. Standard value is: " << final_waypoint_topic_name_);
@@ -51,7 +54,7 @@ void Waypoint_ReconstructorHandle::loadParameters() {
 void Waypoint_ReconstructorHandle::subscribeToTopics() {
   ROS_INFO("subscribe to topics");
   sub1_ = nodeHandle_.subscribe(current_pose_topic_name_, 10, &Waypoint_ReconstructorHandle::poseCallback, this);
-  sub2_ = nodeHandle_.subscribe(v2v_topic_name_, 10, &Waypoint_ReconstructorHandle::V2VCallback, this);
+  sub2_ = nodeHandle_.subscribe(platoon_state_topic_name_, 10, &Waypoint_ReconstructorHandle::PlatoonStateCallback, this);
 }
 
 void Waypoint_ReconstructorHandle::publishToTopics() {
@@ -90,8 +93,8 @@ void Waypoint_ReconstructorHandle::poseCallback(const nav_msgs::OdometryConstPtr
   poseFlag=true;
 }
 
-void Waypoint_ReconstructorHandle::V2VCallback(const common_msgs::V2VConstPtr &msg) {
-  waypoint_reconstructor_.setV2V(msg);
+void Waypoint_ReconstructorHandle::PlatoonStateCallback(const common_msgs::PlatoonStateConstPtr &msg) {
+  waypoint_reconstructor_.setPlatoonState(msg);
   v2vFlag=true;
 }
 

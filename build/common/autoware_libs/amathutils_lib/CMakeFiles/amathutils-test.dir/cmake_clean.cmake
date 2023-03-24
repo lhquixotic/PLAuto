@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/user/code/PLAuto/devel/lib/amathutils_lib/amathutils-test"
-  "/home/user/code/PLAuto/devel/lib/amathutils_lib/amathutils-test.pdb"
+  "/home/lhq/Projects/PLAuto/devel/lib/amathutils_lib/amathutils-test"
+  "/home/lhq/Projects/PLAuto/devel/lib/amathutils_lib/amathutils-test.pdb"
   "CMakeFiles/amathutils-test.dir/test/src/test_amathutils_lib.cpp.o"
 )
 

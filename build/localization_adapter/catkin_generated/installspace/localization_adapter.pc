@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/install
+prefix=/home/lhq/Projects/PLAuto/install
 
 Name: localization_adapter
 Description: Description of localization_adapter

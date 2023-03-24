@@ -1,4 +1,4 @@
-prefix=/home/user/code/PLAuto/install
+prefix=/home/lhq/Projects/PLAuto/install
 
 Name: carla_adapter
 Description: Description of carla_adapter
