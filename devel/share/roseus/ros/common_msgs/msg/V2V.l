@@ -70,7 +70,7 @@
    self)
   )
 
-(setf (get common_msgs::V2V :md5sum-) "eb9ec1d07a2ce2b979126f710e74eb76")
+(setf (get common_msgs::V2V :md5sum-) "84dd78ba72f6eb4041f0491a6158eda6")
 (setf (get common_msgs::V2V :datatype-) "common_msgs/V2V")
 (setf (get common_msgs::V2V :definition-)
       "std_msgs/Header header
@@ -193,21 +193,21 @@ float64 z
 MSG: common_msgs/VehicleDynamicState
 std_msgs/Header  header
 
-float64 lon_speed
-float64 lon_acceleration
-float64 lat_speed
-float64 lat_acceleration
-float64 yaw_rate
-float64 yaw_acceleration
+float32 lon_speed
+float32 lon_accel
+float32 lat_speed
+float32 lat_accel
+float32 yaw_rate
+float32 yaw_accel
 ================================================================================
 MSG: common_msgs/ChassisState
 std_msgs/Header header
 
 # real acc throttle value
-uint8 throttle
+float32 throttle
 
 # real brake pressure
-uint8 brake_pressure
+float32 brake
 
 # vehicle run mode
 uint8 run_mode
@@ -231,6 +231,6 @@ bool parking_brake
 
 
 
-(provide :common_msgs/V2V "eb9ec1d07a2ce2b979126f710e74eb76")
+(provide :common_msgs/V2V "84dd78ba72f6eb4041f0491a6158eda6")
 
 

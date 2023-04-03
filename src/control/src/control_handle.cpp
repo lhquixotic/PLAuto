@@ -38,21 +38,21 @@ void ControlHandle::loadParameters() {
     ROS_WARN_STREAM(
         "Did not load final_waypoints_topic_name. Standard value is: " << final_waypoints_topic_name_);
   }
-  if (!nodeHandle_.param<std::string>("vehicle_dynamic_state_topic_name",
-                                      vehicle_dynamic_state_topic_name_,
-                                      "/chassis/vehicle_dynamic_state")) {
+  if (!nodeHandle_.param<std::string>("ego_state_topic_name",
+                                      ego_state_topic_name_,
+                                      "/carla/ego_state")) {
     ROS_WARN_STREAM(
-        "Did not load vehicle_dynamic_state_topic_name. Standard value is: " << vehicle_dynamic_state_topic_name_);
+        "Did not load ego_state_topic_name. Standard value is: " << ego_state_topic_name_);
   }
   if (!nodeHandle_.param<std::string>("control_command_topic_name",
                                       control_command_topic_name_,
-                                      "/control_cmd")) {
+                                      "/plauto/control")) {
     ROS_WARN_STREAM("Did not load control_command_topic_name. Standard value is: " << control_command_topic_name_);
   }
-  if (!nodeHandle_.param<std::string>("v2v_topic_name",
-                                      v2v_topic_name_,
-                                      "/drivers/v2v")) {
-    ROS_WARN_STREAM("Did not load v2v_topic_name. Standard value is: " << v2v_topic_name_);
+  if (!nodeHandle_.param<std::string>("platoon_state_topic_name",
+                                      platoon_state_topic_name_,
+                                      "/carla/scenario_generation/platoon_state")) {
+    ROS_WARN_STREAM("Did not load platoon_state_topic_name. Standard value is: " << platoon_state_topic_name_);
   }
   if (!nodeHandle_.param<std::string>("localization_utm_topic_name",
                                       localization_utm_topic_name_,
@@ -96,18 +96,18 @@ void ControlHandle::subscribeToTopics() {
       nodeHandle_.subscribe(stop_flag_topic_name_, 10, &ControlHandle::stopFlagCallback, this);
   finalWaypointsSubscriber_ =
       nodeHandle_.subscribe(final_waypoints_topic_name_, 10, &ControlHandle::finalWaypointsCallback, this);
-  vehicleDynamicStateSubscriber_ =
-      nodeHandle_.subscribe(vehicle_dynamic_state_topic_name_, 10, &ControlHandle::vehicleDynamicStateCallback, this);
+  egoStateSubscriber_ =
+      nodeHandle_.subscribe(ego_state_topic_name_, 10, &ControlHandle::egoStateCallback, this);
   utmPoseSubscriber_ = 
       nodeHandle_.subscribe(localization_utm_topic_name_, 10, & ControlHandle::utmPoseCallback, this);
-  v2vInfoSubscriber_ = 
-      nodeHandle_.subscribe(v2v_topic_name_, 10, & ControlHandle::v2vInfoCallback,this);
+  platoonStateSubscriber_ = 
+      nodeHandle_.subscribe(platoon_state_topic_name_, 10, & ControlHandle::platoonStateCallback,this);
 }
 
 void ControlHandle::publishToTopics() {
   ROS_INFO("publish to topics");
   lookaheadpointPublisher_ = nodeHandle_.advertise<geometry_msgs::PointStamped>(lookahead_point_topic_name_, 1);
-  controlCommandPublisher_ = nodeHandle_.advertise<autoware_msgs::ControlCommandStamped>(control_command_topic_name_, 1);
+  controlCommandPublisher_ = nodeHandle_.advertise<common_msgs::ControlCommand>(control_command_topic_name_, 1);
 }  
 
 void ControlHandle::run() {
@@ -117,12 +117,13 @@ void ControlHandle::run() {
 
 void ControlHandle::sendMsg() {
   lookaheadpointPublisher_.publish(control_.getLookaheadPoint());
-  autoware_msgs::ControlCommandStamped control_command = control_.getControlCommand();
+  common_msgs::ControlCommand control_command = control_.getControlCommand();
   if (stop_flag_ == 1) {
-    control_command.cmd.linear_velocity = 0;
+    control_command.accel = -1;
   }
   controlCommandPublisher_.publish(control_command);
 }
+
 // Callbacks
 void ControlHandle::stopFlagCallback(const common_msgs::StopDecision &msg){
   stop_flag_ = msg.veh_stop_flag;
@@ -133,12 +134,12 @@ void ControlHandle::finalWaypointsCallback(const autoware_msgs::Lane &msg) {
   control_.finalWaypointsFlag = true;
 }
 
-void ControlHandle::vehicleDynamicStateCallback(const common_msgs::VehicleDynamicState &msg){
-  control_.setVehicleDynamicState(msg);
-  control_.vehicleDynamicStateFlag = true;
+void ControlHandle::egoStateCallback(const common_msgs::VehicleState &msg){
+  control_.setEgoState(msg);
+  control_.egoStateFlag = true;
 }
-void ControlHandle::v2vInfoCallback(const common_msgs::V2V &msg){
-  control_.setV2VInfo(msg);
+void ControlHandle::platoonStateCallback(const common_msgs::PlatoonState &msg){
+  control_.setPlatoonState(msg);
   control_.v2vInfoFlag = true;
 }
 void ControlHandle::utmPoseCallback(const nav_msgs::Odometry &msg){

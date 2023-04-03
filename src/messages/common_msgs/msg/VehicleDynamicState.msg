@@ -1,8 +1,8 @@
 std_msgs/Header  header
 
-float64 lon_speed
-float64 lon_acceleration
-float64 lat_speed
-float64 lat_acceleration
-float64 yaw_rate
-float64 yaw_acceleration
+float32 lon_speed
+float32 lon_accel
+float32 lat_speed
+float32 lat_accel
+float32 yaw_rate
+float32 yaw_accel

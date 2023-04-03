@@ -27,20 +27,20 @@ struct VehicleDynamicState_
   VehicleDynamicState_()
     : header()
     , lon_speed(0.0)
-    , lon_acceleration(0.0)
+    , lon_accel(0.0)
     , lat_speed(0.0)
-    , lat_acceleration(0.0)
+    , lat_accel(0.0)
     , yaw_rate(0.0)
-    , yaw_acceleration(0.0)  {
+    , yaw_accel(0.0)  {
     }
   VehicleDynamicState_(const ContainerAllocator& _alloc)
     : header(_alloc)
     , lon_speed(0.0)
-    , lon_acceleration(0.0)
+    , lon_accel(0.0)
     , lat_speed(0.0)
-    , lat_acceleration(0.0)
+    , lat_accel(0.0)
     , yaw_rate(0.0)
-    , yaw_acceleration(0.0)  {
+    , yaw_accel(0.0)  {
   (void)_alloc;
     }
 
@@ -49,23 +49,23 @@ struct VehicleDynamicState_
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
 
-   typedef double _lon_speed_type;
+   typedef float _lon_speed_type;
   _lon_speed_type lon_speed;
 
-   typedef double _lon_acceleration_type;
-  _lon_acceleration_type lon_acceleration;
+   typedef float _lon_accel_type;
+  _lon_accel_type lon_accel;
 
-   typedef double _lat_speed_type;
+   typedef float _lat_speed_type;
   _lat_speed_type lat_speed;
 
-   typedef double _lat_acceleration_type;
-  _lat_acceleration_type lat_acceleration;
+   typedef float _lat_accel_type;
+  _lat_accel_type lat_accel;
 
-   typedef double _yaw_rate_type;
+   typedef float _yaw_rate_type;
   _yaw_rate_type yaw_rate;
 
-   typedef double _yaw_acceleration_type;
-  _yaw_acceleration_type yaw_acceleration;
+   typedef float _yaw_accel_type;
+  _yaw_accel_type yaw_accel;
 
 
 
@@ -98,11 +98,11 @@ bool operator==(const ::common_msgs::VehicleDynamicState_<ContainerAllocator1> &
 {
   return lhs.header == rhs.header &&
     lhs.lon_speed == rhs.lon_speed &&
-    lhs.lon_acceleration == rhs.lon_acceleration &&
+    lhs.lon_accel == rhs.lon_accel &&
     lhs.lat_speed == rhs.lat_speed &&
-    lhs.lat_acceleration == rhs.lat_acceleration &&
+    lhs.lat_accel == rhs.lat_accel &&
     lhs.yaw_rate == rhs.yaw_rate &&
-    lhs.yaw_acceleration == rhs.yaw_acceleration;
+    lhs.yaw_accel == rhs.yaw_accel;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -159,12 +159,12 @@ struct MD5Sum< ::common_msgs::VehicleDynamicState_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "543c8cc51ef4a96b419de72eeff8a6e9";
+    return "d3015605eb810e5c79a5de962cc9f172";
   }
 
   static const char* value(const ::common_msgs::VehicleDynamicState_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x543c8cc51ef4a96bULL;
-  static const uint64_t static_value2 = 0x419de72eeff8a6e9ULL;
+  static const uint64_t static_value1 = 0xd3015605eb810e5cULL;
+  static const uint64_t static_value2 = 0x79a5de962cc9f172ULL;
 };
 
 template<class ContainerAllocator>
@@ -185,12 +185,12 @@ struct Definition< ::common_msgs::VehicleDynamicState_<ContainerAllocator> >
   {
     return "std_msgs/Header  header\n"
 "\n"
-"float64 lon_speed\n"
-"float64 lon_acceleration\n"
-"float64 lat_speed\n"
-"float64 lat_acceleration\n"
-"float64 yaw_rate\n"
-"float64 yaw_acceleration\n"
+"float32 lon_speed\n"
+"float32 lon_accel\n"
+"float32 lat_speed\n"
+"float32 lat_accel\n"
+"float32 yaw_rate\n"
+"float32 yaw_accel\n"
 "================================================================================\n"
 "MSG: std_msgs/Header\n"
 "# Standard metadata for higher-level stamped data types.\n"
@@ -226,11 +226,11 @@ namespace serialization
     {
       stream.next(m.header);
       stream.next(m.lon_speed);
-      stream.next(m.lon_acceleration);
+      stream.next(m.lon_accel);
       stream.next(m.lat_speed);
-      stream.next(m.lat_acceleration);
+      stream.next(m.lat_accel);
       stream.next(m.yaw_rate);
-      stream.next(m.yaw_acceleration);
+      stream.next(m.yaw_accel);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -253,17 +253,17 @@ struct Printer< ::common_msgs::VehicleDynamicState_<ContainerAllocator> >
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
     s << indent << "lon_speed: ";
-    Printer<double>::stream(s, indent + "  ", v.lon_speed);
-    s << indent << "lon_acceleration: ";
-    Printer<double>::stream(s, indent + "  ", v.lon_acceleration);
+    Printer<float>::stream(s, indent + "  ", v.lon_speed);
+    s << indent << "lon_accel: ";
+    Printer<float>::stream(s, indent + "  ", v.lon_accel);
     s << indent << "lat_speed: ";
-    Printer<double>::stream(s, indent + "  ", v.lat_speed);
-    s << indent << "lat_acceleration: ";
-    Printer<double>::stream(s, indent + "  ", v.lat_acceleration);
+    Printer<float>::stream(s, indent + "  ", v.lat_speed);
+    s << indent << "lat_accel: ";
+    Printer<float>::stream(s, indent + "  ", v.lat_accel);
     s << indent << "yaw_rate: ";
-    Printer<double>::stream(s, indent + "  ", v.yaw_rate);
-    s << indent << "yaw_acceleration: ";
-    Printer<double>::stream(s, indent + "  ", v.yaw_acceleration);
+    Printer<float>::stream(s, indent + "  ", v.yaw_rate);
+    s << indent << "yaw_accel: ";
+    Printer<float>::stream(s, indent + "  ", v.yaw_accel);
   }
 };
 

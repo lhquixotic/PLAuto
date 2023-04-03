@@ -3,10 +3,11 @@
 
 #include "common_msgs/StopDecision.h"
 #include "autoware_msgs/Lane.h"
-#include "common_msgs/V2V.h"
-#include "common_msgs/VehicleDynamicState.h"
-#include "autoware_msgs/ControlCommandStamped.h"
+// #include "common_msgs/V2V.h"
+#include "common_msgs/VehicleState.h"
+#include "common_msgs/ControlCommand.h"
 #include "nav_msgs/Odometry.h"
+#include "common_msgs/PlatoonState.h"
 
 
 // #include "common_msgs/ControlCmd.h"
@@ -23,7 +24,7 @@ namespace ns_control {
 struct Para{
   bool longitudinal_control_switch;
   bool lateral_control_switch;
-  int  longitudinal_mode; // 1:constant speed, 2: planned speed, 3: desired distance
+  int  longitudinal_mode; // 1:constant speed, 2: planned speed, 3: desired distance 4: trajectory reference
   double desired_speed;
   double desired_distance;
 };
@@ -35,13 +36,13 @@ class Control {
   Control(ros::NodeHandle &nh);
 
   // Getters
-  autoware_msgs::ControlCommandStamped getControlCommand();
+  common_msgs::ControlCommand getControlCommand();
   geometry_msgs::PointStamped getLookaheadPoint();
 
   // Setters
   void setFinalWaypoints(const autoware_msgs::Lane &msg);
-  void setVehicleDynamicState(const common_msgs::VehicleDynamicState &mgs);
-  void setV2VInfo(const common_msgs::V2V &msg);
+  void setEgoState(const common_msgs::VehicleState &mgs);
+  void setPlatoonState(const common_msgs::PlatoonState &msg);
   void setUtmPose(const nav_msgs::Odometry &msg);
   void setPidParameters(const Pid_para &msg);
   void setPurePursuitParameters(const Pure_pursuit_para &msg);
@@ -53,7 +54,7 @@ class Control {
   void latControlUpdate();
   void longControlUpdate();
   bool finalWaypointsFlag = false;
-  bool vehicleDynamicStateFlag = false;
+  bool egoStateFlag = false;
   bool v2vInfoFlag = false;
   bool utmPoseFlag = false;
 
@@ -62,11 +63,10 @@ class Control {
   ros::NodeHandle &nh_;
 
   autoware_msgs::Lane final_waypoints;
-  common_msgs::VehicleDynamicState vehicle_dynamic_state;
-  autoware_msgs::ControlCommand control_cmd;
-  autoware_msgs::ControlCommandStamped ccs;
+  common_msgs::VehicleState ego_state;
+  common_msgs::ControlCommand control_cmd;
   nav_msgs::Odometry utm_pose;
-  common_msgs::V2V v2v_info;
+  common_msgs::PlatoonState platoon_state;
   geometry_msgs::Pose current_pose;
   geometry_msgs::Pose leader_pose;
   geometry_msgs::PointStamped lookahead_point;

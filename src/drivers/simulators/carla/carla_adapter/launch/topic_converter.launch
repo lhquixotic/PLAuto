@@ -1,12 +1,12 @@
 <launch>
-    <node pkg="carla_adapter" type="convert_topic" name="convert_control_command" output="screen">
-        <param name="input_topic" value="/control" />
+    <node pkg="carla_adapter" type="convert_topic" name="convert_control_command" output="screen" ns="/simulation/carla">
+        <param name="input_topic" value="/plauto/control" />
         <param name="output_topic" value="/carla/ego_vehicle/vehicle_control_cmd" />
         <param name="msg_type" value="ControlCommand" />
     </node>
-    <!-- <node pkg="carla_adapter" type="convert_topic" name="convert_control_command" output="screen">
-        <param name="input_topic" value="/control" />
-        <param name="output_topic" value="/carla/ego_vehicle/vehicle_control_cmd" />
-        <param name="msg_type" value="ControlCommand" />
-    </node> -->
+    <node pkg="carla_adapter" type="convert_topic" name="convert_vehicle_state" output="screen" ns="/simulation/carla">
+        <param name="input_topic" value="/carla/ego_vehicle/vehicle_status" />
+        <param name="output_topic" value="/carla/ego_state" />
+        <param name="msg_type" value="VehicleStatus" />
+    </node>
 </launch>

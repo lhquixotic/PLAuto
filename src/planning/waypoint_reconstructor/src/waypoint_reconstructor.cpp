@@ -57,7 +57,7 @@ void Waypoint_Reconstructor::setPlatoonState(const common_msgs::PlatoonStateCons
     platoon_state = *msg;
     leader_pose = platoon_state.vehicles[0].odom;
     current_leader_point = leader_pose.pose.pose.position;
-    ROS_INFO("current leader point x:%f, y:%f, z:%f.",current_leader_point.x,current_leader_point.y,current_leader_point.z);
+    //ROS_INFO("current leader point x:%f, y:%f, z:%f.",current_leader_point.x,current_leader_point.y,current_leader_point.z);
 }
 
 void Waypoint_Reconstructor::initWaypoints() {

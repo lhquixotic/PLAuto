@@ -78,8 +78,8 @@ messages/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg
-/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg
+/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/HardwareStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from autoware_system_msgs/HardwareStatus.msg"
 	cd /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs && /home/lhq/Projects/PLAuto/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg -Iautoware_system_msgs:/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p autoware_system_msgs -o /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -87,20 +87,20 @@ messages/autoware_system_msgs/CMakeFiles/autoware_system_msgs_generate_messages_
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg
-/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg
+/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/NodeStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from autoware_system_msgs/NodeStatus.msg"
 	cd /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs && /home/lhq/Projects/PLAuto/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg -Iautoware_system_msgs:/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p autoware_system_msgs -o /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg
-/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /opt/ros/noetic/share/rosgraph_msgs/msg/TopicStatistics.msg
+/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg
-/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg
+/home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs/SystemStatus.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from autoware_system_msgs/SystemStatus.msg"
 	cd /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs && /home/lhq/Projects/PLAuto/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg -Iautoware_system_msgs:/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p autoware_system_msgs -o /home/lhq/Projects/PLAuto/devel/include/autoware_system_msgs -e /opt/ros/noetic/share/gencpp/cmake/..

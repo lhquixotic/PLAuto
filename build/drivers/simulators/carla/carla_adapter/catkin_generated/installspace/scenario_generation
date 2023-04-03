@@ -52,7 +52,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         
         self.platoon_state = PlatoonState()
         self.platoon_state_publisher = self.new_publisher(
-            PlatoonState,"/carla/scenario_generation/platoon_state",
+            PlatoonState,"/carla/platoon_state",
             QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         )
 

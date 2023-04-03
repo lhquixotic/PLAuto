@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_GpsInfo.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_GpsInfo:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg sensor_msgs/NavSatStatus:geometry_msgs/Vector3:std_msgs/Header:sensor_msgs/NavSatFix:geometry_msgs/Twist
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg geometry_msgs/Twist:geometry_msgs/Vector3:sensor_msgs/NavSatFix:std_msgs/Header:sensor_msgs/NavSatStatus
 
 _autoware_msgs_generate_messages_check_deps_GpsInfo: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_GpsInfo
 _autoware_msgs_generate_messages_check_deps_GpsInfo: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_GpsInfo.dir/build.make

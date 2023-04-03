@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_Waypoint.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_Waypoint:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg geometry_msgs/Pose:geometry_msgs/PoseStamped:autoware_msgs/WaypointState:geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/TwistStamped:geometry_msgs/Vector3:std_msgs/Header:autoware_msgs/DTLane:geometry_msgs/Twist
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg geometry_msgs/Twist:autoware_msgs/WaypointState:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Vector3:autoware_msgs/DTLane:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/TwistStamped:geometry_msgs/PoseStamped
 
 _autoware_msgs_generate_messages_check_deps_Waypoint: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_Waypoint
 _autoware_msgs_generate_messages_check_deps_Waypoint: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_Waypoint.dir/build.make

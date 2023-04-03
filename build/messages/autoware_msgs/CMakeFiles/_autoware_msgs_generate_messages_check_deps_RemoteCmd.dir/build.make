@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RemoteCmd.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RemoteCmd:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg autoware_msgs/ControlCommand:autoware_msgs/BrakeCmd:geometry_msgs/TwistStamped:geometry_msgs/Vector3:autoware_msgs/Gear:std_msgs/Header:autoware_msgs/LampCmd:autoware_msgs/AccelCmd:autoware_msgs/SteerCmd:autoware_msgs/VehicleCmd:geometry_msgs/Twist
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg autoware_msgs/LampCmd:geometry_msgs/Twist:autoware_msgs/ControlCommand:autoware_msgs/AccelCmd:autoware_msgs/BrakeCmd:geometry_msgs/Vector3:autoware_msgs/SteerCmd:autoware_msgs/Gear:autoware_msgs/VehicleCmd:std_msgs/Header:geometry_msgs/TwistStamped
 
 _autoware_msgs_generate_messages_check_deps_RemoteCmd: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RemoteCmd
 _autoware_msgs_generate_messages_check_deps_RemoteCmd: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RemoteCmd.dir/build.make

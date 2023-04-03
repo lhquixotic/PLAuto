@@ -34,17 +34,17 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg" "geometry_msgs/Point:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg" "std_msgs/Header:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg" "jsk_recognition_msgs/BoundingBox:geometry_msgs/Pose:geometry_msgs/Point32:std_msgs/MultiArrayLayout:geometry_msgs/Quaternion:geometry_msgs/Point:std_msgs/Float32MultiArray:geometry_msgs/PolygonStamped:geometry_msgs/Vector3:geometry_msgs/Polygon:sensor_msgs/PointCloud2:std_msgs/Header:geometry_msgs/PointStamped:sensor_msgs/PointField:std_msgs/MultiArrayDimension"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg" "geometry_msgs/Point32:geometry_msgs/Point:geometry_msgs/Quaternion:std_msgs/MultiArrayDimension:geometry_msgs/PolygonStamped:geometry_msgs/Vector3:std_msgs/MultiArrayLayout:geometry_msgs/Pose:std_msgs/Header:jsk_recognition_msgs/BoundingBox:sensor_msgs/PointCloud2:geometry_msgs/PointStamped:geometry_msgs/Polygon:sensor_msgs/PointField:std_msgs/Float32MultiArray"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg" "jsk_recognition_msgs/BoundingBox:geometry_msgs/Pose:geometry_msgs/Point32:std_msgs/MultiArrayLayout:autoware_msgs/CloudCluster:geometry_msgs/Quaternion:geometry_msgs/Point:std_msgs/Float32MultiArray:geometry_msgs/PolygonStamped:geometry_msgs/Vector3:geometry_msgs/Polygon:sensor_msgs/PointCloud2:std_msgs/Header:geometry_msgs/PointStamped:sensor_msgs/PointField:std_msgs/MultiArrayDimension"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg" "geometry_msgs/Point32:geometry_msgs/Point:geometry_msgs/Quaternion:std_msgs/MultiArrayDimension:geometry_msgs/PolygonStamped:autoware_msgs/CloudCluster:geometry_msgs/Vector3:std_msgs/MultiArrayLayout:geometry_msgs/Pose:std_msgs/Header:jsk_recognition_msgs/BoundingBox:sensor_msgs/PointCloud2:geometry_msgs/PointStamped:geometry_msgs/Polygon:sensor_msgs/PointField:std_msgs/Float32MultiArray"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg" NAME_WE)
@@ -59,7 +59,7 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg" "std_msgs/Header:autoware_msgs/ControlCommand"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg" "autoware_msgs/ControlCommand:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg" NAME_WE)
@@ -69,12 +69,12 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg" "autoware_msgs/Waypoint:geometry_msgs/PolygonStamped:autoware_msgs/DTLane:autoware_msgs/LaneArray:geometry_msgs/TwistStamped:geometry_msgs/Polygon:std_msgs/Header:geometry_msgs/Point32:geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/Twist:geometry_msgs/Vector3:sensor_msgs/PointCloud2:autoware_msgs/Lane:geometry_msgs/Pose:std_msgs/ColorRGBA:geometry_msgs/PoseStamped:sensor_msgs/Image:sensor_msgs/PointField:autoware_msgs/WaypointState"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg" "geometry_msgs/Point32:std_msgs/ColorRGBA:autoware_msgs/WaypointState:autoware_msgs/DTLane:geometry_msgs/Quaternion:geometry_msgs/TwistStamped:autoware_msgs/LaneArray:autoware_msgs/Lane:autoware_msgs/Waypoint:geometry_msgs/Vector3:geometry_msgs/Pose:std_msgs/Header:sensor_msgs/Image:sensor_msgs/PointField:geometry_msgs/Twist:geometry_msgs/Point:geometry_msgs/PolygonStamped:geometry_msgs/PoseStamped:sensor_msgs/PointCloud2:geometry_msgs/Polygon"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg" "autoware_msgs/Waypoint:geometry_msgs/PolygonStamped:autoware_msgs/DTLane:autoware_msgs/LaneArray:geometry_msgs/TwistStamped:geometry_msgs/Polygon:std_msgs/Header:autoware_msgs/WaypointState:geometry_msgs/Point32:geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/Vector3:sensor_msgs/PointCloud2:autoware_msgs/Lane:geometry_msgs/Pose:std_msgs/ColorRGBA:geometry_msgs/PoseStamped:autoware_msgs/DetectedObject:sensor_msgs/Image:sensor_msgs/PointField:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg" "geometry_msgs/Point32:std_msgs/ColorRGBA:autoware_msgs/WaypointState:autoware_msgs/DTLane:geometry_msgs/Quaternion:geometry_msgs/TwistStamped:autoware_msgs/LaneArray:autoware_msgs/Lane:autoware_msgs/Waypoint:geometry_msgs/Vector3:geometry_msgs/Pose:std_msgs/Header:autoware_msgs/DetectedObject:sensor_msgs/Image:sensor_msgs/PointField:geometry_msgs/Twist:geometry_msgs/Point:geometry_msgs/PolygonStamped:geometry_msgs/PoseStamped:sensor_msgs/PointCloud2:geometry_msgs/Polygon"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg" NAME_WE)
@@ -144,12 +144,12 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg" "geometry_msgs/Pose:geometry_msgs/PoseStamped:autoware_msgs/WaypointState:autoware_msgs/Waypoint:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/TwistStamped:geometry_msgs/Vector3:std_msgs/Header:autoware_msgs/DTLane:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg" "geometry_msgs/Twist:autoware_msgs/WaypointState:geometry_msgs/Point:geometry_msgs/Quaternion:autoware_msgs/Waypoint:geometry_msgs/Vector3:autoware_msgs/DTLane:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/TwistStamped:geometry_msgs/PoseStamped"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg" "geometry_msgs/Pose:geometry_msgs/PoseStamped:autoware_msgs/WaypointState:autoware_msgs/Waypoint:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/TwistStamped:geometry_msgs/Vector3:std_msgs/Header:autoware_msgs/Lane:autoware_msgs/DTLane:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg" "geometry_msgs/Twist:autoware_msgs/WaypointState:geometry_msgs/Point:autoware_msgs/Lane:geometry_msgs/Quaternion:autoware_msgs/Waypoint:geometry_msgs/Vector3:autoware_msgs/DTLane:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/TwistStamped:geometry_msgs/PoseStamped"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/NDTStat.msg" NAME_WE)
@@ -159,12 +159,12 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg" "geometry_msgs/Point:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg" "std_msgs/Header:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg" "geometry_msgs/PoseArray:geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg" "geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/PoseArray"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/PointsImage.msg" NAME_WE)
@@ -179,7 +179,7 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg" "autoware_msgs/ControlCommand:autoware_msgs/BrakeCmd:geometry_msgs/TwistStamped:geometry_msgs/Vector3:autoware_msgs/Gear:std_msgs/Header:autoware_msgs/LampCmd:autoware_msgs/AccelCmd:autoware_msgs/SteerCmd:autoware_msgs/VehicleCmd:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg" "autoware_msgs/LampCmd:geometry_msgs/Twist:autoware_msgs/ControlCommand:autoware_msgs/AccelCmd:autoware_msgs/BrakeCmd:geometry_msgs/Vector3:autoware_msgs/SteerCmd:autoware_msgs/Gear:autoware_msgs/VehicleCmd:std_msgs/Header:geometry_msgs/TwistStamped"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ScanImage.msg" NAME_WE)
@@ -189,7 +189,7 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg" "autoware_msgs/ExtractedPosition:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg" "std_msgs/Header:autoware_msgs/ExtractedPosition"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/State.msg" NAME_WE)
@@ -234,7 +234,7 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg" "autoware_msgs/ColorSet:autoware_msgs/ValueSet:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg" "autoware_msgs/ValueSet:std_msgs/Header:autoware_msgs/ColorSet"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg" NAME_WE)
@@ -244,7 +244,7 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg" "autoware_msgs/ControlCommand:autoware_msgs/BrakeCmd:geometry_msgs/TwistStamped:geometry_msgs/Vector3:autoware_msgs/Gear:std_msgs/Header:autoware_msgs/LampCmd:autoware_msgs/AccelCmd:autoware_msgs/SteerCmd:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg" "autoware_msgs/LampCmd:geometry_msgs/Twist:autoware_msgs/ControlCommand:autoware_msgs/AccelCmd:autoware_msgs/BrakeCmd:geometry_msgs/Vector3:autoware_msgs/SteerCmd:autoware_msgs/Gear:std_msgs/Header:geometry_msgs/TwistStamped"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleLocation.msg" NAME_WE)
@@ -264,12 +264,12 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg" "geometry_msgs/Point:autoware_msgs/GeometricRectangle:std_msgs/Header:autoware_msgs/VscanTracked"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg" "autoware_msgs/VscanTracked:std_msgs/Header:geometry_msgs/Point:autoware_msgs/GeometricRectangle"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg" "geometry_msgs/Pose:geometry_msgs/PoseStamped:autoware_msgs/WaypointState:geometry_msgs/Quaternion:geometry_msgs/Point:geometry_msgs/TwistStamped:geometry_msgs/Vector3:std_msgs/Header:autoware_msgs/DTLane:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg" "geometry_msgs/Twist:autoware_msgs/WaypointState:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/Vector3:autoware_msgs/DTLane:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/TwistStamped:geometry_msgs/PoseStamped"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg" NAME_WE)
@@ -279,12 +279,12 @@ add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg" "sensor_msgs/NavSatStatus:geometry_msgs/Vector3:std_msgs/Header:sensor_msgs/NavSatFix:geometry_msgs/Twist"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg" "geometry_msgs/Twist:geometry_msgs/Vector3:sensor_msgs/NavSatFix:std_msgs/Header:sensor_msgs/NavSatStatus"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv" NAME_WE)
 add_custom_target(_autoware_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv" "sensor_msgs/Image:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv" "std_msgs/Header:sensor_msgs/Image"
 )
 
 #
@@ -314,19 +314,19 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -344,7 +344,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -356,13 +356,13 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -446,13 +446,13 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -464,13 +464,13 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -488,7 +488,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -500,7 +500,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -554,7 +554,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -566,7 +566,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -590,13 +590,13 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_cpp(autoware_msgs
@@ -608,7 +608,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_msg_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 
@@ -616,7 +616,7 @@ _generate_msg_cpp(autoware_msgs
 _generate_srv_cpp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_msgs
 )
 
@@ -771,19 +771,19 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -801,7 +801,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -813,13 +813,13 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -903,13 +903,13 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -921,13 +921,13 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -945,7 +945,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -957,7 +957,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -1011,7 +1011,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -1023,7 +1023,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -1047,13 +1047,13 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_eus(autoware_msgs
@@ -1065,7 +1065,7 @@ _generate_msg_eus(autoware_msgs
 _generate_msg_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 
@@ -1073,7 +1073,7 @@ _generate_msg_eus(autoware_msgs
 _generate_srv_eus(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_msgs
 )
 
@@ -1228,19 +1228,19 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1258,7 +1258,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1270,13 +1270,13 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1360,13 +1360,13 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1378,13 +1378,13 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1402,7 +1402,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1414,7 +1414,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1468,7 +1468,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1480,7 +1480,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1504,13 +1504,13 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_lisp(autoware_msgs
@@ -1522,7 +1522,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_msg_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 
@@ -1530,7 +1530,7 @@ _generate_msg_lisp(autoware_msgs
 _generate_srv_lisp(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_msgs
 )
 
@@ -1685,19 +1685,19 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1715,7 +1715,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1727,13 +1727,13 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1817,13 +1817,13 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1835,13 +1835,13 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1859,7 +1859,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1871,7 +1871,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1925,7 +1925,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1937,7 +1937,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1961,13 +1961,13 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_nodejs(autoware_msgs
@@ -1979,7 +1979,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_msg_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 
@@ -1987,7 +1987,7 @@ _generate_msg_nodejs(autoware_msgs
 _generate_srv_nodejs(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_msgs
 )
 
@@ -2142,19 +2142,19 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Centroids.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudClusterArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayDimension.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/CloudCluster.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/MultiArrayLayout.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/jsk_recognition_msgs/cmake/../msg/BoundingBox.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32MultiArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2172,7 +2172,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2184,13 +2184,13 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/ColorRGBA.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DetectedObject.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointField.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/PointCloud2.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2274,13 +2274,13 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LaneArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Lane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2292,13 +2292,13 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseArray.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2316,7 +2316,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/RemoteCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2328,7 +2328,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Signals.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ExtractedPosition.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2382,7 +2382,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/TunedResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ValueSet.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ColorSet.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2394,7 +2394,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VehicleCmd.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/LampCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommand.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/AccelCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/BrakeCmd.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/SteerCmd.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Gear.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2418,13 +2418,13 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTracked.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GeometricRectangle.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/Waypoint.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/WaypointState.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/DTLane.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/TwistStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 _generate_msg_py(autoware_msgs
@@ -2436,7 +2436,7 @@ _generate_msg_py(autoware_msgs
 _generate_msg_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/GpsInfo.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Twist.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatFix.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/NavSatStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 
@@ -2444,7 +2444,7 @@ _generate_msg_py(autoware_msgs
 _generate_srv_py(autoware_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/sensor_msgs/cmake/../msg/Image.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_msgs
 )
 

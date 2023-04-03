@@ -10,11 +10,13 @@ namespace ns_control
                                           pp_controller(1.20){};
 
   // Getters
-  autoware_msgs::ControlCommandStamped Control::getControlCommand() { 
-    ccs.cmd = control_cmd;
-    ccs.header.frame_id = "vehicle";
-    ccs.header.stamp = ros::Time::now();
-    return ccs; 
+  common_msgs::ControlCommand Control::getControlCommand() { 
+
+    // ccs.header.frame_id = "vehicle";
+    // ccs.header.stamp = ros::Time::now();
+    control_cmd.header.frame_id = "ego_vehicle";
+    control_cmd.header.stamp = ros::Time::now();
+    return control_cmd; 
     }
   geometry_msgs::PointStamped Control::getLookaheadPoint() { 
     lookahead_point.header.frame_id = "world";
@@ -27,13 +29,13 @@ namespace ns_control
     final_waypoints = msg;
     current_waypoints = final_waypoints.waypoints;
   }
-  void Control::setVehicleDynamicState(const common_msgs::VehicleDynamicState &msg){
-    vehicle_dynamic_state = msg;
+  void Control::setEgoState(const common_msgs::VehicleState &msg){
+    ego_state = msg;
     // ROS_INFO_STREAM("[Control]current velocity: " << vehicle_state.twist.linear.x);
   }
-  void Control::setV2VInfo(const common_msgs::V2V &msg){
-    v2v_info = msg;
-    leader_pose = v2v_info.odom.pose.pose;
+  void Control::setPlatoonState(const common_msgs::PlatoonState &msg){
+    platoon_state = msg;
+    leader_pose = platoon_state.vehicles[0].odom.pose.pose;
   }
   void Control::setUtmPose(const nav_msgs::Odometry &msg){
     utm_pose = msg; 
@@ -112,8 +114,9 @@ namespace ns_control
   void Control::runAlgorithm(){
 
     ROS_DEBUG("[Control]In run() ... ");
-    if (vehicleDynamicStateFlag && finalWaypointsFlag && utmPoseFlag){
+    if (egoStateFlag && finalWaypointsFlag && utmPoseFlag){
       double v_x = utm_pose.twist.twist.linear.x;
+      ROS_DEBUG("[Control] Necessary signals are received...");
       
       // Lateral control
       if (control_para.lateral_control_switch){
@@ -135,38 +138,53 @@ namespace ns_control
         ROS_INFO_STREAM("[Control] lookahead waypoint: x: " << lookahead_point.pose.pose.position.x
                         << ", y: " << lookahead_point.pose.pose.position.y);
 
-        control_cmd.steering_angle = pp_controller.outputSteeringWheelAngle(lookahead_point.pose.pose.position,current_pose);
-        ROS_INFO_STREAM("[Contorl] control_cmd steer angle: " << control_cmd.steering_angle);
+        control_cmd.steer = pp_controller.outputSteeringWheelAngle(lookahead_point.pose.pose.position,current_pose);
+        ROS_INFO_STREAM("[Contorl] control_cmd steer angle: " << control_cmd.steer);
       }else{
-        control_cmd.steering_angle = 0;
+        control_cmd.steer = 0;
         ROS_INFO_STREAM("[Contorl] Lateral control disabled");
       }
      
       // Longitudinal Control
       if (control_para.longitudinal_control_switch){
         if (control_para.longitudinal_mode == 1){// constant speed control
+          // torque mode
           // control_cmd.torque = pid_controller.outputSignal(control_para.desired_speed, v_x);
-          control_cmd.linear_velocity = control_para.desired_speed;
+          // speed control mode
+          // control_cmd.linear_velocity = control_para.desired_speed;
+          // acceleration control mode
+          control_cmd.accel = pid_controller.outputSignal(v_x,control_para.desired_speed);
         }
         else{ if (control_para.longitudinal_mode == 3){//keeping desired distance
             if (v2vInfoFlag){
-              control_cmd.linear_velocity = v2v_info.leader_speed + pid_controller.outputSignal(control_para.desired_distance,
-                  getPlaneDistance(current_pose.position,leader_pose.position));
+              // speed control mode
+              // control_cmd.linear_velocity = platoon_state.vehicles[0].dynamics.lon_speed + pid_controller.outputSignal(control_para.desired_distance,
+              //    getPlaneDistance(current_pose.position,leader_pose.position));// feedforward + feedback
+              
+              // accel control mode
+              float current_distance = getPlaneDistance(current_pose.position,leader_pose.position);
+              control_cmd.accel = pid_controller.outputSignal(control_para.desired_distance,
+                                                              current_distance);
+              ROS_INFO_STREAM("[Control] Current ego position is: "<< current_pose.position.x <<","<< current_pose.position.y <<
+                              ", leader position is: " << leader_pose.position.x <<","<< leader_pose.position.y <<
+                              ", current distance is: " << current_distance);
             }else{ ROS_WARN("NO V2V info!");}
           }
           else {
             if (control_para.longitudinal_mode == 4){ //traj mode
+              float desired_speed;
               if(nearest_idx <= 10){
-                control_cmd.linear_velocity = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
+                desired_speed = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
               }else{
 		            if(nearest_idx <current_waypoints.size()-1){
-                  control_cmd.linear_velocity = current_waypoints.at(nearest_idx).twist.twist.linear.x;
+                  desired_speed = current_waypoints.at(nearest_idx).twist.twist.linear.x;
                 }else{
-                  control_cmd.linear_velocity = 0;
-                  control_cmd.steering_angle =0;
+                  desired_speed = 0;
+                  control_cmd.steer =0;
                 }
 	            }
-	            ROS_INFO_STREAM("[Control] Longitudinal control Speed: "<< control_cmd.linear_velocity);
+              control_cmd.accel = pid_controller.outputSignal(v_x,desired_speed);
+	            ROS_INFO_STREAM("[Control] Longitudinal desired Speed: "<< desired_speed);
             }
 
           } 
@@ -176,7 +194,8 @@ namespace ns_control
         ROS_INFO_STREAM("[Contorl] Longitudinal control disabled");
       }
     }else{
-      ROS_WARN("Waiting for local path or vehicle state...");
+      ROS_WARN("[Control] Waiting for signals: ego_state: %d, final_waypoints: %d, utm_pose: %d", egoStateFlag,
+                finalWaypointsFlag,utmPoseFlag);
     }
 
   }

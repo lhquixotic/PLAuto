@@ -90,11 +90,11 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/CMakeFile
 
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaEgoVehicleStatus.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Accel.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaEgoVehicleControl.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaEgoVehicleStatus.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from carla_msgs/CarlaEgoVehicleStatus.msg"
 	cd /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs && ../../../../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaEgoVehicleStatus.msg -Icarla_msgs:/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Idiagnostic_msgs:/opt/ros/noetic/share/diagnostic_msgs/cmake/../msg -p carla_msgs -o /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg
 
@@ -113,8 +113,8 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/CMakeFile
 
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaCollisionEvent.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaCollisionEvent.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaCollisionEvent.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaCollisionEvent.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaCollisionEvent.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaCollisionEvent.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from carla_msgs/CarlaCollisionEvent.msg"
 	cd /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs && ../../../../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaCollisionEvent.msg -Icarla_msgs:/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Idiagnostic_msgs:/opt/ros/noetic/share/diagnostic_msgs/cmake/../msg -p carla_msgs -o /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg
 
@@ -152,22 +152,22 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/CMakeFile
 
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaTrafficLightInfo.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaBoundingBox.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfo.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaBoundingBox.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from carla_msgs/CarlaTrafficLightInfo.msg"
 	cd /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs && ../../../../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaTrafficLightInfo.msg -Icarla_msgs:/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Idiagnostic_msgs:/opt/ros/noetic/share/diagnostic_msgs/cmake/../msg -p carla_msgs -o /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg
 
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaTrafficLightInfoList.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaBoundingBox.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaTrafficLightInfo.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg/CarlaTrafficLightInfoList.js: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaBoundingBox.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Javascript code from carla_msgs/CarlaTrafficLightInfoList.msg"
 	cd /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs && ../../../../../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg/CarlaTrafficLightInfoList.msg -Icarla_msgs:/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Idiagnostic_msgs:/opt/ros/noetic/share/diagnostic_msgs/cmake/../msg -p carla_msgs -o /home/lhq/Projects/PLAuto/devel/share/gennodejs/ros/carla_msgs/msg
 

@@ -1,10 +1,10 @@
 std_msgs/Header header
 
 # real acc throttle value
-uint8 throttle
+float32 throttle
 
 # real brake pressure
-uint8 brake_pressure
+float32 brake
 
 # vehicle run mode
 uint8 run_mode

@@ -29,17 +29,17 @@ add_custom_target(_autoware_system_msgs_generate_messages_check_deps_${_filename
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg" NAME_WE)
 add_custom_target(_autoware_system_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg" "autoware_system_msgs/DiagnosticStatus:std_msgs/Header:autoware_system_msgs/DiagnosticStatusArray"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg" "autoware_system_msgs/DiagnosticStatus:autoware_system_msgs/DiagnosticStatusArray:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg" NAME_WE)
 add_custom_target(_autoware_system_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg" "autoware_system_msgs/DiagnosticStatus:std_msgs/Header:autoware_system_msgs/DiagnosticStatusArray"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg" "autoware_system_msgs/DiagnosticStatus:autoware_system_msgs/DiagnosticStatusArray:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg" NAME_WE)
 add_custom_target(_autoware_system_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg" "std_msgs/Header:rosgraph_msgs/TopicStatistics:autoware_system_msgs/NodeStatus:autoware_system_msgs/DiagnosticStatusArray:autoware_system_msgs/DiagnosticStatus:autoware_system_msgs/HardwareStatus"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "autoware_system_msgs" "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg" "rosgraph_msgs/TopicStatistics:autoware_system_msgs/HardwareStatus:autoware_system_msgs/NodeStatus:autoware_system_msgs/DiagnosticStatusArray:autoware_system_msgs/DiagnosticStatus:std_msgs/Header"
 )
 
 #
@@ -63,19 +63,19 @@ _generate_msg_cpp(autoware_system_msgs
 _generate_msg_cpp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_cpp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_cpp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
+  "/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/autoware_system_msgs
 )
 
@@ -128,19 +128,19 @@ _generate_msg_eus(autoware_system_msgs
 _generate_msg_eus(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_eus(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_eus(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
+  "/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/autoware_system_msgs
 )
 
@@ -193,19 +193,19 @@ _generate_msg_lisp(autoware_system_msgs
 _generate_msg_lisp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_lisp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_lisp(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
+  "/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/autoware_system_msgs
 )
 
@@ -258,19 +258,19 @@ _generate_msg_nodejs(autoware_system_msgs
 _generate_msg_nodejs(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_nodejs(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_nodejs(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
+  "/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/autoware_system_msgs
 )
 
@@ -323,19 +323,19 @@ _generate_msg_py(autoware_system_msgs
 _generate_msg_py(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_py(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg"
   "${MSG_I_FLAGS}"
-  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg"
+  "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_system_msgs
 )
 _generate_msg_py(autoware_system_msgs
   "/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/SystemStatus.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg"
+  "/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg/TopicStatistics.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/HardwareStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/NodeStatus.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatusArray.msg;/home/lhq/Projects/PLAuto/src/messages/autoware_system_msgs/msg/DiagnosticStatus.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/autoware_system_msgs
 )
 

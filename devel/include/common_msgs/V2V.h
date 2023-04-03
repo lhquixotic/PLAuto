@@ -130,12 +130,12 @@ struct MD5Sum< ::common_msgs::V2V_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "eb9ec1d07a2ce2b979126f710e74eb76";
+    return "84dd78ba72f6eb4041f0491a6158eda6";
   }
 
   static const char* value(const ::common_msgs::V2V_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xeb9ec1d07a2ce2b9ULL;
-  static const uint64_t static_value2 = 0x79126f710e74eb76ULL;
+  static const uint64_t static_value1 = 0x84dd78ba72f6eb40ULL;
+  static const uint64_t static_value2 = 0x41f0491a6158eda6ULL;
 };
 
 template<class ContainerAllocator>
@@ -274,21 +274,21 @@ struct Definition< ::common_msgs::V2V_<ContainerAllocator> >
 "MSG: common_msgs/VehicleDynamicState\n"
 "std_msgs/Header  header\n"
 "\n"
-"float64 lon_speed\n"
-"float64 lon_acceleration\n"
-"float64 lat_speed\n"
-"float64 lat_acceleration\n"
-"float64 yaw_rate\n"
-"float64 yaw_acceleration\n"
+"float32 lon_speed\n"
+"float32 lon_accel\n"
+"float32 lat_speed\n"
+"float32 lat_accel\n"
+"float32 yaw_rate\n"
+"float32 yaw_accel\n"
 "================================================================================\n"
 "MSG: common_msgs/ChassisState\n"
 "std_msgs/Header header\n"
 "\n"
 "# real acc throttle value\n"
-"uint8 throttle\n"
+"float32 throttle\n"
 "\n"
 "# real brake pressure\n"
-"uint8 brake_pressure\n"
+"float32 brake\n"
 "\n"
 "# vehicle run mode\n"
 "uint8 run_mode\n"

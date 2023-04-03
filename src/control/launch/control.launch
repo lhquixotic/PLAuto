@@ -1,6 +1,11 @@
 <launch>
-    <node name="control_node" pkg="control" type="control" output="screen">
+    <arg name="platoon_state_topic_name" default="/carla/platoon_state" />
+    <arg name="ego_state_topic_name" default="/carla/ego_state"/>
+
+    <node name="control" pkg="control" type="control" output="screen" ns="/plauto">
         <rosparam command="load" file="$(find control)/config/control.yaml" /> <!--Load parameters from config files-->
         <rosparam command="load" file="$(find control)/config/control_para.yaml" />
+		<param name="platoon_state_topic_name" value="$(arg platoon_state_topic_name)" />
+        <param name="ego_state_topic_name" value="$(arg ego_state_topic_name)"/>
     </node>
 </launch>

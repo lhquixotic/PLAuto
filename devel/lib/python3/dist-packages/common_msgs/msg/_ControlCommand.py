@@ -16,9 +16,11 @@ class ControlCommand(genpy.Message):
 Header header
 
 # Level of accelaration, unit in m/s^2, throttle is positive, braking is negative
+# [-1.0, 1.0]
 float32 accel
 
 # Level of steering on front wheel, unit in radian, left turning is positive
+# [-1.0,1.0]
 float32 steer
 
 # Gear shift, positive means manual transmission, negative means automatic transmission
@@ -31,7 +33,6 @@ int8 GEAR_DRIVE = -4
 
 # Parking brake switch
 bool parking_brake
-
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.

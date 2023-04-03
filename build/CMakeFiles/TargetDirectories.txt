@@ -666,6 +666,14 @@
 /home/lhq/Projects/PLAuto/build/common/autoware_libs/libwaypoint_follower/CMakeFiles/run_tests_libwaypoint_follower_rostest.dir
 /home/lhq/Projects/PLAuto/build/common/autoware_libs/libwaypoint_follower/CMakeFiles/run_tests_libwaypoint_follower_rostest_test_test_libwaypoint_follower.test.dir
 /home/lhq/Projects/PLAuto/build/common/autoware_libs/libwaypoint_follower/CMakeFiles/_run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/install/strip.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/install/local.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/edit_cache.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/test.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/install.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/list_install_components.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/rebuild_cache.dir
+/home/lhq/Projects/PLAuto/build/control/CMakeFiles/control.dir
 /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/pcl_recorder/CMakeFiles/install/strip.dir
 /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/pcl_recorder/CMakeFiles/install.dir
 /home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/pcl_recorder/CMakeFiles/list_install_components.dir

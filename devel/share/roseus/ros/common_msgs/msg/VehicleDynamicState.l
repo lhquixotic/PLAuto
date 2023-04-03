@@ -16,27 +16,27 @@
 
 (defclass common_msgs::VehicleDynamicState
   :super ros::object
-  :slots (_header _lon_speed _lon_acceleration _lat_speed _lat_acceleration _yaw_rate _yaw_acceleration ))
+  :slots (_header _lon_speed _lon_accel _lat_speed _lat_accel _yaw_rate _yaw_accel ))
 
 (defmethod common_msgs::VehicleDynamicState
   (:init
    (&key
     ((:header __header) (instance std_msgs::Header :init))
     ((:lon_speed __lon_speed) 0.0)
-    ((:lon_acceleration __lon_acceleration) 0.0)
+    ((:lon_accel __lon_accel) 0.0)
     ((:lat_speed __lat_speed) 0.0)
-    ((:lat_acceleration __lat_acceleration) 0.0)
+    ((:lat_accel __lat_accel) 0.0)
     ((:yaw_rate __yaw_rate) 0.0)
-    ((:yaw_acceleration __yaw_acceleration) 0.0)
+    ((:yaw_accel __yaw_accel) 0.0)
     )
    (send-super :init)
    (setq _header __header)
    (setq _lon_speed (float __lon_speed))
-   (setq _lon_acceleration (float __lon_acceleration))
+   (setq _lon_accel (float __lon_accel))
    (setq _lat_speed (float __lat_speed))
-   (setq _lat_acceleration (float __lat_acceleration))
+   (setq _lat_accel (float __lat_accel))
    (setq _yaw_rate (float __yaw_rate))
-   (setq _yaw_acceleration (float __yaw_acceleration))
+   (setq _yaw_accel (float __yaw_accel))
    self)
   (:header
    (&rest __header)
@@ -48,38 +48,38 @@
   (:lon_speed
    (&optional __lon_speed)
    (if __lon_speed (setq _lon_speed __lon_speed)) _lon_speed)
-  (:lon_acceleration
-   (&optional __lon_acceleration)
-   (if __lon_acceleration (setq _lon_acceleration __lon_acceleration)) _lon_acceleration)
+  (:lon_accel
+   (&optional __lon_accel)
+   (if __lon_accel (setq _lon_accel __lon_accel)) _lon_accel)
   (:lat_speed
    (&optional __lat_speed)
    (if __lat_speed (setq _lat_speed __lat_speed)) _lat_speed)
-  (:lat_acceleration
-   (&optional __lat_acceleration)
-   (if __lat_acceleration (setq _lat_acceleration __lat_acceleration)) _lat_acceleration)
+  (:lat_accel
+   (&optional __lat_accel)
+   (if __lat_accel (setq _lat_accel __lat_accel)) _lat_accel)
   (:yaw_rate
    (&optional __yaw_rate)
    (if __yaw_rate (setq _yaw_rate __yaw_rate)) _yaw_rate)
-  (:yaw_acceleration
-   (&optional __yaw_acceleration)
-   (if __yaw_acceleration (setq _yaw_acceleration __yaw_acceleration)) _yaw_acceleration)
+  (:yaw_accel
+   (&optional __yaw_accel)
+   (if __yaw_accel (setq _yaw_accel __yaw_accel)) _yaw_accel)
   (:serialization-length
    ()
    (+
     ;; std_msgs/Header _header
     (send _header :serialization-length)
-    ;; float64 _lon_speed
-    8
-    ;; float64 _lon_acceleration
-    8
-    ;; float64 _lat_speed
-    8
-    ;; float64 _lat_acceleration
-    8
-    ;; float64 _yaw_rate
-    8
-    ;; float64 _yaw_acceleration
-    8
+    ;; float32 _lon_speed
+    4
+    ;; float32 _lon_accel
+    4
+    ;; float32 _lat_speed
+    4
+    ;; float32 _lat_accel
+    4
+    ;; float32 _yaw_rate
+    4
+    ;; float32 _yaw_accel
+    4
     ))
   (:serialize
    (&optional strm)
@@ -87,51 +87,51 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; std_msgs/Header _header
        (send _header :serialize s)
-     ;; float64 _lon_speed
-       (sys::poke _lon_speed (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _lon_acceleration
-       (sys::poke _lon_acceleration (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _lat_speed
-       (sys::poke _lat_speed (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _lat_acceleration
-       (sys::poke _lat_acceleration (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _yaw_rate
-       (sys::poke _yaw_rate (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; float64 _yaw_acceleration
-       (sys::poke _yaw_acceleration (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
+     ;; float32 _lon_speed
+       (sys::poke _lon_speed (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _lon_accel
+       (sys::poke _lon_accel (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _lat_speed
+       (sys::poke _lat_speed (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _lat_accel
+       (sys::poke _lat_accel (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _yaw_rate
+       (sys::poke _yaw_rate (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _yaw_accel
+       (sys::poke _yaw_accel (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; std_msgs/Header _header
      (send _header :deserialize buf ptr-) (incf ptr- (send _header :serialization-length))
-   ;; float64 _lon_speed
-     (setq _lon_speed (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _lon_acceleration
-     (setq _lon_acceleration (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _lat_speed
-     (setq _lat_speed (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _lat_acceleration
-     (setq _lat_acceleration (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _yaw_rate
-     (setq _yaw_rate (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; float64 _yaw_acceleration
-     (setq _yaw_acceleration (sys::peek buf ptr- :double)) (incf ptr- 8)
+   ;; float32 _lon_speed
+     (setq _lon_speed (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _lon_accel
+     (setq _lon_accel (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _lat_speed
+     (setq _lat_speed (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _lat_accel
+     (setq _lat_accel (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _yaw_rate
+     (setq _yaw_rate (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _yaw_accel
+     (setq _yaw_accel (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
 
-(setf (get common_msgs::VehicleDynamicState :md5sum-) "543c8cc51ef4a96b419de72eeff8a6e9")
+(setf (get common_msgs::VehicleDynamicState :md5sum-) "d3015605eb810e5c79a5de962cc9f172")
 (setf (get common_msgs::VehicleDynamicState :datatype-) "common_msgs/VehicleDynamicState")
 (setf (get common_msgs::VehicleDynamicState :definition-)
       "std_msgs/Header  header
 
-float64 lon_speed
-float64 lon_acceleration
-float64 lat_speed
-float64 lat_acceleration
-float64 yaw_rate
-float64 yaw_acceleration
+float32 lon_speed
+float32 lon_accel
+float32 lat_speed
+float32 lat_accel
+float32 yaw_rate
+float32 yaw_accel
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -152,6 +152,6 @@ string frame_id
 
 
 
-(provide :common_msgs/VehicleDynamicState "543c8cc51ef4a96b419de72eeff8a6e9")
+(provide :common_msgs/VehicleDynamicState "d3015605eb810e5c79a5de962cc9f172")
 
 

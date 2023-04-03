@@ -60,8 +60,8 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types
 
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types/msg/CarlaWaypoint.msg
-/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/CarlaWaypoint.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from carla_waypoint_types/CarlaWaypoint.msg"
@@ -69,10 +69,10 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types
 
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types/srv/GetWaypoint.srv
+/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types/msg/CarlaWaypoint.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetWaypoint.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lhq/Projects/PLAuto/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from carla_waypoint_types/GetWaypoint.srv"
@@ -80,8 +80,8 @@ drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types
 
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types/srv/GetActorWaypoint.srv
-/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypoint_types/msg/CarlaWaypoint.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lhq/Projects/PLAuto/devel/include/carla_waypoint_types/GetActorWaypoint.h: /opt/ros/noetic/share/gencpp/msg.h.template

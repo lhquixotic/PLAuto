@@ -21,11 +21,11 @@ class VehicleDynamicState {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
       this.lon_speed = null;
-      this.lon_acceleration = null;
+      this.lon_accel = null;
       this.lat_speed = null;
-      this.lat_acceleration = null;
+      this.lat_accel = null;
       this.yaw_rate = null;
-      this.yaw_acceleration = null;
+      this.yaw_accel = null;
     }
     else {
       if (initObj.hasOwnProperty('header')) {
@@ -40,11 +40,11 @@ class VehicleDynamicState {
       else {
         this.lon_speed = 0.0;
       }
-      if (initObj.hasOwnProperty('lon_acceleration')) {
-        this.lon_acceleration = initObj.lon_acceleration
+      if (initObj.hasOwnProperty('lon_accel')) {
+        this.lon_accel = initObj.lon_accel
       }
       else {
-        this.lon_acceleration = 0.0;
+        this.lon_accel = 0.0;
       }
       if (initObj.hasOwnProperty('lat_speed')) {
         this.lat_speed = initObj.lat_speed
@@ -52,11 +52,11 @@ class VehicleDynamicState {
       else {
         this.lat_speed = 0.0;
       }
-      if (initObj.hasOwnProperty('lat_acceleration')) {
-        this.lat_acceleration = initObj.lat_acceleration
+      if (initObj.hasOwnProperty('lat_accel')) {
+        this.lat_accel = initObj.lat_accel
       }
       else {
-        this.lat_acceleration = 0.0;
+        this.lat_accel = 0.0;
       }
       if (initObj.hasOwnProperty('yaw_rate')) {
         this.yaw_rate = initObj.yaw_rate
@@ -64,11 +64,11 @@ class VehicleDynamicState {
       else {
         this.yaw_rate = 0.0;
       }
-      if (initObj.hasOwnProperty('yaw_acceleration')) {
-        this.yaw_acceleration = initObj.yaw_acceleration
+      if (initObj.hasOwnProperty('yaw_accel')) {
+        this.yaw_accel = initObj.yaw_accel
       }
       else {
-        this.yaw_acceleration = 0.0;
+        this.yaw_accel = 0.0;
       }
     }
   }
@@ -78,17 +78,17 @@ class VehicleDynamicState {
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
     // Serialize message field [lon_speed]
-    bufferOffset = _serializer.float64(obj.lon_speed, buffer, bufferOffset);
-    // Serialize message field [lon_acceleration]
-    bufferOffset = _serializer.float64(obj.lon_acceleration, buffer, bufferOffset);
+    bufferOffset = _serializer.float32(obj.lon_speed, buffer, bufferOffset);
+    // Serialize message field [lon_accel]
+    bufferOffset = _serializer.float32(obj.lon_accel, buffer, bufferOffset);
     // Serialize message field [lat_speed]
-    bufferOffset = _serializer.float64(obj.lat_speed, buffer, bufferOffset);
-    // Serialize message field [lat_acceleration]
-    bufferOffset = _serializer.float64(obj.lat_acceleration, buffer, bufferOffset);
+    bufferOffset = _serializer.float32(obj.lat_speed, buffer, bufferOffset);
+    // Serialize message field [lat_accel]
+    bufferOffset = _serializer.float32(obj.lat_accel, buffer, bufferOffset);
     // Serialize message field [yaw_rate]
-    bufferOffset = _serializer.float64(obj.yaw_rate, buffer, bufferOffset);
-    // Serialize message field [yaw_acceleration]
-    bufferOffset = _serializer.float64(obj.yaw_acceleration, buffer, bufferOffset);
+    bufferOffset = _serializer.float32(obj.yaw_rate, buffer, bufferOffset);
+    // Serialize message field [yaw_accel]
+    bufferOffset = _serializer.float32(obj.yaw_accel, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -99,24 +99,24 @@ class VehicleDynamicState {
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
     // Deserialize message field [lon_speed]
-    data.lon_speed = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [lon_acceleration]
-    data.lon_acceleration = _deserializer.float64(buffer, bufferOffset);
+    data.lon_speed = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [lon_accel]
+    data.lon_accel = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [lat_speed]
-    data.lat_speed = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [lat_acceleration]
-    data.lat_acceleration = _deserializer.float64(buffer, bufferOffset);
+    data.lat_speed = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [lat_accel]
+    data.lat_accel = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [yaw_rate]
-    data.yaw_rate = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [yaw_acceleration]
-    data.yaw_acceleration = _deserializer.float64(buffer, bufferOffset);
+    data.yaw_rate = _deserializer.float32(buffer, bufferOffset);
+    // Deserialize message field [yaw_accel]
+    data.yaw_accel = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 48;
+    return length + 24;
   }
 
   static datatype() {
@@ -126,7 +126,7 @@ class VehicleDynamicState {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '543c8cc51ef4a96b419de72eeff8a6e9';
+    return 'd3015605eb810e5c79a5de962cc9f172';
   }
 
   static messageDefinition() {
@@ -134,12 +134,12 @@ class VehicleDynamicState {
     return `
     std_msgs/Header  header
     
-    float64 lon_speed
-    float64 lon_acceleration
-    float64 lat_speed
-    float64 lat_acceleration
-    float64 yaw_rate
-    float64 yaw_acceleration
+    float32 lon_speed
+    float32 lon_accel
+    float32 lat_speed
+    float32 lat_accel
+    float32 yaw_rate
+    float32 yaw_accel
     ================================================================================
     MSG: std_msgs/Header
     # Standard metadata for higher-level stamped data types.
@@ -179,11 +179,11 @@ class VehicleDynamicState {
       resolved.lon_speed = 0.0
     }
 
-    if (msg.lon_acceleration !== undefined) {
-      resolved.lon_acceleration = msg.lon_acceleration;
+    if (msg.lon_accel !== undefined) {
+      resolved.lon_accel = msg.lon_accel;
     }
     else {
-      resolved.lon_acceleration = 0.0
+      resolved.lon_accel = 0.0
     }
 
     if (msg.lat_speed !== undefined) {
@@ -193,11 +193,11 @@ class VehicleDynamicState {
       resolved.lat_speed = 0.0
     }
 
-    if (msg.lat_acceleration !== undefined) {
-      resolved.lat_acceleration = msg.lat_acceleration;
+    if (msg.lat_accel !== undefined) {
+      resolved.lat_accel = msg.lat_accel;
     }
     else {
-      resolved.lat_acceleration = 0.0
+      resolved.lat_accel = 0.0
     }
 
     if (msg.yaw_rate !== undefined) {
@@ -207,11 +207,11 @@ class VehicleDynamicState {
       resolved.yaw_rate = 0.0
     }
 
-    if (msg.yaw_acceleration !== undefined) {
-      resolved.yaw_acceleration = msg.yaw_acceleration;
+    if (msg.yaw_accel !== undefined) {
+      resolved.yaw_accel = msg.yaw_accel;
     }
     else {
-      resolved.yaw_acceleration = 0.0
+      resolved.yaw_accel = 0.0
     }
 
     return resolved;

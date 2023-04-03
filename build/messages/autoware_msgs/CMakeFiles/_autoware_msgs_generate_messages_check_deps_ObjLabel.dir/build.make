@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ObjLabel.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ObjLabel:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg geometry_msgs/Point:std_msgs/Header
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ObjLabel.msg std_msgs/Header:geometry_msgs/Point
 
 _autoware_msgs_generate_messages_check_deps_ObjLabel: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ObjLabel
 _autoware_msgs_generate_messages_check_deps_ObjLabel: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ObjLabel.dir/build.make

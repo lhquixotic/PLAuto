@@ -38,6 +38,7 @@ from carla_msgs.srv import SpawnObject, DestroyObject, GetBlueprints
 from rosgraph_msgs.msg import Clock
 
 
+
 class CarlaRosBridge(CompatibleNode):
 
     """

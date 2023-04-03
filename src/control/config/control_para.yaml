@@ -1,14 +1,14 @@
 pid:
-  kp: 0.5
-  ki: 0.05
-  kd: 0.001
+  kp: 0.05
+  ki: 0.005
+  kd: 0.0001
 pure_pursuit:
   mode: fixed  # 1) [fixed] lookahead distance 2) [variable] k_pre * v
   lookahead_distance: 4.0 # [m]
   k_pre: 1.5
 control_switch:
   longitudinal: true # Start: true; Shutdown: false
-  lateral: true
-longitudinal_mode: 4 # 1: constant speed 2: planned speed 3: desired distance
+  lateral: false
+longitudinal_mode: 3 # 1: constant speed 2: planned speed 3: desired distance 4: trajectory reference
 desired_speed: 5 # km/h TODO: to check
-desired_distance: 5 # m
+desired_distance: 10 # m

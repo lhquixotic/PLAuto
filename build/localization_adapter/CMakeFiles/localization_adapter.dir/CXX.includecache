@@ -70,14 +70,6 @@ localization_adapter.hpp
 
 /home/lhq/Projects/PLAuto/src/localization_adapter/include/register.h
 
-/home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.cpp
-ros/ros.h
--
-localization_adapter.hpp
-/home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter.hpp
-sstream
--
-
 /home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.cpp
 ros/ros.h
 -
@@ -87,12 +79,6 @@ register.h
 /home/lhq/Projects/PLAuto/src/localization_adapter/src/register.h
 chrono
 -
-
-/home/lhq/Projects/PLAuto/src/localization_adapter/src/main.cpp
-ros/ros.h
--
-localization_adapter_handle.hpp
-/home/lhq/Projects/PLAuto/src/localization_adapter/src/localization_adapter_handle.hpp
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string

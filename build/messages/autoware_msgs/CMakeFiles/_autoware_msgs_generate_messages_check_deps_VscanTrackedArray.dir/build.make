@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_VscanTrackedArray.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_VscanTrackedArray:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg geometry_msgs/Point:autoware_msgs/GeometricRectangle:std_msgs/Header:autoware_msgs/VscanTracked
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/VscanTrackedArray.msg autoware_msgs/VscanTracked:std_msgs/Header:geometry_msgs/Point:autoware_msgs/GeometricRectangle
 
 _autoware_msgs_generate_messages_check_deps_VscanTrackedArray: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_VscanTrackedArray
 _autoware_msgs_generate_messages_check_deps_VscanTrackedArray: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_VscanTrackedArray.dir/build.make

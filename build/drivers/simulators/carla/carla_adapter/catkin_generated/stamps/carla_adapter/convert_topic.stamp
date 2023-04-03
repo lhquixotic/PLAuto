@@ -16,6 +16,7 @@ from carla_msgs.msg import CarlaWorldInfo, CarlaEgoVehicleControl, CarlaEgoVehic
 from nav_msgs.msg import Path
 
 from common_msgs.msg import ControlCommand
+from common_msgs.msg import VehicleState
 
 import argparse
 from easydict import EasyDict as edict
@@ -81,21 +82,33 @@ def convert_ControlCommand(msg, pub):
     pub.publish(new_msg)
 
 
-def convert_VehicleStatus(msg, chassis_pub, control_pub):
+def convert_VehicleStatus(msg, ego_state_pub):
     assert type(msg) == CarlaEgoVehicleStatus
 
-    chassis_msg = ChassisReport()
-    chassis_msg.speed = msg.velocity
-    chassis_pub.publish(chassis_msg)
+    ego_state_msg = VehicleState()
+    ego_state_msg.dynamics.lon_speed = msg.velocity
+    ego_state_msg.dynamics.lon_accel = msg.acceleration.linear.x
+    ego_state_msg.dynamics.lat_accel = msg.acceleration.linear.y
+    ego_state_msg.dynamics.yaw_accel = msg.acceleration.angular.z
+
+    ego_state_msg.chassis.throttle = msg.control.throttle 
+    ego_state_msg.chassis.brake = msg.control.brake
+    ego_state_msg.chassis.steer = msg.control.steer
+
+    ego_state_pub.publish(ego_state_msg)
+
+    # chassis_msg = ChassisReport()
+    # chassis_msg.speed = msg.velocity
+    # chassis_pub.publish(chassis_msg)
     
-    control_msg = ControlReport()
-    control_msg.throttle_available = True
-    control_msg.throttle_report = msg.control.throttle
-    control_msg.brake_available = True
-    control_msg.brake_report = msg.control.brake
-    control_msg.steer_available = True
-    control_msg.steer_report = msg.control.steer
-    control_pub.publish(control_msg)
+    # control_msg = ControlReport()
+    # control_msg.throttle_available = True
+    # control_msg.throttle_report = msg.control.throttle
+    # control_msg.brake_available = True
+    # control_msg.brake_report = msg.control.brake
+    # control_msg.steer_available = True
+    # control_msg.steer_report = msg.control.steer
+    # control_pub.publish(control_msg)
 
 def convert_ObjectArray(msg, pub):
     assert type(msg) == ObjectArray
@@ -160,10 +173,11 @@ if __name__ == "__main__":
         pub = rospy.Publisher(params.output_topic, CarlaEgoVehicleControl, queue_size=1, latch=True)
         rospy.Subscriber(params.input_topic, ControlCommand, convert_ControlCommand, pub)
     elif params.msg_type == "VehicleStatus":
-        # By default, output_topic should be /zzz/drivers/vehicle_report
-        chassis_pub = rospy.Publisher(params.output_topic + "/chassis", ChassisReport, queue_size=1, latch=True)
-        control_pub = rospy.Publisher(params.output_topic + "/control", ControlReport, queue_size=1, latch=True)
-        rospy.Subscriber(params.input_topic, CarlaEgoVehicleStatus, convert_VehicleStatus, chassis_pub, control_pub)
+        # By default, output_topic should be /carla/ego_state
+        # chassis_pub = rospy.Publisher(params.output_topic + "/chassis", ChassisReport, queue_size=1, latch=True)
+        # control_pub = rospy.Publisher(params.output_topic + "/control", ControlReport, queue_size=1, latch=True)
+        ego_state_pub = rospy.Publisher(params.output_topic,VehicleState,queue_size=1,latch=True)
+        rospy.Subscriber(params.input_topic, CarlaEgoVehicleStatus, convert_VehicleStatus, ego_state_pub)
     elif params.msg_type == "ObjectArray":
         pub = rospy.Publisher(params.output_topic, TrackingBoxArray, queue_size=1, latch=True)
         rospy.Subscriber(params.input_topic, ObjectArray, convert_ObjectArray, pub)

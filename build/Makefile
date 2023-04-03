@@ -5940,6 +5940,19 @@ _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test/fast:
 .PHONY : _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test/fast
 
 #=============================================================================
+# Target rules for targets named control
+
+# Build rule for target.
+control: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 control
+.PHONY : control
+
+# fast build rule for target.
+control/fast:
+	$(MAKE) -f control/CMakeFiles/control.dir/build.make control/CMakeFiles/control.dir/build
+.PHONY : control/fast
+
+#=============================================================================
 # Target rules for targets named nodelet_topic_tools_gencfg
 
 # Build rule for target.
@@ -7462,6 +7475,7 @@ help:
 	@echo "... run_tests_libwaypoint_follower_rostest"
 	@echo "... run_tests_libwaypoint_follower_rostest_test_test_libwaypoint_follower.test"
 	@echo "... _run_tests_libwaypoint_follower_rostest_test_test_pure_pursuit.test"
+	@echo "... control"
 	@echo "... nodelet_topic_tools_gencfg"
 	@echo "... topic_tools_generate_messages_eus"
 	@echo "... bond_generate_messages_lisp"

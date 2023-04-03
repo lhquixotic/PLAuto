@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RecognizeLightState.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RecognizeLightState:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv sensor_msgs/Image:std_msgs/Header
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/srv/RecognizeLightState.srv std_msgs/Header:sensor_msgs/Image
 
 _autoware_msgs_generate_messages_check_deps_RecognizeLightState: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RecognizeLightState
 _autoware_msgs_generate_messages_check_deps_RecognizeLightState: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_RecognizeLightState.dir/build.make

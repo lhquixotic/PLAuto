@@ -37,7 +37,7 @@ void Localization_adapterHandle::loadParameters() {
   }
   if (!nodeHandle_.param<std::string>("localization_utm_topic_name",
                                       localization_utm_topic_name_,
-                                      "/localization/utmpose")) {
+                                      "/plauto/localization/utmpose")) {
     ROS_WARN_STREAM("Did not load /localization/utmpose. Standard value is: " << localization_utm_topic_name_);
   }
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {

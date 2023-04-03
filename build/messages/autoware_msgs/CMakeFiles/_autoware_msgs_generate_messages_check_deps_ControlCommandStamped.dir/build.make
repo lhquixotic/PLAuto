@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ControlCommandStamped.dir/progress.make
 
 messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ControlCommandStamped:
-	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg std_msgs/Header:autoware_msgs/ControlCommand
+	cd /home/lhq/Projects/PLAuto/build/messages/autoware_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py autoware_msgs /home/lhq/Projects/PLAuto/src/messages/autoware_msgs/msg/ControlCommandStamped.msg autoware_msgs/ControlCommand:std_msgs/Header
 
 _autoware_msgs_generate_messages_check_deps_ControlCommandStamped: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ControlCommandStamped
 _autoware_msgs_generate_messages_check_deps_ControlCommandStamped: messages/autoware_msgs/CMakeFiles/_autoware_msgs_generate_messages_check_deps_ControlCommandStamped.dir/build.make

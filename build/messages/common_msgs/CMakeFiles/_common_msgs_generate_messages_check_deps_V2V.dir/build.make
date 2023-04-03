@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lhq/Projects/PLAuto/build
 include messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_V2V.dir/progress.make
 
 messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_V2V:
-	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py common_msgs /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg geometry_msgs/Vector3:common_msgs/ChassisState:std_msgs/Header:common_msgs/VehicleDynamicState:common_msgs/PlatoonState:geometry_msgs/Twist:geometry_msgs/Point:geometry_msgs/TwistWithCovariance:geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/PoseWithCovariance:nav_msgs/Odometry:common_msgs/VehicleState
+	cd /home/lhq/Projects/PLAuto/build/messages/common_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py common_msgs /home/lhq/Projects/PLAuto/src/messages/common_msgs/msg/V2V.msg geometry_msgs/TwistWithCovariance:geometry_msgs/Twist:geometry_msgs/Vector3:common_msgs/ChassisState:std_msgs/Header:geometry_msgs/Pose:common_msgs/VehicleDynamicState:common_msgs/VehicleState:geometry_msgs/PoseWithCovariance:geometry_msgs/Point:geometry_msgs/Quaternion:nav_msgs/Odometry:common_msgs/PlatoonState
 
 _common_msgs_generate_messages_check_deps_V2V: messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_V2V
 _common_msgs_generate_messages_check_deps_V2V: messages/common_msgs/CMakeFiles/_common_msgs_generate_messages_check_deps_V2V.dir/build.make

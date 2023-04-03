@@ -9,17 +9,17 @@ import struct
 import std_msgs.msg
 
 class VehicleDynamicState(genpy.Message):
-  _md5sum = "543c8cc51ef4a96b419de72eeff8a6e9"
+  _md5sum = "d3015605eb810e5c79a5de962cc9f172"
   _type = "common_msgs/VehicleDynamicState"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header  header
 
-float64 lon_speed
-float64 lon_acceleration
-float64 lat_speed
-float64 lat_acceleration
-float64 yaw_rate
-float64 yaw_acceleration
+float32 lon_speed
+float32 lon_accel
+float32 lat_speed
+float32 lat_accel
+float32 yaw_rate
+float32 yaw_accel
 ================================================================================
 MSG: std_msgs/Header
 # Standard metadata for higher-level stamped data types.
@@ -36,8 +36,8 @@ time stamp
 #Frame this data is associated with
 string frame_id
 """
-  __slots__ = ['header','lon_speed','lon_acceleration','lat_speed','lat_acceleration','yaw_rate','yaw_acceleration']
-  _slot_types = ['std_msgs/Header','float64','float64','float64','float64','float64','float64']
+  __slots__ = ['header','lon_speed','lon_accel','lat_speed','lat_accel','yaw_rate','yaw_accel']
+  _slot_types = ['std_msgs/Header','float32','float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -47,7 +47,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,lon_speed,lon_acceleration,lat_speed,lat_acceleration,yaw_rate,yaw_acceleration
+       header,lon_speed,lon_accel,lat_speed,lat_accel,yaw_rate,yaw_accel
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -60,24 +60,24 @@ string frame_id
         self.header = std_msgs.msg.Header()
       if self.lon_speed is None:
         self.lon_speed = 0.
-      if self.lon_acceleration is None:
-        self.lon_acceleration = 0.
+      if self.lon_accel is None:
+        self.lon_accel = 0.
       if self.lat_speed is None:
         self.lat_speed = 0.
-      if self.lat_acceleration is None:
-        self.lat_acceleration = 0.
+      if self.lat_accel is None:
+        self.lat_accel = 0.
       if self.yaw_rate is None:
         self.yaw_rate = 0.
-      if self.yaw_acceleration is None:
-        self.yaw_acceleration = 0.
+      if self.yaw_accel is None:
+        self.yaw_accel = 0.
     else:
       self.header = std_msgs.msg.Header()
       self.lon_speed = 0.
-      self.lon_acceleration = 0.
+      self.lon_accel = 0.
       self.lat_speed = 0.
-      self.lat_acceleration = 0.
+      self.lat_accel = 0.
       self.yaw_rate = 0.
-      self.yaw_acceleration = 0.
+      self.yaw_accel = 0.
 
   def _get_types(self):
     """
@@ -100,7 +100,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+      buff.write(_get_struct_6f().pack(_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -130,8 +130,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 48
-      (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+      end += 24
+      (_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel,) = _get_struct_6f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -153,7 +153,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+      buff.write(_get_struct_6f().pack(_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -184,8 +184,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 48
-      (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+      end += 24
+      (_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel,) = _get_struct_6f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -200,9 +200,9 @@ def _get_struct_3I():
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_6d = None
-def _get_struct_6d():
-    global _struct_6d
-    if _struct_6d is None:
-        _struct_6d = struct.Struct("<6d")
-    return _struct_6d
+_struct_6f = None
+def _get_struct_6f():
+    global _struct_6f
+    if _struct_6f is None:
+        _struct_6f = struct.Struct("<6f")
+    return _struct_6f

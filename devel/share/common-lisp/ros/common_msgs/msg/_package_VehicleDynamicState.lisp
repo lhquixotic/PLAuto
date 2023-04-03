@@ -3,14 +3,14 @@
           HEADER
           LON_SPEED-VAL
           LON_SPEED
-          LON_ACCELERATION-VAL
-          LON_ACCELERATION
+          LON_ACCEL-VAL
+          LON_ACCEL
           LAT_SPEED-VAL
           LAT_SPEED
-          LAT_ACCELERATION-VAL
-          LAT_ACCELERATION
+          LAT_ACCEL-VAL
+          LAT_ACCEL
           YAW_RATE-VAL
           YAW_RATE
-          YAW_ACCELERATION-VAL
-          YAW_ACCELERATION
+          YAW_ACCEL-VAL
+          YAW_ACCEL
 ))

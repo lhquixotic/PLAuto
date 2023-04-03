@@ -645,6 +645,12 @@ common_msgs_DIR:PATH=/home/lhq/Projects/PLAuto/devel/share/common_msgs/cmake
 //Value Computed by CMake
 common_msgs_SOURCE_DIR:STATIC=/home/lhq/Projects/PLAuto/src/messages/common_msgs
 
+//Value Computed by CMake
+control_BINARY_DIR:STATIC=/home/lhq/Projects/PLAuto/build/control
+
+//Value Computed by CMake
+control_SOURCE_DIR:STATIC=/home/lhq/Projects/PLAuto/src/control
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
@@ -777,6 +783,9 @@ lib_ros_observer_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libroscpp.so;gen
 
 //Value Computed by CMake
 libwaypoint_follower_BINARY_DIR:STATIC=/home/lhq/Projects/PLAuto/build/common/autoware_libs/libwaypoint_follower
+
+//The directory containing a CMake configuration file for libwaypoint_follower.
+libwaypoint_follower_DIR:PATH=/home/lhq/Projects/PLAuto/devel/share/libwaypoint_follower/cmake
 
 //Dependencies for the target
 libwaypoint_follower_LIB_DEPENDS:STATIC=general;amathutils_lib;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
@@ -1177,7 +1186,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=36
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=37
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

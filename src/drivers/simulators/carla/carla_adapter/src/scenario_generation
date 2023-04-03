@@ -52,7 +52,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         
         self.platoon_state = PlatoonState()
         self.platoon_state_publisher = self.new_publisher(
-            PlatoonState,"/carla/scenario_generation/platoon_state",
+            PlatoonState,"/carla/platoon_state",
             QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         )
 
@@ -82,6 +82,8 @@ class CarlaScenarioGeneration(CompatibleNode):
             spawn_point_platoon_vehicle.position.z = 0.3
 
             spawn_point_platoon_vehicle.orientation = spawn_point_ego_vehicle.orientation
+            self.loginfo("[Scenario generation] Spawn point is ({},{})".format(spawn_point_platoon_vehicle.position.x,
+                                                                               spawn_point_platoon_vehicle.position.y))
             
             return spawn_point_platoon_vehicle
         
@@ -123,9 +125,12 @@ class CarlaScenarioGeneration(CompatibleNode):
         for veh_actor in self.platoon_vehicles:
             veh_state=VehicleState()
             pos = Pose()
-            carla_position = veh_actor.get_location()
+            # carla_position = veh_actor.get_location()
+            carla_position = veh_actor.get_transform().location
             carla_rotation = veh_actor.get_transform().rotation
-            pos.position.x, pos.position.y, pos.position.z = carla_position.x, carla_position.y, carla_position.z
+            pos.position.x, pos.position.y, pos.position.z = carla_position.x, -carla_position.y, carla_position.z
+            #FIXME:(LHQ) position.y
+            
             # pos.position = carla_position
             quat = euler2quat(math.radians(carla_rotation.roll), math.radians(carla_rotation.pitch), math.radians(carla_rotation.yaw))
             pos.orientation.x,pos.orientation.y,pos.orientation.z, pos.orientation.w = quat

@@ -12,7 +12,7 @@ import nav_msgs.msg
 import std_msgs.msg
 
 class V2V(genpy.Message):
-  _md5sum = "eb9ec1d07a2ce2b979126f710e74eb76"
+  _md5sum = "84dd78ba72f6eb4041f0491a6158eda6"
   _type = "common_msgs/V2V"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
@@ -135,21 +135,21 @@ float64 z
 MSG: common_msgs/VehicleDynamicState
 std_msgs/Header  header
 
-float64 lon_speed
-float64 lon_acceleration
-float64 lat_speed
-float64 lat_acceleration
-float64 yaw_rate
-float64 yaw_acceleration
+float32 lon_speed
+float32 lon_accel
+float32 lat_speed
+float32 lat_accel
+float32 yaw_rate
+float32 yaw_accel
 ================================================================================
 MSG: common_msgs/ChassisState
 std_msgs/Header header
 
 # real acc throttle value
-uint8 throttle
+float32 throttle
 
 # real brake pressure
-uint8 brake_pressure
+float32 brake
 
 # vehicle run mode
 uint8 run_mode
@@ -291,7 +291,7 @@ bool parking_brake
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
         _x = _v14
-        buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+        buff.write(_get_struct_6f().pack(_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel))
         _v17 = val1.chassis
         _v18 = _v17.header
         _x = _v18.seq
@@ -306,7 +306,7 @@ bool parking_brake
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
         _x = _v17
-        buff.write(_get_struct_3B2fbB().pack(_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
+        buff.write(_get_struct_2fB2fbB().pack(_x.throttle, _x.brake, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -452,8 +452,8 @@ bool parking_brake
           _v34.frame_id = str[start:end]
         _x = _v33
         start = end
-        end += 48
-        (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+        end += 24
+        (_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel,) = _get_struct_6f().unpack(str[start:end])
         _v36 = val1.chassis
         _v37 = _v36.header
         start = end
@@ -475,8 +475,8 @@ bool parking_brake
           _v37.frame_id = str[start:end]
         _x = _v36
         start = end
-        end += 13
-        (_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_3B2fbB().unpack(str[start:end])
+        end += 19
+        (_x.throttle, _x.brake, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_2fB2fbB().unpack(str[start:end])
         _v36.parking_brake = bool(_v36.parking_brake)
         self.platoon_info.vehicles.append(val1)
       return self
@@ -573,7 +573,7 @@ bool parking_brake
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
         _x = _v52
-        buff.write(_get_struct_6d().pack(_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration))
+        buff.write(_get_struct_6f().pack(_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel))
         _v55 = val1.chassis
         _v56 = _v55.header
         _x = _v56.seq
@@ -588,7 +588,7 @@ bool parking_brake
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
         _x = _v55
-        buff.write(_get_struct_3B2fbB().pack(_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
+        buff.write(_get_struct_2fB2fbB().pack(_x.throttle, _x.brake, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -735,8 +735,8 @@ bool parking_brake
           _v72.frame_id = str[start:end]
         _x = _v71
         start = end
-        end += 48
-        (_x.lon_speed, _x.lon_acceleration, _x.lat_speed, _x.lat_acceleration, _x.yaw_rate, _x.yaw_acceleration,) = _get_struct_6d().unpack(str[start:end])
+        end += 24
+        (_x.lon_speed, _x.lon_accel, _x.lat_speed, _x.lat_accel, _x.yaw_rate, _x.yaw_accel,) = _get_struct_6f().unpack(str[start:end])
         _v74 = val1.chassis
         _v75 = _v74.header
         start = end
@@ -758,8 +758,8 @@ bool parking_brake
           _v75.frame_id = str[start:end]
         _x = _v74
         start = end
-        end += 13
-        (_x.throttle, _x.brake_pressure, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_3B2fbB().unpack(str[start:end])
+        end += 19
+        (_x.throttle, _x.brake, _x.run_mode, _x.accel, _x.steer, _x.gear, _x.parking_brake,) = _get_struct_2fB2fbB().unpack(str[start:end])
         _v74.parking_brake = bool(_v74.parking_brake)
         self.platoon_info.vehicles.append(val1)
       return self
@@ -776,18 +776,18 @@ def _get_struct_2I():
     if _struct_2I is None:
         _struct_2I = struct.Struct("<2I")
     return _struct_2I
+_struct_2fB2fbB = None
+def _get_struct_2fB2fbB():
+    global _struct_2fB2fbB
+    if _struct_2fB2fbB is None:
+        _struct_2fB2fbB = struct.Struct("<2fB2fbB")
+    return _struct_2fB2fbB
 _struct_36d = None
 def _get_struct_36d():
     global _struct_36d
     if _struct_36d is None:
         _struct_36d = struct.Struct("<36d")
     return _struct_36d
-_struct_3B2fbB = None
-def _get_struct_3B2fbB():
-    global _struct_3B2fbB
-    if _struct_3B2fbB is None:
-        _struct_3B2fbB = struct.Struct("<3B2fbB")
-    return _struct_3B2fbB
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
@@ -806,9 +806,9 @@ def _get_struct_4d():
     if _struct_4d is None:
         _struct_4d = struct.Struct("<4d")
     return _struct_4d
-_struct_6d = None
-def _get_struct_6d():
-    global _struct_6d
-    if _struct_6d is None:
-        _struct_6d = struct.Struct("<6d")
-    return _struct_6d
+_struct_6f = None
+def _get_struct_6f():
+    global _struct_6f
+    if _struct_6f is None:
+        _struct_6f = struct.Struct("<6f")
+    return _struct_6f

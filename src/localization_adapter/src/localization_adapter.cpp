@@ -62,7 +62,7 @@ void Localization_adapter::runAlgorithm() {
   }
 }
   else{
-      ROS_WARN_STREAM("Waiting for " << run_mode <<" localization messages..."); 
+      ROS_WARN_STREAM("[Localization] Waiting for " << run_mode <<" localization messages..."); 
   }
 }
 }

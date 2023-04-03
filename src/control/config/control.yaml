@@ -1,17 +1,17 @@
 # Subscriber
-final_waypoints_topic_name: /planning/final_waypoints
+final_waypoints_topic_name: /plauto/planning/final_waypoints
 
-vehicle_state_topic_name: /chassis/vehicle_dynamic_state
+# vehicle_state_topic_name: /chassis/vehicle_dynamic_state
 
-v2v_topic_name: /drivers/v2v
+# v2v_topic_name: /drivers/v2v
 
-localization_utm_topic_name: /localization/utmpose
+localization_utm_topic_name: /plauto/localization/utmpose
 
 stop_flag_topic_name: /stop_flag
 
 # Publisher
-control_command_topic_name: /control_cmd
+control_command_topic_name: /plauto/control
 
-lookahead_point_topic_name: /control/lookahead_point
+lookahead_point_topic_name: /plauto/control/lookahead_point
 # control parameters
-node_rate: 50   # [Herz]
+node_rate: 20    # [Herz]
