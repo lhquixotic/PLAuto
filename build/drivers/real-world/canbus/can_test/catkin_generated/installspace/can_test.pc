@@ -1,8 +1,0 @@
-prefix=/home/lhq/Projects/PLAuto/install
-
-Name: can_test
-Description: Description of can_test
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

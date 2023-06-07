@@ -3,50 +3,20 @@
 import sys
 import rospy
 
-# from zzz_common.params import parse_private_args
-# from zzz_driver_msgs.msg import ChassisReport, ControlReport
-# from zzz_navigation_msgs.msg import MapString
-# from zzz_control_msgs.msg import ControlCommand
-# from zzz_perception_msgs.msg import TrackingBoxArray, TrackingBox, ObjectClass
-
-# from derived_object_msgs.msg import ObjectArray, Object
-# from utils.params import parse_private_args
-
 from carla_msgs.msg import CarlaWorldInfo, CarlaEgoVehicleControl, CarlaEgoVehicleStatus
 from nav_msgs.msg import Path
+from plauto_common.params import parse_private_args
 
 from common_msgs.msg import ControlCommand
 from common_msgs.msg import VehicleState
 
+from plauto_nav_msgs.msg import MapString
+from plauto_perception_msgs.msg import TrackingBoxArray, TrackingBox, ObjectClass
+
+from derived_object_msgs.msg import ObjectArray, Object
+
 import argparse
 from easydict import EasyDict as edict
-
-use_ros = True
-
-def parse_private_args(**kvargs):
-    '''
-    This function provides the ability to get params directly from ros param service.
-    '''
-
-    parser = argparse.ArgumentParser()
-    node_name = rospy.get_name()
-
-    ros_args = {}
-
-    if use_ros:
-        for name, default in kvargs.items():
-            parser.add_argument('--' + name, default=default, type=type(default))
-            ros_args[name] = rospy.get_param(node_name + '/' + name, default)
-    
-    else:
-        # Use builtin arg parser when run the function without ROS
-        cmd_args = parser.parse_args()
-        for k, v in vars(cmd_args).items():
-            if k in ros_args and v != ros_args[v]:
-                rospy.logwarn("Duplicate arguments {}: {} / {}".format(k, ros_args[k], v))
-            if v != kvargs[k]:
-                ros_args[k] = v
-    return edict(ros_args)
 
 
 def convert_CarlaWorldInfo(msg, pub):

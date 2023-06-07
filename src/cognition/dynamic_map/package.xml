@@ -1,0 +1,19 @@
+<package format="2">
+  <name>objects_locator</name>
+  <version>0.1.0</version>
+  <description>
+    This module provide functionality to locate objects onto lanes
+  </description>
+  <license>BSD</license>
+  <maintainer email="zyxin@umich.edu">Yuanxin Zhong</maintainer>
+  <author email="zyxin@umich.edu">Yuanxin Zhong</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>plauto_common</exec_depend>
+  <exec_depend>plauto_nav_msgs</exec_depend>
+  <exec_depend>plauto_cognition_msgs</exec_depend>
+  <exec_depend>plauto_perception_msgs</exec_depend>
+  <export></export>
+</package>

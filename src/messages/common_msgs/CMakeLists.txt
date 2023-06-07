@@ -28,6 +28,28 @@ add_message_files(DIRECTORY msg
     PolarBoundary.msg
     StopDecision.msg
     ControlCommand.msg
+    MapState.msg
+    Lane.msg
+    LanePoint.msg
+    LaneState.msg
+    MultiLaneMapState.msg
+    JunctionMapState.msg
+    RigidBodyState.msg
+    RigidBodyStateStamped.msg
+    RoadObstacle.msg
+    ObjectClass.msg
+    ObjectSignals.msg
+    DetectionBox.msg
+    DetectionBoxArray.msg
+    DimensionWithCovariance.msg
+    DTLane.msg
+    FrenetSerretState2D.msg
+    TrackingBox.msg
+    TrackingBoxArray.msg
+    Waypoint.msg
+    WaypointState.msg
+    BoundingBox.msg
+    Map.msg
 )
 
 generate_messages(

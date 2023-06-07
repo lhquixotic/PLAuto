@@ -3,6 +3,8 @@ import math
 import json
 import carla
 import time
+from numpy import random
+from carla import VehicleLightState as vls
 
 import ros_compatibility as roscomp
 from ros_compatibility.exceptions import *
@@ -14,6 +16,7 @@ from carla_msgs.srv import SpawnObject, DestroyObject
 from diagnostic_msgs.msg import KeyValue
 from geometry_msgs.msg import Pose
 from common_msgs.msg import VehicleState, PlatoonState
+from plauto_nav_msgs.msg import Map
 
 from transforms3d.quaternions import quat2axangle
 from transforms3d.euler import euler2quat
@@ -35,6 +38,8 @@ class CarlaScenarioGeneration(CompatibleNode):
         # connect to the carla world
         self.carla_host = self.get_param("carla_host", "127.0.0.1")
         self.carla_port = self.get_param("carla_port", "2000")
+        self.zombie_vehicle_num = self.get_param("zombie_vehicle_number",0)
+        
         self.carla_client = carla.Client(host=self.carla_host,port=self.carla_port)
         self.carla_client.set_timeout(10.0)
         self.carla_world = self.carla_client.get_world()
@@ -55,9 +60,16 @@ class CarlaScenarioGeneration(CompatibleNode):
             PlatoonState,"/carla/platoon_state",
             QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         )
+        self.local_static_map_publisher = self.new_publisher(
+            Map,"/carla/local_static_map",
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        )
 
         self.spawn_object_service = self.new_client(SpawnObject, "/carla/spawn_object")
         self.destroy_object_service = self.new_client(DestroyObject, "/carla/destroy_object")
+    
+    def output_map(self):
+        pass
     
     def generate_platoon(self,interveh_dist):
         # spawn platoon vehicles
@@ -87,7 +99,6 @@ class CarlaScenarioGeneration(CompatibleNode):
             
             return spawn_point_platoon_vehicle
         
-
         spawn_point = calculate_spawn_point(self.spawn_point_ego_vehicle,2,1,interveh_dist)
 
         # spawn through service
@@ -105,7 +116,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # add platoon vehicle to actor list
         actor_list = self.carla_world.get_actors()
         actor = actor_list.find(response.id)
-        actor.set_autopilot(True)
+        actor.set_autopilot(False)
 
         if actor is not None:
             self.platoon_vehicles.append(actor)
@@ -116,9 +127,55 @@ class CarlaScenarioGeneration(CompatibleNode):
         # add vehicle state to platoon state
         vehicle_state = VehicleState()
         self.platoon_state.vehicles.append(vehicle_state)
+    
+    def generate_zombie_vehicles(self):
+        blueprints = self.carla_world.get_blueprint_library().filter('vehicle*')
+        spawn_points = self.carla_world.get_map().get_spawn_points()
+        random.shuffle(spawn_points)
+        
+        SpawnActor = carla.command.SpawnActor
+        SetAutopilot = carla.command.SetAutopilot
+        SetVehicleLightState = carla.command.SetVehicleLightState
+        FutureActor = carla.command.FutureActor
+        
+        batch = []
+        vehicles_list = []
+    
+        # traffic manager 
+        traffic_manager = self.carla_client.get_trafficmanager()
+        traffic_manager.set_global_distance_to_leading_vehicle(1.0)
+        
+        for n, transform in enumerate(spawn_points):
+            if n >= self.zombie_vehicle_num:
+                break
+            blueprint = random.choice(blueprints)
+            if blueprint.has_attribute('color'):
+                color = random.choice(blueprint.get_attribute('color').recommended_values)
+                blueprint.set_attribute('color', color)
+            if blueprint.has_attribute('driver_id'):
+                driver_id = random.choice(blueprint.get_attribute('driver_id').recommended_values)
+                blueprint.set_attribute('driver_id', driver_id)
+            blueprint.set_attribute('role_name', 'autopilot')
+        
+            # prepare the light state of the cars to spawn
+            light_state = vls.NONE
+            
+            # spawn the cars and set their autopilot and light state all together
+            batch.append(SpawnActor(blueprint, transform)
+                .then(SetAutopilot(FutureActor, True, traffic_manager.get_port()))
+                .then(SetVehicleLightState(FutureActor, light_state)))
+            
+        for response in self.carla_client.apply_batch_sync(batch, False):
+            if response.error:
+                self.logerr(response.error)
+            else:
+                vehicles_list.append(response.actor_id)
+        self.loginfo(f"[Scenario Generation] Zombie vehicles number is {len(vehicles_list)}")
+                
 
     def generate_scenario(self):
         self.generate_platoon(20)
+        self.generate_zombie_vehicles()
 
     def run_step(self):
         # update platoon state
@@ -138,6 +195,10 @@ class CarlaScenarioGeneration(CompatibleNode):
             self.platoon_state.vehicles[0] = veh_state
 
         self.platoon_state_publisher.publish(self.platoon_state)
+        
+        # FIXME: map state
+        # local_static_map = Map()
+        # self.local_static_publisher.publish(local_static_map)
 
     def create_spawn_point(self, x, y, z, roll, pitch, yaw):
         spawn_point = Pose()
@@ -241,7 +302,12 @@ def main(args=None):
         except RuntimeError as e:
             roscomp.logfatal("Exception caught: {}".format(e))
         finally:
+            actor_list = scenario_generation_node.carla_world.get_actors()
+            for actor in actor_list:
+                actor.destroy()
             roscomp.shutdown()
+            del scenario_generation_node.carla_world
+            del scenario_generation_node.carla_client
 
 
 if __name__ == '__main__':

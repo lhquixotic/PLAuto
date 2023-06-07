@@ -4,10 +4,17 @@
   <arg name="spawn_point_ego_vehicle" default='271.0,-129.4,0.3,0.0,0.0,-180.0'/> 
   <arg name="carla_host" default='127.0.0.1' />
   <arg name="carla_port" default='2000' />
+  <arg name="zombie_vehicle_number" default="0"/>
+  <arg name="waypoint_topic" default="/carla/ego_vehicle/waypoints"/>
   
   <node pkg="carla_adapter" type="scenario_generation" name= "scenario_generation" output="screen" ns="/simulation/carla">
     <param name="spawn_point_ego_vehicle" value="$(arg spawn_point_ego_vehicle)"/>
     <param name="carla_host" value="$(arg carla_host)"/>
     <param name="carla_port" value="$(arg carla_port)"/>
+    <param name="zombie_vehicle_number" value="$(arg zombie_vehicle_number)"/>
+  </node>
+
+  <node pkg="carla_adapter" type="carla_map_generator" respawn="true" name="carla_map_generator" output="screen" ns="/simulation/carla">
+    <param name="reference_path_topic" value="$(arg waypoint_topic)"/>
   </node>
 </launch>

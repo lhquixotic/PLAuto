@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="objects_locator" type="objects_locator" name="objects_locator" output="screen" ns="plauto/cognition"></node>
+    <node pkg="objects_locator" type="put_buffer" name="put_buffer" output="screen" ns="plauto/cognition"></node>
+</launch>

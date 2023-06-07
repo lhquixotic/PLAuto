@@ -1,0 +1,4 @@
+<launch>
+    <node name="map_provider" pkg="map_provider" type="local_map_generator" output="screen" ns="/plauto/navigation">
+    </node>
+</launch>

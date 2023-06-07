@@ -9,4 +9,14 @@
         <param name="output_topic" value="/carla/ego_state" />
         <param name="msg_type" value="VehicleStatus" />
     </node>
+    <node pkg="carla_adapter" type="convert_topic" name="convert_objects" output="screen" respawn="true">
+        <param name="input_topic" value="/carla/ego_vehicle/objects" />
+        <param name="output_topic" value="/plauto/perception/objects_truth" />
+        <param name="msg_type" value="ObjectArray" />
+    </node>
+    <node pkg="carla_adapter" type="convert_topic" name="convert_map" output="screen" respawn="true">
+        <param name="input_topic" value="/carla/world_info" />
+        <param name="output_topic" value="/plauto/navigation/static_map" />
+        <param name="msg_type" value="CarlaWorldInfo" />
+    </node>
 </launch>

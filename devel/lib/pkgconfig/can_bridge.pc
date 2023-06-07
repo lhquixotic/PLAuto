@@ -1,8 +1,0 @@
-prefix=/home/lhq/Projects/PLAuto/devel
-
-Name: can_bridge
-Description: Description of can_bridge
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,0 +1,4 @@
+<launch>
+    <node name="pose_reporter" pkg="pose_reporter" type="pose_reporter" output="screen" ns="/plauto/navigation">
+    </node>
+</launch>
