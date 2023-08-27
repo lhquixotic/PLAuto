@@ -47,14 +47,16 @@ class Node(object):
             if new_map:
                 rospy.logdebug("Sent reference path, length: %d", len(new_map.jmap.reference_path.map_lane.central_path_points))
                 self._output_map_publisher.publish(new_map)
-                print("mmap lanes number: ",len(new_map.mmap.lanes))
+                # print("mmap lanes number: ",len(new_map.mmap.lanes))
                 for i in range(len(new_map.mmap.lanes)):
                     if new_map.mmap.lanes[i] is not None:
                         lane = new_map.mmap.lanes[i]
-                    if len(lane.front_vehicles) > 0:
-                        print(lane.front_vehicles[0].state.pose.position.x)
-                    else:
-                        print("No vehicles")  
+                    # if len(lane.front_vehicles) > 0:
+                    #     print("front: ",lane.front_vehicles[0])
+                    # elif len(lane.rear_vehicles) > 0:
+                    #     print("rear: ", lane.rear_vehicles[0].state.pose.pose.position.x)
+                    # else:
+                    #     print("No vehicles")  
                 
             self._rate.sleep()
 

@@ -43,6 +43,7 @@ class NearestLocator:
         assert type(static_map) == Map
         with self._static_map_lock:
             self._static_map_buffer = static_map
+            # print("recved: ", static_map)
             # rospy.loginfo("Updated Local Static Map: lanes_num = %d, in_junction = %d, target_lane_index = %d",
             #    len(static_map.lanes), int(static_map.in_junction), static_map.target_lane_index)
 
@@ -87,6 +88,7 @@ class NearestLocator:
 
         tstates.static_map = copy.deepcopy(self._static_map_buffer or navigation_default(Map)) 
         static_map = tstates.static_map # for easier access
+        # print("static_map",tstates.static_map.lanes)
         tstates.static_map_lane_path_array = get_lane_array(tstates.static_map.lanes)
         tstates.static_map_lane_tangets = [[point.tangent for point in lane.central_path_points] for lane in tstates.static_map.lanes]
         tstates.dynamic_map = cognition_default(MapState)
@@ -185,7 +187,7 @@ class NearestLocator:
         ego_lane_index = self.locate_object_in_lane(tstates.ego_state.state, tstates)
         ego_lane_index_rounded = int(round(ego_lane_index))
 
-        # print("ego_lane_index=",ego_lane_index)
+        rospy.loginfo("ego_lane_index=%d",ego_lane_index)
 
         self._ego_vehicle_distance_to_lane_head = dist_list[:, 3]
         self._ego_vehicle_distance_to_lane_tail = dist_list[:, 4]
@@ -211,12 +213,16 @@ class NearestLocator:
         # TODO: separate vehicle and other objects?
         if tstates.surrounding_object_list is not None:
             for vehicle_idx, vehicle in enumerate(tstates.surrounding_object_list):
+                # rospy.loginfo("vehicle position: %f,%f",vehicle.state.pose.pose.position.x,vehicle.state.pose.pose.position.y)
                 dist_list = np.array([dist_from_point_to_polyline2d(
                     vehicle.state.pose.pose.position.x,
                     vehicle.state.pose.pose.position.y,
                     lane, return_end_distance=True)
                     for lane in tstates.static_map_lane_path_array])
+                # print("lane num: ",tstates.static_map_lane_path_array)
                 closest_lane = np.argmin(np.abs(dist_list[:, 0]))
+                # print(dist_list[:,0])
+                rospy.loginfo("closest lane: %d", closest_lane)
 
                 # Determine if the vehicle is close to lane enough
                 if abs(dist_list[closest_lane, 0]) > lane_dist_thres:

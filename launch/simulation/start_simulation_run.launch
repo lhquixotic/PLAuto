@@ -5,17 +5,24 @@
     <arg name="ego_state_topic" default="/carla/ego_state"/>
 
     <!-- localization -->
-    <include file = "$(find localization_adapter)/launch/localization_adapter.launch">
+    <!-- <include file = "$(find localization_adapter)/launch/localization_adapter.launch">
         <param name="run_mode_setting" value="$(arg run_mode_setting)" />
-    </include>
+    </include> -->
+
+    <!-- cognition -->
+    <include file = "$(find objects_locator)/launch/dynamic_map.launch"></include>
+
+    <!-- navigation -->
+    <include file = "$(find pose_reporter)/launch/pose_reporter.launch"></include>
+    <include file = "$(find map_provider)/launch/map_provider.launch"></include>
 
     <!-- waypoint_reconstruction -->
-    <include file = "$(find waypoint_reconstructor)/launch/waypoint_reconstructor.launch"></include>
+    <!-- <include file = "$(find waypoint_reconstructor)/launch/waypoint_reconstructor.launch"></include> -->
 
     <!-- control -->
-    <include file = "$(find control)/launch/control.launch">
+    <!-- <include file = "$(find control)/launch/control.launch">
         <param name="platoon_state_topic_name" value="$(arg platoon_state_topic)"/>
         <param name="ego_state_topic_name" value="$(arg ego_state_topic)"/>
-    </include>
+    </include> -->
 
 </launch>

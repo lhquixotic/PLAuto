@@ -38,6 +38,7 @@ class MapProvider(object):
 
         self._map_instance = LocalMap()
         if os.path.exists(params.map_file):
+            rospy.loginfo("Load existing map file")
             if self._map_instance.setup_hdmap(file=params.map_file, mtype=params.map_file_type):
                 self._map_trigger.set()
 
@@ -60,6 +61,7 @@ class MapProvider(object):
 
     def pose_callback(self, msg):
         # Note: Here we actually assume that pose is updating at highest frequency
+        rospy.loginfo("[%s] Received pose info" % __module_name__)
         self._map_instance.receive_new_pose(msg.state.pose.pose.position.x, msg.state.pose.pose.position.y)
             
     def loop(self):
@@ -67,12 +69,13 @@ class MapProvider(object):
             self._rate.sleep()
             if self._reference_path_trigger:
                 new_static_map = self._map_instance.update()
+                
                 if new_static_map is not None:
+                    # print("static local map: ", new_static_map.lanes)
                     self._local_map_publisher.publish(new_static_map)
                     rospy.loginfo("[%s] Publish new static map" % __module_name__)
 
-
 if __name__ == "__main__":
-    rospy.init_node("map_provider", log_level=rospy.INFO)
+    rospy.init_node("map_provider", log_level=rospy.DEBUG)
     node = MapProvider()
     node.loop()

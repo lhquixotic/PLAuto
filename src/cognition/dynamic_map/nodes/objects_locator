@@ -13,7 +13,7 @@ class LocatorNode(object):
 
         params = parse_private_args(
             objects_topic = "/plauto/perception/objects_truth",
-            map_input_topic="/simulation/carla/local_static_map",
+            map_input_topic="/plauto/navigation/local_static_map",
             map_output_topic="local_dynamic_map/map_with_objects",
             pose_topic = "/plauto/navigation/ego_pose",
             traffic_light_topic = "/plauto/perception/traffic_lights",
@@ -39,7 +39,7 @@ class LocatorNode(object):
 
 if __name__ == "__main__":
 
-    rospy.init_node("nearest_locator", log_level=rospy.INFO)
+    rospy.init_node("nearest_locator", log_level=rospy.DEBUG)
     
     node = LocatorNode()
     node.loop()

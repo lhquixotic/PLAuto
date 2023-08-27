@@ -12,7 +12,7 @@
   <!-- use comma separated format "x,y,z,roll,pitch,yaw" -->
   <!-- <arg name="spawn_point" default='10.0,-91.5,0.3,0.0,0.0,180.0'/>  -->
   <arg name="spawn_point" default='271.0,-129.4,0.3,0.0,0.0,-180.0'/> 
-  
+
   <!-- Map to load on startup (either a predefined CARLA town (e.g. 'Town01'), or a OpenDRIVE map file) -->
   <arg name="town" default='Town01'/>
   <!-- <arg name="town" default='Town05'/> -->

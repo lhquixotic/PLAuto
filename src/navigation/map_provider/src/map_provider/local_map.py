@@ -151,6 +151,7 @@ class LocalMap(object):
         self._ego_vehicle_y = self._ego_vehicle_y_buffer
 
         update_mode = self.should_update_static_map()
+        rospy.logdebug("update mode: %d",update_mode)
         if update_mode != 0:
             self.update_static_map(update_mode)
             return self.static_local_map
@@ -166,6 +167,9 @@ class LocalMap(object):
             map_x, map_y, self._ego_vehicle_x, self._ego_vehicle_y)
 
         lanes = self._hdmap.getNeighboringLanes(map_x, map_y, self._lane_search_radius, includeJunctions=False)
+        # print("lane is ", lanes)
+        # rospy.loginfo("lane number is %d",len(lanes))
+        
         if len(lanes) > 0:
             _, closestLane = min((dist, lane) for lane, dist in lanes)
             new_edge = closestLane.getEdge()
@@ -180,6 +184,7 @@ class LocalMap(object):
                 rospy.loginfo("We are in the road, edge id is not changed, edge id is %s", self._current_edge_id)
                 # if near the section, load the shape of the section
                 lane_tail_point = closestLane.getShape()[-1]
+                # print("closest lane shape: ",closestLane.getShape())
                 dist_to_lane_tail = math.sqrt(math.pow((map_x - lane_tail_point[0]), 2) + math.pow((map_y - lane_tail_point[1]), 2))
                 if dist_to_lane_tail < perception_range_demand:
                     rospy.loginfo("We are near the junction, load the junction")
@@ -212,7 +217,7 @@ class LocalMap(object):
         init_static_map.target_lane_index = -1
         return init_static_map
 
-    def update_static_map(self, update_mode):
+    def update_static_map(self, update_mode, is_platoon=True):
         ''' 
         Update information in the static map if current location changed dramatically
         '''
@@ -222,10 +227,12 @@ class LocalMap(object):
         # jxy: optimized repeated calculation
         if update_mode == 1:
             self.update_lane_list()
-            self.update_target_lane()
+            if not is_platoon:
+                self.update_target_lane()
         if update_mode == 3:
             self.update_lane_list()
-            self.update_target_lane()
+            if not is_platoon:
+                self.update_target_lane()
             self.update_next_junction()
         if update_mode == 2:
             self.update_junction()
@@ -269,7 +276,7 @@ class LocalMap(object):
                             lane_wrapped = self.wrap_lane(lane)
                             self.static_local_map.next_lanes.append(lane_wrapped)
 
-                        return
+                        return 
 
     def update_junction(self, closest_dist=100):
         
