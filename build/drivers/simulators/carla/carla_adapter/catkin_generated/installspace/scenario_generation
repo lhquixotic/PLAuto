@@ -181,6 +181,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # update platoon state
         for veh_actor in self.platoon_vehicles:
             veh_state=VehicleState()
+            veh_state.uid = veh_actor.id
             pos = Pose()
             # carla_position = veh_actor.get_location()
             carla_position = veh_actor.get_transform().location

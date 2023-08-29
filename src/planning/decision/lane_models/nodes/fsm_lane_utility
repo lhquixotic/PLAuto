@@ -2,17 +2,19 @@
 
 import datetime
 import rospy
-from plauto_common.params import parse_private_args
-from plauto_cognition_msgs.msg import MapState
 
-# from lane_decision_models.lon_pedes import FSM
-# from lane_decision_models.lat_pedes import KeepLaneUtility
-# from lane_decision_models.local_trajectory import PolylineTrajectory
+from lane_decision_models.lon_platoon import PlatoonFSM
+from lane_decision_models.lat_platoon import PlatoonLaneUtility
+from lane_decision_models.local_trajectory import PolylineTrajectory
 from lane_decision_models import MainDecision
 
-# from zzz_planning_msgs.msg import DecisionTrajectory
+from plauto_planning_msgs.msg import DecisionTrajectory
 
+# messages
 from nav_msgs.msg import Path 
+from plauto_common.params import parse_private_args
+from plauto_cognition_msgs.msg import MapState
+from common_msgs.msg import VehicleState, PlatoonState, VehicleDynamicState, ChassisState
 
 
 class DecisionNode(object):
@@ -22,24 +24,24 @@ class DecisionNode(object):
             decision_trajectory_topic="decision_trajectory",
             dynamic_map_topic="/plauto/cognition/local_dynamic_map/map_with_ref",
             static_map_topic="/plauto/navigation/local_static_map",
+            platoon_state_topic="/carla/platoon_state",
             RVIZ_decision_trajectory_topic="decision_trajectory_path", 
             hz = 4,
         )
-        # model_lon = FSM()                           # longitudinal model: FSM
-        # model_lat = KeepLaneUtility(model_lon)      # lateral model: Keep Lane
-        # model_local = PolylineTrajectory()          
+        model_lon = PlatoonFSM()                           # longitudinal model: PlatoonFSM
+        model_lat = PlatoonLaneUtility(model_lon)      # lateral model: Platoon Lane
+        model_local = PolylineTrajectory()          
 
         self._decision_instance = MainDecision(lon_decision=model_lon, lat_decision=model_lat, local_trajectory=model_local)
         self._rate = rospy.Rate(params.hz)
 
         self._dynamic_map_subscriber = rospy.Subscriber(params.dynamic_map_topic, MapState, self._decision_instance.receive_dynamic_map)
-        # self._decision_trajectory_publisher = rospy.Publisher(params.decision_trajectory_topic, DecisionTrajectory, queue_size=1)
+        self._platoon_state_subscriber = rospy.Subscriber(params.platoon_state_topic, PlatoonState, self._decision_instance.receive_platoon_state)
+        self._decision_trajectory_publisher = rospy.Publisher(params.decision_trajectory_topic, DecisionTrajectory, queue_size=1)
         self._rviz_decision_trajectory_publisher = rospy.Publisher(params.RVIZ_decision_trajectory_topic, Path, queue_size=1)
 
     def loop(self):
         while not rospy.is_shutdown():
-            
-            #zwt for running 
             try:
                 publish_msg = self._decision_instance.update()
             except:

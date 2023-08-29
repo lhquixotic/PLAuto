@@ -2,23 +2,24 @@
 
 import rospy
 import numpy as np
-from zzz_common.geometry import dense_polyline2d, dist_from_point_to_polyline2d
-from zzz_planning_msgs.msg import DecisionTrajectory
+from plauto_common.geometry import dense_polyline2d, dist_from_point_to_polyline2d
+from plauto_planning_msgs.msg import DecisionTrajectory
 from threading import Lock
 import time
 from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
-from zzz_cognition_msgs.msg import MapState
-from zzz_driver_msgs.utils import get_speed, get_yaw
-from zzz_planning_decision_lane_models.local_trajectory import PolylineTrajectory # TODO(Temps): Should seperate into continous models
+from plauto_cognition_msgs.msg import MapState
+from plauto_nav_msgs.utils import get_speed, get_yaw
+from plauto_planning_decision_lane_models.local_trajectory import PolylineTrajectory # TODO(Temps): Should seperate into continous models
 
-import csv
+# import csv
 # Make lat lon model as parameter
 
 class MainDecision(object):
     def __init__(self, lon_decision=None, lat_decision=None, local_trajectory=None):
         self._dynamic_map_buffer = None
         self._static_map_buffer = None
+        self._platoon_state = None
 
         self._longitudinal_model_instance = lon_decision
         self._lateral_model_instance = lat_decision
@@ -27,12 +28,13 @@ class MainDecision(object):
 
         self._dynamic_map_lock = Lock()
 
-        # self.f = open('/home/lhq/time.csv','w')
-        # self.csv_write = csv.writer(self.f)
-
     # receive_dynamic_map running in Subscriber CallBack Thread.
     def receive_dynamic_map(self, dynamic_map):
         self._dynamic_map_buffer = dynamic_map
+
+    # receive_platoon_state running in Subscriber CallBack Thread.
+    def receive_platoon_state(self, platoon_state):
+        self._platoon_state = platoon_state
 
     # update running in main node thread loop
     def update(self):
@@ -51,7 +53,7 @@ class MainDecision(object):
         trajectory = None
         
         # s_t = time.time()
-        changing_lane_index, desired_speed = self._lateral_model_instance.lateral_decision(dynamic_map)
+        changing_lane_index, desired_speed = self._lateral_model_instance.lateral_decision(dynamic_map,self._platoon_state)
         # e_t = time.time()
         # print("time_sum = {}".format(e_t-s_t))
         # self.csv_write.writerow([e_t - s_t])
@@ -60,7 +62,7 @@ class MainDecision(object):
         if desired_speed < 0: # TODO: clean this
             desired_speed = 0
 
-        rospy.logdebug("target_lane_index = %d, target_speed = %f km/h", changing_lane_index, desired_speed*3.6)
+        # rospy.logdebug("target_lane_index = %d, target_speed = %f km/h", changing_lane_index, desired_speed*3.6)
         
         # TODO(Temps): Should seperate into continous models 
         if changing_lane_index == -1:
@@ -80,7 +82,6 @@ class MainDecision(object):
         msg = DecisionTrajectory()
         msg.trajectory = self.convert_ndarray_to_pathmsg(trajectory) # TODO: move to library
         msg.desired_speed = desired_speed
-
         return msg
 
     def convert_ndarray_to_pathmsg(self, path): 
@@ -91,7 +92,6 @@ class MainDecision(object):
             pose.pose.position.y = wp[1]
             msg.poses.append(pose)
         msg.header.frame_id = "map"
- 
         return msg
 
     

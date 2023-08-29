@@ -17,7 +17,7 @@ from carla_msgs.msg import CarlaActorList
 from carla_msgs.srv import SpawnObject, DestroyObject
 from diagnostic_msgs.msg import KeyValue
 from geometry_msgs.msg import Pose,PoseStamped
-from common_msgs.msg import VehicleState, PlatoonState
+from common_msgs.msg import VehicleState, PlatoonState, VehicleDynamicState, ChassisState
 from plauto_nav_msgs.msg import Map
 from nav_msgs.msg import Path
 
@@ -75,9 +75,6 @@ class CarlaScenarioGeneration(CompatibleNode):
 
         self.spawn_object_service = self.new_client(SpawnObject, "/carla/spawn_object")
         self.destroy_object_service = self.new_client(DestroyObject, "/carla/destroy_object")
-    
-    def output_map(self):
-        pass
     
     def generate_platoon(self,interveh_dist):
         # spawn platoon vehicles
@@ -187,20 +184,39 @@ class CarlaScenarioGeneration(CompatibleNode):
 
     def run_step(self):
         # update platoon state
-        for veh_actor in self.platoon_vehicles:
+        for veh_idx, veh_actor in enumerate(self.platoon_vehicles):
             veh_state=VehicleState()
+            
+            # odometry info
             pos = Pose()
-            # carla_position = veh_actor.get_location()
             carla_position = veh_actor.get_transform().location
             carla_rotation = veh_actor.get_transform().rotation
             pos.position.x, pos.position.y, pos.position.z = carla_position.x, -carla_position.y, carla_position.z
-            #FIXME:(LHQ) position.y
             
-            # pos.position = carla_position
             quat = euler2quat(math.radians(carla_rotation.roll), math.radians(carla_rotation.pitch), math.radians(carla_rotation.yaw))
             pos.orientation.x,pos.orientation.y,pos.orientation.z, pos.orientation.w = quat
+
+            # dynamics info
+            dynamic_info = VehicleDynamicState()
+            dynamic_info.lon_speed = veh_actor.get_velocity().x
+            dynamic_info.lat_spped = veh_actor.get_velocity().y
+            dynamic_info.lon_accel = veh_actor.get_acceleration().x
+            dynamic_info.lat_accel = veh_actor.get_acceleration().y
+            dynamic_info.yaw_rate = veh_actor.get_angular_velocity().z # deg/s
+
+            # chassis state info
+            chassis_state = ChassisState()
+            chassis_state.throttle = veh_actor.get_control().throttle
+            chassis_state.brake = veh_actor.get_control().brake
+            chassis_state.steer = veh_actor.get_control().steer
+            chassis_state.gear = veh_actor.get_control().gear
+            chassis_state.parking_brake = veh_actor.get_control().hand_brake
+
             veh_state.odom.pose.pose = pos
-            self.platoon_state.vehicles[0] = veh_state
+            veh_state.dynamics = dynamic_info
+            veh_state.chassis = chassis_state
+
+            self.platoon_state.vehicles[veh_idx] = veh_state
             
         # update reference path
         # get leader vehicle's waypoint
