@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/share/sumo/bin/python3
 # -*- coding: utf-8 -*-
 
 # Software License Agreement (BSD License)

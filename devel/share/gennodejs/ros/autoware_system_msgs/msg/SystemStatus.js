@@ -13,8 +13,8 @@ const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
 let NodeStatus = require('./NodeStatus.js');
 let HardwareStatus = require('./HardwareStatus.js');
-let rosgraph_msgs = _finder('rosgraph_msgs');
 let std_msgs = _finder('std_msgs');
+let rosgraph_msgs = _finder('rosgraph_msgs');
 
 //-----------------------------------------------------------
 

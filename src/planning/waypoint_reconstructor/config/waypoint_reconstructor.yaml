@@ -2,7 +2,7 @@ localization_utm_topic_name: /plauto/localization/utmpose
 
 # v2v_topic_name: /drivers/v2v
 
-final_waypoints_topic_name: /plauto/planning/final_waypoints
+final_waypoints_topic_name: /plauto/planning/reconstruct_waypoints
 
 final_waypoints_visual_topic_name: /platuo/visual/planning/final_waypoints_vis
 

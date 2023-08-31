@@ -130,12 +130,12 @@ struct MD5Sum< ::common_msgs::V2V_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "84dd78ba72f6eb4041f0491a6158eda6";
+    return "2d31987bd7161fdc80da619674546dd0";
   }
 
   static const char* value(const ::common_msgs::V2V_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x84dd78ba72f6eb40ULL;
-  static const uint64_t static_value2 = 0x41f0491a6158eda6ULL;
+  static const uint64_t static_value1 = 0x2d31987bd7161fdcULL;
+  static const uint64_t static_value2 = 0x80da619674546dd0ULL;
 };
 
 template<class ContainerAllocator>
@@ -184,6 +184,9 @@ struct Definition< ::common_msgs::V2V_<ContainerAllocator> >
 "MSG: common_msgs/VehicleState\n"
 "# Id of the vehicle\n"
 "std_msgs/Header header \n"
+"\n"
+"# Unique indentity of the vehicle\n"
+"uint64 uid\n"
 "\n"
 "# Basic info of the vehicle\n"
 "\n"

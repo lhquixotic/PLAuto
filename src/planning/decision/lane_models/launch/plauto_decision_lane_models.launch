@@ -1,0 +1,4 @@
+<launch>
+    <node name="plauto_decision_lane_models" pkg="plauto_decision_lane_models" type="fsm_lane_utility" output="screen" ns="/plauto/planning">
+    </node>
+</launch>

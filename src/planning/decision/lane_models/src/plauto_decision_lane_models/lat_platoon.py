@@ -33,19 +33,23 @@ class PlatoonLaneUtility(object):
             return -1, self.longitudinal_model_instance.longitudinal_speed(-1)
 
         # Case if cannot locate ego vehicle correctly
-        # TODO: int?
         ego_lane_index_rounded = int(round(dynamic_map.mmap.ego_lane_index))
         if ego_lane_index_rounded < 0 or ego_lane_index_rounded > len(dynamic_map.mmap.lanes)-1:
             return -1, self.longitudinal_model_instance.longitudinal_speed(-1)
 
-        #target_index = self.generate_lane_change_index()
-        target_index = int(round(self.dynamic_map.mmap.ego_lane_index))
-        # ego_lane = self.dynamic_map.mmap.lanes[0]
+        target_index = self.generate_lane_change_index()
 
         target_speed = self.longitudinal_model_instance.longitudinal_speed(target_index,traffic_light = True,if_record=True)
         # TODO: More accurate speed
         
         return target_index, target_speed
+
+    def platoon_lane_change_decision(self):
+        pass
+    
+
+
+    
 
     def generate_lane_change_index(self, change_lane_thres = 0.5):
 
@@ -146,5 +150,3 @@ class PlatoonLaneUtility(object):
             
         return False
  
-class MOBIL(object):
-    pass

@@ -121,7 +121,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # add platoon vehicle to actor list
         actor_list = self.carla_world.get_actors()
         actor = actor_list.find(response.id)
-        actor.set_autopilot(False)
+        actor.set_autopilot(True)
 
         if actor is not None:
             self.platoon_vehicles.append(actor)
@@ -186,6 +186,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # update platoon state
         for veh_idx, veh_actor in enumerate(self.platoon_vehicles):
             veh_state=VehicleState()
+            veh_state.uid = veh_actor.id
             
             # odometry info
             pos = Pose()
@@ -199,7 +200,7 @@ class CarlaScenarioGeneration(CompatibleNode):
             # dynamics info
             dynamic_info = VehicleDynamicState()
             dynamic_info.lon_speed = veh_actor.get_velocity().x
-            dynamic_info.lat_spped = veh_actor.get_velocity().y
+            dynamic_info.lat_speed = veh_actor.get_velocity().y
             dynamic_info.lon_accel = veh_actor.get_acceleration().x
             dynamic_info.lat_accel = veh_actor.get_acceleration().y
             dynamic_info.yaw_rate = veh_actor.get_angular_velocity().z # deg/s

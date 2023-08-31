@@ -70,7 +70,7 @@
    self)
   )
 
-(setf (get common_msgs::V2V :md5sum-) "84dd78ba72f6eb4041f0491a6158eda6")
+(setf (get common_msgs::V2V :md5sum-) "2d31987bd7161fdc80da619674546dd0")
 (setf (get common_msgs::V2V :datatype-) "common_msgs/V2V")
 (setf (get common_msgs::V2V :definition-)
       "std_msgs/Header header
@@ -103,6 +103,9 @@ common_msgs/VehicleState[] vehicles
 MSG: common_msgs/VehicleState
 # Id of the vehicle
 std_msgs/Header header 
+
+# Unique indentity of the vehicle
+uint64 uid
 
 # Basic info of the vehicle
 
@@ -231,6 +234,6 @@ bool parking_brake
 
 
 
-(provide :common_msgs/V2V "84dd78ba72f6eb4041f0491a6158eda6")
+(provide :common_msgs/V2V "2d31987bd7161fdc80da619674546dd0")
 
 

@@ -10,7 +10,7 @@ from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 from plauto_cognition_msgs.msg import MapState
 from plauto_nav_msgs.utils import get_speed, get_yaw
-from plauto_planning_decision_lane_models.local_trajectory import PolylineTrajectory # TODO(Temps): Should seperate into continous models
+from plauto_decision_lane_models.local_trajectory import PolylineTrajectory # TODO(Temps): Should seperate into continous models
 
 # import csv
 # Make lat lon model as parameter
@@ -35,6 +35,14 @@ class MainDecision(object):
     # receive_platoon_state running in Subscriber CallBack Thread.
     def receive_platoon_state(self, platoon_state):
         self._platoon_state = platoon_state
+        
+    def receive_reconstruct_trajectory(self,reconstruct_waypoints):
+        self._recons_traj = Path()
+        self._recons_traj.header.frame_id = "map"
+        rospy.loginfo("Receive reconstruct trajectory...")
+        for wp in reconstruct_waypoints.waypoints:
+            pose = wp.pose
+            self._recons_traj.poses.append(pose)
 
     # update running in main node thread loop
     def update(self):
@@ -47,17 +55,9 @@ class MainDecision(object):
         else:
             dynamic_map = self._dynamic_map_buffer
 
-        # if dynamic_map.model == dynamic_map.MODEL_JUNCTION_MAP:
-        #     return None
-        
         trajectory = None
         
-        # s_t = time.time()
         changing_lane_index, desired_speed = self._lateral_model_instance.lateral_decision(dynamic_map,self._platoon_state)
-        # e_t = time.time()
-        # print("time_sum = {}".format(e_t-s_t))
-        # self.csv_write.writerow([e_t - s_t])
-
 
         if desired_speed < 0: # TODO: clean this
             desired_speed = 0
@@ -65,22 +65,14 @@ class MainDecision(object):
         # rospy.logdebug("target_lane_index = %d, target_speed = %f km/h", changing_lane_index, desired_speed*3.6)
         
         # TODO(Temps): Should seperate into continous models 
-        if changing_lane_index == -1:
-            # msg = DecisionTrajectory()
-            # msg.desired_speed = desired_speed
-            # print("HHHHHH",desired_speed)
-            # return msg
-            return None
-            # trajectory = self._local_trajectory_instance_for_ref.get_trajectory(dynamic_map, changing_lane_index, desired_speed)#FIXME(ksj)
-        else:
-            # print("IIIII",changing_lane_index)
-            # lane_num = len(dynamic_map.mmap.lanes)
-            # if lane_num is not None: 
-            trajectory = self._local_trajectory_instance.get_trajectory(dynamic_map, changing_lane_index, desired_speed)
+        # if changing_lane_index == -1:
+        #     return None
+        # else:
+        #     trajectory = self._local_trajectory_instance.get_trajectory(dynamic_map, changing_lane_index, desired_speed)
 
-        #rospy.loginfo("Updating desired speed: ",desired_speed)
         msg = DecisionTrajectory()
-        msg.trajectory = self.convert_ndarray_to_pathmsg(trajectory) # TODO: move to library
+        # msg.trajectory = self.convert_ndarray_to_pathmsg(trajectory) # TODO: move to library
+        msg.trajectory = self._recons_traj
         msg.desired_speed = desired_speed
         return msg
 

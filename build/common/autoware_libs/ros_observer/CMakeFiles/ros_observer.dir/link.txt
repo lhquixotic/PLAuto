@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/ros_observer.dir/src/ros_observer.cpp.o -o /home/lhq/Projects/PLAuto/devel/lib/ros_observer/ros_observer  -lrt /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.71.0 -lpthread 
+/usr/share/sumo/bin/c++    -rdynamic CMakeFiles/ros_observer.dir/src/ros_observer.cpp.o  -o /home/lhq/Projects/PLAuto/devel/lib/ros_observer/ros_observer  -lrt /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.71.0 -lpthread 

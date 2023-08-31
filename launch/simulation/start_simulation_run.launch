@@ -5,9 +5,9 @@
     <arg name="ego_state_topic" default="/carla/ego_state"/>
 
     <!-- localization -->
-    <!-- <include file = "$(find localization_adapter)/launch/localization_adapter.launch">
+    <include file = "$(find localization_adapter)/launch/localization_adapter.launch">
         <param name="run_mode_setting" value="$(arg run_mode_setting)" />
-    </include> -->
+    </include>
 
     <!-- cognition -->
     <include file = "$(find objects_locator)/launch/dynamic_map.launch"></include>
@@ -17,7 +17,7 @@
     <include file = "$(find map_provider)/launch/map_provider.launch"></include>
 
     <!-- waypoint_reconstruction -->
-    <!-- <include file = "$(find waypoint_reconstructor)/launch/waypoint_reconstructor.launch"></include> -->
+    <include file = "$(find waypoint_reconstructor)/launch/waypoint_reconstructor.launch"></include>
 
     <!-- control -->
     <!-- <include file = "$(find control)/launch/control.launch">

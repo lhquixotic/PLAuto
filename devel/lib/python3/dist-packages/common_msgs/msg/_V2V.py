@@ -12,7 +12,7 @@ import nav_msgs.msg
 import std_msgs.msg
 
 class V2V(genpy.Message):
-  _md5sum = "84dd78ba72f6eb4041f0491a6158eda6"
+  _md5sum = "2d31987bd7161fdc80da619674546dd0"
   _type = "common_msgs/V2V"
   _has_header = True  # flag to mark the presence of a Header object
   _full_text = """std_msgs/Header header
@@ -45,6 +45,9 @@ common_msgs/VehicleState[] vehicles
 MSG: common_msgs/VehicleState
 # Id of the vehicle
 std_msgs/Header header 
+
+# Unique indentity of the vehicle
+uint64 uid
 
 # Basic info of the vehicle
 
@@ -240,6 +243,8 @@ bool parking_brake
           _x = _x.encode('utf-8')
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = val1.uid
+        buff.write(_get_struct_Q().pack(_x))
         _v3 = val1.odom
         _v4 = _v3.header
         _x = _v4.seq
@@ -373,6 +378,9 @@ bool parking_brake
           _v20.frame_id = str[start:end].decode('utf-8', 'rosmsg')
         else:
           _v20.frame_id = str[start:end]
+        start = end
+        end += 8
+        (val1.uid,) = _get_struct_Q().unpack(str[start:end])
         _v22 = val1.odom
         _v23 = _v22.header
         start = end
@@ -522,6 +530,8 @@ bool parking_brake
           _x = _x.encode('utf-8')
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+        _x = val1.uid
+        buff.write(_get_struct_Q().pack(_x))
         _v41 = val1.odom
         _v42 = _v41.header
         _x = _v42.seq
@@ -656,6 +666,9 @@ bool parking_brake
           _v58.frame_id = str[start:end].decode('utf-8', 'rosmsg')
         else:
           _v58.frame_id = str[start:end]
+        start = end
+        end += 8
+        (val1.uid,) = _get_struct_Q().unpack(str[start:end])
         _v60 = val1.odom
         _v61 = _v60.header
         start = end
@@ -812,3 +825,9 @@ def _get_struct_6f():
     if _struct_6f is None:
         _struct_6f = struct.Struct("<6f")
     return _struct_6f
+_struct_Q = None
+def _get_struct_Q():
+    global _struct_Q
+    if _struct_Q is None:
+        _struct_Q = struct.Struct("<Q")
+    return _struct_Q

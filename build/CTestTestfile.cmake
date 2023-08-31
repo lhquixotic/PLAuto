@@ -19,6 +19,8 @@ subdirs("drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/carla_waypo
 subdirs("messages/common_msgs")
 subdirs("navigation/protocol")
 subdirs("navigation/map_provider")
+subdirs("planning/decision/lane_models")
+subdirs("planning/protocol")
 subdirs("messages/autoware_system_msgs")
 subdirs("localization_adapter")
 subdirs("drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/ros_compatibility")

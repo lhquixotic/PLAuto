@@ -1,28 +1,27 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-K75HBr
+Change Dir: /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_34673/fast && /usr/bin/make  -f CMakeFiles/cmTC_34673.dir/build.make CMakeFiles/cmTC_34673.dir/build
-make[1]: Entering directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-K75HBr'
-Building C object CMakeFiles/cmTC_34673.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_34673.dir/src.c.o -c /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-K75HBr/src.c
-Linking C executable cmTC_34673
-/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34673.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_34673.dir/src.c.o -o cmTC_34673 
-/usr/bin/ld: CMakeFiles/cmTC_34673.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/share/sumo/bin/make cmTC_497c9/fast && /usr/share/sumo/bin/make -f CMakeFiles/cmTC_497c9.dir/build.make CMakeFiles/cmTC_497c9.dir/build
+make[1]: Entering directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_497c9.dir/src.c.o
+/usr/share/sumo/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_497c9.dir/src.c.o   -c /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_497c9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_497c9.dir/link.txt --verbose=1
+/usr/share/sumo/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_497c9.dir/src.c.o  -o cmTC_497c9 
+/usr/share/sumo/bin/ld: CMakeFiles/cmTC_497c9.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
-/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
-/usr/bin/ld: src.c:(.text+0x5e): undefined reference to `pthread_cancel'
-/usr/bin/ld: src.c:(.text+0x6f): undefined reference to `pthread_join'
+/usr/share/sumo/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/share/sumo/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_34673.dir/build.make:99: cmTC_34673] Error 1
-make[1]: Leaving directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-K75HBr'
-make: *** [Makefile:127: cmTC_34673/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_497c9.dir/build.make:87: cmTC_497c9] Error 1
+make[1]: Leaving directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_497c9/fast] Error 2
 
 
 Source file was:
 #include <pthread.h>
 
-static void* test_func(void* data)
+void* test_func(void* data)
 {
   return data;
 }
@@ -32,7 +31,6 @@ int main(void)
   pthread_t thread;
   pthread_create(&thread, NULL, test_func, NULL);
   pthread_detach(thread);
-  pthread_cancel(thread);
   pthread_join(thread, NULL);
   pthread_atfork(NULL, NULL, NULL);
   pthread_exit(NULL);
@@ -40,22 +38,21 @@ int main(void)
   return 0;
 }
 
-
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-M9cTQr
+Change Dir: /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_aa1f5/fast && /usr/bin/make  -f CMakeFiles/cmTC_aa1f5.dir/build.make CMakeFiles/cmTC_aa1f5.dir/build
-make[1]: Entering directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-M9cTQr'
-Building C object CMakeFiles/cmTC_aa1f5.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_aa1f5.dir/CheckFunctionExists.c.o -c /home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-M9cTQr/CheckFunctionExists.c
-Linking C executable cmTC_aa1f5
-/usr/local/lib/python3.8/dist-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa1f5.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_aa1f5.dir/CheckFunctionExists.c.o -o cmTC_aa1f5  -lpthreads 
-/usr/bin/ld: cannot find -lpthreads
+Run Build Command(s):/usr/share/sumo/bin/make cmTC_c02dd/fast && /usr/share/sumo/bin/make -f CMakeFiles/cmTC_c02dd.dir/build.make CMakeFiles/cmTC_c02dd.dir/build
+make[1]: Entering directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c02dd.dir/CheckFunctionExists.c.o
+/usr/share/sumo/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c02dd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c02dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c02dd.dir/link.txt --verbose=1
+/usr/share/sumo/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c02dd.dir/CheckFunctionExists.c.o  -o cmTC_c02dd  -lpthreads 
+/usr/share/sumo/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_aa1f5.dir/build.make:99: cmTC_aa1f5] Error 1
-make[1]: Leaving directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeScratch/TryCompile-M9cTQr'
-make: *** [Makefile:127: cmTC_aa1f5/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_c02dd.dir/build.make:87: cmTC_c02dd] Error 1
+make[1]: Leaving directory '/home/lhq/Projects/PLAuto/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_c02dd/fast] Error 2
 
 
 

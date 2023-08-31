@@ -1,0 +1,16 @@
+<package format="2">
+  <name>plauto_decision_lane_models</name>
+  <version>0.1.0</version>
+  <description>
+    Plauto decision lane model
+  </description>
+  <license>BSD</license>
+  <maintainer email="zyxin@umich.edu">Yuanxin Zhong</maintainer>
+  <author email="zyxin@umich.edu">Yuanxin Zhong</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>plauto_nav_msgs</build_depend>
+  <build_export_depend>plauto_nav_msgs</build_export_depend>
+  <exec_depend>plauto_nav_msgs</exec_depend>
+  <export></export>
+</package>

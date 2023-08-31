@@ -64,6 +64,11 @@ void ControlHandle::loadParameters() {
                                       "/control/lookahead_point")) {
     ROS_WARN_STREAM("Did not load lookahead_point_topic_name. Standard value is: " << localization_utm_topic_name_);
   }
+  if (!nodeHandle_.param<std::string>("decision_trajectory_topic_name",
+                                      decision_trajectory_topic_name_,
+                                      "/plauto/planning/decision_trajectory")) {
+    ROS_WARN_STREAM("Did not load decision_trajectory_topic_name. Standard value is: " << localization_utm_topic_name_);
+  }
 
   if (!nodeHandle_.param("node_rate", node_rate_, 1)) {
     ROS_WARN_STREAM("Did not load node_rate. Standard value is: " << node_rate_);
@@ -102,6 +107,8 @@ void ControlHandle::subscribeToTopics() {
       nodeHandle_.subscribe(localization_utm_topic_name_, 10, & ControlHandle::utmPoseCallback, this);
   platoonStateSubscriber_ = 
       nodeHandle_.subscribe(platoon_state_topic_name_, 10, & ControlHandle::platoonStateCallback,this);
+  decisionTrajectorySubscriber_ = 
+      nodeHandle_.subscribe(decision_trajectory_topic_name_, 10, &ControlHandle::decisionTrajectoryCallback, this);
 }
 
 void ControlHandle::publishToTopics() {
@@ -129,9 +136,14 @@ void ControlHandle::stopFlagCallback(const common_msgs::StopDecision &msg){
   stop_flag_ = msg.veh_stop_flag;
 }
 
+void ControlHandle::decisionTrajectoryCallback(const plauto_planning_msgs::DecisionTrajectory &msg){
+  control_.setDecisionTrajectory(msg);
+  control_.finalWaypointsFlag = true;
+}
+
 void ControlHandle::finalWaypointsCallback(const autoware_msgs::Lane &msg) {
   control_.setFinalWaypoints(msg);
-  control_.finalWaypointsFlag = true;
+  // control_.finalWaypointsFlag = true;
 }
 
 void ControlHandle::egoStateCallback(const common_msgs::VehicleState &msg){

@@ -73,7 +73,7 @@ class V2V {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '84dd78ba72f6eb4041f0491a6158eda6';
+    return '2d31987bd7161fdc80da619674546dd0';
   }
 
   static messageDefinition() {
@@ -109,6 +109,9 @@ class V2V {
     MSG: common_msgs/VehicleState
     # Id of the vehicle
     std_msgs/Header header 
+    
+    # Unique indentity of the vehicle
+    uint64 uid
     
     # Basic info of the vehicle
     

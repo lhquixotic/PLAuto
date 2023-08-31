@@ -8,6 +8,7 @@
 #include "common_msgs/ControlCommand.h"
 #include "nav_msgs/Odometry.h"
 #include "common_msgs/PlatoonState.h"
+#include "plauto_planning_msgs/DecisionTrajectory.h"
 
 
 // #include "common_msgs/ControlCmd.h"
@@ -47,6 +48,7 @@ class Control {
   void setPidParameters(const Pid_para &msg);
   void setPurePursuitParameters(const Pure_pursuit_para &msg);
   void setControlParameters(const Para &msg);
+  void setDecisionTrajectory(const plauto_planning_msgs::DecisionTrajectory &msg);
 
   // Methods
   void runAlgorithm();
@@ -63,6 +65,7 @@ class Control {
   ros::NodeHandle &nh_;
 
   autoware_msgs::Lane final_waypoints;
+  plauto_planning_msgs::DecisionTrajectory decision_trajectory;
   common_msgs::VehicleState ego_state;
   common_msgs::ControlCommand control_cmd;
   nav_msgs::Odometry utm_pose;
@@ -71,6 +74,7 @@ class Control {
   geometry_msgs::Pose leader_pose;
   geometry_msgs::PointStamped lookahead_point;
   std::vector<autoware_msgs::Waypoint> current_waypoints;
+  nav_msgs::Path trajectory;
 
   PID pid_controller;
   Pure_pursuit pp_controller;

@@ -9,6 +9,7 @@ set(PROJECT_DEPS
   common_msgs
   nav_msgs
   autoware_msgs
+  plauto_planning_msgs
   libwaypoint_follower
   )
 
@@ -19,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   common_msgs
   nav_msgs
   autoware_msgs
+  plauto_planning_msgs
   libwaypoint_follower
   )
 

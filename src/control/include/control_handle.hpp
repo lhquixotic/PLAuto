@@ -29,12 +29,14 @@ class ControlHandle {
   ros::Subscriber egoStateSubscriber_;
   ros::Subscriber platoonStateSubscriber_;
   ros::Subscriber utmPoseSubscriber_;
+  ros::Subscriber decisionTrajectorySubscriber_;
 
   ros::Publisher controlCommandPublisher_;
   ros::Publisher lookaheadpointPublisher_;
 
   void stopFlagCallback(const common_msgs::StopDecision &msg);
   void finalWaypointsCallback(const autoware_msgs::Lane &msg);
+  void decisionTrajectoryCallback(const plauto_planning_msgs::DecisionTrajectory &msg);
   void egoStateCallback(const common_msgs::VehicleState &msg); 
   void platoonStateCallback(const common_msgs::PlatoonState &msg);
   void utmPoseCallback(const nav_msgs::Odometry &msg);
@@ -45,6 +47,7 @@ class ControlHandle {
   std::string platoon_state_topic_name_;
   std::string localization_utm_topic_name_;
   std::string lookahead_point_topic_name_;
+  std::string decision_trajectory_topic_name_;
 
   std::string control_command_topic_name_;
 

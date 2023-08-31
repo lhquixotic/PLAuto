@@ -29,6 +29,13 @@ namespace ns_control
     final_waypoints = msg;
     current_waypoints = final_waypoints.waypoints;
   }
+
+  void Control::setDecisionTrajectory(const plauto_planning_msgs::DecisionTrajectory &msg){
+    decision_trajectory = msg;
+    ROS_INFO("Set decision trajectory.");
+    trajectory = decision_trajectory.trajectory;
+  }
+
   void Control::setEgoState(const common_msgs::VehicleState &msg){
     ego_state = msg;
     // ROS_INFO_STREAM("[Control]current velocity: " << vehicle_state.twist.linear.x);
@@ -56,21 +63,24 @@ namespace ns_control
   }
 
   int Control::findLookAheadWaypoint(float lookAheadDistance){
-    int waypoints_size = current_waypoints.size();
+    // int waypoints_size = current_waypoints.size();
+    int waypoints_size = trajectory.poses.size();
     if (waypoints_size == 0){
       next_waypoint_number_ = -1;
       return -1;
     }
     // find nearest point
     nearest_idx = 0;
-    double nearest_distance = getPlaneDistance(current_waypoints.at(0).pose.pose.position,current_pose.position);
+    // double nearest_distance = getPlaneDistance(current_waypoints.at(0).pose.pose.position,current_pose.position);
+    double nearest_distance = getPlaneDistance(trajectory.poses[0].pose.position,current_pose.position);
     for (int i = 0; i < waypoints_size; i++){
       // if search waypoint is the last
       if(i == (waypoints_size - 1)){
         ROS_INFO("search waypoint is the last");
         // break;
       }
-      double dis = getPlaneDistance(current_waypoints.at(i).pose.pose.position,current_pose.position);
+      // double dis = getPlaneDistance(current_waypoints.at(i).pose.pose.position,current_pose.position);
+      double dis = getPlaneDistance(trajectory.poses[i].pose.position,current_pose.position);
       if (dis < nearest_distance){
         nearest_idx = i;
         nearest_distance = dis;
@@ -86,28 +96,14 @@ namespace ns_control
       }
       // if there exists an effective waypoint
       if (getPlaneDistance(
-        current_waypoints.at(j).pose.pose.position, current_pose.position
+        // current_waypoints.at(j).pose.pose.position, current_pose.position
+        trajectory.poses[j].pose.position, current_pose.position
       ) > lookAheadDistance){
-        lookahead_point.point = current_waypoints.at(j).pose.pose.position;
+        // lookahead_point.point = current_waypoints.at(j).pose.pose.position;
+        lookahead_point.point = trajectory.poses[j].pose.position;
         return j;
       }
     }
-    // float dist_sum = 0;
-    // int i;
-    // ROS_INFO_STREAM("[Control::findLookAheadWaypoint] local path waypoints size: "<<current_waypoints.waypoints.size());
-    // for (i = 1; i < current_waypoints.waypoints.size(); i++){ 
-    //   geometry_msgs::Point wp = current_waypoints.waypoints[i].pose.pose.position;      // waypoint position
-    //   //geometry_msgs::Point wp_ = current_waypoints.waypoints[i - 1].pose.pose.position; // last waypoint position
-    //   //float dist = sqrt((wp.x - wp_.x) * (wp.x - wp_.x) + (wp.y - wp_.y) * (wp.y - wp_.y));
-    //   //dist_sum += dist;
-    //   dist_sum = sqrt((wp.x*wp.x)+(wp.y*wp.y));
-    //   if (dist_sum > lookAheadDistance){
-    //     ROS_INFO_STREAM("[Control::findLookAheadWaypoint] dist_sum: " << dist_sum);
-    //     return i;
-    //   }
-    // }
-    // ROS_WARN(" Lookahead waypoint is not in the range of local path. ");
-    // return i;
   }
 
 
@@ -134,11 +130,17 @@ namespace ns_control
         
         int lookahead_waypoint_idx = findLookAheadWaypoint(lookahead_distance);
         ROS_INFO_STREAM("[Control] lookahead waypoint idx: " << lookahead_waypoint_idx);
-        autoware_msgs::Waypoint lookahead_point = final_waypoints.waypoints[lookahead_waypoint_idx];
-        ROS_INFO_STREAM("[Control] lookahead waypoint: x: " << lookahead_point.pose.pose.position.x
-                        << ", y: " << lookahead_point.pose.pose.position.y);
+        if(lookahead_waypoint_idx >= 0){
+          // autoware_msgs::Waypoint lookahead_point = final_waypoints.waypoints[lookahead_waypoint_idx];
+          geometry_msgs::PoseStamped lookahead_point = trajectory.poses[lookahead_waypoint_idx];
+          ROS_INFO_STREAM("[Control] lookahead waypoint: x: " << lookahead_point.pose.position.x
+                          << ", y: " << lookahead_point.pose.position.y);
 
-        control_cmd.steer = pp_controller.outputSteeringWheelAngle(lookahead_point.pose.pose.position,current_pose);
+          control_cmd.steer = pp_controller.outputSteeringWheelAngle(lookahead_point.pose.position,current_pose);
+        }else{
+          control_cmd.steer = 0;
+          ROS_INFO("[Control] lookahead waypoint idx < 0.");
+        }
         ROS_INFO_STREAM("[Contorl] control_cmd steer angle: " << control_cmd.steer);
       }else{
         control_cmd.steer = 0;
@@ -173,16 +175,19 @@ namespace ns_control
           else {
             if (control_para.longitudinal_mode == 4){ //traj mode
               float desired_speed;
-              if(nearest_idx <= 10){
-                desired_speed = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
-              }else{
-		            if(nearest_idx <current_waypoints.size()-1){
-                  desired_speed = current_waypoints.at(nearest_idx).twist.twist.linear.x;
-                }else{
-                  desired_speed = 0;
-                  control_cmd.steer =0;
-                }
-	            }
+              desired_speed = decision_trajectory.desired_speed;
+
+              // if(nearest_idx <= 10){
+              //   desired_speed = current_waypoints.at(next_waypoint_number_).twist.twist.linear.x;
+              // }else{
+		          //   if(nearest_idx <current_waypoints.size()-1){
+              //     desired_speed = current_waypoints.at(nearest_idx).twist.twist.linear.x;
+              //   }else{
+              //     desired_speed = 0;
+              //     control_cmd.steer =0;
+              //   }
+	            // }
+
               control_cmd.accel = pid_controller.outputSignal(v_x,desired_speed);
 	            ROS_INFO_STREAM("[Control] Longitudinal desired Speed: "<< desired_speed);
             }

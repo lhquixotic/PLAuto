@@ -24,7 +24,7 @@ echo_and_run mkdir -p "$DESTDIR/home/lhq/Projects/PLAuto/install/lib/python3/dis
 echo_and_run /usr/bin/env \
     PYTHONPATH="/home/lhq/Projects/PLAuto/install/lib/python3/dist-packages:/home/lhq/Projects/PLAuto/build/lib/python3/dist-packages:$PYTHONPATH" \
     CATKIN_BINARY_DIR="/home/lhq/Projects/PLAuto/build" \
-    "/usr/bin/python3" \
+    "/usr/share/sumo/bin/python3" \
     "/home/lhq/Projects/PLAuto/src/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/ros_compatibility/setup.py" \
      \
     build --build-base "/home/lhq/Projects/PLAuto/build/drivers/simulators/carla/carla_ros_bridge/ros-bridge-0.9.11/ros_compatibility" \

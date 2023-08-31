@@ -3,10 +3,10 @@
 import datetime
 import rospy
 
-from lane_decision_models.lon_platoon import PlatoonFSM
-from lane_decision_models.lat_platoon import PlatoonLaneUtility
-from lane_decision_models.local_trajectory import PolylineTrajectory
-from lane_decision_models import MainDecision
+from plauto_decision_lane_models.lon_platoon import PlatoonFSM
+from plauto_decision_lane_models.lat_platoon import PlatoonLaneUtility
+from plauto_decision_lane_models.local_trajectory import PolylineTrajectory
+from plauto_decision_lane_models import MainDecision
 
 from plauto_planning_msgs.msg import DecisionTrajectory
 
@@ -15,6 +15,7 @@ from nav_msgs.msg import Path
 from plauto_common.params import parse_private_args
 from plauto_cognition_msgs.msg import MapState
 from common_msgs.msg import VehicleState, PlatoonState, VehicleDynamicState, ChassisState
+from autoware_msgs.msg import Lane
 
 
 class DecisionNode(object):
@@ -26,6 +27,7 @@ class DecisionNode(object):
             static_map_topic="/plauto/navigation/local_static_map",
             platoon_state_topic="/carla/platoon_state",
             RVIZ_decision_trajectory_topic="decision_trajectory_path", 
+            waypoint_reconstruct_topic="/plauto/planning/reconstruct_waypoints",
             hz = 4,
         )
         model_lon = PlatoonFSM()                           # longitudinal model: PlatoonFSM
@@ -39,7 +41,9 @@ class DecisionNode(object):
         self._platoon_state_subscriber = rospy.Subscriber(params.platoon_state_topic, PlatoonState, self._decision_instance.receive_platoon_state)
         self._decision_trajectory_publisher = rospy.Publisher(params.decision_trajectory_topic, DecisionTrajectory, queue_size=1)
         self._rviz_decision_trajectory_publisher = rospy.Publisher(params.RVIZ_decision_trajectory_topic, Path, queue_size=1)
-
+        self._reconstruct_waypoints_subscriber = rospy.Subscriber(params.waypoint_reconstruct_topic, Lane, self._decision_instance.receive_reconstruct_trajectory)
+        
+        
     def loop(self):
         while not rospy.is_shutdown():
             try:

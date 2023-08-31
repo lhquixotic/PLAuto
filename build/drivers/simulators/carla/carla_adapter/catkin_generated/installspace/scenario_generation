@@ -2,9 +2,11 @@ import os
 import math
 import json
 import carla
+import rospy
 import time
 from numpy import random
 from carla import VehicleLightState as vls
+import tf
 
 import ros_compatibility as roscomp
 from ros_compatibility.exceptions import *
@@ -14,9 +16,10 @@ from ros_compatibility.qos import QoSProfile, DurabilityPolicy
 from carla_msgs.msg import CarlaActorList
 from carla_msgs.srv import SpawnObject, DestroyObject
 from diagnostic_msgs.msg import KeyValue
-from geometry_msgs.msg import Pose
-from common_msgs.msg import VehicleState, PlatoonState
+from geometry_msgs.msg import Pose,PoseStamped
+from common_msgs.msg import VehicleState, PlatoonState, VehicleDynamicState, ChassisState
 from plauto_nav_msgs.msg import Map
+from nav_msgs.msg import Path
 
 from transforms3d.quaternions import quat2axangle
 from transforms3d.euler import euler2quat
@@ -54,6 +57,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         # initialize the players list
         self.platoon_vehicles = []
         self.players = []
+        self.reference_path = Path()
         
         self.platoon_state = PlatoonState()
         self.platoon_state_publisher = self.new_publisher(
@@ -64,18 +68,18 @@ class CarlaScenarioGeneration(CompatibleNode):
             Map,"/carla/local_static_map",
             QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         )
+        self.reference_path_publisher = self.new_publisher(
+            Path,"/plauto/navigation/reference_path",
+            QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        )
 
         self.spawn_object_service = self.new_client(SpawnObject, "/carla/spawn_object")
         self.destroy_object_service = self.new_client(DestroyObject, "/carla/destroy_object")
-    
-    def output_map(self):
-        pass
     
     def generate_platoon(self,interveh_dist):
         # spawn platoon vehicles
         vehicle_bp = self.carla_world.get_blueprint_library().filter('vehicle.carlamotors.carlacola')
         
-
         def calculate_spawn_point(spawn_point_ego_vehicle,ev_order,pv_order,interveh_dist):
             # calculate the spawn point of other cars in the platoon
             # param spawn_point_ego_vehicle: Pose()
@@ -108,6 +112,7 @@ class CarlaScenarioGeneration(CompatibleNode):
         spawn_object_request.attach_to = 0
         spawn_object_request.random_pose = False
         spawn_object_request.transform = spawn_point
+        spawn_object_request.attributes.append(KeyValue(key="role_name",value="leader_vehicle"))
         response = self.call_service(self.spawn_object_service, spawn_object_request, spin_until_response_received=True)
         
         # sleep to wait response
@@ -155,7 +160,7 @@ class CarlaScenarioGeneration(CompatibleNode):
             if blueprint.has_attribute('driver_id'):
                 driver_id = random.choice(blueprint.get_attribute('driver_id').recommended_values)
                 blueprint.set_attribute('driver_id', driver_id)
-            blueprint.set_attribute('role_name', 'autopilot')
+            blueprint.set_attribute('role_name', 'zombie_'+str(n))
         
             # prepare the light state of the cars to spawn
             light_state = vls.NONE
@@ -179,23 +184,84 @@ class CarlaScenarioGeneration(CompatibleNode):
 
     def run_step(self):
         # update platoon state
-        for veh_actor in self.platoon_vehicles:
+        for veh_idx, veh_actor in enumerate(self.platoon_vehicles):
             veh_state=VehicleState()
             veh_state.uid = veh_actor.id
+            
+            # odometry info
             pos = Pose()
-            # carla_position = veh_actor.get_location()
             carla_position = veh_actor.get_transform().location
             carla_rotation = veh_actor.get_transform().rotation
             pos.position.x, pos.position.y, pos.position.z = carla_position.x, -carla_position.y, carla_position.z
-            #FIXME:(LHQ) position.y
             
-            # pos.position = carla_position
             quat = euler2quat(math.radians(carla_rotation.roll), math.radians(carla_rotation.pitch), math.radians(carla_rotation.yaw))
             pos.orientation.x,pos.orientation.y,pos.orientation.z, pos.orientation.w = quat
-            veh_state.odom.pose.pose = pos
-            self.platoon_state.vehicles[0] = veh_state
 
+            # dynamics info
+            dynamic_info = VehicleDynamicState()
+            dynamic_info.lon_speed = veh_actor.get_velocity().x
+            dynamic_info.lat_speed = veh_actor.get_velocity().y
+            dynamic_info.lon_accel = veh_actor.get_acceleration().x
+            dynamic_info.lat_accel = veh_actor.get_acceleration().y
+            dynamic_info.yaw_rate = veh_actor.get_angular_velocity().z # deg/s
+
+            # chassis state info
+            chassis_state = ChassisState()
+            chassis_state.throttle = veh_actor.get_control().throttle
+            chassis_state.brake = veh_actor.get_control().brake
+            chassis_state.steer = veh_actor.get_control().steer
+            chassis_state.gear = veh_actor.get_control().gear
+            chassis_state.parking_brake = veh_actor.get_control().hand_brake
+
+            veh_state.odom.pose.pose = pos
+            veh_state.dynamics = dynamic_info
+            veh_state.chassis = chassis_state
+
+            self.platoon_state.vehicles[veh_idx] = veh_state
+            
+        # update reference path
+        # get leader vehicle's waypoint
+        leader_veh = self.platoon_vehicles[0]
+        leader_loc = leader_veh.get_transform().location
+        leader_rot = leader_veh.get_transform().rotation
+        leader_pose = PoseStamped()
+        leader_pose.pose.position.x = leader_loc.x
+        leader_pose.pose.position.y = -leader_loc.y
+        leader_pose.pose.position.z = leader_loc.z
+        
+        quaternion = tf.transformations.quaternion_from_euler(
+                0, 0, -math.radians(leader_rot.yaw))
+        leader_pose.pose.orientation.x = quaternion[0]
+        leader_pose.pose.orientation.y = quaternion[1]
+        leader_pose.pose.orientation.z = quaternion[2]
+        leader_pose.pose.orientation.w = quaternion[3]
+        
+        # get ego vehicle's waypoint
+        actor_list = self.carla_world.get_actors()
+        ego_veh = [actor for actor in actor_list if actor.attributes.get("role_name") == "ego_vehicle"]
+        ego_veh = ego_veh[0]
+        ego_loc = ego_veh.get_transform().location
+        ego_rot = ego_veh.get_transform().rotation
+        ego_pose = PoseStamped()
+        ego_pose.pose.position.x = ego_loc.x
+        ego_pose.pose.position.y = -ego_loc.y
+        ego_pose.pose.position.z = ego_loc.z
+        
+        quaternion = tf.transformations.quaternion_from_euler(
+                0, 0, -math.radians(ego_rot.yaw))
+        ego_pose.pose.orientation.x = quaternion[0]
+        ego_pose.pose.orientation.y = quaternion[1]
+        ego_pose.pose.orientation.z = quaternion[2]
+        ego_pose.pose.orientation.w = quaternion[3]
+
+        # set reference path
+        self.reference_path.header.frame_id = "/map"
+        self.reference_path.header.stamp = rospy.Time.now()
+        self.reference_path.poses.append(ego_pose)
+        self.reference_path.poses.append(leader_pose)
+         
         self.platoon_state_publisher.publish(self.platoon_state)
+        self.reference_path_publisher.publish(self.reference_path)
         
         # FIXME: map state
         # local_static_map = Map()
@@ -253,7 +319,16 @@ class CarlaScenarioGeneration(CompatibleNode):
             #     self.loginfo("Object {} successfully destroyed.".format(actor_id))
             # self.global_sensors = []
 
-            # destroy player
+            # destroy player [sensor, vehicle, pedestrian]
+            # actor_list = self.carla_world.get_actors()
+            # for actor in actor_list:
+            #     for type_ids in ["sensor","vehicle","pedestrian"]:
+            #         if actor.type_id in type_ids:
+            #             destroy_object_request = roscomp.get_service_request(DestroyObject)
+            #             destroy_object_request.id = actor.id
+            #             self.call_service(self.destroy_object_service,
+            #                       destroy_object_request, timeout=0.5, spin_until_response_received=True)
+            #             self.loginfo("Object {} successfully destroyed.".format(actor.id))
             for player_id in self.players:
                 destroy_object_request = roscomp.get_service_request(DestroyObject)
                 destroy_object_request.id = player_id
@@ -261,6 +336,8 @@ class CarlaScenarioGeneration(CompatibleNode):
                                   destroy_object_request, timeout=0.5, spin_until_response_received=True)
                 self.loginfo("Object {} successfully destroyed.".format(player_id))
             self.players = []
+            
+            
         except ServiceException:
             self.logwarn(
                 'Could not call destroy service on objects, the ros bridge is probably already shutdown')
@@ -303,7 +380,12 @@ def main(args=None):
         except RuntimeError as e:
             roscomp.logfatal("Exception caught: {}".format(e))
         finally:
+            actor_list = scenario_generation_node.carla_world.get_actors()
+            for actor in actor_list:
+                actor.destroy()
             roscomp.shutdown()
+            del scenario_generation_node.carla_world
+            del scenario_generation_node.carla_client
 
 
 if __name__ == '__main__':

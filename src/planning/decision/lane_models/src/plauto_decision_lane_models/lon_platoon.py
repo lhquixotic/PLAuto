@@ -15,26 +15,11 @@ class PlatoonFSM(object):
         
         self.dynamic_map = None # dynamic map:to obtain state
         self.platoon_state = None
+         
+        self.ego_lane_array = None # for locate ego vehicle in the ego lane
         
-        self.state = 1 # driving state
-        self.a_cmf = 2 # comfortable acceleration (m/ss)
-        self.a_max = 6 # max deacceleration (m/ss) 
-        self.d_0 = 20 # distance fisrt entering Hard Braking state or Yielding state (m)
-        self.v_0 = 4 # speed fisrt entering Hard Braking state or Yielding state (m/s)
-        self.setup = 0 
-        self.delta = 5 # safety offset
-        self.tau_max = 4 # time advantage threshold (s)
-        self.delay_time = 0.5 # braking reaction time (s)
-        self.k_s = -2 # feedback coefficient
-        self.limit_speed = 8 # limit speed (m/s)
-        self.veh_len = 4 # vehicle length (m)
-        self.veh_wid = 2 # vehicle width (m)
-
-        self.decision_dt = 0.25 # decision update time (s)
-        
-        time_dir = time.strftime("%Y-%m-%d-%H-%M", time.localtime()) 
-        self.fname = '/home/user/carla_log/' + time_dir + "/decision_state.txt" 
-    
+        self.platoon_lane_index = None
+        self.leader_in_junction = None
 
     def update_dynamic_map(self,dynamic_map):
         self.dynamic_map = dynamic_map
@@ -44,9 +29,74 @@ class PlatoonFSM(object):
 
     def longitudinal_speed(self, target_lane_index, traffic_light = False, if_record = False):
         platoon_veh, platoon_vehicle_lane = self.get_platoon_state()
-        front_vehicles = self.get_obstacle_state()
+        front_obstacle_vehicles = self.get_obstacle_state()
+        # if no obstacle vehicle in the current lane, or the obstacle vehicle is in front of leader vehicle
+        # target speed is the speed of the leader vehicle
         target_speed = platoon_veh.dynamics.lon_speed
+        
+        if len(front_obstacle_vehicles) == 0:
+            rospy.loginfo("No obstacle vehicle in the current lane.")    
+        else:
+            closest_obstalce_loc = [front_obstacle_vehicles[0].state.pose.pose.position.x,
+                                    front_obstacle_vehicles[0].state.pose.pose.position.y]
+            closest_obstalce_loc = np.array(closest_obstalce_loc)
+            rospy.logdebug("The closet obstacle location is %.2f,%.2f",closest_obstalce_loc[0],closest_obstalce_loc[1])
+            # if obstacle vehicle is between the two vehicle, stop(FIXME)
+            ego_veh_loc = np.array([self.dynamic_map.ego_state.pose.pose.position.x,
+                                    self.dynamic_map.ego_state.pose.pose.position.y])
+            pla_veh_loc = np.array([platoon_veh.odom.pose.pose.position.x,
+                                    platoon_veh.odom.pose.pose.position.y])
+            obstacle_leader_array = closest_obstalce_loc - pla_veh_loc
+            obstacle_ego_array = closest_obstalce_loc - ego_veh_loc
+            if np.dot(obstacle_leader_array,obstacle_ego_array) <= 0:
+                # obstacle is between leader vehicle and ego vehicle            
+                target_speed = 0
         return target_speed
+
+    def get_platoon_state(self):
+        rospy.logdebug("platoon vehicle num: %d",len(self.platoon_state.vehicles))
+        platoon_veh = self.platoon_state.vehicles[0]
+        
+        # locate platoon vehicle in the lane
+        lanes = [lane_state.map_lane for lane_state in self.dynamic_map.mmap.lanes]
+        lane_path_array = get_lane_array(lanes)
+        dist_list = np.array([dist_from_point_to_polyline2d(
+            platoon_veh.odom.pose.pose.position.x,
+            platoon_veh.odom.pose.pose.position.y,
+            lane) for lane in lane_path_array])
+        self.ego_lane_array = lane_path_array[int(self.dynamic_map.mmap.ego_lane_index)]
+
+        if len(self.dynamic_map.mmap.lanes) < 2:
+            closest_lane = second_closest_lane = 0
+        else:
+            closest_lane, second_closest_lane = np.abs(dist_list[:,0]).argsort()[:2]
+        rospy.logdebug("The closest lane of the platoon vehicle is %d",closest_lane)
+        return platoon_veh, closest_lane
+
+    def get_obstacle_state(self):
+        ego_vehicle_location = np.array([self.dynamic_map.ego_state.pose.pose.position.x,
+                                        self.dynamic_map.ego_state.pose.pose.position.y])
+        rospy.logdebug("number of lanes:%d",len(self.dynamic_map.mmap.lanes))
+        ego_lane_index = self.dynamic_map.mmap.ego_lane_index
+        rospy.logdebug("ego vehicle lane index is %d",ego_lane_index)
+        ego_lane = self.dynamic_map.mmap.lanes[int(ego_lane_index)]
+        front_vehicles = ego_lane.front_vehicles
+        for vid,front_vehicle in enumerate(front_vehicles):
+            vehicle_id = front_vehicle.uid
+            rospy.logdebug("vehicle id is %d",vehicle_id)
+            for platoon_veh in self.platoon_state.vehicles:
+                platoon_veh_id = platoon_veh.uid
+                rospy.logdebug("platoon vehicle id is %d", platoon_veh_id)
+                if vehicle_id == platoon_veh_id:
+                    rospy.logdebug("UID %d is platoon vehicle, delete.", vehicle_id)
+                    del front_vehicles[vid]
+                    
+        if len(front_vehicles) > 0:
+            rospy.logdebug("front vehicles num: %d",len(front_vehicles))
+            return front_vehicles
+        return []
+
+    # TODO: more detailed FSM is to be added.
 
     def rule_state_transition(self,current_speed,ped_state):
         state = self.state
@@ -69,38 +119,6 @@ class PlatoonFSM(object):
                     self.state = 4
         elif not PedinCrosswalk: 
                 self.state = 1
-
-    def get_platoon_state(self):
-        rospy.logdebug("platoon vehicle num: %d",len(self.platoon_state.vehicles))
-        platoon_veh = self.platoon_state.vehicles[0]
-        
-        # locate platoon vehicle in the lane
-        lane_path_array = get_lane_array(self.dynamic_map.lanes)
-        dist_list = np.array([dist_from_point_to_polyline2d(
-            platoon_veh.pose.pose.position.x,
-            platoon_veh.pose.pose.position.y,
-            lane) for lane in lane_path_array])
-        if len(self.dynamic_map.mmap.lanes) < 2:
-            closest_lane = second_closest_lane = 0
-        else:
-            closest_lane, second_closest_lane = np.abs(dist_list[:,0]).argsort()[:2]
-        rospy.logdebug("The closest lane of the platoon vehicle is %d",closest_lane)
-        return platoon_veh, closest_lane
-
-    def get_obstacle_state(self):
-        ego_vehicle_location = np.array([self.dynamic_map.ego_state.pose.pose.position.x,
-                                        self.dynamic_map.ego_state.pose.pose.position.y])
-        rospy.logdebug("number of lanes:%d",len(self.dynamic_map.mmap.lanes))
-        ego_lane_index = self.dynamic_map.mmap.ego_lane_index
-        rospy.logdebug("ego vehicle lane index is %d",ego_lane_index)
-        ego_lane = self.dynamic_map.mmap.lanes[ego_lane_index]
-        front_vehicles = ego_lane.front_vehicles
-        # for front_vehicle in front_vehicles:
-        #     vehicle_id = 
-        if len(front_vehicles) > 0:
-            rospy.logdebug("front vehicles num: %d",len(front_vehicles))
-            return front_vehicles
-        return []
 
     def get_ped_state(self):
         dist = 100

@@ -33,11 +33,16 @@ def convert_ControlCommand(msg, pub):
     new_msg = CarlaEgoVehicleControl()
     new_msg.header = msg.header
 
-    new_msg.steer = -msg.steer # In Carla, right turning is positive
+    # convert actual value to CarlaControl value
+    # throttle [0,1], brake [0,1], steer [-1,1]
+    new_msg.steer = -msg.steer * 0.02# In Carla, right turning is positive
+    if abs(new_msg.steer) > 1:
+        new_msg.steer = new_msg.steer / abs(new_msg.steer)
+        
     if msg.accel > 0:
-        new_msg.throttle = msg.accel
+        new_msg.throttle = msg.accel * 0.5
     else:
-        new_msg.brake = -msg.accel
+        new_msg.brake = -msg.accel * 0.5
 
     if msg.gear == ControlCommand.GEAR_PARKING or msg.parking_brake:
         new_msg.hand_brake = 1
