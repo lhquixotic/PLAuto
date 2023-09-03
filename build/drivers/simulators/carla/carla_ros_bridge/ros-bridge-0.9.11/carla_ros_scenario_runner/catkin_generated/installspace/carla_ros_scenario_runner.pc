@@ -1,8 +1,0 @@
-prefix=/home/lhq/Projects/PLAuto/install
-
-Name: carla_ros_scenario_runner
-Description: Description of carla_ros_scenario_runner
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

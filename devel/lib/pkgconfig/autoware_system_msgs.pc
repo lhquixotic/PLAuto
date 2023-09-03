@@ -1,8 +1,0 @@
-prefix=/home/lhq/Projects/PLAuto/devel
-
-Name: autoware_system_msgs
-Description: Description of autoware_system_msgs
-Version: 1.13.0
-Cflags: -I/home/lhq/Projects/PLAuto/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime rosgraph_msgs std_msgs
