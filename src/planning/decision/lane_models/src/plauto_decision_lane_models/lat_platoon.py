@@ -14,7 +14,6 @@ class PlatoonLaneUtility(object):
         self.platoon_state = None
 
     def lateral_decision(self, dynamic_map, platoon_state = None, close_to_junction = 10):
-        
         if platoon_state is None:
             rospy.logwarn("No platoon state used in lateral decision.")
         else:
@@ -48,9 +47,6 @@ class PlatoonLaneUtility(object):
         pass
     
 
-
-    
-
     def generate_lane_change_index(self, change_lane_thres = 0.5):
 
         ego_lane_index = int(round(self.dynamic_map.mmap.ego_lane_index))
@@ -79,7 +75,6 @@ class PlatoonLaneUtility(object):
         return ego_lane_index
 
     def lane_utility(self, lane_index):
-
         available_speed = self.longitudinal_model_instance.longitudinal_speed(lane_index)
         exit_lane_index = self.dynamic_map.mmap.target_lane_index
         distance_to_end = self.dynamic_map.mmap.distance_to_junction
@@ -124,8 +119,7 @@ class PlatoonLaneUtility(object):
             front_v = get_speed(front_vehicle.state)
             if d_front > max(10 + 3*(ego_v-front_v), 10):
                 front_safe = True
-        
-
+    
         if rear_vehicle is None:
             rear_safe = True
             d_rear = -1

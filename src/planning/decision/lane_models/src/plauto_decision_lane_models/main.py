@@ -59,8 +59,8 @@ class MainDecision(object):
         
         changing_lane_index, desired_speed = self._lateral_model_instance.lateral_decision(dynamic_map,self._platoon_state)
 
-        if desired_speed < 0: # TODO: clean this
-            desired_speed = 0
+        # if desired_speed < 0: # TODO: clean this
+        #     desired_speed = 0
 
         # rospy.logdebug("target_lane_index = %d, target_speed = %f km/h", changing_lane_index, desired_speed*3.6)
         

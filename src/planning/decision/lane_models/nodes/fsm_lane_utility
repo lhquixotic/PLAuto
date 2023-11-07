@@ -30,7 +30,7 @@ class DecisionNode(object):
             waypoint_reconstruct_topic="/plauto/planning/reconstruct_waypoints",
             hz = 4,
         )
-        model_lon = PlatoonFSM()                           # longitudinal model: PlatoonFSM
+        model_lon = PlatoonFSM()                       # longitudinal model: PlatoonFSM
         model_lat = PlatoonLaneUtility(model_lon)      # lateral model: Platoon Lane
         model_local = PolylineTrajectory()          
 
